@@ -6,7 +6,7 @@
     "repo": "audixdev/americas-pc-tracker",
     "description": "Live standings of the unofficial projects trying to run the Xbox build of GTA VI on a PC: how far each has got, what changed, and a best guess at when it becomes playable."
   },
-  "checked_at": "2026-11-24T20:04:00Z",
+  "checked_at": "2026-11-24T20:22:00Z",
   "headline_note": "None is playable yet. The best picture is lit only where sunlight falls, at 2 to 4 frames a second.",
   "stages": [
     {
@@ -119,9 +119,9 @@
       "furthest": "Story mode loads as far as the story intro's title card",
       "stage": 5,
       "state": "active",
-      "status": "Starts, shows the logo, intro art and first-run screens, loads story mode and reaches the story intro's title card, then stops. All 25,908 of the game's shader programs translate and compile.",
-      "source": "project README and wiki status page",
-      "changed_at": "2026-11-24T18:20:00Z",
+      "status": "Starts, shows the logo, intro art and first-run screens, loads story mode and reaches the story intro's title card, then stops. A status note updated on 24 Nov says the story load now runs 300 seconds without a fault but does not finish. All 25,908 of the game's shader programs translate and compile.",
+      "source": "project README and status files; commit aae91f3 (24 Nov)",
+      "changed_at": "2026-11-24T20:22:00Z",
       "status_docs": [
         "README.md"
       ]
@@ -182,9 +182,9 @@
       "furthest": "The account picker, at about 12 fps",
       "stage": 5,
       "state": "active",
-      "status": "Starts the game, opens all its archives and renders its screens up to the account picker at about 12 frames a second. About 84% of the game's shaders translate. A commit on 24 Nov adds an offline console with one signed-in user, the README's next step, but no new screen is reported yet.",
-      "source": "project README (it names the game by its title ID, 7952987A) and commit 9f5bd4f",
-      "changed_at": "2026-11-24T20:04:00Z"
+      "status": "Starts the game, opens all its archives and renders its screens up to the account picker at about 12 frames a second. About 84% of the game's shaders translate. A commit on 24 Nov adds an offline console with one signed-in user, the README's next step, but no new screen is reported yet. A later commit adds options to size the window or cover the monitor.",
+      "source": "project README (it names the game by its title ID, 7952987A) and commits 9f5bd4f and 7255852",
+      "changed_at": "2026-11-24T20:22:00Z"
     },
     {
       "id": "tuxbox",
@@ -230,9 +230,9 @@
       "furthest": "A window shows presented frames, all black",
       "stage": 4,
       "state": "active",
-      "status": "Commits on 24 Nov wire the game's present call to a real window and put the game's memory pages into the graphics card's address space, so draws now execute without a hang. A 150-second run submitted about 15,500 draws and as many presents with no device loss, but a read-back of the drawn target is uniformly black. The README still describes the older state.",
-      "source": "commits 523d947, ea771ec and 38c8451, measured on an RTX 4090",
-      "changed_at": "2026-11-24T20:04:00Z"
+      "status": "Commits on 24 Nov wire the game's present call to a real window and put the game's memory pages into the graphics card's address space, so draws now execute without a hang. A 150-second run submitted about 15,500 draws and as many presents with no device loss, but a read-back of the drawn target is uniformly black. A later commit rules out culling, depth clipping and the pipeline stand-ins as the cause of the black frame. The README still describes the older state.",
+      "source": "commits 523d947, ea771ec, 38c8451 and 29de70e, measured on an RTX 4090",
+      "changed_at": "2026-11-24T20:22:00Z"
     },
     {
       "id": "xbox-emulator",
@@ -363,6 +363,15 @@
     "revision_note": "Moved forward from Tue 1 Dec to Sun 29 Nov. The pace has been faster than this forecast assumed: frame rate roughly tripled in a day, and XCL took two smaller retail games from a new repository to playable in about two days. Reaching playable does not require ray-traced lighting, so the remaining gap is mainly speed and stability. The Take-Two notice against Leonida's 3,007-repository network is a new risk to the public projects, which is why the chance by Fri 4 Dec rises only to 7 in 10."
   },
   "updates": [
+    {
+      "at": "2026-11-24T20:22:00Z",
+      "title": "five-star-recomp's story load holds for 300 seconds",
+      "points": [
+        "five-star-recomp's status files now say the story load runs 300 seconds without a fault, but it does not finish. It stays at stage 5.",
+        "palmetto's newest commit rules out culling, depth clipping and its pipeline stand-ins as the cause of its black frames. It stays at stage 4.",
+        "g6shim added window-size options. Its furthest screen is unchanged, and the forecast is unchanged."
+      ]
+    },
     {
       "at": "2026-11-24T20:04:00Z",
       "title": "Entries re-checked against every README; ScarlettPort added",
