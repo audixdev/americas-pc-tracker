@@ -6,7 +6,7 @@
     "repo": "audixdev/americas-pc-tracker",
     "description": "Live standings of the unofficial projects trying to run the Xbox build of GTA VI on a PC: how far each has got, what changed, and a best guess at when it becomes playable."
   },
-  "checked_at": "2026-11-24T19:38:00Z",
+  "checked_at": "2026-11-24T19:50:00Z",
   "headline_note": "None is playable yet. The best picture is lit only where sunlight falls, at 2 to 4 frames a second.",
   "stages": [
     {
@@ -283,23 +283,25 @@
     }
   ],
   "forecast": {
-    "target": "2026-12-01T12:00:00Z",
+    "target": "2026-11-29T12:00:00Z",
     "definition": "At least one project shows 30 minutes or more in the game world under player control, at 20 frames a second or better on some PC, without a crash.",
     "rests_on": [
-      "The executable surfaced on 23 November. Within about a day, three code bases reported the game world running.",
-      "The front-runner now shows a lit world with characters, but only direct sunlight works: everything in shadow is black.",
-      "Speed is the long pole. The best reported figure is about 4 frames a second, and the longest reported session lasted about 13 minutes before the GPU device was lost. Playable needs five times the speed and over twice the session length.",
-      "Work is shared across projects. victory-gta6 and AnyXboxX build on VIctory, and fixes move between XCL, VIctory and Palmwave in days, not weeks.",
-      "Takedowns are a real risk. Leonida and at least one community server are already gone."
+      "The executable surfaced on 23 November, and within about a day three code bases reported the game world running. A private build, CGBJ, is said to have done the same, but that comes from press reports only.",
+      "Other games show the pace. XCL's repository opened on the evening of 20 November, and by the evening of 22 November it listed two smaller retail games, Minecraft Preview and Unicorn Overlord, as fully playable. No project has done this with a game the size of GTA VI.",
+      "The picture is arriving. victory-gta6 renders the first gameplay scene with textures, sky and sunlit surfaces. Anything in shadow is still black, because no build runs the game's ray-traced lighting yet.",
+      "Speed is the long pole. VIctory took 0.5 to 1.8 seconds per world frame on 23 November; a day later the victory-gta6 fork runs at 2 to 4 frames a second, roughly three times faster, though on a different graphics card. Playable needs 20, so another five- to tenfold gain is still needed.",
+      "The playable bar does not require correct lighting, only 20 frames a second for 30 minutes. A build could skip the ray-traced passes to get there, as Palmwave already does with other heavy passes in its modified runs. Stability may be the harder part: the longest reported session lasted about 13 minutes before the GPU device was lost, and victory-gta6's newest commits lose it soon after start.",
+      "Work is shared across projects. victory-gta6 and AnyXboxX build on VIctory, and fixes move between XCL, VIctory and Palmwave within days.",
+      "Takedowns are now on the record. On 24 November GitHub published a Take-Two notice against Leonida and applied it to its whole network of 3,007 repositories. The notice argues that requiring the game files, given when the project appeared and what it targets, points to the leaked copy. That argument would fit most projects listed here, though none has been named so far. A notice cannot stop private builds, but it could break up the open work the public projects depend on."
     ],
     "chances": [
       {
         "label": "By Sun 29 Nov",
-        "value": "3 in 10"
+        "value": "5 in 10"
       },
       {
         "label": "By Fri 4 Dec",
-        "value": "6 in 10"
+        "value": "7 in 10"
       },
       {
         "label": "By 31 Dec",
@@ -325,13 +327,22 @@
       },
       {
         "label": "Playable",
-        "value": "around Tue 1 Dec"
+        "value": "around Sun 29 Nov"
       }
     ],
-    "revised_at": "2026-11-24T19:30:00Z",
-    "revision_note": "Lighting arrived sooner than expected: victory-gta6 shows a sunlit world, and a 13-minute controlled session was reported. The target date stays at Tue 1 Dec because frame rate, at about 4 per second, is still the limit."
+    "revised_at": "2026-11-24T19:50:00Z",
+    "revision_note": "Moved forward from Tue 1 Dec to Sun 29 Nov. The pace has been faster than this forecast assumed: frame rate roughly tripled in a day, and XCL took two smaller retail games from a new repository to playable in about two days. Reaching playable does not require ray-traced lighting, so the remaining gap is mainly speed and stability. The Take-Two notice against Leonida's 3,007-repository network is a new risk to the public projects, which is why the chance by Fri 4 Dec rises only to 7 in 10."
   },
   "updates": [
+    {
+      "at": "2026-11-24T19:50:00Z",
+      "title": "Forecast moves to Sun 29 Nov; Take-Two notice published",
+      "points": [
+        "The forecast for a playable build moves from Tue 1 Dec to Sun 29 Nov. Frame rate roughly tripled in a day, XCL showed two smaller retail games going from a new repository to playable in about two days, and the playable bar does not need ray-traced lighting.",
+        "GitHub published a Take-Two takedown notice against Leonida on 24 November and applied it to all 3,007 repositories in its network. No other project on this page is named in it.",
+        "No project changed stage in this check."
+      ]
+    },
     {
       "at": "2026-11-24T19:30:00Z",
       "title": "Rankings rechecked; victory-gta6 takes the lead",
