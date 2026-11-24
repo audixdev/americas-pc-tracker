@@ -10,13 +10,22 @@ You are the editor of this page. The user wants it updated end to end, all the w
 ## A. Routine check ("update the tracker")
 
 1. **Sync.** `git pull --ff-only origin main`. If it fails, stop and tell the user why.
-2. **Detect.** `python3 tools/check_sources.py`. Note every CHANGED and PROBLEMS row.
-3. **Read what changed**, and only that. For each changed repo:
-   - README changed: `gh api repos/OWNER/NAME/readme -H "Accept: application/vnd.github.raw"`, then find the status section.
-   - status doc changed: `gh api "repos/OWNER/NAME/contents/PATH" -H "Accept: application/vnd.github.raw"`.
-   - commits or PRs moved: look at the titles in the report. Open a PR body (`gh api repos/OWNER/NAME/pulls/N --jq .body`) only when its title suggests a new milestone, such as in-game, lighting, fps, playable or a crash fix.
-   - gone or blocked (404/451): confirm once with `gh api repos/OWNER/NAME`, then set `state` to `gone`. Explain what is known, for example "repository no longer exists"; do not speculate about takedowns unless a source says so.
+2. **Detect and fetch.** `python3 tools/check_sources.py`. Note every CHANGED and PROBLEMS row. Then `python3 tools/read_sources.py`, which writes one file per project to `.sources/` (gitignored): the entry as the page shows it now, the current README, its status docs and the recent commits with full messages. It also writes `.sources/_new.md`, a GitHub search for GTA VI projects the tracker does not list yet.
+3. **Re-read every entry against its sources, every run.** Not only the repos that changed: an entry can be out of date because an earlier check missed something. For **every** project in `projects` and `also_watched`, open its `.sources/` file and compare each claim in the entry (`furthest`, `status`, `stage`, `state`, `tagline`, `source`, every number) with the README and the commit messages. Rewrite whatever no longer matches.
+   - **Only write what a source you read in this run says.** Never keep a sentence because it was there before, never fill a gap from memory, and never guess. If you cannot find a claim in the README, a status doc, a commit message or a PR body, remove it.
+   - **The README's status section is the baseline.** Commits newer than the README that report a measured result (numbers, "window shown", "draws execute") count too: cite the short sha in `source`, for example "commit 523d947". A plan, a "next" item or a TODO is not a result.
+   - **Forks.** A fork's README often keeps the upstream README below its own section. Use only the fork's own section for the fork, and the upstream repo's own README for upstream. Never mix the two.
+   - **Drop stale claims** that the source no longer makes, such as "PR not merged" after the merge, or a crash the README now says is fixed.
+   - **Date the source.** Put the README's status date, or the commit sha, in `source`.
+   - PR bodies: open one (`gh api repos/OWNER/NAME/pulls/N --jq .body`) when a commit or the README points to it for a milestone, such as in-game, lighting, fps, playable or a crash fix.
+   - Gone or blocked (404/451): confirm once with `gh api repos/OWNER/NAME`, then set `state` to `gone`. Explain what is known, for example "repository no longer exists". Do not speculate about takedowns unless a source says so.
+   - Press-only entries (no repo): check them by search in step 4. If nothing new turns up, leave them as they are and say so in the report.
 4. **Scan the wider news**, with 1–2 `WebSearch` calls (standard mode). Example: `GTA 6 PC port news <today's date>`. Look for press reports on private builds, takedowns, new projects and official Rockstar statements. Treat results as leads and prefer first-hand sources. Never link to leak or download sites.
+   **Look for new projects** in the same step. Go through `.sources/_new.md` and the search results. For each plausible candidate, read its README and recent commits (`gh api repos/OWNER/NAME/readme -H "Accept: application/vnd.github.raw"`, `gh api "repos/OWNER/NAME/commits?per_page=10"`) before deciding.
+   - **Add to `projects`** any runtime, recompilation or emulation effort for GTA VI that makes a first-hand claim of at least stage 1 (from its README, commits or PRs). Rank it like any other entry.
+   - **Add to `also_watched`** active efforts with no claim yet that people are following: many stars, or a continuation of a known project.
+   - **Skip** asset extractors, archive tools, clippers, companion apps, frame-generation tools, other trackers and lists, plain mirrors without new work, and anything that offers a playable download, asks for game files or looks fake. Never link a releases page.
+   - Run `python3 tools/check_sources.py --save` (A.7) after adding a repo, so its baseline is stored.
 5. **Decide**, against the stage bar in CLAUDE.md:
    - Stage changed, or the project got further within its stage? Update its `furthest` phrase, then re-sort `projects`: by stage, then by furthest point within the stage (rules in CLAUDE.md). Fix `tied_with_previous`.
    - Status text out of date? Rewrite it in 1–3 plain sentences in your own words. Set `changed_at` to the new `checked_at`, and set `source`.
@@ -55,6 +64,7 @@ Changes to the design or the template go in `templates/page.html` or `assets/`. 
 The `Update tracker` workflow (`.github/workflows/update-tracker.yml`) runs this skill on a GitHub runner when the user starts it from their phone. There is no chat, so nobody can answer questions. Where this section differs from A and B, it wins.
 
 - **Skip the git steps.** The checkout is already current, so skip A.1 and B.1. Never commit or push, and skip A.9 and A.10. The workflow's publish job re-runs `build.py --check`, keeps only `data/` and `index.html`, and then commits and pushes.
+- **The same source rules apply.** Re-read every entry against its README and commits (A.3) and look for new projects (A.4). If the turn budget runs short, finish comparing the ranked projects first, and say in the report which ones you could not re-read.
 - **Do everything else**, A.2 to A.8, or B.2 to B.4 when the prompt contains a request from the user. Treat that request like a chat message from the user.
 - **Never stop to ask.** If something is ambiguous, take the cautious option: the lower stage, no forecast move, or no change. Explain it in the report.
 - **No WebSearch?** If the tool is unavailable or fails, skip A.4 and say so in the report.
@@ -63,7 +73,10 @@ The `Update tracker` workflow (`.github/workflows/update-tracker.yml`) runs this
 
 ## Writing checklist (before committing)
 
-- [ ] Every status names its source, and second-hand claims are marked.
+- [ ] Every entry was compared with its README and recent commits in this run, and every sentence can be traced to one of them.
+- [ ] Nothing stale is left: merged PRs, fixed crashes and old frame rates were updated or removed.
+- [ ] `_new.md` and the news search were checked for new projects.
+- [ ] Every status names its source (with a date or commit sha), and second-hand claims are marked.
 - [ ] No links to leaks, downloads or how-to guides.
 - [ ] The text is in my own words, with nothing copied from other trackers.
 - [ ] Numbers are specific (fps, seconds, stage), with no hype.

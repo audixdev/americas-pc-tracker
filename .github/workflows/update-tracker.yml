@@ -56,9 +56,9 @@ jobs:
             ${{ inputs.instruction }}
           claude_args: |
             --model ${{ inputs.model }}
-            --max-turns 60
+            --max-turns 120
             --permission-mode acceptEdits
-            --allowedTools "Read,Edit,Write,Glob,Grep,WebSearch,WebFetch,Bash(python3 tools/check_sources.py:*),Bash(python3 tools/build.py:*),Bash(gh api:*),Bash(date:*),Bash(git status:*),Bash(git diff:*),Bash(git log:*)"
+            --allowedTools "Read,Edit,Write,Glob,Grep,WebSearch,WebFetch,Bash(python3 tools/check_sources.py:*),Bash(python3 tools/read_sources.py:*),Bash(python3 tools/build.py:*),Bash(gh api:*),Bash(date:*),Bash(git status:*),Bash(git diff:*),Bash(git log:*)"
 
       - name: Show Claude's report
         if: always()

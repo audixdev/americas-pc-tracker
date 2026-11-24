@@ -8,6 +8,7 @@ Live at https://audixdev.github.io/americas-pc-tracker/, published from `main` b
 - `data/tracker.json` is the **single source of truth**. Every fact and every sentence on the page lives there.
 - `tools/build.py` validates the JSON and renders `templates/page.html` into `index.html`. **Never hand-edit `index.html`**. Edit the JSON or the template, then rebuild.
 - `tools/check_sources.py` queries every tracked repo through `gh api` and diffs against `data/last-seen.json` to show what changed since the last check. `--save` stores the new snapshot, which is committed. Always run `--save` **before** `build.py`, because the page shows last-commit times from that snapshot.
+- `tools/read_sources.py` downloads, for every project, its current README, status docs and recent commits with full messages into `.sources/` (gitignored), and searches GitHub for untracked GTA VI projects (`.sources/_new.md`). Every update re-reads every entry against these files.
 - `assets/site.css` holds the design tokens and layout. `assets/site.js` updates "checked N min ago" and the countdown in the browser, using the same wording as `rel_until()` in build.py.
 - Updates are run with the `/update-tracker` skill (`.claude/skills/update-tracker/SKILL.md`). Follow it whenever the user says "update the tracker", "check the status", "what's new", "check the projects" or similar.
 - The same skill can run without a PC through the `Update tracker` workflow (`.github/workflows/update-tracker.yml`), started by hand from the GitHub app. Claude runs with a read-only token and writes its report to `tracker-report.md`. A second job validates, then commits and pushes only `data/` and `index.html`. It needs the `CLAUDE_CODE_OAUTH_TOKEN` repo secret, created with `claude setup-token`.
@@ -17,6 +18,7 @@ Live at https://audixdev.github.io/americas-pc-tracker/, published from `main` b
 ```bash
 python3 tools/check_sources.py            # what changed since last check
 python3 tools/check_sources.py --save     # same, and store the snapshot
+python3 tools/read_sources.py            # fetch every README + recent commits, and new-project candidates
 python3 tools/build.py                    # validate + render index.html
 python3 tools/build.py --check            # validate + confirm index.html is current (CI runs this)
 ```
@@ -48,6 +50,7 @@ When a claim is ambiguous, use the lower stage and explain why in the status tex
 ## Editorial rules (non-negotiable)
 
 - **Status only.** No game files, no links to the leak, no download, decryption or "how to run" instructions, and no links to anything that hosts them. Any "playable download" is fake or malware, and the page says so.
+- **Facts come only from first-hand sources read in this check.** Every sentence about a project must match its README, status file, commit messages or PR bodies as they are now. Never carry a claim over from an earlier entry without re-checking it, never fill gaps from memory, and never mix a fork's status with its upstream's.
 - **Attribute every claim.** The `source` field says where the claim comes from: project README, status file, PR, chat or press. Mark second-hand and unconfirmed claims as such.
 - **Own words.** Paraphrase. Never copy text from vuyp/gta6-pc-race or other trackers. Short factual names, numbers and repo links are fine.
 - **Plain and neutral.** Short sentences in sentence case. No hype words, no emoji, no "insane" or "huge". Use numbers instead of adjectives.
