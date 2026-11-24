@@ -1,0 +1,141 @@
+# Runs the update-tracker skill with Claude, then publishes the result.
+# Start it from the GitHub app: Actions > Update tracker > Run workflow.
+#
+# Two jobs on purpose:
+#   update   Claude checks sources and edits files. Read-only GitHub token.
+#   publish  Re-validates, keeps only data/ and index.html, commits and pushes.
+#
+# Needs one repo secret: CLAUDE_CODE_OAUTH_TOKEN (from `claude setup-token`).
+
+name: Update tracker
+
+on:
+  workflow_dispatch:
+    inputs:
+      model:
+        description: "Model"
+        type: choice
+        options: [sonnet, opus]
+        default: sonnet
+      instruction:
+        description: "Optional request, e.g. \"Y is halted\" (blank = routine check)"
+        type: string
+        required: false
+        default: ""
+
+concurrency:
+  group: update-tracker
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run the update-tracker skill
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ github.token }}
+          prompt: |
+            Update the tracker. Read CLAUDE.md, then follow
+            .claude/skills/update-tracker/SKILL.md, including its section
+            "C. Running in GitHub Actions".
+
+            Request from the user (blank means a routine check, section A):
+            ${{ inputs.instruction }}
+          claude_args: |
+            --model ${{ inputs.model }}
+            --max-turns 60
+            --permission-mode acceptEdits
+            --allowedTools "Read,Edit,Write,Glob,Grep,WebSearch,WebFetch,Bash(python3 tools/check_sources.py:*),Bash(python3 tools/build.py:*),Bash(gh api:*),Bash(date:*),Bash(git status:*),Bash(git diff:*),Bash(git log:*)"
+
+      - name: Show Claude's report
+        if: always()
+        run: |
+          if [ -f tracker-report.md ]; then
+            cat tracker-report.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "No report was written." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Validate and limit changes
+        run: |
+          python3 tools/build.py --check
+          stray=$(git status --porcelain --untracked-files=all -- . ':!data' ':!index.html' ':!tracker-report.md')
+          if [ -n "$stray" ]; then
+            echo "::error::Files outside data/ and index.html changed:"
+            echo "$stray"
+            exit 1
+          fi
+
+      - name: Hand the changes to the publish job
+        uses: actions/upload-artifact@v4
+        with:
+          name: tracker-update
+          path: |
+            data/
+            index.html
+          retention-days: 3
+
+  publish:
+    needs: update
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pages: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      # Same commit the update job started from, so a push fails instead of
+      # overwriting anything that landed on main in the meantime.
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: tracker-update
+          path: .
+
+      - name: Validate again
+        run: python3 tools/build.py --check
+
+      - name: Commit and push
+        id: push
+        run: |
+          if git diff --quiet -- data index.html; then
+            echo "Nothing changed." >> "$GITHUB_STEP_SUMMARY"
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          checked=$(python3 -c "import json; print(json.load(open('data/tracker.json'))['checked_at'])")
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data index.html
+          git commit -m "Update tracker: check at ${checked}"
+          git push origin HEAD:main
+          echo "Pushed: check at ${checked}" >> "$GITHUB_STEP_SUMMARY"
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Ask GitHub Pages to rebuild
+        if: steps.push.outputs.pushed == 'true'
+        run: |
+          gh api -X POST "repos/${GITHUB_REPOSITORY}/pages/builds" --silent \
+            || echo "::warning::Could not request a Pages build; the push should trigger one anyway."
+          echo "Live page: https://audixdev.github.io/americas-pc-tracker/" >> "$GITHUB_STEP_SUMMARY"

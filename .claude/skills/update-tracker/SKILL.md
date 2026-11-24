@@ -49,6 +49,17 @@ Examples: "add project X", "drop Y", "Y is halted", "move the forecast to Friday
 
 Changes to the design or the template go in `templates/page.html` or `assets/`. Rebuild, preview with the `tracker` launch config (desktop and mobile, light and dark), then commit with a descriptive message.
 
+## C. Running in GitHub Actions
+
+The `Update tracker` workflow (`.github/workflows/update-tracker.yml`) runs this skill on a GitHub runner when the user starts it from their phone. There is no chat, so nobody can answer questions. Where this section differs from A and B, it wins.
+
+- **Skip the git steps.** The checkout is already current, so skip A.1 and B.1. Never commit or push, and skip A.9 and A.10. The workflow's publish job re-runs `build.py --check`, keeps only `data/` and `index.html`, and then commits and pushes.
+- **Do everything else**, A.2 to A.8, or B.2 to B.4 when the prompt contains a request from the user. Treat that request like a chat message from the user.
+- **Never stop to ask.** If something is ambiguous, take the cautious option: the lower stage, no forecast move, or no change. Explain it in the report.
+- **No WebSearch?** If the tool is unavailable or fails, skip A.4 and say so in the report.
+- **Report to a file.** Write the A.11 report to `tracker-report.md` in the repo root, in Markdown, 3 to 8 short lines. The workflow shows it on the run's summary page. The report is never committed.
+- **Only touch** `data/`, `index.html` and `tracker-report.md`. Any other changed file fails the run.
+
 ## Writing checklist (before committing)
 
 - [ ] Every status names its source, and second-hand claims are marked.

@@ -10,6 +10,7 @@ Live at https://audixdev.github.io/americas-pc-tracker/, published from `main` b
 - `tools/check_sources.py` queries every tracked repo through `gh api` and diffs against `data/last-seen.json` to show what changed since the last check. `--save` stores the new snapshot, which is committed. Always run `--save` **before** `build.py`, because the page shows last-commit times from that snapshot.
 - `assets/site.css` holds the design tokens and layout. `assets/site.js` updates "checked N min ago" and the countdown in the browser, using the same wording as `rel_until()` in build.py.
 - Updates are run with the `/update-tracker` skill (`.claude/skills/update-tracker/SKILL.md`). Follow it whenever the user says "update the tracker", "check the status", "what's new", "check the projects" or similar.
+- The same skill can run without a PC through the `Update tracker` workflow (`.github/workflows/update-tracker.yml`), started by hand from the GitHub app. Claude runs with a read-only token and writes its report to `tracker-report.md`. A second job validates, then commits and pushes only `data/` and `index.html`. It needs the `CLAUDE_CODE_OAUTH_TOKEN` repo secret, created with `claude setup-token`.
 
 ## Commands
 
