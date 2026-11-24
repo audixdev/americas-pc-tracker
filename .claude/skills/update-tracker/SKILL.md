@@ -22,6 +22,7 @@ You are the editor of this page. The user wants it updated end to end, all the w
    - Status text out of date? Rewrite it in 1–3 plain sentences in your own words. Set `changed_at` to the new `checked_at`, and set `source`.
    - A new GTA VI project with a real claim goes in `projects`. A new project with no claim yet goes in `also_watched` with a one-line note.
    - Forecast: change `target`, `chances` or `milestones` only on real evidence. Then set `revised_at` and write `revision_note` saying what moved it and why.
+   - **Other trackers, posts and press are leads, never the basis.** Before using any claim from them (in `rests_on`, a status or the forecast), check it against a first-hand source yourself: the project's README or status file, commit messages and dates (`gh api "repos/OWNER/NAME/commits?..."`), PR bodies, or the primary document (for example GitHub's `github/dmca` repo for takedowns). Recompute their numbers rather than repeating them. Drop what you cannot confirm, or mark it unconfirmed. Make your own forecast call from the evidence, with at least one reason of your own, and don't simply adopt another site's date.
    - Also update `headline_note` if it is no longer true.
 6. **Edit `data/tracker.json`.**
    - Always set `checked_at` to now: `date -u +%Y-%m-%dT%H:%M:00Z`.
