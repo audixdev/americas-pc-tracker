@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Big+Shoulders+Display:wght@500;700;800&display=swap">
 <link rel="stylesheet" href="assets/site.css?v=3b19e9aced">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"GTA VI PC Tracker","description":"Live standings of the unofficial projects trying to run the Xbox build of GTA VI on a PC: how far each has got, what changed, and a best guess at when it becomes playable.","url":"https://audixdev.github.io/americas-pc-tracker/","dateModified":"2026-11-24T18:20:00Z"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"GTA VI PC Tracker","description":"Live standings of the unofficial projects trying to run the Xbox build of GTA VI on a PC: how far each has got, what changed, and a best guess at when it becomes playable.","url":"https://audixdev.github.io/americas-pc-tracker/","dateModified":"2026-11-24T18:27:00Z"}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -31,7 +31,7 @@
       <a href="#updates">Updates</a>
       <a href="#method">Method</a>
     </nav>
-    <p class="top__checked">Checked <time class="js-ago" datetime="2026-11-24T18:20:00Z">18:20</time></p>
+    <p class="top__checked">Checked <time class="js-ago" datetime="2026-11-24T18:27:00Z">18:27</time></p>
   </div>
 </header>
 
@@ -42,7 +42,7 @@
         <h1 id="hero-title">Is GTA VI playable on PC yet?</h1>
         <p class="hero__answer">No.</p>
         <p class="hero__lead">Three public projects and one private build have reached stage&nbsp;6 of&nbsp;7, in-game. None of them has a usable picture yet.</p>
-        <p class="hero__how">Sixteen projects are trying to run the Xbox Series build of GTA&nbsp;VI on a PC. This page reads their public repositories and reports how far each says it has got. <span class="quiet">Last checked <time datetime="2026-11-24T18:20:00Z">18:20 UTC on Tue 24 Nov</time><span class="js-ago-suffix" data-from="2026-11-24T18:20:00Z"></span>.</span></p>
+        <p class="hero__how">Sixteen projects are trying to run the Xbox Series build of GTA&nbsp;VI on a PC. This page reads their public repositories and reports how far each says it has got. <span class="quiet">Last checked <time datetime="2026-11-24T18:27:00Z">18:27 UTC on Tue 24 Nov</time><span class="js-ago-suffix" data-from="2026-11-24T18:27:00Z"></span>.</span></p>
       </div>
       <figure class="board" aria-label="Pit board: P1 AnyXboxX, stage 6 of 7, In-game, playable estimate about 6½ days">
         <div class="board__panel">
@@ -51,7 +51,7 @@
           <p class="board__row"><span class="board__k"></span><span class="board__v board__v--small">In-game</span></p>
           <p class="board__row"><span class="board__k">ETA</span><span class="board__v "><span class="js-countdown" data-target="2026-12-01T12:00:00Z" data-short="1">~6½d</span></span></p>
         </div>
-        <figcaption class="board__cap">Leader, stage and estimate to playable, as of 18:20 UTC</figcaption>
+        <figcaption class="board__cap">Leader, stage and estimate to playable, as of 18:27 UTC</figcaption>
       </figure>
     </div>
   </section>
@@ -168,7 +168,7 @@
         <div class="tower__row" role="row">
           <p class="tower__pos" role="cell" aria-label="Position 6=">6=</p>
           <div class="tower__who" role="cell">
-            <h3><a class="name" href="https://github.com/ivall/xcl" rel="noopener">XCL</a></h3>
+            <h3><a class="name" href="https://github.com/xcl-dev/xcl" rel="noopener">XCL</a></h3>
             <p class="tower__tag">General Xbox Series to Windows compatibility layer, in the spirit of Proton</p>
           </div>
           <div class="tower__stage" role="cell" aria-label="Stage 5 of 7: Recognisable picture">
@@ -258,7 +258,7 @@
           <p class="tower__gap" role="cell" aria-label="1 stage behind the leader">+1 stage</p>
           <div class="tower__latest" role="cell">
             <p>A modified diagnostic build, which skips failed checks automatically, played the intro, showed readable setup text and reached loading on an RTX 4060 laptop. Starting the original executable is not yet shown.</p>
-            <p class="tower__src">Source: project README and its progress issue. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T18:20:35Z">18:20 UTC, Tue 24 Nov</time>.</p>
+            <p class="tower__src">Source: project README and its progress issue. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T18:27:19Z">18:27 UTC, Tue 24 Nov</time>.</p>
           </div>
         </div>
         <div class="tower__row" role="row">
@@ -321,8 +321,8 @@
           </div>
           <p class="tower__gap" role="cell" aria-label="3 stages behind the leader">+3 stages</p>
           <div class="tower__latest" role="cell">
-            <p>The frame loop runs and submits about 78,000&nbsp;frames in a 140-second run, but nothing executes on the graphics card yet, so nothing is drawn or presented.</p>
-            <p class="tower__src">Source: project README. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T18:23:46Z">18:23 UTC, Tue 24 Nov</time>.</p>
+            <p>Builds all 10,241&nbsp;of the game&#x27;s graphics pipelines and records about 42,700 draws in a 150-second run, but no draw executes yet: letting them run hangs the graphics card, and the game hands its display surface nothing to present. Nothing is drawn.</p>
+            <p class="tower__src">Source: project README, measured on an RTX 4090. Entry changed <time datetime="2026-11-24T18:27:00Z">18:27 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T18:27:16Z">18:27 UTC, Tue 24 Nov</time>.</p>
           </div>
         </div>
         <div class="tower__row" role="row">
@@ -399,6 +399,10 @@
         <p class="sec-head__note">Newest first. Times are UTC.</p>
       </div>
       <ol class="feed">
+        <li class="feed__item">
+          <p class="feed__when"><time datetime="2026-11-24T18:27:00Z"><span class="feed__hm">18:27</span> Tue 24 Nov</time></p>
+          <div class="feed__body"><h3>palmetto builds every pipeline; XCL moves house</h3><ul><li>palmetto now builds all 10,241&nbsp;of the game&#x27;s graphics pipelines and records about 42,700 draws per run. None executes yet, so it stays at stage 3.</li><li>XCL&#x27;s repository has moved from ivall/xcl to xcl-dev/xcl. Links on this page now point to the new home.</li><li>No project changed stage in this check.</li></ul></div>
+        </li>
         <li class="feed__item">
           <p class="feed__when"><time datetime="2026-11-24T18:20:00Z"><span class="feed__hm">18:20</span> Tue 24 Nov</time></p>
           <div class="feed__body"><h3>Tracker goes live with 16 projects</h3><ul><li>Sixteen projects are ranked from their own READMEs, plus four on the watch list and four general Xbox layers with no GTA VI claims.</li><li>Three public projects report the game world running: AnyXboxX, VIctory and Palmwave. None has a usable picture yet.</li><li>The first forecast puts playable around Tue 1 Dec, with speed as the main obstacle.</li></ul></div>

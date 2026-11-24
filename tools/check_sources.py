@@ -124,7 +124,8 @@ def snapshot_repo(entry: dict, since: str | None) -> dict:
         pulls = gh(f"repos/{repo}/pulls?state=all&sort=updated&direction=desc&per_page=15") or []
         snap["pulls"] = [
             {"number": p["number"], "title": p["title"][:160], "state": p["state"],
-             "merged": bool(p.get("merged_at")), "updated_at": p["updated_at"]}
+             "merged": bool(p.get("merged_at")), "merged_at": p.get("merged_at"),
+             "created_at": p["created_at"], "updated_at": p["updated_at"]}
             for p in pulls
         ]
     except GhError:
@@ -156,12 +157,18 @@ def diff(old: dict | None, new: dict, since: str | None) -> list[str]:
         if (old.get("status_docs") or {}).get(doc) != sha:
             notes.append(f"{doc} changed")
     if since:
-        fresh = [p for p in new.get("pulls") or [] if p["updated_at"] > since]
-        for p in fresh[:8]:
-            tag = "merged" if p["merged"] else p["state"]
-            notes.append(f"PR #{p['number']} ({tag}) updated: {p['title']}")
-        if len(fresh) > 8:
-            notes.append(f"... and {len(fresh) - 8} more PRs updated")
+        pulls = new.get("pulls") or []
+        opened = [p for p in pulls if (p.get("created_at") or "") > since]
+        merged = [p for p in pulls if (p.get("merged_at") or "") > since]
+        busy = [p for p in pulls if p["updated_at"] > since and p not in opened and p not in merged]
+        for p in merged[:8]:
+            notes.append(f"merged PR #{p['number']}: {p['title']}")
+        for p in opened[:8]:
+            notes.append(f"new PR #{p['number']} ({p['state']}): {p['title']}")
+        if len(merged) + len(opened) > 16:
+            notes.append(f"... and {len(merged) + len(opened) - 16} more new or merged PRs")
+        if busy and (merged or opened or len(busy) >= 5):
+            notes.append(f"{len(busy)} other PR(s) had activity (comments or pushes)")
     old_tags = {r["tag"] for r in old.get("releases") or []}
     for r in new.get("releases") or []:
         if r["tag"] not in old_tags:

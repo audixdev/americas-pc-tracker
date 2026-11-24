@@ -7,7 +7,7 @@ Live at https://audixdev.github.io/americas-pc-tracker/, published from `main` b
 
 - `data/tracker.json` is the **single source of truth**. Every fact and every sentence on the page lives there.
 - `tools/build.py` validates the JSON and renders `templates/page.html` into `index.html`. **Never hand-edit `index.html`**. Edit the JSON or the template, then rebuild.
-- `tools/check_sources.py` queries every tracked repo through `gh api` and diffs against `data/last-seen.json` to show what changed since the last check. `--save` stores the new snapshot, which is committed.
+- `tools/check_sources.py` queries every tracked repo through `gh api` and diffs against `data/last-seen.json` to show what changed since the last check. `--save` stores the new snapshot, which is committed. Always run `--save` **before** `build.py`, because the page shows last-commit times from that snapshot.
 - `assets/site.css` holds the design tokens and layout. `assets/site.js` updates "checked N min ago" and the countdown in the browser, using the same wording as `rel_until()` in build.py.
 - Updates are run with the `/update-tracker` skill (`.claude/skills/update-tracker/SKILL.md`). Follow it whenever the user says "update the tracker", "check the status", "what's new", "check the projects" or similar.
 

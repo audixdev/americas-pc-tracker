@@ -6,16 +6,37 @@
     "repo": "audixdev/americas-pc-tracker",
     "description": "Live standings of the unofficial projects trying to run the Xbox build of GTA VI on a PC: how far each has got, what changed, and a best guess at when it becomes playable."
   },
-  "checked_at": "2026-11-24T18:20:00Z",
+  "checked_at": "2026-11-24T18:27:00Z",
   "headline_note": "None of them has a usable picture yet.",
   "stages": [
-    { "name": "Loads", "bar": "The game's executable loads with its imports resolved." },
-    { "name": "Starts up", "bar": "The game's own start-up code runs: memory, threads, archives." },
-    { "name": "Graphics device", "bar": "The game creates its graphics device and queues on the PC." },
-    { "name": "First frames", "bar": "Frames are presented to a window, even if they are black." },
-    { "name": "Recognisable picture", "bar": "The game's own screens can be seen: logos, menus, video or setup pages." },
-    { "name": "In-game", "bar": "The game world is loaded and running, with or without a usable picture." },
-    { "name": "Playable", "bar": "30 minutes or more in the world under player control, at 20 frames a second or better, without a crash." }
+    {
+      "name": "Loads",
+      "bar": "The game's executable loads with its imports resolved."
+    },
+    {
+      "name": "Starts up",
+      "bar": "The game's own start-up code runs: memory, threads, archives."
+    },
+    {
+      "name": "Graphics device",
+      "bar": "The game creates its graphics device and queues on the PC."
+    },
+    {
+      "name": "First frames",
+      "bar": "Frames are presented to a window, even if they are black."
+    },
+    {
+      "name": "Recognisable picture",
+      "bar": "The game's own screens can be seen: logos, menus, video or setup pages."
+    },
+    {
+      "name": "In-game",
+      "bar": "The game world is loaded and running, with or without a usable picture."
+    },
+    {
+      "name": "Playable",
+      "bar": "30 minutes or more in the world under player control, at 20 frames a second or better, without a crash."
+    }
   ],
   "projects": [
     {
@@ -73,12 +94,14 @@
       "status": "Starts, shows the logo, intro art and first-run screens, loads story mode and reaches the story intro's title card, then stops. All 25,908 of the game's shader programs translate and compile.",
       "source": "project README and wiki status page",
       "changed_at": "2026-11-24T18:20:00Z",
-      "status_docs": ["README.md"]
+      "status_docs": [
+        "README.md"
+      ]
     },
     {
       "id": "xcl",
       "name": "XCL",
-      "repo": "ivall/xcl",
+      "repo": "xcl-dev/xcl",
       "tagline": "General Xbox Series to Windows compatibility layer, in the spirit of Proton",
       "stage": 5,
       "state": "active",
@@ -188,9 +211,9 @@
       "stage": 3,
       "tied_with_previous": true,
       "state": "active",
-      "status": "The frame loop runs and submits about 78,000 frames in a 140-second run, but nothing executes on the graphics card yet, so nothing is drawn or presented.",
-      "source": "project README",
-      "changed_at": "2026-11-24T18:20:00Z"
+      "status": "Builds all 10,241 of the game's graphics pipelines and records about 42,700 draws in a 150-second run, but no draw executes yet: letting them run hangs the graphics card, and the game hands its display surface nothing to present. Nothing is drawn.",
+      "source": "project README, measured on an RTX 4090",
+      "changed_at": "2026-11-24T18:27:00Z"
     },
     {
       "id": "g6shim",
@@ -205,16 +228,44 @@
     }
   ],
   "also_watched": [
-    { "name": "VIctory-macOS", "repo": "pragyaangaur/VIctory-macOS", "note": "Brings VIctory to Apple Silicon Macs. It reaches only as far as VIctory does, and the world does not render yet." },
-    { "name": "Leonida Continued", "repo": "ubiquitarianism/leonida", "note": "Carries on Leonida's code. Its README says the game does not boot yet, although all 26,503 shaders translate to SPIR-V and pass validation." },
-    { "name": "G6Recomp", "repo": "Kajcsi/G6Recomp", "note": "Static recompiler. The loader and boot milestones are in progress, and a first frame is not started." },
-    { "name": "xbox-emulator", "repo": "omonkeyz/xbox-emulator", "note": "Xbox Series runtime whose README reports Fortnite and XDefiant results. It makes no GTA VI claim of its own." }
+    {
+      "name": "VIctory-macOS",
+      "repo": "pragyaangaur/VIctory-macOS",
+      "note": "Brings VIctory to Apple Silicon Macs. It reaches only as far as VIctory does, and the world does not render yet."
+    },
+    {
+      "name": "Leonida Continued",
+      "repo": "ubiquitarianism/leonida",
+      "note": "Carries on Leonida's code. Its README says the game does not boot yet, although all 26,503 shaders translate to SPIR-V and pass validation."
+    },
+    {
+      "name": "G6Recomp",
+      "repo": "Kajcsi/G6Recomp",
+      "note": "Static recompiler. The loader and boot milestones are in progress, and a first frame is not started."
+    },
+    {
+      "name": "xbox-emulator",
+      "repo": "omonkeyz/xbox-emulator",
+      "note": "Xbox Series runtime whose README reports Fortnite and XDefiant results. It makes no GTA VI claim of its own."
+    }
   ],
   "checked_idle": [
-    { "name": "ScarlettX", "repo": "Freminet/ScarlettX" },
-    { "name": "scarlett-layer", "repo": "jadeowaowa/scarlett-layer" },
-    { "name": "XValkyrie", "repo": "sammwyy/xvalkyrie" },
-    { "name": "AnyPS5", "repo": "boykopovar/AnyPS5" }
+    {
+      "name": "ScarlettX",
+      "repo": "Freminet/ScarlettX"
+    },
+    {
+      "name": "scarlett-layer",
+      "repo": "jadeowaowa/scarlett-layer"
+    },
+    {
+      "name": "XValkyrie",
+      "repo": "sammwyy/xvalkyrie"
+    },
+    {
+      "name": "AnyPS5",
+      "repo": "boykopovar/AnyPS5"
+    }
   ],
   "forecast": {
     "target": "2026-12-01T12:00:00Z",
@@ -227,21 +278,54 @@
       "Takedowns are a real risk. Leonida and at least one community server are already gone."
     ],
     "chances": [
-      { "label": "By Sun 29 Nov", "value": "3 in 10" },
-      { "label": "By Fri 4 Dec", "value": "6 in 10" },
-      { "label": "By 31 Dec", "value": "8 in 10" },
-      { "label": "Stalls until an official PC release", "value": "under 2 in 10" }
+      {
+        "label": "By Sun 29 Nov",
+        "value": "3 in 10"
+      },
+      {
+        "label": "By Fri 4 Dec",
+        "value": "6 in 10"
+      },
+      {
+        "label": "By 31 Dec",
+        "value": "8 in 10"
+      },
+      {
+        "label": "Stalls until an official PC release",
+        "value": "under 2 in 10"
+      }
     ],
     "milestones": [
-      { "label": "Recognisable picture", "value": "reached Mon 23 Nov" },
-      { "label": "In-game", "value": "reached Tue 24 Nov" },
-      { "label": "Lit world on screen", "value": "expected within 2 days" },
-      { "label": "Playable", "value": "around Tue 1 Dec" }
+      {
+        "label": "Recognisable picture",
+        "value": "reached Mon 23 Nov"
+      },
+      {
+        "label": "In-game",
+        "value": "reached Tue 24 Nov"
+      },
+      {
+        "label": "Lit world on screen",
+        "value": "expected within 2 days"
+      },
+      {
+        "label": "Playable",
+        "value": "around Tue 1 Dec"
+      }
     ],
     "revised_at": "2026-11-24T18:20:00Z",
     "revision_note": "First estimate, made when the tracker launched."
   },
   "updates": [
+    {
+      "at": "2026-11-24T18:27:00Z",
+      "title": "palmetto builds every pipeline; XCL moves house",
+      "points": [
+        "palmetto now builds all 10,241 of the game's graphics pipelines and records about 42,700 draws per run. None executes yet, so it stays at stage 3.",
+        "XCL's repository has moved from ivall/xcl to xcl-dev/xcl. Links on this page now point to the new home.",
+        "No project changed stage in this check."
+      ]
+    },
     {
       "at": "2026-11-24T18:20:00Z",
       "title": "Tracker goes live with 16 projects",
@@ -253,12 +337,33 @@
     }
   ],
   "method": [
-    { "label": "Playable builds", "text": "None exist. Anything offered as a playable download of GTA VI for PC is fake, and fakes have carried malware." },
-    { "label": "What the projects use", "text": "They work from a leaked Xbox Series build. Rockstar has not announced a PC version. This page does not link to the leak or explain how to get or run it." },
-    { "label": "Sources", "text": "Each project's public repository: its README, status files, commits and pull requests. Press reports where a project has no public code. Every row names its source." },
-    { "label": "Claims", "text": "Stages are what each project says about itself, unless the source line says otherwise. This page does not run the code, and most claims are unverified." },
-    { "label": "Ranking", "text": "By stage first, then by how far within that stage the project's own description goes. An equals sign marks a tie." },
-    { "label": "Who writes it", "text": "An AI assistant (Claude) checks the repositories when asked and rewrites the entries. It can be wrong; the source links are there to check it." },
-    { "label": "Affiliation", "text": "None. Not connected to Rockstar Games, Take-Two Interactive, Microsoft or any project listed. Names link to repositories to credit the work." }
+    {
+      "label": "Playable builds",
+      "text": "None exist. Anything offered as a playable download of GTA VI for PC is fake, and fakes have carried malware."
+    },
+    {
+      "label": "What the projects use",
+      "text": "They work from a leaked Xbox Series build. Rockstar has not announced a PC version. This page does not link to the leak or explain how to get or run it."
+    },
+    {
+      "label": "Sources",
+      "text": "Each project's public repository: its README, status files, commits and pull requests. Press reports where a project has no public code. Every row names its source."
+    },
+    {
+      "label": "Claims",
+      "text": "Stages are what each project says about itself, unless the source line says otherwise. This page does not run the code, and most claims are unverified."
+    },
+    {
+      "label": "Ranking",
+      "text": "By stage first, then by how far within that stage the project's own description goes. An equals sign marks a tie."
+    },
+    {
+      "label": "Who writes it",
+      "text": "An AI assistant (Claude) checks the repositories when asked and rewrites the entries. It can be wrong; the source links are there to check it."
+    },
+    {
+      "label": "Affiliation",
+      "text": "None. Not connected to Rockstar Games, Take-Two Interactive, Microsoft or any project listed. Names link to repositories to credit the work."
+    }
   ]
 }

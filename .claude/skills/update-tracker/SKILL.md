@@ -27,8 +27,8 @@ You are the editor of this page. The user wants it updated end to end, all the w
    - Always set `checked_at` to now: `date -u +%Y-%m-%dT%H:%M:00Z`.
    - If anything meaningful changed, insert one entry at the **top** of `updates`. Its `at` equals `checked_at`. Give it a headline-style title, such as "Palmwave lights the world", and 1–4 points. Each point is a complete sentence that names the project.
    - If nothing meaningful changed, add no update entry. Bump `checked_at` only.
-7. **Build and validate.** Run `python3 tools/build.py`, then `python3 tools/build.py --check`. Fix any validation error in the JSON. Never hand-edit `index.html`.
-8. **Save the snapshot.** `python3 tools/check_sources.py --save`. This reruns the queries, which takes about 10 seconds, so the next check diffs from now.
+7. **Save the snapshot.** `python3 tools/check_sources.py --save`. This reruns the queries, which takes about 10 seconds, so the next check diffs from now. It must come **before** the build, because the page reads "last commit" times from `data/last-seen.json`.
+8. **Build and validate.** Run `python3 tools/build.py`, then `python3 tools/build.py --check`. Fix any validation error in the JSON. Never hand-edit `index.html`.
 9. **Commit and push.** The user has given standing approval for this step.
    ```bash
    git add data/ index.html
@@ -45,7 +45,7 @@ Examples: "add project X", "drop Y", "Y is halted", "move the forecast to Friday
 1. `git pull --ff-only origin main`
 2. Edit `data/tracker.json`. To add a project, read its README first and write a real status line; never add a placeholder.
 3. If the change is user-visible news, such as a new project or a forecast change, add an `updates` entry. Bump `checked_at` only if you actually checked sources.
-4. Run steps A.7, A.9, A.10 and A.11. Also run A.8 if a repo was added, so its baseline is stored.
+4. If a repo was added or renamed, run A.7 first so its baseline is stored. Then run A.8, A.9, A.10 and A.11.
 
 Changes to the design or the template go in `templates/page.html` or `assets/`. Rebuild, preview with the `tracker` launch config (desktop and mobile, light and dark), then commit with a descriptive message.
 
