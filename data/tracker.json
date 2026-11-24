@@ -1,0 +1,264 @@
+{
+  "site": {
+    "name": "GTA VI PC Tracker",
+    "short": "VI/PC",
+    "url": "https://audixdev.github.io/americas-pc-tracker/",
+    "repo": "audixdev/americas-pc-tracker",
+    "description": "Live standings of the unofficial projects trying to run the Xbox build of GTA VI on a PC: how far each has got, what changed, and a best guess at when it becomes playable."
+  },
+  "checked_at": "2026-11-24T18:20:00Z",
+  "headline_note": "None of them has a usable picture yet.",
+  "stages": [
+    { "name": "Loads", "bar": "The game's executable loads with its imports resolved." },
+    { "name": "Starts up", "bar": "The game's own start-up code runs: memory, threads, archives." },
+    { "name": "Graphics device", "bar": "The game creates its graphics device and queues on the PC." },
+    { "name": "First frames", "bar": "Frames are presented to a window, even if they are black." },
+    { "name": "Recognisable picture", "bar": "The game's own screens can be seen: logos, menus, video or setup pages." },
+    { "name": "In-game", "bar": "The game world is loaded and running, with or without a usable picture." },
+    { "name": "Playable", "bar": "30 minutes or more in the world under player control, at 20 frames a second or better, without a crash." }
+  ],
+  "projects": [
+    {
+      "id": "anyxboxx",
+      "name": "AnyXboxX",
+      "repo": "LooperSalty/AnyXboxX",
+      "tagline": "Xbox Series emulator focused on this one game, built on VIctory",
+      "stage": 6,
+      "state": "active",
+      "status": "Reaches the world with a character you can move: the movement tutorial prompt appears, but the 3D picture behind it is still black. The world runs at about 2.4 frames a second in Series X mode and 3.2 in Series S mode, and 130 to 170 shaders are still untranslated.",
+      "source": "project README, measured on an RTX 4070 SUPER",
+      "changed_at": "2026-11-24T18:20:00Z"
+    },
+    {
+      "id": "victory",
+      "name": "VIctory",
+      "repo": "marvisak/VIctory",
+      "tagline": "Runs the game's Xbox code natively on Windows",
+      "stage": 6,
+      "state": "active",
+      "status": "Boots, runs the menus at the game's own 30 fps and loads into the world in about 50 seconds. The first mission's title card renders, the scene after it stays dark, and each frame takes 0.5 to 1.8 seconds. Entering the world can hang a real graphics card.",
+      "source": "project README, tested on one RX 6700 XT",
+      "changed_at": "2026-11-24T18:20:00Z"
+    },
+    {
+      "id": "palmwave",
+      "name": "Palmwave",
+      "repo": "fablinoo/palmwave",
+      "tagline": "Xbox Series to Windows layer with its own shader path",
+      "stage": 6,
+      "state": "active",
+      "status": "The first mission starts and part of the world's geometry is drawn, such as poles, power lines and fences, but about 91% of the depth buffer is empty and the picture is still one flat colour because nothing is lit yet.",
+      "source": "project README",
+      "changed_at": "2026-11-24T18:20:00Z"
+    },
+    {
+      "id": "cgbj",
+      "name": "CGBJ",
+      "repo": null,
+      "tagline": "Private build, reportedly based on VIctory. No public code",
+      "stage": 6,
+      "tied_with_previous": true,
+      "state": "unverified",
+      "status": "Press coverage has described a private build in the game world with a player walking, unlit and very slow. Nobody outside the group can test it, and this page could not find a first-hand source.",
+      "source": "press reports only; not confirmed by this page",
+      "changed_at": "2026-11-24T18:20:00Z"
+    },
+    {
+      "id": "five-star-recomp",
+      "name": "five-star-recomp",
+      "repo": "ThatRecompDev/five-star-recomp",
+      "tagline": "Native recompilation of the Xbox Series release",
+      "stage": 5,
+      "state": "active",
+      "status": "Starts, shows the logo, intro art and first-run screens, loads story mode and reaches the story intro's title card, then stops. All 25,908 of the game's shader programs translate and compile.",
+      "source": "project README and wiki status page",
+      "changed_at": "2026-11-24T18:20:00Z",
+      "status_docs": ["README.md"]
+    },
+    {
+      "id": "xcl",
+      "name": "XCL",
+      "repo": "ivall/xcl",
+      "tagline": "General Xbox Series to Windows compatibility layer, in the spirit of Proton",
+      "stage": 5,
+      "state": "active",
+      "status": "Starts the game in about four seconds and holds a steady 30 fps through its menus and on to the settings screens without crashing. Gameplay is not reached yet. All 26,698 of the game's GPU programs translate.",
+      "source": "project README (it calls the game \"a newer retail game\")",
+      "changed_at": "2026-11-24T18:20:00Z"
+    },
+    {
+      "id": "openscarlett-ce",
+      "name": "OpenScarlett (Community Edition)",
+      "repo": "OpenCommunityEdition/OpenScarlett",
+      "tagline": "Xbox Series runtime for Windows and Linux",
+      "stage": 5,
+      "tied_with_previous": true,
+      "state": "active",
+      "status": "Runs the first-boot settings, legal and start screens at 30 fps and plays the 4K intro movie with sound, then stops while it streams in the scene behind the menus. About nine in ten of the game's shaders translate.",
+      "source": "project README (it calls the game \"a newer retail game\")",
+      "changed_at": "2026-11-24T18:20:00Z"
+    },
+    {
+      "id": "percyscarlett",
+      "name": "PercyScarlett",
+      "repo": "rpatty-dev/PercyScarlett",
+      "tagline": "Xbox Series runtime; already runs Minecraft's Series build in-world",
+      "stage": 5,
+      "tied_with_previous": true,
+      "state": "active",
+      "status": "Renders the account picker, plays the game's 4K video and walks through the full first-run setup with a gamepad, saving settings and starting to stream the world.",
+      "source": "project README, which refers to the game by a nickname",
+      "changed_at": "2026-11-24T18:20:00Z"
+    },
+    {
+      "id": "tuxbox",
+      "name": "TuxBox",
+      "repo": "brcly/TuxBox",
+      "tagline": "Runs Xbox Series games on Linux through Proton",
+      "stage": 5,
+      "tied_with_previous": true,
+      "state": "active",
+      "status": "Shows the game's player-selection prompt at 3840 by 2160 on stock Proton Experimental. It is the furthest Linux-first project.",
+      "source": "project README",
+      "changed_at": "2026-11-24T18:20:00Z"
+    },
+    {
+      "id": "gta6-boottest",
+      "name": "GTA6-BootTest",
+      "repo": "OnlyMoisties/GTA6-BootTest",
+      "tagline": "Boot harness with stand-in libraries and its own shader translator",
+      "stage": 5,
+      "tied_with_previous": true,
+      "state": "active",
+      "status": "Boots, streams its archives, runs the frame loop and draws its first interface screen, the start-screen prompt bar, through translated shaders. Screens after that go black again.",
+      "source": "project README",
+      "changed_at": "2026-11-24T18:20:00Z"
+    },
+    {
+      "id": "xbox2windows",
+      "name": "Xbox2Windows",
+      "repo": "R0Y00/Xbox2Windows",
+      "tagline": "Static recompiler and runtime for Xbox Series executables",
+      "stage": 5,
+      "tied_with_previous": true,
+      "state": "active",
+      "status": "A modified diagnostic build, which skips failed checks automatically, played the intro, showed readable setup text and reached loading on an RTX 4060 laptop. Starting the original executable is not yet shown.",
+      "source": "project README and its progress issue",
+      "changed_at": "2026-11-24T18:20:00Z"
+    },
+    {
+      "id": "openscarlett",
+      "name": "OpenScarlett",
+      "repo": "californiaAlmonds/OpenScarlett",
+      "tagline": "Xbox Series runtime; plays Minecraft's Series build at 60 fps",
+      "stage": 4,
+      "state": "active",
+      "status": "Reports more than 360 crash-free 4K frames from a recent retail title it does not name, with live shader translation. Its README does not mention this game by name.",
+      "source": "project README",
+      "changed_at": "2026-11-24T18:20:00Z"
+    },
+    {
+      "id": "holy-interoperability",
+      "name": "Holy-Interoperability",
+      "repo": "mewiof/Holy-Interoperability",
+      "tagline": "Compatibility layer for Xbox Series games",
+      "stage": 4,
+      "tied_with_previous": true,
+      "state": "active",
+      "status": "Says a retail title it does not name loads, streams its start-up data and presents its first frames. The same README calls the project early bring-up, with nothing drawn yet.",
+      "source": "project README",
+      "changed_at": "2026-11-24T18:20:00Z"
+    },
+    {
+      "id": "leonida",
+      "name": "Leonida",
+      "repo": null,
+      "tagline": "The first large recompilation effort. Halted",
+      "stage": 3,
+      "state": "halted",
+      "status": "Stopped. Press reports say its lead stepped away and its Discord server was taken down. Its GitHub repository no longer exists. A separate continuation is listed under also watched.",
+      "source": "press reports; GitHub check by this page",
+      "changed_at": "2026-11-24T18:20:00Z"
+    },
+    {
+      "id": "palmetto",
+      "name": "palmetto",
+      "repo": "luizwidmer/palmetto",
+      "tagline": "Solo clean-room runtime, started from Leonida's work",
+      "stage": 3,
+      "tied_with_previous": true,
+      "state": "active",
+      "status": "The frame loop runs and submits about 78,000 frames in a 140-second run, but nothing executes on the graphics card yet, so nothing is drawn or presented.",
+      "source": "project README",
+      "changed_at": "2026-11-24T18:20:00Z"
+    },
+    {
+      "id": "g6shim",
+      "name": "g6shim",
+      "repo": "gookie-dev/g6shim",
+      "tagline": "Stand-in system libraries for the Series release",
+      "stage": 2,
+      "state": "active",
+      "status": "Starts the game and opens all its archives, then stops where the graphics device is created. Its next goal is a first frame.",
+      "source": "project README",
+      "changed_at": "2026-11-24T18:20:00Z"
+    }
+  ],
+  "also_watched": [
+    { "name": "VIctory-macOS", "repo": "pragyaangaur/VIctory-macOS", "note": "Brings VIctory to Apple Silicon Macs. It reaches only as far as VIctory does, and the world does not render yet." },
+    { "name": "Leonida Continued", "repo": "ubiquitarianism/leonida", "note": "Carries on Leonida's code. Its README says the game does not boot yet, although all 26,503 shaders translate to SPIR-V and pass validation." },
+    { "name": "G6Recomp", "repo": "Kajcsi/G6Recomp", "note": "Static recompiler. The loader and boot milestones are in progress, and a first frame is not started." },
+    { "name": "xbox-emulator", "repo": "omonkeyz/xbox-emulator", "note": "Xbox Series runtime whose README reports Fortnite and XDefiant results. It makes no GTA VI claim of its own." }
+  ],
+  "checked_idle": [
+    { "name": "ScarlettX", "repo": "Freminet/ScarlettX" },
+    { "name": "scarlett-layer", "repo": "jadeowaowa/scarlett-layer" },
+    { "name": "XValkyrie", "repo": "sammwyy/xvalkyrie" },
+    { "name": "AnyPS5", "repo": "boykopovar/AnyPS5" }
+  ],
+  "forecast": {
+    "target": "2026-12-01T12:00:00Z",
+    "definition": "At least one project shows 30 minutes or more in the game world under player control, at 20 frames a second or better on some PC, without a crash.",
+    "rests_on": [
+      "The executable surfaced on 23 November. Within about a day, three code bases reported the game world running.",
+      "The front-runners are in the world but blind: the picture is black or one flat colour, and lighting has not started.",
+      "Speed is the long pole. The best measured figure is 3.2 frames a second, up from 0.2 the same day. Playable needs about six times that.",
+      "Work is shared across projects. AnyXboxX builds on VIctory, and fixes move between XCL, VIctory and Palmwave in days, not weeks.",
+      "Takedowns are a real risk. Leonida and at least one community server are already gone."
+    ],
+    "chances": [
+      { "label": "By Sun 29 Nov", "value": "3 in 10" },
+      { "label": "By Fri 4 Dec", "value": "6 in 10" },
+      { "label": "By 31 Dec", "value": "8 in 10" },
+      { "label": "Stalls until an official PC release", "value": "under 2 in 10" }
+    ],
+    "milestones": [
+      { "label": "Recognisable picture", "value": "reached Mon 23 Nov" },
+      { "label": "In-game", "value": "reached Tue 24 Nov" },
+      { "label": "Lit world on screen", "value": "expected within 2 days" },
+      { "label": "Playable", "value": "around Tue 1 Dec" }
+    ],
+    "revised_at": "2026-11-24T18:20:00Z",
+    "revision_note": "First estimate, made when the tracker launched."
+  },
+  "updates": [
+    {
+      "at": "2026-11-24T18:20:00Z",
+      "title": "Tracker goes live with 16 projects",
+      "points": [
+        "Sixteen projects are ranked from their own READMEs, plus four on the watch list and four general Xbox layers with no GTA VI claims.",
+        "Three public projects report the game world running: AnyXboxX, VIctory and Palmwave. None has a usable picture yet.",
+        "The first forecast puts playable around Tue 1 Dec, with speed as the main obstacle."
+      ]
+    }
+  ],
+  "method": [
+    { "label": "Playable builds", "text": "None exist. Anything offered as a playable download of GTA VI for PC is fake, and fakes have carried malware." },
+    { "label": "What the projects use", "text": "They work from a leaked Xbox Series build. Rockstar has not announced a PC version. This page does not link to the leak or explain how to get or run it." },
+    { "label": "Sources", "text": "Each project's public repository: its README, status files, commits and pull requests. Press reports where a project has no public code. Every row names its source." },
+    { "label": "Claims", "text": "Stages are what each project says about itself, unless the source line says otherwise. This page does not run the code, and most claims are unverified." },
+    { "label": "Ranking", "text": "By stage first, then by how far within that stage the project's own description goes. An equals sign marks a tie." },
+    { "label": "Who writes it", "text": "An AI assistant (Claude) checks the repositories when asked and rewrites the entries. It can be wrong; the source links are there to check it." },
+    { "label": "Affiliation", "text": "None. Not connected to Rockstar Games, Take-Two Interactive, Microsoft or any project listed. Names link to repositories to credit the work." }
+  ]
+}

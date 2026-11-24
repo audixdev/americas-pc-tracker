@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>$title</title>
+<meta name="description" content="$description">
+<meta name="theme-color" content="#18224a">
+<link rel="canonical" href="$site_url">
+<meta property="og:title" content="$title">
+<meta property="og:description" content="$description">
+<meta property="og:type" content="website">
+<meta property="og:url" content="$site_url">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Big+Shoulders+Display:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="assets/site.css?v=$asset_version">
+<script type="application/ld+json">$jsonld</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top__bar">
+    <a class="brand" href="#main" aria-label="$site_name, top of page"><span class="brand__mark" aria-hidden="true">$site_short</span><span class="brand__name">$site_name</span></a>
+    <nav class="top__nav" aria-label="Sections">
+      <a href="#standings">Standings</a>
+      <a href="#forecast">Forecast</a>
+      <a href="#updates">Updates</a>
+      <a href="#method">Method</a>
+    </nav>
+    <p class="top__checked">Checked <time class="js-ago" datetime="$checked_iso">$checked_short</time></p>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero__grid">
+      <div class="hero__words">
+        <h1 id="hero-title">Is GTA VI playable on PC yet?</h1>
+        <p class="hero__answer">$answer</p>
+        <p class="hero__lead">$lead</p>
+        <p class="hero__how">$how <span class="quiet">Last checked <time datetime="$checked_iso">$checked_long</time><span class="js-ago-suffix" data-from="$checked_iso"></span>.</span></p>
+      </div>
+      <figure class="board" aria-label="Pit board: $board_label">
+        <div class="board__panel">
+$board_rows
+        </div>
+        <figcaption class="board__cap">Leader, stage and estimate to playable, as of $checked_short UTC</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="track" aria-labelledby="track-title">
+    <div class="wrap">
+      <h2 id="track-title" class="track__title">Where everyone is on the seven stages</h2>
+      <ol class="track__strip">
+$track_cols
+      </ol>
+    </div>
+  </section>
+
+  <section id="standings" class="standings" aria-labelledby="standings-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="standings-title">Standings</h2>
+        <p class="sec-head__note">$standings_note</p>
+      </div>
+      <div class="tower" role="table" aria-label="Standings">
+        <div class="tower__head" role="row">
+          <span role="columnheader">Pos</span>
+          <span role="columnheader">Project</span>
+          <span role="columnheader">Stage</span>
+          <span role="columnheader">Gap</span>
+          <span role="columnheader">Latest</span>
+        </div>
+$tower_rows
+      </div>
+
+      <div class="watch">
+        <h3>Also watched</h3>
+        <ul class="watch__list">
+$watch_rows
+        </ul>
+        <p class="watch__idle">$idle_line</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="forecast" class="forecast" aria-labelledby="forecast-title">
+    <div class="wrap forecast__grid">
+      <div class="forecast__main">
+        <h2 id="forecast-title">Time to playable</h2>
+        <p class="forecast__clock"><span class="js-countdown" data-target="$fc_target_iso">$fc_rel</span></p>
+        <p class="forecast__date">Best guess: <time datetime="$fc_target_iso">$fc_date</time>.</p>
+        <p class="forecast__def"><strong>Playable means:</strong> $fc_definition</p>
+        <h3>What the estimate rests on</h3>
+        <ul class="forecast__reasons">
+$fc_reasons
+        </ul>
+      </div>
+      <div class="forecast__side">
+        <h3>Chances</h3>
+        <dl class="odds">
+$fc_chances
+        </dl>
+        <h3>Milestones</h3>
+        <dl class="miles">
+$fc_milestones
+        </dl>
+        <p class="forecast__rev">This is a guess by the AI that writes this page, and it can be badly wrong. Revised <time datetime="$fc_revised_iso">$fc_revised</time>: $fc_revision_note</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="updates" class="updates" aria-labelledby="updates-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="updates-title">Updates</h2>
+        <p class="sec-head__note">Newest first. Times are UTC.</p>
+      </div>
+      <ol class="feed">
+$updates_recent
+      </ol>
+$updates_older
+    </div>
+  </section>
+
+  <section id="method" class="method" aria-labelledby="method-title">
+    <div class="wrap">
+      <h2 id="method-title">Method and limits</h2>
+      <dl class="method__list">
+$method_rows
+      </dl>
+      <h3 class="method__sub">The seven stages</h3>
+      <ol class="stages">
+$stage_defs
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <p class="foot__big" aria-hidden="true">$site_short</p>
+    <div>
+      <p>$site_name is an unofficial status page. It holds no game files and links to no downloads. It is not affiliated with Rockstar Games, Take-Two Interactive, Microsoft or any project listed.</p>
+      <p class="quiet">Source and history on <a href="https://github.com/$site_repo">GitHub</a>. Times are UTC.</p>
+    </div>
+  </div>
+</footer>
+<script src="assets/site.js?v=$asset_version" defer></script>
+</body>
+</html>
