@@ -262,7 +262,15 @@ a.chip:hover { background: color-mix(in oklab, var(--c) 32%, var(--surface)); }
 .entry h4 .name { text-decoration: none; }
 .entry h4 a.name:hover { text-decoration: underline; text-decoration-thickness: 2px; }
 .entry__tagline { margin-top: 6px; color: var(--muted); font-size: 0.9375rem; line-height: 1.4; }
-.entry__status p:first-child { max-width: 64ch; }
+.entry__status > p:not(.entry__src) { max-width: 64ch; }
+.entry__furthest {
+  margin-bottom: 8px; padding-left: 10px; border-left: 3px solid var(--c, var(--line));
+  font-weight: 700; line-height: 1.35;
+}
+.entry__label {
+  display: block; margin-bottom: 2px; color: var(--muted);
+  font: 600 0.75rem/1.2 var(--body); letter-spacing: 0.06em; text-transform: uppercase;
+}
 .entry__src { margin-top: 8px; font-size: 0.875rem; color: var(--muted); line-height: 1.45; max-width: 72ch; }
 .entry.is-out .entry__pos, .entry.is-out h4 { color: var(--muted); }
 

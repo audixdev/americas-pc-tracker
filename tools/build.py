@@ -79,7 +79,7 @@ def validate(d: dict) -> None:
     ids = set()
     for i, p in enumerate(projects):
         where = f"projects[{i}] ({p.get('name', '?')})"
-        for k in ("id", "name", "tagline", "status", "source", "state"):
+        for k in ("id", "name", "tagline", "furthest", "status", "source", "state"):
             need(p, k, where)
         if p["id"] in ids:
             raise Invalid(f"{where}: duplicate id '{p['id']}'")
@@ -345,6 +345,7 @@ def build_html(d: dict, last_seen: dict) -> str:
                 f'        <p class="entry__tagline">{nb(p["tagline"])}</p>',
                 f'      </div>',
                 f'      <div class="entry__status">',
+                f'        <p class="entry__furthest"><span class="entry__label">Furthest point</span> {nb(p["furthest"])}</p>',
                 f'        <p>{nb(p["status"])}</p>',
                 f'        <p class="entry__src">Source: {e(p["source"])}. Entry changed '
                 f'<time datetime="{e(p["changed_at"])}">{hm(changed)} UTC, {day(changed)}</time>.{commit_txt}</p>',
@@ -366,8 +367,8 @@ def build_html(d: dict, last_seen: dict) -> str:
     else:
         idle_line = ""
 
-    standings_note = (f"Ranked by stage, then by how far each project's own description goes. "
-                      f"{len(projects)} projects.")
+    standings_note = (f"Ranked by stage, then within each stage by the furthest point reached in the game, "
+                      f"furthest first. {len(projects)} projects.")
 
     # --- forecast
     fc_reasons = indent([f"<li>{nb(r)}</li>" for r in fc["rests_on"]], 10)

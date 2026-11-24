@@ -26,7 +26,8 @@ Local preview uses `.claude/launch.json` (`tracker`, port 8765).
 ## Data rules (build.py enforces most of them)
 
 - All times are UTC in the form `2026-11-24T18:20:00Z`. Nothing can be later than `checked_at`.
-- `projects` array order **is the ranking**. Stages must never increase down the list. Set `tied_with_previous: true` to share a position (shown as "3=").
+- `projects` array order **is the ranking**. Stages must never increase down the list. Within a stage, order by the furthest point reached in the game's own sequence of screens, furthest first; break near-ties by measured frame rate, then unmodified over modified builds, then public first-hand sources over unconfirmed ones. Set `tied_with_previous: true` (shown as "3=") only when none of these separates two projects.
+- Every project has a `furthest` field: one short phrase naming the furthest point it has reached. It is shown above the status and must justify the project's position.
 - `state` is one of `active`, `halted`, `gone` or `unverified`. Use `unverified` for builds with no public code that are known only from press.
 - `changed_at` is when **this page's entry** for the project last changed, not the repo's last push. The page reads the last commit time from `last-seen.json`.
 - `updates` are newest first, each with a title and 1–4 points. The first 5 are shown and the rest collapse.

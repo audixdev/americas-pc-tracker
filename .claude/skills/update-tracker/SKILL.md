@@ -18,7 +18,7 @@ You are the editor of this page. The user wants it updated end to end, all the w
    - gone or blocked (404/451): confirm once with `gh api repos/OWNER/NAME`, then set `state` to `gone`. Explain what is known, for example "repository no longer exists"; do not speculate about takedowns unless a source says so.
 4. **Scan the wider news**, with 1–2 `WebSearch` calls (standard mode). Example: `GTA 6 PC port news <today's date>`. Look for press reports on private builds, takedowns, new projects and official Rockstar statements. Treat results as leads and prefer first-hand sources. Never link to leak or download sites.
 5. **Decide**, against the stage bar in CLAUDE.md:
-   - Stage changed? Move the project, re-sort `projects` so stages never increase down the list, and fix `tied_with_previous`.
+   - Stage changed, or the project got further within its stage? Update its `furthest` phrase, then re-sort `projects`: by stage, then by furthest point within the stage (rules in CLAUDE.md). Fix `tied_with_previous`.
    - Status text out of date? Rewrite it in 1–3 plain sentences in your own words. Set `changed_at` to the new `checked_at`, and set `source`.
    - A new GTA VI project with a real claim goes in `projects`. A new project with no claim yet goes in `also_watched` with a one-line note.
    - Forecast: change `target`, `chances` or `milestones` only on real evidence. Then set `revised_at` and write `revision_note` saying what moved it and why.
