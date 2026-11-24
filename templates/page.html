@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>$title</title>
 <meta name="description" content="$description">
-<meta name="theme-color" content="#18224a">
+<meta name="theme-color" content="#f3f4f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111318" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="$site_url">
 <meta property="og:title" content="$title">
 <meta property="og:description" content="$description">
@@ -15,7 +16,7 @@
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Big+Shoulders+Display:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,400..900&family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;1,400&display=swap">
 <link rel="stylesheet" href="assets/site.css?v=$asset_version">
 <script type="application/ld+json">$jsonld</script>
 </head>
@@ -31,7 +32,7 @@
       <a href="#updates">Updates</a>
       <a href="#method">Method</a>
     </nav>
-    <p class="top__checked">Checked <time class="js-ago" datetime="$checked_iso">$checked_short</time></p>
+    <p class="top__checked">Checked <time class="js-ago" datetime="$checked_iso">$checked_short UTC</time></p>
   </div>
 </header>
 
@@ -39,26 +40,19 @@
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap hero__grid">
       <div class="hero__words">
-        <h1 id="hero-title">Is GTA VI playable on PC yet?</h1>
-        <p class="hero__answer">$answer</p>
+        <h1 id="hero-title">Is GTA&nbsp;VI playable on PC yet?</h1>
+        <p class="$answer_cls">$answer</p>
         <p class="hero__lead">$lead</p>
+        <p class="hero__eta">Best guess for playable: <a href="#forecast" class="js-countdown" data-target="$fc_target_iso" data-lower="1">$fc_rel_lower</a>, on $fc_date.</p>
         <p class="hero__how">$how <span class="quiet">Last checked <time datetime="$checked_iso">$checked_long</time><span class="js-ago-suffix" data-from="$checked_iso"></span>.</span></p>
       </div>
-      <figure class="board" aria-label="Pit board: $board_label">
-        <div class="board__panel">
-$board_rows
-        </div>
-        <figcaption class="board__cap">Leader, stage and estimate to playable, as of $checked_short UTC</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section class="track" aria-labelledby="track-title">
-    <div class="wrap">
-      <h2 id="track-title" class="track__title">Where everyone is on the seven stages</h2>
-      <ol class="track__strip">
-$track_cols
-      </ol>
+      <div class="ladder-wrap">
+        <h2 class="ladder__title">Where everyone is on the seven stages</h2>
+        <ol class="ladder" reversed>
+$ladder_rows
+        </ol>
+        <p class="ladder__key"><span class="chip is-unverified">Dashed</span> is unconfirmed, <span class="chip is-out">struck</span> has stopped. Stage definitions are under <a href="#method">Method</a>.</p>
+      </div>
     </div>
   </section>
 
@@ -68,16 +62,7 @@ $track_cols
         <h2 id="standings-title">Standings</h2>
         <p class="sec-head__note">$standings_note</p>
       </div>
-      <div class="tower" role="table" aria-label="Standings">
-        <div class="tower__head" role="row">
-          <span role="columnheader">Pos</span>
-          <span role="columnheader">Project</span>
-          <span role="columnheader">Stage</span>
-          <span role="columnheader">Gap</span>
-          <span role="columnheader">Latest</span>
-        </div>
-$tower_rows
-      </div>
+$standings_groups
 
       <div class="watch">
         <h3>Also watched</h3>
@@ -107,9 +92,9 @@ $fc_reasons
 $fc_chances
         </dl>
         <h3>Milestones</h3>
-        <dl class="miles">
+        <ol class="miles">
 $fc_milestones
-        </dl>
+        </ol>
         <p class="forecast__rev">This is a guess by the AI that writes this page, and it can be badly wrong. Revised <time datetime="$fc_revised_iso">$fc_revised</time>: $fc_revision_note</p>
       </div>
     </div>
@@ -144,7 +129,7 @@ $stage_defs
 
 <footer class="foot">
   <div class="wrap foot__grid">
-    <p class="foot__big" aria-hidden="true">$site_short</p>
+    <p class="foot__mark" aria-hidden="true">$site_short</p>
     <div>
       <p>$site_name is an unofficial status page. It holds no game files and links to no downloads. It is not affiliated with Rockstar Games, Take-Two Interactive, Microsoft or any project listed.</p>
       <p class="quiet">Source and history on <a href="https://github.com/$site_repo">GitHub</a>. Times are UTC.</p>

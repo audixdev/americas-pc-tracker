@@ -267,86 +267,92 @@ def build_html(d: dict, last_seen: dict) -> str:
     how = (f"{num_word(len(active)).capitalize()} projects are trying to run the Xbox Series build of GTA&nbsp;VI "
            f"on a PC. This page reads their public repositories and reports how far each says it has got.")
 
-    # --- pit board
-    board_label = (f"P1 {leader['name']}, stage {leader['stage']} of 7, {stages[leader['stage'] - 1]['name']}, "
-                   f"playable estimate {rel_until(target, checked).lower()}")
-    board = [
-        ("P1", e(leader["name"]), "board__v--name"),
-        ("STG", f"{leader['stage']}<span class=\"board__of\">/7</span>", ""),
-        ("", e(stages[leader["stage"] - 1]["name"]), "board__v--small"),
-        ("ETA", f'<span class="js-countdown" data-target="{e(fc["target"])}" data-short="1">'
-                f'{e(rel_until(target, checked).replace("About ", "~").replace(" days", "d").replace("a day", "1d"))}</span>', ""),
-    ]
-    board_rows = indent([
-        f'<p class="board__row"><span class="board__k">{k}</span><span class="board__v {c}">{v}</span></p>'
-        for k, v, c in board
-    ], 10)
+    # --- ladder (hero): stage 7 at the top, every project placed on its rung
+    slugs: dict[int, str] = {}
+    used: set[str] = set()
+    for i, p in enumerate(projects):
+        base = "p-" + (re.sub(r"[^a-z0-9]+", "-", p["name"].lower()).strip("-") or "project")
+        slug, k = base, 2
+        while slug in used:
+            slug, k = f"{base}-{k}", k + 1
+        used.add(slug)
+        slugs[i] = slug
 
-    # --- track strip
-    track = []
-    for n in range(1, 8):
-        who = [p for p in projects if p["stage"] == n]
-        cls = ["track__col"]
+    def chip(i: int, p: dict) -> str:
+        cls = "chip"
+        note = ""
+        if p["state"] in ("halted", "gone"):
+            cls += " is-out"
+            note = f'<span class="vh">, {STATE_LABEL[p["state"]].lower()}</span>'
+        elif p["state"] == "unverified":
+            cls += " is-unverified"
+            note = '<span class="vh">, unconfirmed</span>'
+        return f'<li><a class="{cls}" href="#{slugs[i]}">{e(p["name"])}{note}</a></li>'
+
+    ladder = []
+    for n in range(7, 0, -1):
+        who = [chip(i, p) for i, p in enumerate(projects) if p["stage"] == n]
+        cls = [f"rung stage-{n}"]
         if any(p["stage"] >= n for p in projects):
             cls.append("is-reached")
         if n == top_stage:
             cls.append("is-front")
-        if n == 7:
-            cls.append("is-finish")
-        names = "".join(
-            f'<li{" class=\"is-out\"" if p["state"] in ("halted", "gone") else ""}>{e(p["name"])}</li>' for p in who
-        ) or '<li class="is-empty">Nobody yet</li>'
-        track.append(
-            f'<li class="{" ".join(cls)}"><p class="track__n">{n}</p>'
-            f'<p class="track__name">{e(stages[n - 1]["name"])}</p>'
-            f'<ul class="track__who" aria-label="{len(who)} at this stage">{names}</ul></li>'
+        reached = any(p["stage"] >= n for p in projects)
+        names = "".join(who) or (
+            '<li class="rung__empty">None at this stage</li>' if reached else '<li class="rung__empty">Nobody yet</li>')
+        count = f"{len(who)} project{'s' if len(who) != 1 else ''}" if who else "none"
+        ladder.append(
+            f'<li class="{" ".join(cls)}"><span class="rung__n">{n}</span>'
+            f'<span class="rung__name">{e(stages[n - 1]["name"])}<span class="vh">: {count}</span></span>'
+            f'<ul class="rung__who">{names}</ul></li>'
         )
-    track_cols = indent(track, 8)
+    ladder_rows = indent(ladder, 10)
 
-    # --- timing tower
-    rows = []
-    for p, pos in zip(projects, positions):
-        gap = top_stage - p["stage"]
-        if p is leader:
-            gap_txt, gap_aria = "Leader", "Leader"
-        elif gap == 0:
-            gap_txt, gap_aria = "Level", "Same stage as the leader"
-        else:
-            gap_txt = f"+{gap} stage{'s' if gap > 1 else ''}"
-            gap_aria = f"{gap} stage{'s' if gap > 1 else ''} behind the leader"
-        tag = (f' <span class="tag tag--{p["state"]}">{STATE_LABEL[p["state"]]}</span>'
-               if p["state"] in STATE_LABEL else "")
-        seen = (last_seen.get("repos", {}).get((p.get("repo") or "").lower()) or {}) if p.get("repo") else {}
-        head = (seen.get("head") or {}).get("date")
-        commit_txt = ""
-        if head:
-            hd = ts(head)
-            commit_txt = f' Last commit <time datetime="{e(head)}">{hm(hd)} UTC, {day(hd)}</time>.'
-        elif p.get("repo") is None and p["state"] != "gone":
-            commit_txt = " No public code."
-        changed = ts(p["changed_at"])
-        row_cls = "tower__row" + (" is-out" if p["state"] in ("halted", "gone") else "")
-        stage_name = stages[p["stage"] - 1]["name"]
-        rows += [
-            f'<div class="{row_cls}" role="row">',
-            f'  <p class="tower__pos" role="cell" aria-label="Position {e(pos)}">{e(pos)}</p>',
-            f'  <div class="tower__who" role="cell">',
-            f'    <h3>{repo_link(p["name"], p.get("repo"))}{tag}</h3>',
-            f'    <p class="tower__tag">{nb(p["tagline"])}</p>',
-            f'  </div>',
-            f'  <div class="tower__stage" role="cell" aria-label="Stage {p["stage"]} of 7: {e(stage_name)}">',
-            f'    {meter(p["stage"])}',
-            f'    <p class="tower__stagename"><span class="tower__stagenum">{p["stage"]}</span> {e(stage_name)}</p>',
-            f'  </div>',
-            f'  <p class="tower__gap" role="cell" aria-label="{e(gap_aria)}">{e(gap_txt)}</p>',
-            f'  <div class="tower__latest" role="cell">',
-            f'    <p>{nb(p["status"])}</p>',
-            f'    <p class="tower__src">Source: {e(p["source"])}. Entry changed '
-            f'<time datetime="{e(p["changed_at"])}">{hm(changed)} UTC, {day(changed)}</time>.{commit_txt}</p>',
-            f'  </div>',
-            f'</div>',
+    # --- standings, grouped by stage
+    groups = []
+    for n in range(7, 0, -1):
+        members = [(i, p, pos) for i, (p, pos) in enumerate(zip(projects, positions)) if p["stage"] == n]
+        if not members:
+            continue
+        gap = top_stage - n
+        where = "at the front" if gap == 0 else f"{gap} stage{'s' if gap > 1 else ''} behind the front"
+        groups += [
+            f'<section class="group stage-{n}" aria-labelledby="g{n}">',
+            f'  <h3 id="g{n}" class="group__head"><span class="group__n">{n}</span> '
+            f'<span class="group__name">{e(stages[n - 1]["name"])}</span> '
+            f'<span class="group__count">{num_word(len(members)).capitalize()} '
+            f'project{"s" if len(members) != 1 else ""}, {where}</span></h3>',
+            '  <ol class="group__list">',
         ]
-    tower_rows = indent(rows, 8)
+        for i, p, pos in members:
+            tag = (f' <span class="tag tag--{p["state"]}">{STATE_LABEL[p["state"]]}</span>'
+                   if p["state"] in STATE_LABEL else "")
+            seen = (last_seen.get("repos", {}).get((p.get("repo") or "").lower()) or {}) if p.get("repo") else {}
+            head = (seen.get("head") or {}).get("date")
+            commit_txt = ""
+            if head:
+                hd = ts(head)
+                commit_txt = f' Last commit <time datetime="{e(head)}">{hm(hd)} UTC, {day(hd)}</time>.'
+            elif p.get("repo") is None and p["state"] != "gone":
+                commit_txt = " No public code."
+            changed = ts(p["changed_at"])
+            row_cls = "entry" + (" is-out" if p["state"] in ("halted", "gone") else "")
+            groups += [
+                f'    <li class="{row_cls}" id="{slugs[i]}">',
+                f'      <p class="entry__pos"><span class="vh">Position </span>{e(pos)}</p>',
+                f'      <div class="entry__who">',
+                f'        <h4>{repo_link(p["name"], p.get("repo"))}{tag}</h4>',
+                f'        <p class="entry__tagline">{nb(p["tagline"])}</p>',
+                f'      </div>',
+                f'      <div class="entry__status">',
+                f'        <p>{nb(p["status"])}</p>',
+                f'        <p class="entry__src">Source: {e(p["source"])}. Entry changed '
+                f'<time datetime="{e(p["changed_at"])}">{hm(changed)} UTC, {day(changed)}</time>.{commit_txt}</p>',
+                f'      </div>',
+                f'    </li>',
+            ]
+        groups += ["  </ol>", "</section>"]
+    standings_groups = indent(groups, 6)
 
     watch_rows = indent([
         f'<li><h4>{repo_link(w["name"], w["repo"])}</h4><p>{nb(w["note"])}</p></li>'
@@ -365,8 +371,29 @@ def build_html(d: dict, last_seen: dict) -> str:
 
     # --- forecast
     fc_reasons = indent([f"<li>{nb(r)}</li>" for r in fc["rests_on"]], 10)
-    fc_chances = indent([f'<div><dt>{e(c["label"])}</dt><dd>{e(c["value"])}</dd></div>' for c in fc["chances"]], 10)
-    fc_miles = indent([f'<div><dt>{e(m["label"])}</dt><dd>{e(m["value"])}</dd></div>' for m in fc["milestones"]], 10)
+    def pips(value: str) -> str:
+        m = re.search(r"(under\s+)?(\d+) in 10\b", value)
+        if not m:
+            return ""
+        n = min(int(m.group(2)), 10)
+        full = n - 1 if m.group(1) else n
+        dots = "".join(
+            '<span class="pip is-on"></span>' if k < full
+            else '<span class="pip is-part"></span>' if (m.group(1) and k == full)
+            else '<span class="pip"></span>'
+            for k in range(10)
+        )
+        return f'<span class="pips" aria-hidden="true">{dots}</span>'
+
+    fc_chances = indent([
+        f'<div><dt>{e(c["label"])}</dt><dd><span class="odds__v">{e(c["value"])}</span>{pips(c["value"])}</dd></div>'
+        for c in fc["chances"]
+    ], 10)
+    fc_miles = indent([
+        f'<li class="{"is-done" if m["value"].lower().startswith("reached") else "is-next"}">'
+        f'<span class="miles__label">{e(m["label"])}</span> <span class="miles__when">{e(m["value"])}</span></li>'
+        for m in fc["milestones"]
+    ], 10)
     revised = ts(fc["revised_at"])
 
     # --- updates
@@ -395,7 +422,7 @@ def build_html(d: dict, last_seen: dict) -> str:
 
     method_rows = indent([f'<div><dt>{e(m["label"])}</dt><dd>{nb(m["text"])}</dd></div>' for m in d["method"]], 8)
     stage_defs = indent([
-        f'<li><span class="stages__n">{i}</span><span class="stages__name">{e(s["name"])}</span>'
+        f'<li class="stage-{i}"><span class="stages__n">{i}</span><span class="stages__name">{e(s["name"])}</span>'
         f'<span class="stages__bar">{nb(s["bar"])}</span></li>'
         for i, s in enumerate(stages, 1)
     ], 8)
@@ -426,15 +453,15 @@ def build_html(d: dict, last_seen: dict) -> str:
         "answer": e(answer),
         "lead": lead,
         "how": how,
-        "board_label": e(board_label),
-        "board_rows": board_rows,
-        "track_cols": track_cols,
+        "answer_cls": "hero__answer" + (" is-long" if len(answer) > 4 else ""),
+        "ladder_rows": ladder_rows,
         "standings_note": e(standings_note),
-        "tower_rows": tower_rows,
+        "standings_groups": standings_groups,
         "watch_rows": watch_rows,
         "idle_line": idle_line,
         "fc_target_iso": e(fc["target"]),
         "fc_rel": e(rel_until(target, checked)),
+        "fc_rel_lower": e(rel_until(target, checked)[:1].lower() + rel_until(target, checked)[1:]),
         "fc_date": f"{part_of_day(target)} {day(target)}",
         "fc_definition": nb(fc["definition"]),
         "fc_reasons": fc_reasons,

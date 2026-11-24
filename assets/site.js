@@ -41,7 +41,9 @@
       document.querySelectorAll(".js-countdown").forEach(function (el) {
         var t = until(el.getAttribute("data-target"));
         if (!t) { return; }
-        el.textContent = el.hasAttribute("data-short") ? shortForm(t) : t;
+        if (el.hasAttribute("data-short")) { t = shortForm(t); }
+        if (el.hasAttribute("data-lower")) { t = t.charAt(0).toLowerCase() + t.slice(1); }
+        el.textContent = t;
       });
     } catch (e) { /* leave the server-rendered text in place */ }
   }

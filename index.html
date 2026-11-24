@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>GTA VI PC Tracker: is GTA VI playable on PC yet?</title>
 <meta name="description" content="Live standings of the unofficial projects trying to run the Xbox build of GTA VI on a PC: how far each has got, what changed, and a best guess at when it becomes playable.">
-<meta name="theme-color" content="#18224a">
+<meta name="theme-color" content="#f3f4f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111318" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://audixdev.github.io/americas-pc-tracker/">
 <meta property="og:title" content="GTA VI PC Tracker: is GTA VI playable on PC yet?">
 <meta property="og:description" content="Live standings of the unofficial projects trying to run the Xbox build of GTA VI on a PC: how far each has got, what changed, and a best guess at when it becomes playable.">
@@ -15,8 +16,8 @@
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Big+Shoulders+Display:wght@500;700;800&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=3b19e9aced">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,400..900&family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="assets/site.css?v=f056b9aa18">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"GTA VI PC Tracker","description":"Live standings of the unofficial projects trying to run the Xbox build of GTA VI on a PC: how far each has got, what changed, and a best guess at when it becomes playable.","url":"https://audixdev.github.io/americas-pc-tracker/","dateModified":"2026-11-24T18:27:00Z"}</script>
 </head>
 <body>
@@ -31,7 +32,7 @@
       <a href="#updates">Updates</a>
       <a href="#method">Method</a>
     </nav>
-    <p class="top__checked">Checked <time class="js-ago" datetime="2026-11-24T18:27:00Z">18:27</time></p>
+    <p class="top__checked">Checked <time class="js-ago" datetime="2026-11-24T18:27:00Z">18:27 UTC</time></p>
   </div>
 </header>
 
@@ -39,35 +40,25 @@
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap hero__grid">
       <div class="hero__words">
-        <h1 id="hero-title">Is GTA VI playable on PC yet?</h1>
+        <h1 id="hero-title">Is GTA&nbsp;VI playable on PC yet?</h1>
         <p class="hero__answer">No.</p>
         <p class="hero__lead">Three public projects and one private build have reached stage&nbsp;6 of&nbsp;7, in-game. None of them has a usable picture yet.</p>
+        <p class="hero__eta">Best guess for playable: <a href="#forecast" class="js-countdown" data-target="2026-12-01T12:00:00Z" data-lower="1">about 6½ days</a>, on the afternoon of Tue 1 Dec.</p>
         <p class="hero__how">Sixteen projects are trying to run the Xbox Series build of GTA&nbsp;VI on a PC. This page reads their public repositories and reports how far each says it has got. <span class="quiet">Last checked <time datetime="2026-11-24T18:27:00Z">18:27 UTC on Tue 24 Nov</time><span class="js-ago-suffix" data-from="2026-11-24T18:27:00Z"></span>.</span></p>
       </div>
-      <figure class="board" aria-label="Pit board: P1 AnyXboxX, stage 6 of 7, In-game, playable estimate about 6½ days">
-        <div class="board__panel">
-          <p class="board__row"><span class="board__k">P1</span><span class="board__v board__v--name">AnyXboxX</span></p>
-          <p class="board__row"><span class="board__k">STG</span><span class="board__v ">6<span class="board__of">/7</span></span></p>
-          <p class="board__row"><span class="board__k"></span><span class="board__v board__v--small">In-game</span></p>
-          <p class="board__row"><span class="board__k">ETA</span><span class="board__v "><span class="js-countdown" data-target="2026-12-01T12:00:00Z" data-short="1">~6½d</span></span></p>
-        </div>
-        <figcaption class="board__cap">Leader, stage and estimate to playable, as of 18:27 UTC</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section class="track" aria-labelledby="track-title">
-    <div class="wrap">
-      <h2 id="track-title" class="track__title">Where everyone is on the seven stages</h2>
-      <ol class="track__strip">
-        <li class="track__col is-reached"><p class="track__n">1</p><p class="track__name">Loads</p><ul class="track__who" aria-label="0 at this stage"><li class="is-empty">Nobody yet</li></ul></li>
-        <li class="track__col is-reached"><p class="track__n">2</p><p class="track__name">Starts up</p><ul class="track__who" aria-label="1 at this stage"><li>g6shim</li></ul></li>
-        <li class="track__col is-reached"><p class="track__n">3</p><p class="track__name">Graphics device</p><ul class="track__who" aria-label="2 at this stage"><li class="is-out">Leonida</li><li>palmetto</li></ul></li>
-        <li class="track__col is-reached"><p class="track__n">4</p><p class="track__name">First frames</p><ul class="track__who" aria-label="2 at this stage"><li>OpenScarlett</li><li>Holy-Interoperability</li></ul></li>
-        <li class="track__col is-reached"><p class="track__n">5</p><p class="track__name">Recognisable picture</p><ul class="track__who" aria-label="7 at this stage"><li>five-star-recomp</li><li>XCL</li><li>OpenScarlett (Community Edition)</li><li>PercyScarlett</li><li>TuxBox</li><li>GTA6-BootTest</li><li>Xbox2Windows</li></ul></li>
-        <li class="track__col is-reached is-front"><p class="track__n">6</p><p class="track__name">In-game</p><ul class="track__who" aria-label="4 at this stage"><li>AnyXboxX</li><li>VIctory</li><li>Palmwave</li><li>CGBJ</li></ul></li>
-        <li class="track__col is-finish"><p class="track__n">7</p><p class="track__name">Playable</p><ul class="track__who" aria-label="0 at this stage"><li class="is-empty">Nobody yet</li></ul></li>
-      </ol>
+      <div class="ladder-wrap">
+        <h2 class="ladder__title">Where everyone is on the seven stages</h2>
+        <ol class="ladder" reversed>
+          <li class="rung stage-7"><span class="rung__n">7</span><span class="rung__name">Playable<span class="vh">: none</span></span><ul class="rung__who"><li class="rung__empty">Nobody yet</li></ul></li>
+          <li class="rung stage-6 is-reached is-front"><span class="rung__n">6</span><span class="rung__name">In-game<span class="vh">: 4 projects</span></span><ul class="rung__who"><li><a class="chip" href="#p-anyxboxx">AnyXboxX</a></li><li><a class="chip" href="#p-victory">VIctory</a></li><li><a class="chip" href="#p-palmwave">Palmwave</a></li><li><a class="chip is-unverified" href="#p-cgbj">CGBJ<span class="vh">, unconfirmed</span></a></li></ul></li>
+          <li class="rung stage-5 is-reached"><span class="rung__n">5</span><span class="rung__name">Recognisable picture<span class="vh">: 7 projects</span></span><ul class="rung__who"><li><a class="chip" href="#p-five-star-recomp">five-star-recomp</a></li><li><a class="chip" href="#p-xcl">XCL</a></li><li><a class="chip" href="#p-openscarlett-community-edition">OpenScarlett (Community Edition)</a></li><li><a class="chip" href="#p-percyscarlett">PercyScarlett</a></li><li><a class="chip" href="#p-tuxbox">TuxBox</a></li><li><a class="chip" href="#p-gta6-boottest">GTA6-BootTest</a></li><li><a class="chip" href="#p-xbox2windows">Xbox2Windows</a></li></ul></li>
+          <li class="rung stage-4 is-reached"><span class="rung__n">4</span><span class="rung__name">First frames<span class="vh">: 2 projects</span></span><ul class="rung__who"><li><a class="chip" href="#p-openscarlett">OpenScarlett</a></li><li><a class="chip" href="#p-holy-interoperability">Holy-Interoperability</a></li></ul></li>
+          <li class="rung stage-3 is-reached"><span class="rung__n">3</span><span class="rung__name">Graphics device<span class="vh">: 2 projects</span></span><ul class="rung__who"><li><a class="chip is-out" href="#p-leonida">Leonida<span class="vh">, halted</span></a></li><li><a class="chip" href="#p-palmetto">palmetto</a></li></ul></li>
+          <li class="rung stage-2 is-reached"><span class="rung__n">2</span><span class="rung__name">Starts up<span class="vh">: 1 project</span></span><ul class="rung__who"><li><a class="chip" href="#p-g6shim">g6shim</a></li></ul></li>
+          <li class="rung stage-1 is-reached"><span class="rung__n">1</span><span class="rung__name">Loads<span class="vh">: none</span></span><ul class="rung__who"><li class="rung__empty">None at this stage</li></ul></li>
+        </ol>
+        <p class="ladder__key"><span class="chip is-unverified">Dashed</span> is unconfirmed, <span class="chip is-out">struck</span> has stopped. Stage definitions are under <a href="#method">Method</a>.</p>
+      </div>
     </div>
   </section>
 
@@ -77,271 +68,207 @@
         <h2 id="standings-title">Standings</h2>
         <p class="sec-head__note">Ranked by stage, then by how far each project&#x27;s own description goes. 16 projects.</p>
       </div>
-      <div class="tower" role="table" aria-label="Standings">
-        <div class="tower__head" role="row">
-          <span role="columnheader">Pos</span>
-          <span role="columnheader">Project</span>
-          <span role="columnheader">Stage</span>
-          <span role="columnheader">Gap</span>
-          <span role="columnheader">Latest</span>
-        </div>
-        <div class="tower__row" role="row">
-          <p class="tower__pos" role="cell" aria-label="Position 1">1</p>
-          <div class="tower__who" role="cell">
-            <h3><a class="name" href="https://github.com/LooperSalty/AnyXboxX" rel="noopener">AnyXboxX</a></h3>
-            <p class="tower__tag">Xbox Series emulator focused on this one game, built on VIctory</p>
-          </div>
-          <div class="tower__stage" role="cell" aria-label="Stage 6 of 7: In-game">
-            <span class="meter" aria-hidden="true"><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg"></span></span>
-            <p class="tower__stagename"><span class="tower__stagenum">6</span> In-game</p>
-          </div>
-          <p class="tower__gap" role="cell" aria-label="Leader">Leader</p>
-          <div class="tower__latest" role="cell">
-            <p>Reaches the world with a character you can move: the movement tutorial prompt appears, but the 3D picture behind it is still black. The world runs at about 2.4&nbsp;frames a second in Series X mode and 3.2 in Series S mode, and 130 to 170 shaders are still untranslated.</p>
-            <p class="tower__src">Source: project README, measured on an RTX 4070 SUPER. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T17:19:22Z">17:19 UTC, Tue 24 Nov</time>.</p>
-          </div>
-        </div>
-        <div class="tower__row" role="row">
-          <p class="tower__pos" role="cell" aria-label="Position 2">2</p>
-          <div class="tower__who" role="cell">
-            <h3><a class="name" href="https://github.com/marvisak/VIctory" rel="noopener">VIctory</a></h3>
-            <p class="tower__tag">Runs the game&#x27;s Xbox code natively on Windows</p>
-          </div>
-          <div class="tower__stage" role="cell" aria-label="Stage 6 of 7: In-game">
-            <span class="meter" aria-hidden="true"><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg"></span></span>
-            <p class="tower__stagename"><span class="tower__stagenum">6</span> In-game</p>
-          </div>
-          <p class="tower__gap" role="cell" aria-label="Same stage as the leader">Level</p>
-          <div class="tower__latest" role="cell">
-            <p>Boots, runs the menus at the game&#x27;s own 30&nbsp;fps and loads into the world in about 50&nbsp;seconds. The first mission&#x27;s title card renders, the scene after it stays dark, and each frame takes 0.5 to 1.8&nbsp;seconds. Entering the world can hang a real graphics card.</p>
-            <p class="tower__src">Source: project README, tested on one RX 6700 XT. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T09:53:38Z">09:53 UTC, Tue 24 Nov</time>.</p>
-          </div>
-        </div>
-        <div class="tower__row" role="row">
-          <p class="tower__pos" role="cell" aria-label="Position 3=">3=</p>
-          <div class="tower__who" role="cell">
-            <h3><a class="name" href="https://github.com/fablinoo/palmwave" rel="noopener">Palmwave</a></h3>
-            <p class="tower__tag">Xbox Series to Windows layer with its own shader path</p>
-          </div>
-          <div class="tower__stage" role="cell" aria-label="Stage 6 of 7: In-game">
-            <span class="meter" aria-hidden="true"><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg"></span></span>
-            <p class="tower__stagename"><span class="tower__stagenum">6</span> In-game</p>
-          </div>
-          <p class="tower__gap" role="cell" aria-label="Same stage as the leader">Level</p>
-          <div class="tower__latest" role="cell">
-            <p>The first mission starts and part of the world&#x27;s geometry is drawn, such as poles, power lines and fences, but about 91% of the depth buffer is empty and the picture is still one flat colour because nothing is lit yet.</p>
-            <p class="tower__src">Source: project README. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T16:22:40Z">16:22 UTC, Tue 24 Nov</time>.</p>
-          </div>
-        </div>
-        <div class="tower__row" role="row">
-          <p class="tower__pos" role="cell" aria-label="Position 3=">3=</p>
-          <div class="tower__who" role="cell">
-            <h3><span class="name">CGBJ</span> <span class="tag tag--unverified">Unconfirmed</span></h3>
-            <p class="tower__tag">Private build, reportedly based on VIctory. No public code</p>
-          </div>
-          <div class="tower__stage" role="cell" aria-label="Stage 6 of 7: In-game">
-            <span class="meter" aria-hidden="true"><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg"></span></span>
-            <p class="tower__stagename"><span class="tower__stagenum">6</span> In-game</p>
-          </div>
-          <p class="tower__gap" role="cell" aria-label="Same stage as the leader">Level</p>
-          <div class="tower__latest" role="cell">
-            <p>Press coverage has described a private build in the game world with a player walking, unlit and very slow. Nobody outside the group can test it, and this page could not find a first-hand source.</p>
-            <p class="tower__src">Source: press reports only; not confirmed by this page. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. No public code.</p>
-          </div>
-        </div>
-        <div class="tower__row" role="row">
-          <p class="tower__pos" role="cell" aria-label="Position 5">5</p>
-          <div class="tower__who" role="cell">
-            <h3><a class="name" href="https://github.com/ThatRecompDev/five-star-recomp" rel="noopener">five-star-recomp</a></h3>
-            <p class="tower__tag">Native recompilation of the Xbox Series release</p>
-          </div>
-          <div class="tower__stage" role="cell" aria-label="Stage 5 of 7: Recognisable picture">
-            <span class="meter" aria-hidden="true"><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg"></span><span class="meter__seg"></span></span>
-            <p class="tower__stagename"><span class="tower__stagenum">5</span> Recognisable picture</p>
-          </div>
-          <p class="tower__gap" role="cell" aria-label="1 stage behind the leader">+1 stage</p>
-          <div class="tower__latest" role="cell">
-            <p>Starts, shows the logo, intro art and first-run screens, loads story mode and reaches the story intro&#x27;s title card, then stops. All 25,908&nbsp;of the game&#x27;s shader programs translate and compile.</p>
-            <p class="tower__src">Source: project README and wiki status page. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T18:19:38Z">18:19 UTC, Tue 24 Nov</time>.</p>
-          </div>
-        </div>
-        <div class="tower__row" role="row">
-          <p class="tower__pos" role="cell" aria-label="Position 6=">6=</p>
-          <div class="tower__who" role="cell">
-            <h3><a class="name" href="https://github.com/xcl-dev/xcl" rel="noopener">XCL</a></h3>
-            <p class="tower__tag">General Xbox Series to Windows compatibility layer, in the spirit of Proton</p>
-          </div>
-          <div class="tower__stage" role="cell" aria-label="Stage 5 of 7: Recognisable picture">
-            <span class="meter" aria-hidden="true"><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg"></span><span class="meter__seg"></span></span>
-            <p class="tower__stagename"><span class="tower__stagenum">5</span> Recognisable picture</p>
-          </div>
-          <p class="tower__gap" role="cell" aria-label="1 stage behind the leader">+1 stage</p>
-          <div class="tower__latest" role="cell">
-            <p>Starts the game in about four seconds and holds a steady 30&nbsp;fps through its menus and on to the settings screens without crashing. Gameplay is not reached yet. All 26,698&nbsp;of the game&#x27;s GPU programs translate.</p>
-            <p class="tower__src">Source: project README (it calls the game &quot;a newer retail game&quot;). Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T17:06:34Z">17:06 UTC, Tue 24 Nov</time>.</p>
-          </div>
-        </div>
-        <div class="tower__row" role="row">
-          <p class="tower__pos" role="cell" aria-label="Position 6=">6=</p>
-          <div class="tower__who" role="cell">
-            <h3><a class="name" href="https://github.com/OpenCommunityEdition/OpenScarlett" rel="noopener">OpenScarlett (Community Edition)</a></h3>
-            <p class="tower__tag">Xbox Series runtime for Windows and Linux</p>
-          </div>
-          <div class="tower__stage" role="cell" aria-label="Stage 5 of 7: Recognisable picture">
-            <span class="meter" aria-hidden="true"><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg"></span><span class="meter__seg"></span></span>
-            <p class="tower__stagename"><span class="tower__stagenum">5</span> Recognisable picture</p>
-          </div>
-          <p class="tower__gap" role="cell" aria-label="1 stage behind the leader">+1 stage</p>
-          <div class="tower__latest" role="cell">
-            <p>Runs the first-boot settings, legal and start screens at 30&nbsp;fps and plays the 4K intro movie with sound, then stops while it streams in the scene behind the menus. About nine in ten of the game&#x27;s shaders translate.</p>
-            <p class="tower__src">Source: project README (it calls the game &quot;a newer retail game&quot;). Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T17:44:52Z">17:44 UTC, Tue 24 Nov</time>.</p>
-          </div>
-        </div>
-        <div class="tower__row" role="row">
-          <p class="tower__pos" role="cell" aria-label="Position 6=">6=</p>
-          <div class="tower__who" role="cell">
-            <h3><a class="name" href="https://github.com/rpatty-dev/PercyScarlett" rel="noopener">PercyScarlett</a></h3>
-            <p class="tower__tag">Xbox Series runtime; already runs Minecraft&#x27;s Series build in-world</p>
-          </div>
-          <div class="tower__stage" role="cell" aria-label="Stage 5 of 7: Recognisable picture">
-            <span class="meter" aria-hidden="true"><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg"></span><span class="meter__seg"></span></span>
-            <p class="tower__stagename"><span class="tower__stagenum">5</span> Recognisable picture</p>
-          </div>
-          <p class="tower__gap" role="cell" aria-label="1 stage behind the leader">+1 stage</p>
-          <div class="tower__latest" role="cell">
-            <p>Renders the account picker, plays the game&#x27;s 4K video and walks through the full first-run setup with a gamepad, saving settings and starting to stream the world.</p>
-            <p class="tower__src">Source: project README, which refers to the game by a nickname. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T09:38:33Z">09:38 UTC, Tue 24 Nov</time>.</p>
-          </div>
-        </div>
-        <div class="tower__row" role="row">
-          <p class="tower__pos" role="cell" aria-label="Position 6=">6=</p>
-          <div class="tower__who" role="cell">
-            <h3><a class="name" href="https://github.com/brcly/TuxBox" rel="noopener">TuxBox</a></h3>
-            <p class="tower__tag">Runs Xbox Series games on Linux through Proton</p>
-          </div>
-          <div class="tower__stage" role="cell" aria-label="Stage 5 of 7: Recognisable picture">
-            <span class="meter" aria-hidden="true"><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg"></span><span class="meter__seg"></span></span>
-            <p class="tower__stagename"><span class="tower__stagenum">5</span> Recognisable picture</p>
-          </div>
-          <p class="tower__gap" role="cell" aria-label="1 stage behind the leader">+1 stage</p>
-          <div class="tower__latest" role="cell">
-            <p>Shows the game&#x27;s player-selection prompt at 3840 by 2160 on stock Proton Experimental. It is the furthest Linux-first project.</p>
-            <p class="tower__src">Source: project README. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T17:30:44Z">17:30 UTC, Tue 24 Nov</time>.</p>
-          </div>
-        </div>
-        <div class="tower__row" role="row">
-          <p class="tower__pos" role="cell" aria-label="Position 6=">6=</p>
-          <div class="tower__who" role="cell">
-            <h3><a class="name" href="https://github.com/OnlyMoisties/GTA6-BootTest" rel="noopener">GTA6-BootTest</a></h3>
-            <p class="tower__tag">Boot harness with stand-in libraries and its own shader translator</p>
-          </div>
-          <div class="tower__stage" role="cell" aria-label="Stage 5 of 7: Recognisable picture">
-            <span class="meter" aria-hidden="true"><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg"></span><span class="meter__seg"></span></span>
-            <p class="tower__stagename"><span class="tower__stagenum">5</span> Recognisable picture</p>
-          </div>
-          <p class="tower__gap" role="cell" aria-label="1 stage behind the leader">+1 stage</p>
-          <div class="tower__latest" role="cell">
-            <p>Boots, streams its archives, runs the frame loop and draws its first interface screen, the start-screen prompt bar, through translated shaders. Screens after that go black again.</p>
-            <p class="tower__src">Source: project README. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T01:09:50Z">01:09 UTC, Tue 24 Nov</time>.</p>
-          </div>
-        </div>
-        <div class="tower__row" role="row">
-          <p class="tower__pos" role="cell" aria-label="Position 6=">6=</p>
-          <div class="tower__who" role="cell">
-            <h3><a class="name" href="https://github.com/R0Y00/Xbox2Windows" rel="noopener">Xbox2Windows</a></h3>
-            <p class="tower__tag">Static recompiler and runtime for Xbox Series executables</p>
-          </div>
-          <div class="tower__stage" role="cell" aria-label="Stage 5 of 7: Recognisable picture">
-            <span class="meter" aria-hidden="true"><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg"></span><span class="meter__seg"></span></span>
-            <p class="tower__stagename"><span class="tower__stagenum">5</span> Recognisable picture</p>
-          </div>
-          <p class="tower__gap" role="cell" aria-label="1 stage behind the leader">+1 stage</p>
-          <div class="tower__latest" role="cell">
-            <p>A modified diagnostic build, which skips failed checks automatically, played the intro, showed readable setup text and reached loading on an RTX 4060 laptop. Starting the original executable is not yet shown.</p>
-            <p class="tower__src">Source: project README and its progress issue. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T18:27:19Z">18:27 UTC, Tue 24 Nov</time>.</p>
-          </div>
-        </div>
-        <div class="tower__row" role="row">
-          <p class="tower__pos" role="cell" aria-label="Position 12=">12=</p>
-          <div class="tower__who" role="cell">
-            <h3><a class="name" href="https://github.com/californiaAlmonds/OpenScarlett" rel="noopener">OpenScarlett</a></h3>
-            <p class="tower__tag">Xbox Series runtime; plays Minecraft&#x27;s Series build at 60&nbsp;fps</p>
-          </div>
-          <div class="tower__stage" role="cell" aria-label="Stage 4 of 7: First frames">
-            <span class="meter" aria-hidden="true"><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg"></span><span class="meter__seg"></span><span class="meter__seg"></span></span>
-            <p class="tower__stagename"><span class="tower__stagenum">4</span> First frames</p>
-          </div>
-          <p class="tower__gap" role="cell" aria-label="2 stages behind the leader">+2 stages</p>
-          <div class="tower__latest" role="cell">
-            <p>Reports more than 360 crash-free 4K frames from a recent retail title it does not name, with live shader translation. Its README does not mention this game by name.</p>
-            <p class="tower__src">Source: project README. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T06:28:01Z">06:28 UTC, Tue 24 Nov</time>.</p>
-          </div>
-        </div>
-        <div class="tower__row" role="row">
-          <p class="tower__pos" role="cell" aria-label="Position 12=">12=</p>
-          <div class="tower__who" role="cell">
-            <h3><a class="name" href="https://github.com/mewiof/Holy-Interoperability" rel="noopener">Holy-Interoperability</a></h3>
-            <p class="tower__tag">Compatibility layer for Xbox Series games</p>
-          </div>
-          <div class="tower__stage" role="cell" aria-label="Stage 4 of 7: First frames">
-            <span class="meter" aria-hidden="true"><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg"></span><span class="meter__seg"></span><span class="meter__seg"></span></span>
-            <p class="tower__stagename"><span class="tower__stagenum">4</span> First frames</p>
-          </div>
-          <p class="tower__gap" role="cell" aria-label="2 stages behind the leader">+2 stages</p>
-          <div class="tower__latest" role="cell">
-            <p>Says a retail title it does not name loads, streams its start-up data and presents its first frames. The same README calls the project early bring-up, with nothing drawn yet.</p>
-            <p class="tower__src">Source: project README. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T03:20:41Z">03:20 UTC, Tue 24 Nov</time>.</p>
-          </div>
-        </div>
-        <div class="tower__row is-out" role="row">
-          <p class="tower__pos" role="cell" aria-label="Position 14=">14=</p>
-          <div class="tower__who" role="cell">
-            <h3><span class="name">Leonida</span> <span class="tag tag--halted">Halted</span></h3>
-            <p class="tower__tag">The first large recompilation effort. Halted</p>
-          </div>
-          <div class="tower__stage" role="cell" aria-label="Stage 3 of 7: Graphics device">
-            <span class="meter" aria-hidden="true"><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg"></span><span class="meter__seg"></span><span class="meter__seg"></span><span class="meter__seg"></span></span>
-            <p class="tower__stagename"><span class="tower__stagenum">3</span> Graphics device</p>
-          </div>
-          <p class="tower__gap" role="cell" aria-label="3 stages behind the leader">+3 stages</p>
-          <div class="tower__latest" role="cell">
-            <p>Stopped. Press reports say its lead stepped away and its Discord server was taken down. Its GitHub repository no longer exists. A separate continuation is listed under also watched.</p>
-            <p class="tower__src">Source: press reports; GitHub check by this page. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. No public code.</p>
-          </div>
-        </div>
-        <div class="tower__row" role="row">
-          <p class="tower__pos" role="cell" aria-label="Position 14=">14=</p>
-          <div class="tower__who" role="cell">
-            <h3><a class="name" href="https://github.com/luizwidmer/palmetto" rel="noopener">palmetto</a></h3>
-            <p class="tower__tag">Solo clean-room runtime, started from Leonida&#x27;s work</p>
-          </div>
-          <div class="tower__stage" role="cell" aria-label="Stage 3 of 7: Graphics device">
-            <span class="meter" aria-hidden="true"><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg"></span><span class="meter__seg"></span><span class="meter__seg"></span><span class="meter__seg"></span></span>
-            <p class="tower__stagename"><span class="tower__stagenum">3</span> Graphics device</p>
-          </div>
-          <p class="tower__gap" role="cell" aria-label="3 stages behind the leader">+3 stages</p>
-          <div class="tower__latest" role="cell">
-            <p>Builds all 10,241&nbsp;of the game&#x27;s graphics pipelines and records about 42,700 draws in a 150-second run, but no draw executes yet: letting them run hangs the graphics card, and the game hands its display surface nothing to present. Nothing is drawn.</p>
-            <p class="tower__src">Source: project README, measured on an RTX 4090. Entry changed <time datetime="2026-11-24T18:27:00Z">18:27 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T18:27:16Z">18:27 UTC, Tue 24 Nov</time>.</p>
-          </div>
-        </div>
-        <div class="tower__row" role="row">
-          <p class="tower__pos" role="cell" aria-label="Position 16">16</p>
-          <div class="tower__who" role="cell">
-            <h3><a class="name" href="https://github.com/gookie-dev/g6shim" rel="noopener">g6shim</a></h3>
-            <p class="tower__tag">Stand-in system libraries for the Series release</p>
-          </div>
-          <div class="tower__stage" role="cell" aria-label="Stage 2 of 7: Starts up">
-            <span class="meter" aria-hidden="true"><span class="meter__seg is-on"></span><span class="meter__seg is-on"></span><span class="meter__seg"></span><span class="meter__seg"></span><span class="meter__seg"></span><span class="meter__seg"></span><span class="meter__seg"></span></span>
-            <p class="tower__stagename"><span class="tower__stagenum">2</span> Starts up</p>
-          </div>
-          <p class="tower__gap" role="cell" aria-label="4 stages behind the leader">+4 stages</p>
-          <div class="tower__latest" role="cell">
-            <p>Starts the game and opens all its archives, then stops where the graphics device is created. Its next goal is a first frame.</p>
-            <p class="tower__src">Source: project README. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T18:21:52Z">18:21 UTC, Tue 24 Nov</time>.</p>
-          </div>
-        </div>
-      </div>
+      <section class="group stage-6" aria-labelledby="g6">
+        <h3 id="g6" class="group__head"><span class="group__n">6</span> <span class="group__name">In-game</span> <span class="group__count">Four projects, at the front</span></h3>
+        <ol class="group__list">
+          <li class="entry" id="p-anyxboxx">
+            <p class="entry__pos"><span class="vh">Position </span>1</p>
+            <div class="entry__who">
+              <h4><a class="name" href="https://github.com/LooperSalty/AnyXboxX" rel="noopener">AnyXboxX</a></h4>
+              <p class="entry__tagline">Xbox Series emulator focused on this one game, built on VIctory</p>
+            </div>
+            <div class="entry__status">
+              <p>Reaches the world with a character you can move: the movement tutorial prompt appears, but the 3D picture behind it is still black. The world runs at about 2.4&nbsp;frames a second in Series X mode and 3.2 in Series S mode, and 130 to 170 shaders are still untranslated.</p>
+              <p class="entry__src">Source: project README, measured on an RTX 4070 SUPER. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T17:19:22Z">17:19 UTC, Tue 24 Nov</time>.</p>
+            </div>
+          </li>
+          <li class="entry" id="p-victory">
+            <p class="entry__pos"><span class="vh">Position </span>2</p>
+            <div class="entry__who">
+              <h4><a class="name" href="https://github.com/marvisak/VIctory" rel="noopener">VIctory</a></h4>
+              <p class="entry__tagline">Runs the game&#x27;s Xbox code natively on Windows</p>
+            </div>
+            <div class="entry__status">
+              <p>Boots, runs the menus at the game&#x27;s own 30&nbsp;fps and loads into the world in about 50&nbsp;seconds. The first mission&#x27;s title card renders, the scene after it stays dark, and each frame takes 0.5 to 1.8&nbsp;seconds. Entering the world can hang a real graphics card.</p>
+              <p class="entry__src">Source: project README, tested on one RX 6700 XT. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T09:53:38Z">09:53 UTC, Tue 24 Nov</time>.</p>
+            </div>
+          </li>
+          <li class="entry" id="p-palmwave">
+            <p class="entry__pos"><span class="vh">Position </span>3=</p>
+            <div class="entry__who">
+              <h4><a class="name" href="https://github.com/fablinoo/palmwave" rel="noopener">Palmwave</a></h4>
+              <p class="entry__tagline">Xbox Series to Windows layer with its own shader path</p>
+            </div>
+            <div class="entry__status">
+              <p>The first mission starts and part of the world&#x27;s geometry is drawn, such as poles, power lines and fences, but about 91% of the depth buffer is empty and the picture is still one flat colour because nothing is lit yet.</p>
+              <p class="entry__src">Source: project README. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T16:22:40Z">16:22 UTC, Tue 24 Nov</time>.</p>
+            </div>
+          </li>
+          <li class="entry" id="p-cgbj">
+            <p class="entry__pos"><span class="vh">Position </span>3=</p>
+            <div class="entry__who">
+              <h4><span class="name">CGBJ</span> <span class="tag tag--unverified">Unconfirmed</span></h4>
+              <p class="entry__tagline">Private build, reportedly based on VIctory. No public code</p>
+            </div>
+            <div class="entry__status">
+              <p>Press coverage has described a private build in the game world with a player walking, unlit and very slow. Nobody outside the group can test it, and this page could not find a first-hand source.</p>
+              <p class="entry__src">Source: press reports only; not confirmed by this page. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. No public code.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+      <section class="group stage-5" aria-labelledby="g5">
+        <h3 id="g5" class="group__head"><span class="group__n">5</span> <span class="group__name">Recognisable picture</span> <span class="group__count">Seven projects, 1 stage behind the front</span></h3>
+        <ol class="group__list">
+          <li class="entry" id="p-five-star-recomp">
+            <p class="entry__pos"><span class="vh">Position </span>5</p>
+            <div class="entry__who">
+              <h4><a class="name" href="https://github.com/ThatRecompDev/five-star-recomp" rel="noopener">five-star-recomp</a></h4>
+              <p class="entry__tagline">Native recompilation of the Xbox Series release</p>
+            </div>
+            <div class="entry__status">
+              <p>Starts, shows the logo, intro art and first-run screens, loads story mode and reaches the story intro&#x27;s title card, then stops. All 25,908&nbsp;of the game&#x27;s shader programs translate and compile.</p>
+              <p class="entry__src">Source: project README and wiki status page. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T18:19:38Z">18:19 UTC, Tue 24 Nov</time>.</p>
+            </div>
+          </li>
+          <li class="entry" id="p-xcl">
+            <p class="entry__pos"><span class="vh">Position </span>6=</p>
+            <div class="entry__who">
+              <h4><a class="name" href="https://github.com/xcl-dev/xcl" rel="noopener">XCL</a></h4>
+              <p class="entry__tagline">General Xbox Series to Windows compatibility layer, in the spirit of Proton</p>
+            </div>
+            <div class="entry__status">
+              <p>Starts the game in about four seconds and holds a steady 30&nbsp;fps through its menus and on to the settings screens without crashing. Gameplay is not reached yet. All 26,698&nbsp;of the game&#x27;s GPU programs translate.</p>
+              <p class="entry__src">Source: project README (it calls the game &quot;a newer retail game&quot;). Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T17:06:34Z">17:06 UTC, Tue 24 Nov</time>.</p>
+            </div>
+          </li>
+          <li class="entry" id="p-openscarlett-community-edition">
+            <p class="entry__pos"><span class="vh">Position </span>6=</p>
+            <div class="entry__who">
+              <h4><a class="name" href="https://github.com/OpenCommunityEdition/OpenScarlett" rel="noopener">OpenScarlett (Community Edition)</a></h4>
+              <p class="entry__tagline">Xbox Series runtime for Windows and Linux</p>
+            </div>
+            <div class="entry__status">
+              <p>Runs the first-boot settings, legal and start screens at 30&nbsp;fps and plays the 4K intro movie with sound, then stops while it streams in the scene behind the menus. About nine in ten of the game&#x27;s shaders translate.</p>
+              <p class="entry__src">Source: project README (it calls the game &quot;a newer retail game&quot;). Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T17:44:52Z">17:44 UTC, Tue 24 Nov</time>.</p>
+            </div>
+          </li>
+          <li class="entry" id="p-percyscarlett">
+            <p class="entry__pos"><span class="vh">Position </span>6=</p>
+            <div class="entry__who">
+              <h4><a class="name" href="https://github.com/rpatty-dev/PercyScarlett" rel="noopener">PercyScarlett</a></h4>
+              <p class="entry__tagline">Xbox Series runtime; already runs Minecraft&#x27;s Series build in-world</p>
+            </div>
+            <div class="entry__status">
+              <p>Renders the account picker, plays the game&#x27;s 4K video and walks through the full first-run setup with a gamepad, saving settings and starting to stream the world.</p>
+              <p class="entry__src">Source: project README, which refers to the game by a nickname. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T09:38:33Z">09:38 UTC, Tue 24 Nov</time>.</p>
+            </div>
+          </li>
+          <li class="entry" id="p-tuxbox">
+            <p class="entry__pos"><span class="vh">Position </span>6=</p>
+            <div class="entry__who">
+              <h4><a class="name" href="https://github.com/brcly/TuxBox" rel="noopener">TuxBox</a></h4>
+              <p class="entry__tagline">Runs Xbox Series games on Linux through Proton</p>
+            </div>
+            <div class="entry__status">
+              <p>Shows the game&#x27;s player-selection prompt at 3840 by 2160 on stock Proton Experimental. It is the furthest Linux-first project.</p>
+              <p class="entry__src">Source: project README. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T17:30:44Z">17:30 UTC, Tue 24 Nov</time>.</p>
+            </div>
+          </li>
+          <li class="entry" id="p-gta6-boottest">
+            <p class="entry__pos"><span class="vh">Position </span>6=</p>
+            <div class="entry__who">
+              <h4><a class="name" href="https://github.com/OnlyMoisties/GTA6-BootTest" rel="noopener">GTA6-BootTest</a></h4>
+              <p class="entry__tagline">Boot harness with stand-in libraries and its own shader translator</p>
+            </div>
+            <div class="entry__status">
+              <p>Boots, streams its archives, runs the frame loop and draws its first interface screen, the start-screen prompt bar, through translated shaders. Screens after that go black again.</p>
+              <p class="entry__src">Source: project README. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T01:09:50Z">01:09 UTC, Tue 24 Nov</time>.</p>
+            </div>
+          </li>
+          <li class="entry" id="p-xbox2windows">
+            <p class="entry__pos"><span class="vh">Position </span>6=</p>
+            <div class="entry__who">
+              <h4><a class="name" href="https://github.com/R0Y00/Xbox2Windows" rel="noopener">Xbox2Windows</a></h4>
+              <p class="entry__tagline">Static recompiler and runtime for Xbox Series executables</p>
+            </div>
+            <div class="entry__status">
+              <p>A modified diagnostic build, which skips failed checks automatically, played the intro, showed readable setup text and reached loading on an RTX 4060 laptop. Starting the original executable is not yet shown.</p>
+              <p class="entry__src">Source: project README and its progress issue. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T18:27:19Z">18:27 UTC, Tue 24 Nov</time>.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+      <section class="group stage-4" aria-labelledby="g4">
+        <h3 id="g4" class="group__head"><span class="group__n">4</span> <span class="group__name">First frames</span> <span class="group__count">Two projects, 2 stages behind the front</span></h3>
+        <ol class="group__list">
+          <li class="entry" id="p-openscarlett">
+            <p class="entry__pos"><span class="vh">Position </span>12=</p>
+            <div class="entry__who">
+              <h4><a class="name" href="https://github.com/californiaAlmonds/OpenScarlett" rel="noopener">OpenScarlett</a></h4>
+              <p class="entry__tagline">Xbox Series runtime; plays Minecraft&#x27;s Series build at 60&nbsp;fps</p>
+            </div>
+            <div class="entry__status">
+              <p>Reports more than 360 crash-free 4K frames from a recent retail title it does not name, with live shader translation. Its README does not mention this game by name.</p>
+              <p class="entry__src">Source: project README. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T06:28:01Z">06:28 UTC, Tue 24 Nov</time>.</p>
+            </div>
+          </li>
+          <li class="entry" id="p-holy-interoperability">
+            <p class="entry__pos"><span class="vh">Position </span>12=</p>
+            <div class="entry__who">
+              <h4><a class="name" href="https://github.com/mewiof/Holy-Interoperability" rel="noopener">Holy-Interoperability</a></h4>
+              <p class="entry__tagline">Compatibility layer for Xbox Series games</p>
+            </div>
+            <div class="entry__status">
+              <p>Says a retail title it does not name loads, streams its start-up data and presents its first frames. The same README calls the project early bring-up, with nothing drawn yet.</p>
+              <p class="entry__src">Source: project README. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T03:20:41Z">03:20 UTC, Tue 24 Nov</time>.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+      <section class="group stage-3" aria-labelledby="g3">
+        <h3 id="g3" class="group__head"><span class="group__n">3</span> <span class="group__name">Graphics device</span> <span class="group__count">Two projects, 3 stages behind the front</span></h3>
+        <ol class="group__list">
+          <li class="entry is-out" id="p-leonida">
+            <p class="entry__pos"><span class="vh">Position </span>14=</p>
+            <div class="entry__who">
+              <h4><span class="name">Leonida</span> <span class="tag tag--halted">Halted</span></h4>
+              <p class="entry__tagline">The first large recompilation effort. Halted</p>
+            </div>
+            <div class="entry__status">
+              <p>Stopped. Press reports say its lead stepped away and its Discord server was taken down. Its GitHub repository no longer exists. A separate continuation is listed under also watched.</p>
+              <p class="entry__src">Source: press reports; GitHub check by this page. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. No public code.</p>
+            </div>
+          </li>
+          <li class="entry" id="p-palmetto">
+            <p class="entry__pos"><span class="vh">Position </span>14=</p>
+            <div class="entry__who">
+              <h4><a class="name" href="https://github.com/luizwidmer/palmetto" rel="noopener">palmetto</a></h4>
+              <p class="entry__tagline">Solo clean-room runtime, started from Leonida&#x27;s work</p>
+            </div>
+            <div class="entry__status">
+              <p>Builds all 10,241&nbsp;of the game&#x27;s graphics pipelines and records about 42,700 draws in a 150-second run, but no draw executes yet: letting them run hangs the graphics card, and the game hands its display surface nothing to present. Nothing is drawn.</p>
+              <p class="entry__src">Source: project README, measured on an RTX 4090. Entry changed <time datetime="2026-11-24T18:27:00Z">18:27 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T18:27:16Z">18:27 UTC, Tue 24 Nov</time>.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+      <section class="group stage-2" aria-labelledby="g2">
+        <h3 id="g2" class="group__head"><span class="group__n">2</span> <span class="group__name">Starts up</span> <span class="group__count">One project, 4 stages behind the front</span></h3>
+        <ol class="group__list">
+          <li class="entry" id="p-g6shim">
+            <p class="entry__pos"><span class="vh">Position </span>16</p>
+            <div class="entry__who">
+              <h4><a class="name" href="https://github.com/gookie-dev/g6shim" rel="noopener">g6shim</a></h4>
+              <p class="entry__tagline">Stand-in system libraries for the Series release</p>
+            </div>
+            <div class="entry__status">
+              <p>Starts the game and opens all its archives, then stops where the graphics device is created. Its next goal is a first frame.</p>
+              <p class="entry__src">Source: project README. Entry changed <time datetime="2026-11-24T18:20:00Z">18:20 UTC, Tue 24 Nov</time>. Last commit <time datetime="2026-11-24T18:21:52Z">18:21 UTC, Tue 24 Nov</time>.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
 
       <div class="watch">
         <h3>Also watched</h3>
@@ -375,18 +302,18 @@
       <div class="forecast__side">
         <h3>Chances</h3>
         <dl class="odds">
-          <div><dt>By Sun 29 Nov</dt><dd>3 in 10</dd></div>
-          <div><dt>By Fri 4 Dec</dt><dd>6 in 10</dd></div>
-          <div><dt>By 31 Dec</dt><dd>8 in 10</dd></div>
-          <div><dt>Stalls until an official PC release</dt><dd>under 2 in 10</dd></div>
+          <div><dt>By Sun 29 Nov</dt><dd><span class="odds__v">3 in 10</span><span class="pips" aria-hidden="true"><span class="pip is-on"></span><span class="pip is-on"></span><span class="pip is-on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></span></dd></div>
+          <div><dt>By Fri 4 Dec</dt><dd><span class="odds__v">6 in 10</span><span class="pips" aria-hidden="true"><span class="pip is-on"></span><span class="pip is-on"></span><span class="pip is-on"></span><span class="pip is-on"></span><span class="pip is-on"></span><span class="pip is-on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></span></dd></div>
+          <div><dt>By 31 Dec</dt><dd><span class="odds__v">8 in 10</span><span class="pips" aria-hidden="true"><span class="pip is-on"></span><span class="pip is-on"></span><span class="pip is-on"></span><span class="pip is-on"></span><span class="pip is-on"></span><span class="pip is-on"></span><span class="pip is-on"></span><span class="pip is-on"></span><span class="pip"></span><span class="pip"></span></span></dd></div>
+          <div><dt>Stalls until an official PC release</dt><dd><span class="odds__v">under 2 in 10</span><span class="pips" aria-hidden="true"><span class="pip is-on"></span><span class="pip is-part"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></span></dd></div>
         </dl>
         <h3>Milestones</h3>
-        <dl class="miles">
-          <div><dt>Recognisable picture</dt><dd>reached Mon 23 Nov</dd></div>
-          <div><dt>In-game</dt><dd>reached Tue 24 Nov</dd></div>
-          <div><dt>Lit world on screen</dt><dd>expected within 2 days</dd></div>
-          <div><dt>Playable</dt><dd>around Tue 1 Dec</dd></div>
-        </dl>
+        <ol class="miles">
+          <li class="is-done"><span class="miles__label">Recognisable picture</span> <span class="miles__when">reached Mon 23 Nov</span></li>
+          <li class="is-done"><span class="miles__label">In-game</span> <span class="miles__when">reached Tue 24 Nov</span></li>
+          <li class="is-next"><span class="miles__label">Lit world on screen</span> <span class="miles__when">expected within 2 days</span></li>
+          <li class="is-next"><span class="miles__label">Playable</span> <span class="miles__when">around Tue 1 Dec</span></li>
+        </ol>
         <p class="forecast__rev">This is a guess by the AI that writes this page, and it can be badly wrong. Revised <time datetime="2026-11-24T18:20:00Z">18:20 UTC on Tue 24 Nov</time>: First estimate, made when the tracker launched.</p>
       </div>
     </div>
@@ -426,13 +353,13 @@
       </dl>
       <h3 class="method__sub">The seven stages</h3>
       <ol class="stages">
-        <li><span class="stages__n">1</span><span class="stages__name">Loads</span><span class="stages__bar">The game&#x27;s executable loads with its imports resolved.</span></li>
-        <li><span class="stages__n">2</span><span class="stages__name">Starts up</span><span class="stages__bar">The game&#x27;s own start-up code runs: memory, threads, archives.</span></li>
-        <li><span class="stages__n">3</span><span class="stages__name">Graphics device</span><span class="stages__bar">The game creates its graphics device and queues on the PC.</span></li>
-        <li><span class="stages__n">4</span><span class="stages__name">First frames</span><span class="stages__bar">Frames are presented to a window, even if they are black.</span></li>
-        <li><span class="stages__n">5</span><span class="stages__name">Recognisable picture</span><span class="stages__bar">The game&#x27;s own screens can be seen: logos, menus, video or setup pages.</span></li>
-        <li><span class="stages__n">6</span><span class="stages__name">In-game</span><span class="stages__bar">The game world is loaded and running, with or without a usable picture.</span></li>
-        <li><span class="stages__n">7</span><span class="stages__name">Playable</span><span class="stages__bar">30&nbsp;minutes or more in the world under player control, at 20&nbsp;frames a second or better, without a crash.</span></li>
+        <li class="stage-1"><span class="stages__n">1</span><span class="stages__name">Loads</span><span class="stages__bar">The game&#x27;s executable loads with its imports resolved.</span></li>
+        <li class="stage-2"><span class="stages__n">2</span><span class="stages__name">Starts up</span><span class="stages__bar">The game&#x27;s own start-up code runs: memory, threads, archives.</span></li>
+        <li class="stage-3"><span class="stages__n">3</span><span class="stages__name">Graphics device</span><span class="stages__bar">The game creates its graphics device and queues on the PC.</span></li>
+        <li class="stage-4"><span class="stages__n">4</span><span class="stages__name">First frames</span><span class="stages__bar">Frames are presented to a window, even if they are black.</span></li>
+        <li class="stage-5"><span class="stages__n">5</span><span class="stages__name">Recognisable picture</span><span class="stages__bar">The game&#x27;s own screens can be seen: logos, menus, video or setup pages.</span></li>
+        <li class="stage-6"><span class="stages__n">6</span><span class="stages__name">In-game</span><span class="stages__bar">The game world is loaded and running, with or without a usable picture.</span></li>
+        <li class="stage-7"><span class="stages__n">7</span><span class="stages__name">Playable</span><span class="stages__bar">30&nbsp;minutes or more in the world under player control, at 20&nbsp;frames a second or better, without a crash.</span></li>
       </ol>
     </div>
   </section>
@@ -440,13 +367,13 @@
 
 <footer class="foot">
   <div class="wrap foot__grid">
-    <p class="foot__big" aria-hidden="true">VI/PC</p>
+    <p class="foot__mark" aria-hidden="true">VI/PC</p>
     <div>
       <p>GTA VI PC Tracker is an unofficial status page. It holds no game files and links to no downloads. It is not affiliated with Rockstar Games, Take-Two Interactive, Microsoft or any project listed.</p>
       <p class="quiet">Source and history on <a href="https://github.com/audixdev/americas-pc-tracker">GitHub</a>. Times are UTC.</p>
     </div>
   </div>
 </footer>
-<script src="assets/site.js?v=3b19e9aced" defer></script>
+<script src="assets/site.js?v=f056b9aa18" defer></script>
 </body>
 </html>
