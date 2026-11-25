@@ -6,7 +6,7 @@
     "repo": "audixdev/americas-pc-tracker",
     "description": "Live standings of the unofficial projects trying to run the Xbox build of GTA VI on a PC: how far each has got, what changed, and a best guess at when it becomes playable."
   },
-  "checked_at": "2026-11-25T18:44:00Z",
+  "checked_at": "2026-11-25T19:16:00Z",
   "headline_note": "None is playable yet. The closest, KLBF Lab, reports 77 minutes without a crash, but at about 5 to 9 frames a second; playable needs 20.",
   "stages": [
     {
@@ -74,9 +74,9 @@
       "furthest": "The first gameplay scene with the player in control, at about 14 fps",
       "stage": 6,
       "state": "active",
-      "status": "Its README (status dated 25 Nov) says the first gameplay scene renders with the player in control at about 14 fps facing the window and 9 to 12 fps turned toward the room, on one RTX 4070 with the Series S profile. The opening cutscene plays through but is dark, with dithered faces and white eyes. Shadowed areas are dark because ray-traced light does not run, some geometry and character assets are missing or wrong, and 15-minute runs end without a device loss. After merging the newest victory-fork code, it measures 9 to 10 fps with a cold shader cache. It is not playable: the 30-minute bar is not met.",
+      "status": "Its README (status dated 25 Nov) says the first gameplay scene renders with the player in control at about 14 fps facing the window and 9 to 12 fps turned toward the room, on one RTX 4070 with the Series S profile. These are the project's own figures from one machine, in the first indoor scene rather than free roam, and are unconfirmed. The opening cutscene plays through but is dark, with dithered faces and white eyes. Shadowed areas are dark because ray-traced light does not run, some geometry and character assets are missing or wrong, and 15-minute runs end without a device loss. After merging the newest victory-fork code, it measures 9 to 10 fps with a cold shader cache. It is not playable: the 30-minute bar is not met.",
       "source": "project README (status dated 25 Nov), FLAMINGO.md and commit 1f70cac; one RTX 4070, self-reported; new to this page",
-      "changed_at": "2026-11-25T15:37:00Z",
+      "changed_at": "2026-11-25T19:16:00Z",
       "tested_on": "Windows 11 · NVIDIA RTX 4070",
       "lanes": {
         "picture": {
@@ -85,7 +85,7 @@
         },
         "speed": {
           "fps": 11.5,
-          "note": "9 to 14 fps by view"
+          "note": "9 to 14 fps indoors, self-reported"
         },
         "stability": {
           "minutes": 15,
@@ -148,30 +148,6 @@
       }
     },
     {
-      "id": "victory-perf",
-      "name": "victory-perf",
-      "repo": "vitutu1/victory-perf",
-      "tagline": "Performance fork of victory-fork with lighting stand-ins from ScarlettPort; created 25 Nov",
-      "furthest": "The heist interior, at about 11 fps, with stand-in lighting",
-      "stage": 6,
-      "state": "active",
-      "status": "Its README says the prologue runs with character control, a HUD, a pause menu and gamepad and keyboard input. It reports 14 fps in the prison corridor, 11 in the heist interior and 9 in the cell, and 4.5 to 6.5 fps in heavy scenes, on an RTX 4070 SUPER at half render scale, with lighting stand-ins switched on. Real ray-traced lighting is not done. It calls itself stable in testing but gives no session length. All numbers are self-reported on one machine. The 20 fps bar is not met.",
-      "source": "project README (undated) and commits of 25 Nov; one RTX 4070 SUPER, self-reported",
-      "changed_at": "2026-11-25T18:31:00Z",
-      "tested_on": "Windows 11 · NVIDIA RTX 4070 SUPER",
-      "lanes": {
-        "picture": {
-          "step": 3,
-          "note": "shade lit by stand-ins, not ray tracing"
-        },
-        "speed": {
-          "fps": 9.3,
-          "note": "4.5 to 14 fps by scene"
-        },
-        "stability": null
-      }
-    },
-    {
       "id": "victory-belobug-amd",
       "name": "VIctory-Belobug-AMD",
       "repo": "Belobug/VIctory-Belobug-AMD",
@@ -191,6 +167,27 @@
         "speed": {
           "fps": 6,
           "note": "5 to 7 fps, less while driving"
+        },
+        "stability": null
+      }
+    },
+    {
+      "id": "rorodev6-victory",
+      "name": "victory (rorodev6)",
+      "repo": "rorodev6/victory",
+      "tagline": "VIctory-family build on shadowdog00's Series S work, tested on an AMD card",
+      "furthest": "The opening cutscene and the prologue, at 7 to 9 fps",
+      "stage": 6,
+      "state": "active",
+      "status": "Its README (25 Nov) says the game boots, runs its menus and intro video, and plays the opening cutscene and the prologue at 7 to 9 fps on one RX 6700 XT, running as a Series S. Bodies, faces and hair are drawn; some walls, posters and wire mesh change from launch to launch, and ray tracing is off. It says the single thread that submits work is the limit, not the graphics card. It does not describe the lighting or give a session length.",
+      "source": "project README (status dated 25 Nov) and commits to 30cb61e; one RX 6700 XT, self-reported; new to this page",
+      "tested_on": "Windows · AMD RX 6700 XT",
+      "changed_at": "2026-11-25T19:16:00Z",
+      "lanes": {
+        "picture": null,
+        "speed": {
+          "fps": 8,
+          "note": "7 to 9 fps in the cutscene and prologue"
         },
         "stability": null
       }
@@ -393,6 +390,24 @@
       "tied_with_previous": true
     },
     {
+      "id": "victory-perf",
+      "name": "victory-perf",
+      "repo": "vitutu1/victory-perf",
+      "tagline": "Performance fork of victory-fork with lighting stand-ins from ScarlettPort; created 25 Nov",
+      "furthest": "The heist interior, with stand-in lighting (last recorded 25 Nov)",
+      "stage": 6,
+      "state": "gone",
+      "status": "The repository now returns 404 and no source this page has read says why. Its README, as read here earlier on 25 Nov, reported 9 to 14 fps in prologue interiors and 4.5 to 6.5 in heavy scenes on one RTX 4070 SUPER, with lighting stand-ins. Those figures were the project's own, from one machine, and were never confirmed. They cannot be re-checked, so its lanes are left empty.",
+      "source": "repository returns 404 at 19:14 UTC on 25 Nov; last recorded from its README earlier that day, self-reported",
+      "changed_at": "2026-11-25T19:16:00Z",
+      "lanes": {
+        "picture": null,
+        "speed": null,
+        "stability": null
+      },
+      "tied_with_previous": true
+    },
+    {
       "id": "five-star-recomp",
       "name": "five-star-recomp",
       "repo": "ThatRecompDev/five-star-recomp",
@@ -582,25 +597,30 @@
     }
   ],
   "forecast": {
-    "target": "2026-11-29T12:00:00Z",
+    "target": "2026-12-01T15:00:00Z",
     "definition": "At least one project shows 30 minutes or more in the game world under player control, at 20 frames a second or better on some PC, without a crash.",
     "rests_on": [
-      "The executable surfaced on 23 November, and within about a day three code bases reported the game world running. A private build, CGBJ, is said to have done the same, but that comes from press reports only.",
+      "The executable surfaced on 23 November. Two days later twelve public projects report the game world running, and one, KLBF Lab, reports finishing the first mission and reaching free roam. A private build, CGBJ, is said to be in the world too, but that comes from press reports only.",
       "Other games show the pace. XCL's repository opened on the evening of 20 November, and by the evening of 22 November it listed two smaller retail games, Minecraft Preview and Unicorn Overlord, as fully playable. No project has done this with a game the size of GTA VI.",
       "The picture is arriving. KLBF Lab, Belobug's AMD fork and victory-perf light shaded places with stand-ins or fixes of their own; others still show anything out of the sun as black, because no build runs the game's ray-traced lighting properly yet.",
-      "Speed is the long pole. VIctory took 0.5 to 1.8 seconds per world frame on 23 November. Two days later the fastest reports are 9 to 14 frames a second in Flamingo and 5 to 9 in KLBF Lab while playing, each on one machine. Playable needs 20, so about a doubling is still needed.",
+      "Speed is the long pole. VIctory took 0.5 to 1.8 seconds per world frame on 23 November. Two days later the best free-roam figure on this page is about 5 to 8 fps, in KLBF Lab; Flamingo's 9 to 14 is indoors in the first scene, self-reported on one machine. PortWatch's owner has said it has seen no evidence of any build above 10 fps in free roam. Playable needs 20, so the gap is still two- to threefold.",
+      "Where the time goes is now measured, and it is not mostly the graphics card. rorodev6's build spends 22 to 40 ms of a 113 to 141 ms frame on GPU work and the rest copying the game's memory to and from the card, on one thread. victory-fork finds its submit thread and the card both close to full, and cutting one alone moved the frame by 0 to 7%. Getting to 20 fps means removing most of that copying, which is deeper work than the gains of the first two days.",
       "The playable bar does not require correct lighting, only 20 frames a second for 30 minutes. A build could skip the ray-traced passes to get there. Stability has moved: KLBF Lab reports a 77-minute session on a test build that the testers ended themselves, so speed is now the main gap.",
       "Work is shared across projects. victory-fork, AnyXboxX and ScarlettPort build on VIctory, and fixes move between XCL and the VIctory family within days.",
-      "Takedowns are now on the record. On 24 November GitHub published a Take-Two notice against Leonida and applied it to its whole network of 3,007 repositories. The notice argues that requiring the game files, given when the project appeared and what it targets, points to the leaked copy. That argument would fit most projects listed here, though none has been named so far. A notice cannot stop private builds, but it could break up the open work the public projects depend on."
+      "Takedowns are now on the record. On 24 November GitHub published a Take-Two notice against Leonida and applied it to its whole network of 3,007 repositories. The notice argues that requiring the game files, given when the project appeared and what it targets, points to the leaked copy. That argument would fit most projects listed here, though none has been named so far. A notice cannot stop private builds, but it could break up the open work the public projects depend on. On 25 November two more ranked repositories, ztrx and victory-perf, disappeared; no source says why."
     ],
     "chances": [
       {
         "label": "By Sun 29 Nov",
+        "value": "3 in 10"
+      },
+      {
+        "label": "By Tue 1 Dec",
         "value": "5 in 10"
       },
       {
         "label": "By Fri 4 Dec",
-        "value": "7 in 10"
+        "value": "6 in 10"
       },
       {
         "label": "By 31 Dec",
@@ -625,14 +645,32 @@
         "value": "partly reached Tue 24 Nov"
       },
       {
+        "label": "30 minutes without a crash",
+        "value": "reached Wed 25 Nov, self-reported"
+      },
+      {
+        "label": "10 fps in free roam",
+        "value": "around Fri 27 Nov"
+      },
+      {
         "label": "Playable",
-        "value": "around Sun 29 Nov"
+        "value": "around Tue 1 Dec"
       }
     ],
-    "revised_at": "2026-11-24T19:50:00Z",
-    "revision_note": "Moved forward from Tue 1 Dec to Sun 29 Nov. The pace has been faster than this forecast assumed: frame rate roughly tripled in a day, and XCL took two smaller retail games from a new repository to playable in about two days. Reaching playable does not require ray-traced lighting, so the remaining gap is mainly speed and stability. The Take-Two notice against Leonida's 3,007-repository network is a new risk to the public projects, which is why the chance by Fri 4 Dec rises only to 7 in 10."
+    "revised_at": "2026-11-25T19:16:00Z",
+    "revision_note": "Moved back from Sun 29 Nov to Tue 1 Dec. Stability is no longer the main gap: KLBF Lab reports 77 minutes without a crash on a test build. Speed is. The best free-roam figure on this page is about 5 to 8 fps, PortWatch's owner reports seeing no build above 10 fps in free roam, and the projects' own measurements show most of each frame going to memory copies that need deeper changes to remove. Two repositories disappeared on 25 Nov without a stated reason, which adds to the takedown risk. The chance by Sun 29 Nov falls from 5 in 10 to 3 in 10."
   },
   "updates": [
+    {
+      "at": "2026-11-25T19:16:00Z",
+      "title": "Forecast moves to Tue 1 Dec; victory-perf's repository is gone",
+      "points": [
+        "victory-perf's repository now returns 404, so it is marked gone with empty lanes. Its figures of up to 14 fps were its own, from one machine, and were never confirmed.",
+        "PortWatch, another tracker, pinned a note at about 18:57 UTC saying it has found no evidence of any build above 10 fps in free roam. No project on this page reports more than that in free roam; Flamingo's 9 to 14 fps is indoors in the first scene, self-reported, and stays marked unconfirmed.",
+        "victory (rorodev6) joins at stage 6: its README reports the opening cutscene and the prologue at 7 to 9 fps on one RX 6700 XT.",
+        "The forecast moves from Sun 29 Nov to Tue 1 Dec, and the chance by Sun 29 Nov falls to 3 in 10: stability looks solved, but free-roam speed is still under 10 fps and most of each frame goes to memory copies."
+      ]
+    },
     {
       "at": "2026-11-25T18:44:00Z",
       "title": "Leonida returns to the standings at stage 5",
