@@ -6,8 +6,8 @@
     "repo": "audixdev/americas-pc-tracker",
     "description": "Live standings of the unofficial projects trying to run the Xbox build of GTA VI on a PC: how far each has got, what changed, and a best guess at when it becomes playable."
   },
-  "checked_at": "2026-11-25T10:33:00Z",
-  "headline_note": "None is playable yet. The best pictures are lit only where sunlight falls, at about 2 to 7 frames a second.",
+  "checked_at": "2026-11-25T13:08:00Z",
+  "headline_note": "None is playable yet. The best pictures are lit only where sunlight falls, at about 2 to 8 frames a second.",
   "stages": [
     {
       "name": "Loads",
@@ -59,9 +59,9 @@
       "furthest": "The first gameplay scene, lit by sunlight, with the player in control",
       "stage": 6,
       "state": "active",
-      "status": "Plays the opening cutscene lit and in order, then renders the first gameplay scene with characters, textures, sky and a sunlit exterior; the HUD, pause menu and gamepad work. Anything out of direct sunlight is black because ray-traced light does not run yet. The README's status table gives 2 to 4 fps in the world, and its newest section says the first room renders with walls, textures, people and lamps. A second-night section reports the first room going from about 3.5-4 to 6-7 fps on an RTX 4070 with all of its new switches on, which are off by default; the defaults give about 4.5 to 5. It reports no driver hang or device loss in normal runs. Newest commit: f85101b.",
-      "source": "the fork's own README section (dated 25 Nov) and commits a26859f, 9376fd6 and f85101b; tested on one RTX 4070",
-      "changed_at": "2026-11-25T10:33:00Z"
+      "status": "Plays the opening cutscene lit and in order, then renders the first gameplay scene with characters, textures, sky and a sunlit exterior; the HUD, pause menu and gamepad work. Anything out of direct sunlight is black because ray-traced light does not run yet. The README's status table gives 2 to 4 fps in the world, and its newest section says the first room renders with walls, textures, people and lamps. A second-night section reports the first room going from about 3.5-4 to 6-7 fps on an RTX 4070 with all of its new switches on, which are off by default; the defaults give about 4.5 to 5. It reports no driver hang or device loss in normal runs. Its newest commit message (0b0074e) reports 7 to 8 fps in the first rooms and 10 to 12 in lighter views, one run on an RTX 4070, and says a first play session past the first rooms lost the device in the open world with the card out of room for textures; the cause is not known.",
+      "source": "the fork's own README section (dated 25 Nov) and commits a26859f, 9376fd6, f85101b, a253706 and 0b0074e; tested on one RTX 4070",
+      "changed_at": "2026-11-25T13:08:00Z"
     },
     {
       "id": "scarlettport",
@@ -71,9 +71,21 @@
       "furthest": "The lit gameplay view, with shadowed areas too dark",
       "stage": 6,
       "state": "active",
-      "status": "Its README says that on an RTX 3060 it reaches the lit world at about 4 fps in the prologue on the Series S profile, up from 2.6, and that it is not yet verified playable. Shadowed areas are still too dark and a frozen tile-grid overlay sits over gameplay. It builds on the public victory-fork code; the newest commit (56e088e) syncs its bundled copy of that runtime to victory-fork's 26f8afd. A second path on XCL runs the menus and loading screens at 30 fps.",
-      "source": "project README (25 Nov) and commits 48ba23a and 56e088e, one RTX 3060; this page has not checked its prebuilt launcher",
-      "changed_at": "2026-11-25T10:33:00Z"
+      "status": "Its README says that on an RTX 3060 it reaches the lit world at about 4 fps in the prologue on the Series S profile, now limited by the graphics card, and that it is not yet verified playable. The tile-grid overlay is fixed. Shadowed areas are still too dark and the picture stalls while world data streams in. Commit a934da5 (v0.2.1) syncs its bundled copy of the victory-fork runtime and reports per-frame read waits cut from about 156 to about 26 ms. Its \"in progress\" table lists later fixes as built but not yet measured for speed.",
+      "source": "project README (25 Nov) and commits 56e088e and a934da5, one RTX 3060; this page has not checked its prebuilt launcher",
+      "changed_at": "2026-11-25T13:08:00Z"
+    },
+    {
+      "id": "victory-belobug-amd",
+      "name": "VIctory-Belobug-AMD",
+      "repo": "Belobug/VIctory-Belobug-AMD",
+      "tagline": "AMD Radeon fork of VIctory, created 25 Nov",
+      "furthest": "A lit world with people, vehicles and sky, about 3 fps while driving",
+      "stage": 6,
+      "state": "active",
+      "status": "Its README says the world renders lit, with textures, people, vehicles, vegetation, water and sky, at 3 to 5 fps on an RX 9070 XT (about 3 while driving). Shaded places are flat and rather dark because ray-traced light does not run. The in-game phone is broken, and one driver timeout happened in the session the README was written in. It is not playable. It follows VIctory up to commit 8e79c80 and adds fixes of its own.",
+      "source": "project README (25 Nov) and commits to 71652a2; tested on one RX 9070 XT and nothing else; new to this page",
+      "changed_at": "2026-11-25T13:08:00Z"
     },
     {
       "id": "percyscarlett",
@@ -191,12 +203,12 @@
       "name": "TuxBox",
       "repo": "brcly/TuxBox",
       "tagline": "Runs Xbox Series games on Linux through Proton",
-      "furthest": "The story intro, on Linux; the recorded run crashed after about ten minutes",
+      "furthest": "The story intro, on Linux; it still stalls there",
       "stage": 5,
       "state": "active",
-      "status": "Its README says the game gets into the story intro on Linux with stock Proton Experimental. It is not playable: many shaders are unsupported, and the recorded run crashed after about ten minutes. A merged evidence commit (a30aa2a) quotes the title's own crash report from an RTX 3080 Ti run: state \"Game Running\" at frame 21,663 after 12 min 45 s, then exit code 5. The README does not claim the world, so this page keeps stage 5. It is the furthest Linux-first project.",
-      "source": "project README and commits a30aa2a and e8af9fd (25 Nov)",
-      "changed_at": "2026-11-25T08:45:00Z"
+      "status": "Its README says the game gets into the story intro on Linux with stock Proton Experimental. It is not playable: GPU queues still stall there, many shaders are unsupported and the prologue cutscene has not appeared. Commit a30aa2a quotes the title's own crash report from an RTX 3080 Ti run: state \"Game Running\" at frame 21,663 after 12 min 45 s, then exit code 5. A later commit on 25 Nov (faf8b19) fixes a queue deadlock and says it still stalls at the story intro. The README does not claim the world, so this page keeps stage 5. It is the furthest Linux-first project.",
+      "source": "project README and commits a30aa2a and faf8b19 (25 Nov)",
+      "changed_at": "2026-11-25T13:08:00Z"
     },
     {
       "id": "gta6-boottest",
@@ -230,9 +242,9 @@
       "furthest": "A window shows presented frames, all black",
       "stage": 4,
       "state": "active",
-      "status": "Per its commits, the game's present call goes to a real window and draws execute without a hang. A 300-second boot presented about 33,300 frames, all pure black. A 1,200-second boot (f5596dc, 25 Nov) shows the same black frames and a repeating two-pass blit loop with no new content. The newest commit (9611b22, 25 Nov) says the status arrays are complete and the stalled wait is the title's own armed-flag lifecycle, so the loader is never re-armed after start-up. The README still describes the older state.",
-      "source": "commits 523d947 to 9611b22 (24 to 25 Nov), measured on an RTX 4090",
-      "changed_at": "2026-11-25T10:33:00Z"
+      "status": "Per its commits, the game's present call goes to a real window and draws execute without a hang. A 300-second boot presented about 33,300 frames, all pure black. A 1,200-second boot (f5596dc, 25 Nov) shows the same black frames and a repeating two-pass blit loop with no new content. Later commits (to 58a6036, 25 Nov) say the loader is never re-armed after start-up, and that adding audio imports, a DirectStorage shim and a pipeline cache left every capture black and the loading state unmoved. One of them cuts graphics pipeline creation on a warm boot from 14.7 to 3.9 s. The README still describes the older state.",
+      "source": "commits 523d947 to 58a6036 (24 to 25 Nov), measured on an RTX 4090",
+      "changed_at": "2026-11-25T13:08:00Z"
     },
     {
       "id": "xbox-emulator",
@@ -275,12 +287,12 @@
     {
       "name": "VIctory-macOS",
       "repo": "pragyaangaur/VIctory-macOS",
-      "note": "Brings VIctory to Apple Silicon Macs. It reaches only as far as VIctory does, and the world does not render yet."
+      "note": "Brings VIctory to Apple Silicon Macs. Its README says the game world appeared on two Macs on 25 Nov, running at only 0.1 to 0.2 fps, and that nobody has reached gameplay."
     },
     {
-      "name": "VIctory V2",
-      "repo": "DesertGamer/VIctory-V2",
-      "note": "Integration fork of VIctory that merged open community pull requests in batches. Its README says it no longer merges from upstream, and asks for help. It makes no progress claim of its own."
+      "name": "VIPort (formerly VIctory V2)",
+      "repo": "DesertGamer/VIPort",
+      "note": "Renamed from VIctory V2. An integration fork of VIctory that merged open community pull requests in batches; its README says it has not merged from upstream since 25 Nov. Its status text repeats VIctory's own figures (world at 1 to 2 seconds a frame, unlit) and gives no measurement of its own, so it is not ranked."
     },
     {
       "name": "Leonida Continued",
@@ -368,6 +380,16 @@
     "revision_note": "Moved forward from Tue 1 Dec to Sun 29 Nov. The pace has been faster than this forecast assumed: frame rate roughly tripled in a day, and XCL took two smaller retail games from a new repository to playable in about two days. Reaching playable does not require ray-traced lighting, so the remaining gap is mainly speed and stability. The Take-Two notice against Leonida's 3,007-repository network is a new risk to the public projects, which is why the chance by Fri 4 Dec rises only to 7 in 10."
   },
   "updates": [
+    {
+      "at": "2026-11-25T13:08:00Z",
+      "title": "victory-fork reports 7 to 8 fps in the first rooms; an AMD fork joins",
+      "points": [
+        "victory-fork's newest commit message reports 7 to 8 fps in the first rooms and 10 to 12 in lighter views on an RTX 4070, one run. It also says a first play session past the first rooms lost the device in the open world. The 20 fps bar is not met.",
+        "VIctory-Belobug-AMD, a VIctory fork for Radeon cards created on 25 Nov, joins at stage 6: its README says the lit world renders at 3 to 5 fps on an RX 9070 XT.",
+        "ScarlettPort's v0.2.1 fixes its tile-grid overlay and stays at about 4 fps. TuxBox's README says its story intro still stalls, and palmetto's frames are still black after its newest commits.",
+        "VIctory V2 is now VIPort, and VIctory-macOS reports the world on two Macs at 0.1 to 0.2 fps. The forecast is unchanged."
+      ]
+    },
     {
       "at": "2026-11-25T10:33:00Z",
       "title": "PercyScarlett reaches the opening prison scene; victory-fork reports 6 to 7 fps with switches on",
