@@ -6,7 +6,7 @@
     "repo": "audixdev/americas-pc-tracker",
     "description": "Live standings of the unofficial projects trying to run the Xbox build of GTA VI on a PC: how far each has got, what changed, and a best guess at when it becomes playable."
   },
-  "checked_at": "2026-11-25T06:41:00Z",
+  "checked_at": "2026-11-25T08:45:00Z",
   "headline_note": "None is playable yet. The best pictures are lit only where sunlight falls, at 2 to 5 frames a second.",
   "stages": [
     {
@@ -59,9 +59,9 @@
       "furthest": "The first gameplay scene, lit by sunlight, with the player in control",
       "stage": 6,
       "state": "active",
-      "status": "Plays the opening cutscene lit and in order, then renders the first gameplay scene with characters, textures, sky and a sunlit exterior; the HUD, pause menu and gamepad work. Anything out of direct sunlight is black because ray-traced light does not run yet. The README gives 2.5 to 4 frames a second in the world (240 to 350 ms a frame with opt-in switches) and reports no driver hang or device loss in normal runs. Its newest changes make a write through one view of a memory page visible at the page's other views; the first room had its walls in later frames in 4 runs out of 4, against 2 of 5 before.",
-      "source": "the fork's own README section (dated 25 Nov), tested on one RTX 4070",
-      "changed_at": "2026-11-25T06:41:00Z"
+      "status": "Plays the opening cutscene lit and in order, then renders the first gameplay scene with characters, textures, sky and a sunlit exterior; the HUD, pause menu and gamepad work. Anything out of direct sunlight is black because ray-traced light does not run yet. The README's table gives 2 to 4 frames a second in the world, and its newest section says the first room now renders with walls, textures, people and lamps on the test machine, at 190 to 450 ms a frame. It reports no driver hang or device loss in normal runs. The newest commit (9376fd6) cuts processor-side work in the descriptor sync; its author says the card is now the limit at 250 to 380 ms a frame.",
+      "source": "the fork's own README section (dated 25 Nov) and commits a26859f and 9376fd6; tested on one RTX 4070",
+      "changed_at": "2026-11-25T08:45:00Z"
     },
     {
       "id": "scarlettport",
@@ -128,12 +128,12 @@
       "name": "five-star-recomp",
       "repo": "ThatRecompDev/five-star-recomp",
       "tagline": "Native recompilation of the Xbox Series release",
-      "furthest": "The opening cutscene's art, cards and sound at 30 fps; its 3D world does not draw",
+      "furthest": "The opening cutscene's art, cards and sound at 30 fps; its 3D world is drawn into the G-buffer but not shown",
       "stage": 5,
       "state": "active",
-      "status": "Starts, shows the logo, intro art and first-run screens, loads story mode and plays the opening cutscene's art, credit cards, dialogue and sound at 30 frames a second. The README says the cutscene's 3D world does not draw yet, and its Graphics API row still lists the story load as open. All 25,908 of the game's shader programs translate and compile.",
+      "status": "Starts, shows the logo, intro art and first-run screens, loads story mode and plays the opening cutscene's art, credit cards, dialogue and sound at 30 frames a second. The README now says the cutscene's 3D world draws into the G-buffer, but lighting and composition do not reach the screen yet, and its Graphics API row still lists the story load as open. All 25,908 of the game's shader programs translate and compile.",
       "source": "project README status section (25 Nov)",
-      "changed_at": "2026-11-25T06:41:00Z",
+      "changed_at": "2026-11-25T08:45:00Z",
       "status_docs": [
         "README.md"
       ]
@@ -146,9 +146,9 @@
       "furthest": "The start screen after the intro movie, at 30 fps",
       "stage": 5,
       "state": "active",
-      "status": "Runs the first-boot settings, legal and start screens at a steady 30 fps and plays the 4K intro movie with sound, then stops while it streams in the scene behind the menus, according to its README. About nine in ten of the game's shaders translate. Commits on 25 Nov mention fixes found in a newer title's first scene, but the README does not say that a scene is shown.",
-      "source": "project README (it calls the game \"a newer retail game\") and commits 9b5f556 and 1b7c40d (25 Nov)",
-      "changed_at": "2026-11-25T06:41:00Z"
+      "status": "Runs the first-boot settings, legal and start screens at a steady 30 fps and plays the 4K intro movie with sound, then stops while it streams in the scene behind the menus, according to its README. About nine in ten of the game's shaders translate. Commits on 25 Nov describe fixes found in a newer title's first scene; the newest (e6b7abc) says that scene ran to its 228-second test limit without a GPU reset. The README does not say the scene is shown, so the stage is unchanged.",
+      "source": "project README (it calls the game \"a newer retail game\") and commits 1b7c40d, c1751e2 and e6b7abc (25 Nov)",
+      "changed_at": "2026-11-25T08:45:00Z"
     },
     {
       "id": "percyscarlett",
@@ -194,9 +194,9 @@
       "furthest": "The story intro, on Linux; the recorded run crashed after about ten minutes",
       "stage": 5,
       "state": "active",
-      "status": "Its README says the game gets into the story intro on Linux with stock Proton Experimental. It is not playable: many shaders are unsupported, and the recorded run crashed after about ten minutes. It is the furthest Linux-first project.",
-      "source": "project README and commit a93613a (25 Nov)",
-      "changed_at": "2026-11-25T06:41:00Z"
+      "status": "Its README says the game gets into the story intro on Linux with stock Proton Experimental. It is not playable: many shaders are unsupported, and the recorded run crashed after about ten minutes. A merged evidence commit (a30aa2a) quotes the title's own crash report from an RTX 3080 Ti run: state \"Game Running\" at frame 21,663 after 12 min 45 s, then exit code 5. The README does not claim the world, so this page keeps stage 5. It is the furthest Linux-first project.",
+      "source": "project README and commits a30aa2a and e8af9fd (25 Nov)",
+      "changed_at": "2026-11-25T08:45:00Z"
     },
     {
       "id": "gta6-boottest",
@@ -230,9 +230,9 @@
       "furthest": "A window shows presented frames, all black",
       "stage": 4,
       "state": "active",
-      "status": "Per its commits, the game's present call goes to a real window and draws execute without a hang. A 300-second boot presented about 33,300 frames, all pure black. A newer commit (f5596dc, 25 Nov) says a 1,200-second boot shows the same black frames and a repeating two-pass blit loop with no new content, which it reads as a loading state that does not advance. The README still describes the older state.",
-      "source": "commits 523d947 to f5596dc (24 to 25 Nov), measured on an RTX 4090",
-      "changed_at": "2026-11-25T06:41:00Z"
+      "status": "Per its commits, the game's present call goes to a real window and draws execute without a hang. A 300-second boot presented about 33,300 frames, all pure black. A newer commit (f5596dc, 25 Nov) says a 1,200-second boot shows the same black frames and a repeating two-pass blit loop with no new content, which it reads as a loading state that does not advance. Commit d641842 reports that nothing re-arms the loader after start-up, which it places in the game's stage manager. The README still describes the older state.",
+      "source": "commits 523d947 to d641842 (24 to 25 Nov), measured on an RTX 4090",
+      "changed_at": "2026-11-25T08:45:00Z"
     },
     {
       "id": "xbox-emulator",
@@ -276,6 +276,11 @@
       "name": "VIctory-macOS",
       "repo": "pragyaangaur/VIctory-macOS",
       "note": "Brings VIctory to Apple Silicon Macs. It reaches only as far as VIctory does, and the world does not render yet."
+    },
+    {
+      "name": "VIctory V2",
+      "repo": "DesertGamer/VIctory-V2",
+      "note": "Integration fork of VIctory that merges open community pull requests in batches. Its README makes no progress claim of its own."
     },
     {
       "name": "Leonida Continued",
@@ -363,6 +368,16 @@
     "revision_note": "Moved forward from Tue 1 Dec to Sun 29 Nov. The pace has been faster than this forecast assumed: frame rate roughly tripled in a day, and XCL took two smaller retail games from a new repository to playable in about two days. Reaching playable does not require ray-traced lighting, so the remaining gap is mainly speed and stability. The Take-Two notice against Leonida's 3,007-repository network is a new risk to the public projects, which is why the chance by Fri 4 Dec rises only to 7 in 10."
   },
   "updates": [
+    {
+      "at": "2026-11-25T08:45:00Z",
+      "title": "victory-fork renders the first room; five-star-recomp draws the cutscene world offscreen",
+      "points": [
+        "victory-fork's README now says the first room renders with walls, textures, people and lamps at 190 to 450 ms a frame, and its newest commit says the graphics card is now the limit at 250 to 380 ms.",
+        "five-star-recomp's README says the opening cutscene's 3D world now draws into the G-buffer, but lighting and composition do not reach the screen. It stays at stage 5.",
+        "TuxBox and OpenScarlett (Community Edition) have commits that point toward a loaded world or scene. Neither README claims it, so both stay at stage 5.",
+        "VIctory V2, a fork that merges VIctory's open pull requests, joins the watch list. No stage or forecast changed."
+      ]
+    },
     {
       "at": "2026-11-25T06:41:00Z",
       "title": "AnyXboxX reports two missions played; XCL enters its 3D world",
