@@ -19,6 +19,7 @@
   --s5: #a8ad1c;
   --s6: #5c9e30;
   --s7: #16905a;
+  --bar: #2b59c3; /* lane steps that meet the playable bar */
 
   --display: "Anybody", "Arial Narrow", sans-serif;
   --body: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", system-ui, sans-serif;
@@ -42,6 +43,7 @@
     --s5: #cdd24a;
     --s6: #8bca55;
     --s7: #3fc488;
+    --bar: #93a8f4;
     color-scheme: dark;
   }
 }
@@ -59,6 +61,7 @@
   --s5: #cdd24a;
   --s6: #8bca55;
   --s7: #3fc488;
+  --bar: #93a8f4;
   color-scheme: dark;
 }
 
@@ -252,7 +255,7 @@ a.chip:hover { background: color-mix(in oklab, var(--c) 32%, var(--surface)); }
 .group__count { margin-left: auto; color: var(--muted); font: 400 0.9375rem/1.3 var(--body); }
 
 .entry {
-  display: grid; grid-template-columns: 3rem minmax(0, 15rem) minmax(0, 1fr); gap: 6px 28px;
+  display: grid; grid-template-columns: 3rem minmax(0, 17.5rem) minmax(0, 1fr); gap: 6px 28px;
   padding-block: 20px; border-bottom: 1px solid var(--line);
 }
 .group__list .entry:last-child { border-bottom: 0; }
@@ -263,6 +266,24 @@ a.chip:hover { background: color-mix(in oklab, var(--c) 32%, var(--surface)); }
 .entry h4 a.name:hover { text-decoration: underline; text-decoration-thickness: 2px; }
 .entry__tagline { margin-top: 6px; color: var(--muted); font-size: 0.9375rem; line-height: 1.4; }
 .entry__status > p:not(.entry__src) { max-width: 64ch; }
+.entry__tested { margin-top: 4px; color: var(--muted); font-size: 0.875rem; }
+
+/* meters: the stage, and for in-game rows the three lanes. Blue steps meet the playable bar. */
+.gauges { margin-top: 14px; display: grid; gap: 10px; }
+.gauge p { margin-top: 5px; font-size: 0.875rem; line-height: 1.35; }
+.gauge b { font-weight: 700; }
+.gauge--stage p { font-size: 0.9375rem; }
+.meter { display: flex; gap: 3px; }
+.meter__seg { width: 22px; height: 5px; border-radius: 1px; background: var(--line); }
+.meter__seg.is-on { background: color-mix(in oklab, var(--ink) 78%, var(--surface)); }
+.meter__seg.is-bar { background: color-mix(in oklab, var(--bar) 30%, var(--surface)); }
+.meter__seg.is-bar.is-on { background: var(--bar); }
+.meter--stage { max-width: 17.5rem; }
+.meter--stage .meter__seg { flex: 1; width: auto; height: 6px; }
+.meter--stage .meter__seg.is-on { background: var(--c); }
+.gauges__short { color: var(--muted); font-size: 0.875rem; }
+.gauges__short.is-met { color: var(--ink); font-weight: 700; }
+.group__note { margin-top: 10px; color: var(--muted); font-size: 0.9375rem; max-width: 80ch; }
 .entry__furthest {
   margin-bottom: 8px; padding-left: 10px; border-left: 3px solid var(--c, var(--line));
   font-weight: 700; line-height: 1.35;
@@ -400,6 +421,21 @@ a.chip:hover { background: color-mix(in oklab, var(--c) 32%, var(--surface)); }
 .stages__n { font: 900 1.6rem/1 var(--display); font-stretch: 120%; }
 .stages__name { font-weight: 700; }
 .stages__bar { color: var(--muted); max-width: 64ch; }
+.lanes__intro { max-width: 72ch; margin-bottom: 10px; }
+.lanes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px 32px; margin-top: 22px; }
+.lanes h4 { font: 800 1.3rem/1.1 var(--display); }
+.lanes__about { margin-top: 6px; color: var(--muted); font-size: 0.9375rem; min-height: 2.8em; }
+.lanes ol { margin-top: 12px; border-top: 2px solid var(--ink); }
+.lanes li {
+  display: grid; grid-template-columns: 1.6rem minmax(0, 1fr); gap: 10px;
+  padding-block: 9px; border-bottom: 1px solid var(--line); font-size: 0.9375rem;
+}
+.lanes__n { color: var(--muted); font-weight: 700; }
+.lanes li.is-bar .lanes__n { color: var(--bar); }
+@media (max-width: 860px) {
+  .lanes { grid-template-columns: minmax(0, 1fr); }
+  .lanes__about { min-height: 0; }
+}
 @media (max-width: 700px) {
   .method__list div { grid-template-columns: minmax(0, 1fr); }
   .stages li { grid-template-columns: 2.2rem minmax(0, 1fr); }

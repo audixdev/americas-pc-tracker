@@ -1,162 +1,162 @@
 {
-  "checked_at": "2026-11-25T15:36:53Z",
+  "checked_at": "2026-11-25T18:33:31Z",
   "repos": {
     "belobug/victory-belobug-amd": {
       "default_branch": "main",
       "description": null,
       "group": "projects",
       "head": {
-        "date": "2026-11-25T14:00:14Z",
-        "message": "README: upstream's status section left out (it named upstream's test machine, an RX 6700 XT, and a warning that is upstream's), Windows 10 as reported",
-        "sha": "01aadd193d57e71fb4d57810eb2fdd1bc95c950b"
+        "date": "2026-11-25T18:06:09Z",
+        "message": "The bindless plan looks at direct slots only when a window died",
+        "sha": "000ffdd4ee0ff085596b798958bce534a69b4f07"
       },
       "name": "VIctory-Belobug-AMD",
       "pulls": [
         {
-          "created_at": "2026-11-25T13:39:43Z",
+          "created_at": "2026-11-25T17:14:46Z",
           "merged": false,
           "merged_at": null,
-          "number": 84,
+          "number": 150,
           "state": "open",
-          "title": "Extract scalar and vector ALU lowering from lower.rs",
-          "updated_at": "2026-11-25T15:36:11Z"
+          "title": "GPU: improve texture uploads and specialize single-record indirect draws",
+          "updated_at": "2026-11-25T18:32:21Z"
         },
         {
-          "created_at": "2026-11-25T13:21:44Z",
+          "created_at": "2026-11-25T16:48:16Z",
           "merged": false,
           "merged_at": null,
-          "number": 72,
+          "number": 144,
           "state": "open",
-          "title": "Split vector ALU lowering to restore the asset-policy check",
-          "updated_at": "2026-11-25T15:36:11Z"
+          "title": "GPU, Shaders: clamp view/sampler heap indices to dedicated null sentinels and bound StrideTable (#95)",
+          "updated_at": "2026-11-25T18:32:19Z"
         },
         {
-          "created_at": "2026-11-25T13:41:28Z",
+          "created_at": "2026-11-25T12:47:21Z",
           "merged": false,
           "merged_at": null,
-          "number": 86,
+          "number": 44,
           "state": "open",
-          "title": "translate --warm: translate every shader into the run's cache ahead of a run",
-          "updated_at": "2026-11-25T15:35:41Z"
+          "title": "Windows 10: load the D3D12 Agility SDK runtime (shader model 6.6)",
+          "updated_at": "2026-11-25T18:31:45Z"
         },
         {
-          "created_at": "2026-11-25T15:32:06Z",
+          "created_at": "2026-11-25T18:12:23Z",
           "merged": false,
           "merged_at": null,
-          "number": 133,
+          "number": 165,
           "state": "open",
-          "title": "Loader: reject garbage relocation sizes, serialise crash-log appends",
-          "updated_at": "2026-11-25T15:32:06Z"
+          "title": "CI: the crates that run anywhere are tested on Linux too",
+          "updated_at": "2026-11-25T18:29:48Z"
         },
         {
-          "created_at": "2026-11-25T15:31:46Z",
+          "created_at": "2026-11-25T18:29:21Z",
           "merged": false,
           "merged_at": null,
-          "number": 132,
+          "number": 169,
           "state": "open",
-          "title": "timeline: wait for busy queues to finish before pump/submit returns (#116)",
-          "updated_at": "2026-11-25T15:31:46Z"
+          "title": "HLE: harden media source resolver URL and UNC path validation",
+          "updated_at": "2026-11-25T18:29:21Z"
         },
         {
-          "created_at": "2026-11-25T13:51:04Z",
+          "created_at": "2026-11-25T14:56:55Z",
           "merged": false,
           "merged_at": null,
-          "number": 93,
+          "number": 123,
           "state": "open",
-          "title": "xmem: keep tiny reservations per page; map_whole only for large runs",
-          "updated_at": "2026-11-25T15:31:04Z"
+          "title": "GPU: AVX2 fast-path and skip-unchanged writes in merge_gpu_writes*",
+          "updated_at": "2026-11-25T18:25:34Z"
         },
         {
-          "created_at": "2026-11-25T14:24:41Z",
+          "created_at": "2026-11-25T18:21:56Z",
           "merged": false,
           "merged_at": null,
-          "number": 112,
+          "number": 167,
           "state": "open",
-          "title": "watch: clear stale JOURNAL.written entries on title_memory_remapped (#102)",
-          "updated_at": "2026-11-25T15:27:20Z"
+          "title": "Reuse initialized scratch space for texture reads",
+          "updated_at": "2026-11-25T18:21:56Z"
         },
         {
-          "created_at": "2026-11-25T15:23:21Z",
+          "created_at": "2026-11-25T15:03:34Z",
           "merged": false,
           "merged_at": null,
-          "number": 129,
+          "number": 128,
           "state": "open",
-          "title": "Shader tests: a cross-device VALU fuzzer (hardware adapters vs WARP), ignored by default",
-          "updated_at": "2026-11-25T15:23:29Z"
+          "title": "Wave64 on 32-lane hosts: several console waves per group, wave reductions, permlanes and ds_(b)permute in halves (+ two fixes)",
+          "updated_at": "2026-11-25T18:18:46Z"
         },
         {
-          "created_at": "2026-11-25T11:52:49Z",
+          "created_at": "2026-11-25T12:33:06Z",
           "merged": false,
           "merged_at": null,
-          "number": 14,
+          "number": 35,
           "state": "open",
-          "title": "xmem: enforce 16 MiB minimum and pre-validate pages in map_whole",
-          "updated_at": "2026-11-25T15:23:29Z"
+          "title": "Precompute the XMA inverse MDCT's sine/cosine tables",
+          "updated_at": "2026-11-25T18:14:01Z"
         },
         {
-          "created_at": "2026-11-25T13:49:48Z",
+          "created_at": "2026-11-25T18:13:00Z",
           "merged": false,
           "merged_at": null,
-          "number": 92,
+          "number": 166,
           "state": "open",
-          "title": "Shaders: keep 64-lane waves for wave64 programs on a 64-lane host",
-          "updated_at": "2026-11-25T15:18:47Z"
+          "title": "GPU: diagnostics builds log the title's asks for frame statistics",
+          "updated_at": "2026-11-25T18:13:00Z"
         },
         {
-          "created_at": "2026-11-25T13:45:24Z",
+          "created_at": "2026-11-25T14:53:16Z",
           "merged": false,
           "merged_at": null,
-          "number": 90,
+          "number": 119,
           "state": "open",
-          "title": "Shaders: follow EXEC set from a scalar the section made constant",
-          "updated_at": "2026-11-25T15:18:45Z"
+          "title": "Speed up bindless planning, BCPack decoding, and shader translation",
+          "updated_at": "2026-11-25T18:12:57Z"
         },
         {
-          "created_at": "2026-11-25T13:34:43Z",
+          "created_at": "2026-11-25T18:06:58Z",
           "merged": false,
           "merged_at": null,
-          "number": 79,
+          "number": 164,
           "state": "open",
-          "title": "GPU: VICTORY_ADAPTER picks the host adapter by name",
-          "updated_at": "2026-11-25T15:18:43Z"
+          "title": "GPU: prioritize requested and early depth-only pipelines over early draw PSOs",
+          "updated_at": "2026-11-25T18:08:57Z"
         },
         {
-          "created_at": "2026-11-25T14:18:51Z",
+          "created_at": "2026-11-25T17:57:52Z",
           "merged": false,
           "merged_at": null,
-          "number": 108,
+          "number": 161,
           "state": "open",
-          "title": "CI: require mutation coverage on changed lines",
-          "updated_at": "2026-11-25T15:18:00Z"
+          "title": "Title memory is copied, not used in place, past half of the host GPU's system-memory budget (#147)",
+          "updated_at": "2026-11-25T18:06:10Z"
         },
         {
-          "created_at": "2026-11-25T12:32:39Z",
+          "created_at": "2026-11-25T18:01:30Z",
           "merged": false,
           "merged_at": null,
-          "number": 30,
+          "number": 162,
           "state": "open",
-          "title": "Take texture upload memory from the list's scratch pool",
-          "updated_at": "2026-11-25T15:13:09Z"
+          "title": "Remove the deferred-work lock from host command lists",
+          "updated_at": "2026-11-25T18:01:30Z"
         },
         {
-          "created_at": "2026-11-25T13:18:02Z",
+          "created_at": "2026-11-25T12:34:55Z",
           "merged": false,
           "merged_at": null,
-          "number": 69,
+          "number": 40,
           "state": "open",
-          "title": "Under Wine, copies of title memory are not sparse buffers by default (GPU reset once the world loads)",
-          "updated_at": "2026-11-25T15:11:34Z"
+          "title": "Input: DualSense device paths end in a NUL",
+          "updated_at": "2026-11-25T17:58:01Z"
         }
       ],
-      "pushed_at": "2026-11-25T14:01:08Z",
+      "pushed_at": "2026-11-25T18:07:27Z",
       "readme": {
         "path": "README.md",
-        "sha": "72798d9037601ed8b2a67e1e46eb984fbc61a7ce"
+        "sha": "a5aa7e2268859cef664dc6c3e76fed3b28ba9db3"
       },
       "releases": [],
       "renamed_to": null,
       "repo": "Belobug/VIctory-Belobug-AMD",
-      "stars": 1460,
+      "stars": 1559,
       "state": "ok"
     },
     "boykopovar/anyps5": {
@@ -164,149 +164,149 @@
       "description": "Tool for automatic PS5 executables porting to Linux and Windows",
       "group": "checked_idle",
       "head": {
-        "date": "2026-11-25T15:34:19Z",
-        "message": "Merge pull request #20070 from c1b3r-p3d1a/feat/shader-interp-f16-float-modes",
-        "sha": "d28f9808ac052c62ed14d103ded1e32e9624ad19"
+        "date": "2026-11-25T18:20:22Z",
+        "message": "Merge pull request #26824 from u-instinct11/docs/memory-trace-encodings",
+        "sha": "1afab89d421fc56c69ffac711b54c3273207b06d"
       },
       "name": "AnyPS5",
       "pulls": [
         {
-          "created_at": "2026-11-13T15:44:53Z",
+          "created_at": "2026-11-24T05:26:22Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 26575,
+          "state": "open",
+          "title": "fix(agc): keep the minification filter of an S# without a mip filter",
+          "updated_at": "2026-11-25T18:33:15Z"
+        },
+        {
+          "created_at": "2026-11-23T13:55:21Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 26221,
+          "state": "open",
+          "title": "fix(agc): refuse a host import over read-trapped pages instead of resolving the trap under its locks",
+          "updated_at": "2026-11-25T18:32:43Z"
+        },
+        {
+          "created_at": "2026-11-25T02:08:30Z",
           "merged": true,
-          "merged_at": "2026-11-25T15:25:10Z",
-          "number": 19605,
+          "merged_at": "2026-11-25T17:51:13Z",
+          "number": 26877,
           "state": "closed",
-          "title": "fix(shader): apply the f16 output modifier after rounding and the FP16_OVFL clamp",
-          "updated_at": "2026-11-25T15:37:01Z"
+          "title": "feat(libSceRazorCpu): implement sceRazorCpuInitializeInternal and initialized query paths",
+          "updated_at": "2026-11-25T18:32:39Z"
         },
         {
-          "created_at": "2026-11-23T19:49:50Z",
+          "created_at": "2026-11-24T23:55:27Z",
           "merged": false,
           "merged_at": null,
-          "number": 26356,
+          "number": 26835,
           "state": "open",
-          "title": "feat(libScePosixForWebKit): implement glob and globfree",
-          "updated_at": "2026-11-25T15:36:15Z"
+          "title": "feat(libSceVideoOutSecondary): implement firmware 13.60 slot table exports KJWkt9y7YC4 and s+isXKLpwS0",
+          "updated_at": "2026-11-25T18:32:37Z"
         },
         {
-          "created_at": "2026-11-25T15:35:55Z",
+          "created_at": "2026-11-24T05:58:30Z",
           "merged": false,
           "merged_at": null,
-          "number": 27247,
+          "number": 26580,
           "state": "open",
-          "title": "fix(libSceMove): preserve sceMoveOpen validation precedence",
-          "updated_at": "2026-11-25T15:36:05Z"
+          "title": "fix(shader): round the comparison reference of 16_UNORM sampled reads as RDNA2 does",
+          "updated_at": "2026-11-25T18:32:35Z"
         },
         {
-          "created_at": "2026-11-24T21:14:57Z",
+          "created_at": "2026-11-24T20:10:53Z",
           "merged": false,
           "merged_at": null,
-          "number": 26778,
+          "number": 26759,
           "state": "open",
-          "title": "perf(agc): learn draw relocation shapes from data donors",
-          "updated_at": "2026-11-25T15:35:41Z"
+          "title": "test(libSceNgs2): cover the FFT work-size geometry and argument checks",
+          "updated_at": "2026-11-25T18:32:07Z"
         },
         {
-          "created_at": "2026-11-25T15:34:47Z",
+          "created_at": "2026-11-08T11:12:55Z",
           "merged": false,
           "merged_at": null,
-          "number": 27246,
+          "number": 17144,
           "state": "open",
-          "title": "feat(libkernel): print a host backtrace with module info",
-          "updated_at": "2026-11-25T15:34:47Z"
+          "title": "feat(libSceSystemService): implement AppMessaging queue and event flags",
+          "updated_at": "2026-11-25T18:31:47Z"
         },
         {
-          "created_at": "2026-11-25T02:59:42Z",
+          "created_at": "2026-11-17T10:09:49Z",
           "merged": false,
           "merged_at": null,
-          "number": 26934,
+          "number": 22252,
           "state": "open",
-          "title": "refactor(libSceIcu): drop redundant errno saves in data open",
-          "updated_at": "2026-11-25T15:34:45Z"
+          "title": "perf(tools): parallelize progress scanning and skip fetching present commits",
+          "updated_at": "2026-11-25T18:31:00Z"
         },
         {
-          "created_at": "2026-11-14T14:53:02Z",
-          "merged": true,
-          "merged_at": "2026-11-25T15:34:20Z",
-          "number": 20070,
+          "created_at": "2026-11-24T15:02:00Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 26679,
+          "state": "open",
+          "title": "test(agc): wait for the draw-error record before reading the failure trace",
+          "updated_at": "2026-11-25T18:30:10Z"
+        },
+        {
+          "created_at": "2026-11-25T06:27:27Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 27132,
           "state": "closed",
-          "title": "feat(shader): follow split denormal fields and f16 rounding in 16-bit interpolation",
-          "updated_at": "2026-11-25T15:34:20Z"
+          "title": "feat(libSceNKWebKit): implement WKPageHasMediaSessionWithActiveMediaElements",
+          "updated_at": "2026-11-25T18:29:50Z"
         },
         {
-          "created_at": "2026-11-24T15:46:44Z",
+          "created_at": "2026-11-25T17:32:02Z",
           "merged": false,
           "merged_at": null,
-          "number": 26692,
+          "number": 27272,
           "state": "open",
-          "title": "fix(libSceLibreSsl): validate BIO and BIO_METHOD guest pointers before access",
-          "updated_at": "2026-11-25T15:34:07Z"
+          "title": "fix(libSceSaveData.native): raise filesystem errors from the module",
+          "updated_at": "2026-11-25T18:29:27Z"
         },
         {
-          "created_at": "2026-11-13T15:08:54Z",
-          "merged": true,
-          "merged_at": "2026-11-25T15:33:57Z",
-          "number": 19569,
-          "state": "closed",
-          "title": "fix(relinker): preserve jump tables formed by 32-bit LEA",
-          "updated_at": "2026-11-25T15:33:57Z"
-        },
-        {
-          "created_at": "2026-11-25T15:21:16Z",
+          "created_at": "2026-11-24T14:22:04Z",
           "merged": false,
           "merged_at": null,
-          "number": 27244,
+          "number": 26674,
           "state": "open",
-          "title": "fix(libc): preserve x87 double scaling semantics",
-          "updated_at": "2026-11-25T15:32:59Z"
+          "title": "feat(libSceIcu): implement Normalizer2Impl::addLcccChars",
+          "updated_at": "2026-11-25T18:29:15Z"
         },
         {
-          "created_at": "2026-11-25T14:57:26Z",
+          "created_at": "2026-10-29T09:26:30Z",
           "merged": false,
           "merged_at": null,
-          "number": 27238,
+          "number": 12792,
           "state": "open",
-          "title": "fix(libSceLibreSsl): queue LibreSSL's ASN.1 errors when RSA_verify rejects a DigestInfo",
-          "updated_at": "2026-11-25T15:32:31Z"
+          "title": "fix(agc): compare pending storage results over a surface whose page walk fails",
+          "updated_at": "2026-11-25T18:28:34Z"
         },
         {
-          "created_at": "2026-11-25T15:20:27Z",
+          "created_at": "2026-11-25T13:26:41Z",
           "merged": false,
           "merged_at": null,
-          "number": 27242,
+          "number": 27216,
           "state": "open",
-          "title": "fix(relinker): share zero-address export trampolines",
-          "updated_at": "2026-11-25T15:32:16Z"
+          "title": "feat(libSceAudioPropagation): render three-point material paths from console measurements",
+          "updated_at": "2026-11-25T18:27:24Z"
         },
         {
-          "created_at": "2026-11-25T15:20:48Z",
+          "created_at": "2026-11-22T16:52:46Z",
           "merged": false,
           "merged_at": null,
-          "number": 27243,
+          "number": 25766,
           "state": "open",
-          "title": "feat(libc): implement strtofflags",
-          "updated_at": "2026-11-25T15:32:07Z"
-        },
-        {
-          "created_at": "2026-11-25T15:31:23Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 27245,
-          "state": "open",
-          "title": "fix(relinker): read RELR tables across load segments",
-          "updated_at": "2026-11-25T15:31:32Z"
-        },
-        {
-          "created_at": "2026-11-23T12:50:53Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 26197,
-          "state": "open",
-          "title": "feat(agc): support sampler border colour tables",
-          "updated_at": "2026-11-25T15:31:04Z"
+          "title": "feat(libc): add integer libc++ to_string",
+          "updated_at": "2026-11-25T18:26:29Z"
         }
       ],
-      "pushed_at": "2026-11-25T15:34:20Z",
+      "pushed_at": "2026-11-25T18:20:23Z",
       "readme": {
         "path": "README.md",
         "sha": "5e8a0904aa9f866f8ba15324ede7d847272f687e"
@@ -327,7 +327,7 @@
       ],
       "renamed_to": null,
       "repo": "boykopovar/AnyPS5",
-      "stars": 61417,
+      "stars": 61432,
       "state": "ok"
     },
     "brcly/tuxbox": {
@@ -335,29 +335,119 @@
       "description": "TuxBox is a new, native-first compatibility layer for running unpacked, decrypted Xbox Series X|S games on x86-64 Linux and Windows.",
       "group": "projects",
       "head": {
-        "date": "2026-11-25T15:09:57Z",
-        "message": "Merge pull request #175 from NathansDomainSolutions/fix/xmem-legacy-mapped-writes",
-        "sha": "7b22d7172e4eab0402ec61b56d6c9423f7abb5c5"
+        "date": "2026-11-25T18:03:52Z",
+        "message": "Merge pull request #183 from smith-3/codex/lanes-post-dispatch-wait",
+        "sha": "4cb6a4a6bf5b4bdd13f190240f7e4ec7a2327519"
       },
       "name": "TuxBox",
       "pulls": [
         {
-          "created_at": "2026-11-25T14:59:24Z",
+          "created_at": "2026-11-25T18:28:22Z",
           "merged": false,
           "merged_at": null,
-          "number": 174,
+          "number": 187,
           "state": "open",
+          "title": "lanes: check direct queue label waits around CopyBufferRegion",
+          "updated_at": "2026-11-25T18:28:22Z"
+        },
+        {
+          "created_at": "2026-11-25T18:09:38Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 186,
+          "state": "open",
+          "title": "d3d12: split memory_wait lists safely, elide satisfied waits, and track cross-submit writes",
+          "updated_at": "2026-11-25T18:20:25Z"
+        },
+        {
+          "created_at": "2026-11-25T14:59:24Z",
+          "merged": true,
+          "merged_at": "2026-11-25T18:00:31Z",
+          "number": 174,
+          "state": "closed",
           "title": "d3d12: restore static samplers a multi-table raster root leaves out",
-          "updated_at": "2026-11-25T15:12:52Z"
+          "updated_at": "2026-11-25T18:03:55Z"
         },
         {
           "created_at": "2026-11-25T14:59:11Z",
+          "merged": true,
+          "merged_at": "2026-11-25T18:00:06Z",
+          "number": 173,
+          "state": "closed",
+          "title": "xshader: take a vertex shader's table parameter from its own records",
+          "updated_at": "2026-11-25T18:03:55Z"
+        },
+        {
+          "created_at": "2026-11-25T17:45:33Z",
+          "merged": true,
+          "merged_at": "2026-11-25T18:03:53Z",
+          "number": 183,
+          "state": "closed",
+          "title": "d3d12: honor memory waits after compute dispatches",
+          "updated_at": "2026-11-25T18:03:53Z"
+        },
+        {
+          "created_at": "2026-11-25T16:03:50Z",
+          "merged": true,
+          "merged_at": "2026-11-25T18:00:56Z",
+          "number": 176,
+          "state": "closed",
+          "title": "xshader: coalesce wave32 guards, pure intrinsics and local temporaries",
+          "updated_at": "2026-11-25T18:00:56Z"
+        },
+        {
+          "created_at": "2026-11-25T16:37:30Z",
+          "merged": true,
+          "merged_at": "2026-11-25T17:59:35Z",
+          "number": 177,
+          "state": "closed",
+          "title": "d3d12, dxbc: lay out a mesh pipeline's pixel tables as the pixel program reads them",
+          "updated_at": "2026-11-25T17:59:35Z"
+        },
+        {
+          "created_at": "2026-11-25T16:55:26Z",
+          "merged": true,
+          "merged_at": "2026-11-25T17:59:09Z",
+          "number": 179,
+          "state": "closed",
+          "title": "lanes: replay a GPU fence handoff in both directions",
+          "updated_at": "2026-11-25T17:59:09Z"
+        },
+        {
+          "created_at": "2026-11-25T16:37:45Z",
+          "merged": true,
+          "merged_at": "2026-11-25T17:58:37Z",
+          "number": 178,
+          "state": "closed",
+          "title": "lanes: pin the descriptor limit the reclaim self-test counts on",
+          "updated_at": "2026-11-25T17:58:37Z"
+        },
+        {
+          "created_at": "2026-11-25T17:55:32Z",
           "merged": false,
           "merged_at": null,
-          "number": 173,
+          "number": 185,
           "state": "open",
-          "title": "xshader: take a vertex shader's table parameter from its own records",
-          "updated_at": "2026-11-25T15:12:50Z"
+          "title": "xshader: lower constant-lane v_readlane_b32 for Wave32 and portable Wave64",
+          "updated_at": "2026-11-25T17:55:32Z"
+        },
+        {
+          "created_at": "2026-11-25T17:54:04Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 184,
+          "state": "open",
+          "title": "d3d12: use 32-byte guest stride for Device11 inline descriptor arenas",
+          "updated_at": "2026-11-25T17:54:04Z"
+        },
+        {
+          "created_at": "2026-11-25T17:36:35Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 181,
+          "state": "open",
+          "title": "Lower wave32 masked DPP prefixes and totals in wave allocation",
+          "updated_at": "2026-11-25T17:40:02Z"
         },
         {
           "created_at": "2026-11-25T15:05:46Z",
@@ -385,99 +475,9 @@
           "state": "closed",
           "title": "d3d12, dxbc: refuse incompatible WaveSize(N) compute shaders before driver compile",
           "updated_at": "2026-11-25T14:21:41Z"
-        },
-        {
-          "created_at": "2026-11-25T12:58:01Z",
-          "merged": true,
-          "merged_at": "2026-11-25T14:21:41Z",
-          "number": 170,
-          "state": "closed",
-          "title": "d3d12, dxbc: convert slot 80 thread-dimension dispatches using bound PSO numthreads",
-          "updated_at": "2026-11-25T14:21:41Z"
-        },
-        {
-          "created_at": "2026-11-25T12:55:57Z",
-          "merged": true,
-          "merged_at": "2026-11-25T14:21:41Z",
-          "number": 169,
-          "state": "closed",
-          "title": "build, verify: fix MSVC /W4 warnings and resolve ordinal imports",
-          "updated_at": "2026-11-25T14:21:41Z"
-        },
-        {
-          "created_at": "2026-11-25T12:51:57Z",
-          "merged": true,
-          "merged_at": "2026-11-25T14:21:41Z",
-          "number": 168,
-          "state": "closed",
-          "title": "d3d12: reflect raster roots with several descriptor tables",
-          "updated_at": "2026-11-25T14:21:41Z"
-        },
-        {
-          "created_at": "2026-11-25T12:07:40Z",
-          "merged": true,
-          "merged_at": "2026-11-25T14:21:41Z",
-          "number": 167,
-          "state": "closed",
-          "title": "tools: avoid stale and ambiguous pipeline failure attribution",
-          "updated_at": "2026-11-25T14:21:41Z"
-        },
-        {
-          "created_at": "2026-11-25T12:00:59Z",
-          "merged": true,
-          "merged_at": "2026-11-25T14:21:40Z",
-          "number": 166,
-          "state": "closed",
-          "title": "xshader: fix wave reductions, FP32 rounding and bounded table indexing",
-          "updated_at": "2026-11-25T14:21:41Z"
-        },
-        {
-          "created_at": "2026-11-24T17:39:32Z",
-          "merged": true,
-          "merged_at": "2026-11-25T14:21:41Z",
-          "number": 74,
-          "state": "closed",
-          "title": "Add CachyOS + RX 6900 XT (Proton Experimental) verify results",
-          "updated_at": "2026-11-25T14:21:41Z"
-        },
-        {
-          "created_at": "2026-11-24T14:12:00Z",
-          "merged": true,
-          "merged_at": "2026-11-25T14:21:41Z",
-          "number": 61,
-          "state": "closed",
-          "title": "tools: offline Scarlett launch diagnosis and visual regression comparison",
-          "updated_at": "2026-11-25T14:21:41Z"
-        },
-        {
-          "created_at": "2026-11-24T14:03:12Z",
-          "merged": true,
-          "merged_at": "2026-11-25T14:21:41Z",
-          "number": 60,
-          "state": "closed",
-          "title": "test: independent RDNA2 scalar CPU oracle and generated native tests",
-          "updated_at": "2026-11-25T14:21:41Z"
-        },
-        {
-          "created_at": "2026-11-25T11:42:48Z",
-          "merged": true,
-          "merged_at": "2026-11-25T11:44:14Z",
-          "number": 165,
-          "state": "closed",
-          "title": "d3d12: look up cached shaders without scanning the cache directory",
-          "updated_at": "2026-11-25T11:44:14Z"
-        },
-        {
-          "created_at": "2026-11-24T10:10:44Z",
-          "merged": true,
-          "merged_at": "2026-11-25T11:37:48Z",
-          "number": 41,
-          "state": "closed",
-          "title": "Add Bazzite + RTX 3080 Ti verify results",
-          "updated_at": "2026-11-25T11:37:48Z"
         }
       ],
-      "pushed_at": "2026-11-25T15:09:57Z",
+      "pushed_at": "2026-11-25T18:03:53Z",
       "readme": {
         "path": "README.md",
         "sha": "68fedbdf8e76a21c1988a02f59908f65036d9db2"
@@ -485,7 +485,7 @@
       "releases": [],
       "renamed_to": null,
       "repo": "brcly/TuxBox",
-      "stars": 358,
+      "stars": 366,
       "state": "ok"
     },
     "californiaalmonds/openscarlett": {
@@ -732,9 +732,9 @@
       "description": "VIPort: independent, community-built project on the VIctory codebase. Runs GTA VI (Xbox) on Windows. Not playable yet, reaches the first cutscene. No game data. Help wanted.",
       "group": "also_watched",
       "head": {
-        "date": "2026-11-25T14:04:03Z",
-        "message": "GPU: run unsized console wave64 compute programs on 32-lane hosts",
-        "sha": "74a7f8125a76998af6e1cd0217543304d5874e71"
+        "date": "2026-11-25T18:06:48Z",
+        "message": "diag: log the card's video memory in use against its budget every five seconds",
+        "sha": "71a863295d04b48ef626c324ba87d9dccf1f126e"
       },
       "name": "VIPort (formerly VIctory V2)",
       "pulls": [
@@ -820,10 +820,10 @@
           "updated_at": "2026-11-24T23:55:06Z"
         }
       ],
-      "pushed_at": "2026-11-25T14:16:53Z",
+      "pushed_at": "2026-11-25T18:06:53Z",
       "readme": {
         "path": "README.md",
-        "sha": "95018f8fee221143cf6a9459f2447cd7c13adc6a"
+        "sha": "0048985ce115c9623f50ca73bc93f9d3782bf959"
       },
       "releases": [],
       "renamed_to": null,
@@ -836,12 +836,93 @@
       "description": "DexNom Runtime is a source-only Windows x64 fork of VIctory with (AMD) Radeon rendering and GPU memory improvements.",
       "group": "projects",
       "head": {
-        "date": "2026-11-25T15:30:43Z",
-        "message": "Repair pixel quad sampling, grow ray buffer views, and recover sparse textures",
-        "sha": "921d8d3b43b44f3a6ca4b44095edd3c4baf10a87"
+        "date": "2026-11-25T17:46:07Z",
+        "message": "Keep cached test textures within their reserved guest memory",
+        "sha": "2e01ab4760db91820ef5f9a9f85761f83cd6b5d0"
       },
       "name": "DexNom Runtime",
       "pulls": [
+        {
+          "created_at": "2026-11-25T18:29:56Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 16,
+          "state": "open",
+          "title": "Diagnose unsupported compute wave sizes on D3D12",
+          "updated_at": "2026-11-25T18:29:56Z"
+        },
+        {
+          "created_at": "2026-11-25T18:04:59Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 13,
+          "state": "open",
+          "title": "Add experimental Linux launch support via umu-run and GE-Proton",
+          "updated_at": "2026-11-25T18:18:58Z"
+        },
+        {
+          "created_at": "2026-11-25T18:16:52Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 15,
+          "state": "open",
+          "title": "docs: NVIDIA test results - RTX 4070 (RT blocked by 64-lane pipelines, frame time, switches)",
+          "updated_at": "2026-11-25T18:16:52Z"
+        },
+        {
+          "created_at": "2026-11-25T18:13:43Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 14,
+          "state": "open",
+          "title": "Docs: NVIDIA (32-lane) report \u2014 the ray-tracing builder stays off (5 of 53 programs), and VICTORY_WAVE_WIDE=1 loses the device",
+          "updated_at": "2026-11-25T18:13:43Z"
+        },
+        {
+          "created_at": "2026-11-25T17:31:37Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 11,
+          "state": "open",
+          "title": "test(gpu): add reproducible upload-fill CPU benchmark",
+          "updated_at": "2026-11-25T17:57:55Z"
+        },
+        {
+          "created_at": "2026-11-25T17:53:23Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 12,
+          "state": "open",
+          "title": "GPU: load optional D3D12 Agility SDK at runtime for Windows 10 SM 6.6",
+          "updated_at": "2026-11-25T17:53:23Z"
+        },
+        {
+          "created_at": "2026-11-25T16:10:20Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 5,
+          "state": "open",
+          "title": "docs: low-VRAM test results \u2014 RTX 5070 Laptop 8 GB (world loads, movement breakpoint +0x5149aec)",
+          "updated_at": "2026-11-25T17:50:11Z"
+        },
+        {
+          "created_at": "2026-11-25T17:16:08Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 10,
+          "state": "open",
+          "title": "docs: RDNA4 test results \u2014 RX 9070 XT (compiler crash workaround, frame time, copy switches)",
+          "updated_at": "2026-11-25T17:30:49Z"
+        },
+        {
+          "created_at": "2026-11-25T17:11:12Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 8,
+          "state": "open",
+          "title": "docs: RDNA4 (RX 9070 XT) results \u2014 setup holds 30 fps, world load crashes in amdxc64",
+          "updated_at": "2026-11-25T17:25:32Z"
+        },
         {
           "created_at": "2026-11-25T15:34:59Z",
           "merged": false,
@@ -849,7 +930,34 @@
           "number": 2,
           "state": "open",
           "title": "gpu: isolate AMD driver compiler crashes (crashed.txt) and skip self-CopyResource",
-          "updated_at": "2026-11-25T15:35:09Z"
+          "updated_at": "2026-11-25T17:22:19Z"
+        },
+        {
+          "created_at": "2026-11-25T17:15:43Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 9,
+          "state": "open",
+          "title": "GPU: port texture streaming and indirect draw improvements",
+          "updated_at": "2026-11-25T17:15:43Z"
+        },
+        {
+          "created_at": "2026-11-25T16:58:27Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 7,
+          "state": "open",
+          "title": "Fix RDNA 4 amdxc64.dll shader compiler crash and 30s GPU watchdog stalls",
+          "updated_at": "2026-11-25T16:59:23Z"
+        },
+        {
+          "created_at": "2026-11-25T16:44:13Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 6,
+          "state": "closed",
+          "title": "Linux/Proton only: opt-in VICTORY_LOG_FILE and VICTORY_SKIP_TITLE_INT3 (no change on Windows)",
+          "updated_at": "2026-11-25T16:53:46Z"
         },
         {
           "created_at": "2026-11-25T15:10:03Z",
@@ -858,23 +966,32 @@
           "number": 1,
           "state": "open",
           "title": "GPU: AVX2 fast-path for merge_piece, first_difference, and last_difference",
-          "updated_at": "2026-11-25T15:21:23Z"
+          "updated_at": "2026-11-25T16:14:19Z"
+        },
+        {
+          "created_at": "2026-11-25T16:07:11Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 4,
+          "state": "open",
+          "title": "Add maintainability notes from a read-through of main",
+          "updated_at": "2026-11-25T16:07:11Z"
         }
       ],
-      "pushed_at": "2026-11-25T15:31:04Z",
+      "pushed_at": "2026-11-25T17:46:10Z",
       "readme": {
         "path": "README.md",
         "sha": "ebb716b8d733b86fbd54a37507dc9780d47bc3ab"
       },
       "releases": [
         {
-          "published_at": "2026-11-25T14:57:01Z",
-          "tag": "v0.1.0"
+          "published_at": "2026-11-25T17:21:44Z",
+          "tag": "v0.1.1-intro.1"
         }
       ],
       "renamed_to": null,
       "repo": "DexNom/VIctory",
-      "stars": 283,
+      "stars": 655,
       "state": "ok"
     },
     "fablinoo/palmwave": {
@@ -1039,7 +1156,7 @@
       "releases": [],
       "renamed_to": null,
       "repo": "Freminet/ScarlettX",
-      "stars": 269,
+      "stars": 268,
       "state": "ok"
     },
     "fxceless/victory-fork": {
@@ -1047,157 +1164,157 @@
       "description": "Work-in-progress fork of VIctory: getting an Xbox Series title to render and run on a Windows PC. No game files.",
       "group": "projects",
       "head": {
-        "date": "2026-11-25T12:43:36Z",
-        "message": "Copies in place measured and fixed, our threads on the fast cores, and a corrected comparison of draw windows",
-        "sha": "0b0074e0b2765e574c622e9a3de566f20f04135b"
+        "date": "2026-11-25T17:28:51Z",
+        "message": "README: the dips while moving, measured; two attempts on the title's page mapping, both taken back out",
+        "sha": "d510ee4a9b635bcc345207a73ccb4c4fceb8228c"
       },
       "name": "victory-fork",
       "pulls": [
         {
-          "created_at": "2026-11-25T15:16:18Z",
+          "created_at": "2026-11-25T18:07:40Z",
           "merged": false,
           "merged_at": null,
-          "number": 991,
+          "number": 1063,
           "state": "open",
-          "title": "Passage de vitesse : commutateurs actifs par d\u00e9faut, plafond 120 images/s, README en fran\u00e7ais",
-          "updated_at": "2026-11-25T15:36:40Z"
+          "title": "Batch consecutive pool-page mappings in an opt-in mode",
+          "updated_at": "2026-11-25T18:33:02Z"
         },
         {
-          "created_at": "2026-11-25T12:41:39Z",
+          "created_at": "2026-11-25T17:49:12Z",
           "merged": false,
           "merged_at": null,
-          "number": 916,
+          "number": 1056,
           "state": "open",
-          "title": "GPU: only a shader that can store by address declares its title-memory copies written (12 GB/frame of CPU compare with ray tracing)",
-          "updated_at": "2026-11-25T15:36:37Z"
+          "title": "Linux and Proton: Linux build and CI, a log file, early pipelines without a pipeline library",
+          "updated_at": "2026-11-25T18:32:26Z"
         },
         {
-          "created_at": "2026-11-25T15:36:24Z",
+          "created_at": "2026-11-25T15:55:05Z",
           "merged": false,
           "merged_at": null,
-          "number": 1002,
+          "number": 1007,
           "state": "open",
-          "title": "Shaders: the tiled cascade shadow programs translate exactly on 32-lane hosts",
-          "updated_at": "2026-11-25T15:36:24Z"
+          "title": "GPU: async background worker for heap-indexed texture uploads (VICTORY_HEAP_WORKER=1)",
+          "updated_at": "2026-11-25T18:31:45Z"
         },
         {
-          "created_at": "2026-11-25T08:22:51Z",
+          "created_at": "2026-11-25T03:12:56Z",
           "merged": false,
           "merged_at": null,
-          "number": 808,
+          "number": 610,
           "state": "open",
-          "title": "shader: lower packed dot products to DXIL dot4AddPacked and fmad",
-          "updated_at": "2026-11-25T15:36:05Z"
+          "title": "GPU: VICTORY_TEXTURE_DROP_MIPS=N leaves out a texture's N largest levels on the host (8 GB cards)",
+          "updated_at": "2026-11-25T18:31:45Z"
         },
         {
-          "created_at": "2026-11-25T15:35:49Z",
+          "created_at": "2026-11-25T16:47:43Z",
           "merged": false,
           "merged_at": null,
-          "number": 1001,
+          "number": 1031,
           "state": "open",
-          "title": "GPU: batch requested indirect prefixes in one prelude (opt-in)",
-          "updated_at": "2026-11-25T15:35:49Z"
+          "title": "GPU: bound texture queue work and keep sampling on resident mips",
+          "updated_at": "2026-11-25T18:30:43Z"
         },
         {
-          "created_at": "2026-11-25T12:23:46Z",
+          "created_at": "2026-11-25T15:24:40Z",
           "merged": false,
           "merged_at": null,
-          "number": 907,
+          "number": 994,
           "state": "open",
-          "title": "Shaders: pixel programs the console depth-tests before they run declare early depth (glass prepass over characters)",
-          "updated_at": "2026-11-25T15:34:57Z"
+          "title": "Ray tracing: the title's structure builder runs without crashing it (dispatches by thread counts, title memory by address made ready); node tests answer no hit ",
+          "updated_at": "2026-11-25T18:29:42Z"
         },
         {
-          "created_at": "2026-11-25T15:34:34Z",
+          "created_at": "2026-11-25T18:29:18Z",
           "merged": false,
           "merged_at": null,
-          "number": 1000,
+          "number": 1073,
           "state": "open",
-          "title": "GPU: indirect records clamped into a ring of the list's behind one enhanced barrier, and in the list's prelude where the list did not write them",
-          "updated_at": "2026-11-25T15:34:34Z"
+          "title": "GPU: reconcile closed memory lists and publish directory in queue order",
+          "updated_at": "2026-11-25T18:29:18Z"
         },
         {
-          "created_at": "2026-11-25T12:34:55Z",
+          "created_at": "2026-11-25T17:50:59Z",
           "merged": false,
           "merged_at": null,
-          "number": 913,
+          "number": 1059,
           "state": "open",
-          "title": "Shaders: LDS byte and half writes as one bounded compare-exchange, not AND then OR",
-          "updated_at": "2026-11-25T15:34:37Z"
+          "title": "GPU: coalesce VirtualProtect runs in watch.rs, use NtReadVirtualMemory in host::read, and reuse Deferred capacities",
+          "updated_at": "2026-11-25T18:28:34Z"
         },
         {
-          "created_at": "2026-11-25T15:33:31Z",
+          "created_at": "2026-11-25T17:50:57Z",
           "merged": false,
           "merged_at": null,
-          "number": 999,
+          "number": 1058,
           "state": "open",
-          "title": "Port water texture readback and guard against stale writes",
-          "updated_at": "2026-11-25T15:33:31Z"
+          "title": "GPU: copy small real buffers in place via plaincopy::copy_buffer",
+          "updated_at": "2026-11-25T18:28:30Z"
         },
         {
-          "created_at": "2026-11-25T15:31:57Z",
+          "created_at": "2026-11-25T04:30:22Z",
           "merged": false,
           "merged_at": null,
-          "number": 998,
+          "number": 688,
           "state": "open",
-          "title": "gpu: compact empty indirect records in device-local clamp",
-          "updated_at": "2026-11-25T15:31:57Z"
+          "title": "victory-gpu: 64-thread CARD_COMPARE with per-plan VRAM staging and COPY queue readback",
+          "updated_at": "2026-11-25T18:25:28Z"
         },
         {
-          "created_at": "2026-11-25T13:44:08Z",
+          "created_at": "2026-11-25T18:25:26Z",
           "merged": false,
           "merged_at": null,
-          "number": 957,
+          "number": 1070,
           "state": "open",
-          "title": "Shaders: return zero for unused image query extents (port of upstream VIctory #1313)",
-          "updated_at": "2026-11-25T15:31:29Z"
+          "title": "GPU: allow VICTORY_INDIRECT_GATHER=1 to work standalone without VICTORY_INDIRECT_WINDOW=1",
+          "updated_at": "2026-11-25T18:25:26Z"
         },
         {
-          "created_at": "2026-11-25T11:45:23Z",
+          "created_at": "2026-11-25T18:23:08Z",
           "merged": false,
           "merged_at": null,
-          "number": 884,
+          "number": 1069,
           "state": "open",
-          "title": "HLE: implement blocking and prefix-enumeration XGameSave vtable slots",
-          "updated_at": "2026-11-25T15:30:37Z"
+          "title": "xmem: page remaps skip the kernel calls that change nothing (VICTORY_REMAP_LEAN=1)",
+          "updated_at": "2026-11-25T18:23:08Z"
         },
         {
-          "created_at": "2026-11-25T15:29:30Z",
+          "created_at": "2026-11-25T06:49:46Z",
           "merged": false,
           "merged_at": null,
-          "number": 997,
-          "state": "open",
-          "title": "gpu: coalesce card-memory piece hashing across 64 threads per piece",
-          "updated_at": "2026-11-25T15:29:30Z"
+          "number": 766,
+          "state": "closed",
+          "title": "Diagnostics: count the title mapping changes and how long the lock was held",
+          "updated_at": "2026-11-25T18:20:33Z"
         },
         {
-          "created_at": "2026-11-25T15:28:40Z",
+          "created_at": "2026-11-25T04:29:18Z",
           "merged": false,
           "merged_at": null,
-          "number": 996,
+          "number": 685,
           "state": "open",
-          "title": "Preserve signed R8 contrast in PNG captures",
-          "updated_at": "2026-11-25T15:28:40Z"
+          "title": "victory-gpu: O(log R) BlockRuns guard cache and fix VICTORY_D3D12_DRED=0",
+          "updated_at": "2026-11-25T18:20:01Z"
         },
         {
-          "created_at": "2026-11-24T20:06:27Z",
+          "created_at": "2026-11-24T21:29:08Z",
           "merged": false,
           "merged_at": null,
-          "number": 20,
+          "number": 100,
           "state": "open",
-          "title": "GPU: compile our run-time HLSL with DXC when the system compiler refuses it (Wine/Proton)",
-          "updated_at": "2026-11-25T15:28:27Z"
+          "title": "Turn the last three switched-off style lints back on",
+          "updated_at": "2026-11-25T18:19:22Z"
         }
       ],
-      "pushed_at": "2026-11-25T12:43:41Z",
+      "pushed_at": "2026-11-25T17:28:55Z",
       "readme": {
         "path": "README.md",
-        "sha": "d43f5286bea309e5e4a5dbb50b47d79e2e98ed18"
+        "sha": "3921e7dce516d5b382728cf13ff952a7d9d1ac45"
       },
       "releases": [],
       "renamed_to": null,
       "repo": "fxceless/victory-fork",
-      "stars": 2829,
+      "stars": 2909,
       "state": "ok"
     },
     "fxceless/victory-gta6": {
@@ -1309,12 +1426,39 @@
       "description": "Clean-room replacements for console system DLLs that let console game executables run natively on Windows, without emulation. ",
       "group": "projects",
       "head": {
-        "date": "2026-11-25T13:41:22Z",
-        "message": "fix(run): start games without the Windows debug heap",
-        "sha": "dbfe70797e6e8344defb6fb319f367de8d375541"
+        "date": "2026-11-25T17:59:00Z",
+        "message": "fix(d3d12_xs): evict idle copies of title memory without a resource",
+        "sha": "87b2e1154c26e6ea8310a113e500ecfcb8104142"
       },
       "name": "g6shim",
       "pulls": [
+        {
+          "created_at": "2026-11-25T07:49:09Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 19,
+          "state": "open",
+          "title": "feat(shader): expand translation coverage for TF-4",
+          "updated_at": "2026-11-25T18:11:59Z"
+        },
+        {
+          "created_at": "2026-11-25T17:42:22Z",
+          "merged": true,
+          "merged_at": "2026-11-25T17:59:01Z",
+          "number": 22,
+          "state": "closed",
+          "title": "fix(d3d12_xs): evict idle copies of title memory without a resource",
+          "updated_at": "2026-11-25T17:59:06Z"
+        },
+        {
+          "created_at": "2026-11-25T16:56:11Z",
+          "merged": true,
+          "merged_at": "2026-11-25T17:12:28Z",
+          "number": 21,
+          "state": "closed",
+          "title": "fix(runtime): give the game process 1 ms timer resolution",
+          "updated_at": "2026-11-25T17:12:33Z"
+        },
         {
           "created_at": "2026-11-25T13:24:44Z",
           "merged": true,
@@ -1341,15 +1485,6 @@
           "state": "closed",
           "title": "feat(shader): read lane masks as data through wave ballots",
           "updated_at": "2026-11-25T10:02:36Z"
-        },
-        {
-          "created_at": "2026-11-25T07:49:09Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 19,
-          "state": "open",
-          "title": "feat(shader): expand translation coverage for TF-4",
-          "updated_at": "2026-11-25T07:49:09Z"
         },
         {
           "created_at": "2026-11-24T21:52:39Z",
@@ -1431,27 +1566,9 @@
           "state": "closed",
           "title": "ci: require the DXIL validator in the Windows job",
           "updated_at": "2026-11-24T15:24:49Z"
-        },
-        {
-          "created_at": "2026-11-24T14:56:51Z",
-          "merged": true,
-          "merged_at": "2026-11-24T15:14:57Z",
-          "number": 8,
-          "state": "closed",
-          "title": "feat(file): translate more path functions on the virtual drives",
-          "updated_at": "2026-11-24T15:14:57Z"
-        },
-        {
-          "created_at": "2026-11-24T13:59:49Z",
-          "merged": true,
-          "merged_at": "2026-11-24T14:12:46Z",
-          "number": 6,
-          "state": "closed",
-          "title": "test(tools): cover the convention, ledger and progress scripts",
-          "updated_at": "2026-11-24T14:12:46Z"
         }
       ],
-      "pushed_at": "2026-11-25T13:41:23Z",
+      "pushed_at": "2026-11-25T17:59:01Z",
       "readme": {
         "path": "README.md",
         "sha": "701c42e59d30f2e7061a02864b9316170361e6ff"
@@ -1528,7 +1645,7 @@
           "updated_at": "2026-11-24T15:37:39Z"
         }
       ],
-      "pushed_at": "2026-11-25T15:33:50Z",
+      "pushed_at": "2026-11-25T17:54:36Z",
       "readme": {
         "path": "README.md",
         "sha": "c0c4587824e97cfe790db5fc11650f8d971296f6"
@@ -1536,7 +1653,7 @@
       "releases": [],
       "renamed_to": null,
       "repo": "IAmNotSiob/leonida-ce",
-      "stars": 24,
+      "stars": 25,
       "state": "ok"
     },
     "ivall/xcl": {
@@ -1772,7 +1889,7 @@
       "releases": [],
       "renamed_to": null,
       "repo": "Kajcsi/G6Recomp",
-      "stars": 10,
+      "stars": 11,
       "state": "ok"
     },
     "loopersalty/anyxboxx": {
@@ -1780,20 +1897,101 @@
       "description": "AnyXboxX \u2014 prototype d'\u00e9mulateur Xbox Series X (HLE du GDK sur Unicorn)",
       "group": "projects",
       "head": {
-        "date": "2026-11-25T15:36:48Z",
-        "message": "Merge pull request #175 from marquezinii/feat/resume-journal-victory",
-        "sha": "a51a072a22d0b56db0d4dc689440b15dabd099da"
+        "date": "2026-11-25T18:32:29Z",
+        "message": "Merge pull request #218 from IxMxAMAR/feat/rdna2-f16",
+        "sha": "e259cb325541c5199283aca6423a4da786e8c17d"
       },
       "name": "AnyXboxX",
       "pulls": [
         {
-          "created_at": "2026-11-24T21:19:02Z",
+          "created_at": "2026-11-25T16:22:20Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 219,
+          "state": "open",
+          "title": "feat: half precision (f16) in the HLSL recompiler (25 encodings)",
+          "updated_at": "2026-11-25T18:32:56Z"
+        },
+        {
+          "created_at": "2026-11-25T16:22:08Z",
           "merged": true,
-          "merged_at": "2026-11-25T15:36:49Z",
-          "number": 175,
+          "merged_at": "2026-11-25T18:32:29Z",
+          "number": 218,
           "state": "closed",
-          "title": "feat: outil de r\u00e9sum\u00e9 du journal VIctory (m\u00e9dianes des images du monde, comparaison de deux lancements)",
-          "updated_at": "2026-11-25T15:36:49Z"
+          "title": "feat: half precision (f16) in the RDNA 2 interpreter (25 encodings)",
+          "updated_at": "2026-11-25T18:32:30Z"
+        },
+        {
+          "created_at": "2026-11-25T16:22:24Z",
+          "merged": true,
+          "merged_at": "2026-11-25T18:28:03Z",
+          "number": 220,
+          "state": "closed",
+          "title": "fix: HLSL f32 operations folded at compile time (x + 0, 0 - x, x - x, 0 \u00d7 x)",
+          "updated_at": "2026-11-25T18:28:03Z"
+        },
+        {
+          "created_at": "2026-11-25T16:13:29Z",
+          "merged": true,
+          "merged_at": "2026-11-25T18:24:00Z",
+          "number": 216,
+          "state": "closed",
+          "title": "feat: staging buffers of index-picked textures are reused, on in the launcher (world entry about twice as fast on RTX 5080)",
+          "updated_at": "2026-11-25T18:24:01Z"
+        },
+        {
+          "created_at": "2026-11-25T16:48:51Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 221,
+          "state": "open",
+          "title": "feat: 16-bit integer compares, s_pack_*_b32_b16 and global addtid in the RDNA 2 interpreter and HLSL \u2014 1,113/1,490",
+          "updated_at": "2026-11-25T18:19:49Z"
+        },
+        {
+          "created_at": "2026-11-25T17:43:59Z",
+          "merged": true,
+          "merged_at": "2026-11-25T18:19:20Z",
+          "number": 224,
+          "state": "closed",
+          "title": "fix: reuse card copyback scratch storage",
+          "updated_at": "2026-11-25T18:19:20Z"
+        },
+        {
+          "created_at": "2026-11-25T15:52:57Z",
+          "merged": true,
+          "merged_at": "2026-11-25T18:15:15Z",
+          "number": 214,
+          "state": "closed",
+          "title": "fix: device methods 0x1c8 and 0x218 are DeserializePipelineStateX, and declining them is the answer",
+          "updated_at": "2026-11-25T18:15:15Z"
+        },
+        {
+          "created_at": "2026-11-25T16:02:45Z",
+          "merged": true,
+          "merged_at": "2026-11-25T18:10:43Z",
+          "number": 215,
+          "state": "closed",
+          "title": "fix: share SDWA/DPP operand types between interpreter and HLSL",
+          "updated_at": "2026-11-25T18:10:43Z"
+        },
+        {
+          "created_at": "2026-11-25T16:50:01Z",
+          "merged": true,
+          "merged_at": "2026-11-25T18:05:18Z",
+          "number": 222,
+          "state": "closed",
+          "title": "fix: the VIctory copy builds again outside the launcher's configuration (victory-gpu without diagnostics, victory-shader tests on Windows)",
+          "updated_at": "2026-11-25T18:05:19Z"
+        },
+        {
+          "created_at": "2026-11-25T17:37:43Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 223,
+          "state": "open",
+          "title": "feat: d16 typed buffer loads and stores (buffer/tbuffer_*_format_d16_*) in the RDNA 2 interpreter and HLSL \u2014 1,078/1,490",
+          "updated_at": "2026-11-25T17:37:43Z"
         },
         {
           "created_at": "2026-11-25T15:19:58Z",
@@ -1802,135 +2000,54 @@
           "number": 211,
           "state": "open",
           "title": "refactor: Rust architecture plan and first ported component",
-          "updated_at": "2026-11-25T15:31:48Z"
-        },
-        {
-          "created_at": "2026-11-25T01:23:20Z",
-          "merged": true,
-          "merged_at": "2026-11-25T15:30:18Z",
-          "number": 190,
-          "state": "closed",
-          "title": "feat(tombox): build and verify AcpHal.dll and chad.dll audio libraries by default (W14)",
-          "updated_at": "2026-11-25T15:30:18Z"
-        },
-        {
-          "created_at": "2026-11-25T00:05:05Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 185,
-          "state": "open",
-          "title": "fix: --banc-perf sans verdict quand aucune seconde n'est mesur\u00e9e apr\u00e8s la chauffe",
-          "updated_at": "2026-11-25T15:26:23Z"
-        },
-        {
-          "created_at": "2026-11-24T15:42:15Z",
-          "merged": true,
-          "merged_at": "2026-11-25T15:25:54Z",
-          "number": 152,
-          "state": "closed",
-          "title": "rdna2/mimg: add 4 texture formats and 14 _mip/_l/_o 2D ops",
-          "updated_at": "2026-11-25T15:25:55Z"
-        },
-        {
-          "created_at": "2026-11-25T15:24:51Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 212,
-          "state": "open",
-          "title": "feat: multi-lane pixel shader waves with SM 6.0 ballot and readlane (#68)",
-          "updated_at": "2026-11-25T15:24:51Z"
-        },
-        {
-          "created_at": "2026-11-24T15:43:41Z",
-          "merged": true,
-          "merged_at": "2026-11-25T15:21:25Z",
-          "number": 153,
-          "state": "closed",
-          "title": "docs: o\u00f9 lire la doc ISA RDNA 2 d'AMD (copie archiv\u00e9e) et comment \u00e9tiqueter les autres sources",
-          "updated_at": "2026-11-25T15:21:26Z"
-        },
-        {
-          "created_at": "2026-11-24T16:27:08Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 156,
-          "state": "closed",
-          "title": "feat: interfaces GDK hors ligne (XGameStreaming, XGameUi, XNetworking, XAccessibility, XUser) \u2014 280/396",
-          "updated_at": "2026-11-25T15:18:42Z"
+          "updated_at": "2026-11-25T16:35:08Z"
         },
         {
           "created_at": "2026-11-25T15:18:33Z",
           "merged": false,
           "merged_at": null,
           "number": 210,
+          "state": "closed",
+          "title": "feat: offline GDK interfaces (XGameStreaming, XGameUi, XNetworking, XAccessibility, XUser), unnotified subscriptions in E_NOTIMPL \u2014 277/396",
+          "updated_at": "2026-11-25T16:20:38Z"
+        },
+        {
+          "created_at": "2026-11-25T16:20:01Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 217,
           "state": "open",
           "title": "feat: offline GDK interfaces (XGameStreaming, XGameUi, XNetworking, XAccessibility, XUser), unnotified subscriptions in E_NOTIMPL \u2014 277/396",
-          "updated_at": "2026-11-25T15:18:33Z"
+          "updated_at": "2026-11-25T16:20:01Z"
         },
         {
-          "created_at": "2026-11-24T19:55:58Z",
-          "merged": true,
-          "merged_at": "2026-11-25T15:16:35Z",
-          "number": 170,
-          "state": "closed",
-          "title": "feat: le lanceur natif \u00e9crit la premi\u00e8re exception du jeu sur stderr (W12)",
-          "updated_at": "2026-11-25T15:16:35Z"
-        },
-        {
-          "created_at": "2026-11-24T13:14:28Z",
-          "merged": true,
-          "merged_at": "2026-11-25T14:57:54Z",
-          "number": 139,
-          "state": "closed",
-          "title": "feat: double pr\u00e9cision et d\u00e9calages 64 bits dans l'interpr\u00e9teur RDNA 2",
-          "updated_at": "2026-11-25T15:14:39Z"
-        },
-        {
-          "created_at": "2026-11-25T15:14:14Z",
+          "created_at": "2026-11-24T18:02:07Z",
           "merged": false,
           "merged_at": null,
-          "number": 209,
-          "state": "open",
-          "title": "fix: f64/f32 points from the review of #139 (v_cvt_f64_f32 abs/neg in HLSL, v_fract NaN and bound, 1/(2*pi), sign of zero)",
-          "updated_at": "2026-11-25T15:14:29Z"
+          "number": 163,
+          "state": "closed",
+          "title": "feat: demi-pr\u00e9cision (f16) dans l'interpr\u00e9teur RDNA 2 (25 encodages)",
+          "updated_at": "2026-11-25T16:15:39Z"
         },
         {
-          "created_at": "2026-11-23T23:59:55Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 117,
+          "created_at": "2026-11-25T15:24:51Z",
+          "merged": true,
+          "merged_at": "2026-11-25T16:11:52Z",
+          "number": 212,
           "state": "closed",
           "title": "feat: multi-lane pixel shader waves with SM 6.0 ballot and readlane (#68)",
-          "updated_at": "2026-11-25T15:12:46Z"
-        },
-        {
-          "created_at": "2026-11-24T16:56:43Z",
-          "merged": true,
-          "merged_at": "2026-11-25T15:07:53Z",
-          "number": 158,
-          "state": "closed",
-          "title": "feat: inventorier les PSO dans le rapport jour J",
-          "updated_at": "2026-11-25T15:07:53Z"
-        },
-        {
-          "created_at": "2026-11-24T14:22:40Z",
-          "merged": true,
-          "merged_at": "2026-11-25T15:02:54Z",
-          "number": 143,
-          "state": "closed",
-          "title": "test: d\u00e9marrage natif W9, W10, W11, W13 et W15 (note du premier d\u00e9marrage 1.0.2.1)",
-          "updated_at": "2026-11-25T15:02:54Z"
+          "updated_at": "2026-11-25T16:11:53Z"
         }
       ],
-      "pushed_at": "2026-11-25T15:36:48Z",
+      "pushed_at": "2026-11-25T18:32:29Z",
       "readme": {
         "path": "README.md",
-        "sha": "2908ec81648c97f37292a6acddd54831b0c8d591"
+        "sha": "5e54e4f6cb8e1de8bfba48ffa8aa9ade4007053c"
       },
       "releases": [],
       "renamed_to": null,
       "repo": "LooperSalty/AnyXboxX",
-      "stars": 336,
+      "stars": 339,
       "state": "ok"
     },
     "luizwidmer/palmetto": {
@@ -1938,13 +2055,13 @@
       "description": "Clean-room compatibility runtime",
       "group": "projects",
       "head": {
-        "date": "2026-11-25T15:15:49Z",
-        "message": "platform: deliver the measured user-change event and offline async completions, both opt-in",
-        "sha": "e8a23e3515fdea57293751b37a6889bbeb0ec358"
+        "date": "2026-11-25T18:24:32Z",
+        "message": "dstorage: resolve physical pages at the CPU view and transfer page lists live",
+        "sha": "66b33d78226be0279c61b7c7e2d3d893562b4f62"
       },
       "name": "palmetto",
       "pulls": [],
-      "pushed_at": "2026-11-25T15:15:58Z",
+      "pushed_at": "2026-11-25T18:24:35Z",
       "readme": {
         "path": "README.md",
         "sha": "bd54409336f2abab9c723f1b9ca632755696ef45"
@@ -1952,7 +2069,7 @@
       "releases": [],
       "renamed_to": null,
       "repo": "luizwidmer/palmetto",
-      "stars": 10,
+      "stars": 11,
       "state": "ok"
     },
     "marvisak/victory": {
@@ -1960,157 +2077,157 @@
       "description": "An attempt at running GTA VI on PC",
       "group": "projects",
       "head": {
-        "date": "2026-11-25T14:50:41Z",
-        "message": "Shader: normalized buffer codes convert to the float nearest their quotient",
-        "sha": "da82e444ec46a162ca779c82d4cf191a69182971"
+        "date": "2026-11-25T16:51:02Z",
+        "message": "README: status of 2026-11-25, the prologue is reached at about 1 fps",
+        "sha": "13f91caee25f2fdf2c062be5f7a27f058e51cbca"
       },
       "name": "VIctory",
       "pulls": [
         {
-          "created_at": "2026-11-25T07:18:34Z",
+          "created_at": "2026-11-25T18:33:28Z",
           "merged": false,
           "merged_at": null,
-          "number": 2185,
+          "number": 2707,
           "state": "open",
-          "title": "fix: clamp shader heap indices to the host's view-heap cap (NVIDIA)",
-          "updated_at": "2026-11-25T15:35:56Z"
+          "title": "GPU: preserve taken dynamic descriptor slots across texture eviction",
+          "updated_at": "2026-11-25T18:33:28Z"
         },
         {
-          "created_at": "2026-11-25T07:44:43Z",
+          "created_at": "2026-11-25T15:30:20Z",
           "merged": false,
           "merged_at": null,
-          "number": 2202,
+          "number": 2539,
           "state": "open",
-          "title": "shader: lower remaining packed dot products and clamped integer forms",
-          "updated_at": "2026-11-25T15:35:52Z"
+          "title": "Shaders: a select or carry-in on an untracked mask tests this lane's bit",
+          "updated_at": "2026-11-25T18:33:35Z"
         },
         {
-          "created_at": "2026-11-25T08:23:48Z",
+          "created_at": "2026-11-25T13:20:15Z",
           "merged": false,
           "merged_at": null,
-          "number": 2229,
+          "number": 2427,
           "state": "open",
-          "title": "Shaders: v_pk_fmac_f16 with DPP reads src0 from the selected lane",
-          "updated_at": "2026-11-25T15:35:27Z"
+          "title": "cut cold launch to the first screen from 49 s to 21 s",
+          "updated_at": "2026-11-25T18:33:23Z"
         },
         {
-          "created_at": "2026-11-25T10:27:26Z",
+          "created_at": "2026-11-25T15:23:39Z",
           "merged": false,
           "merged_at": null,
-          "number": 2315,
-          "state": "closed",
-          "title": "GPU: the heap clamp bound must fit what D3D12 gives",
-          "updated_at": "2026-11-25T15:35:16Z"
-        },
-        {
-          "created_at": "2026-11-25T02:27:42Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 1989,
-          "state": "closed",
-          "title": "Shaders: a vertex program writing through views declares UAVs at every stage",
-          "updated_at": "2026-11-25T15:34:31Z"
-        },
-        {
-          "created_at": "2026-11-25T13:04:26Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 2405,
+          "number": 2530,
           "state": "open",
-          "title": "Shaders: test raw VCC on s_cbranch_vccz and s_cbranch_vccnz without EXEC masking",
-          "updated_at": "2026-11-25T15:34:16Z"
+          "title": "Core: re-canonicalize policy::resolve paths after collapsing .. to close symlink bypass",
+          "updated_at": "2026-11-25T18:33:16Z"
         },
         {
-          "created_at": "2026-11-25T15:34:15Z",
+          "created_at": "2026-11-25T16:25:55Z",
           "merged": false,
           "merged_at": null,
-          "number": 2547,
+          "number": 2596,
           "state": "open",
-          "title": "GPU: host descriptor heaps, depth twin copies, frame timing",
-          "updated_at": "2026-11-25T15:34:15Z"
+          "title": "Shader tests: an empty root-constant list is set as the one constant it declares (#2571)",
+          "updated_at": "2026-11-25T18:33:14Z"
         },
         {
-          "created_at": "2026-11-25T13:28:52Z",
+          "created_at": "2026-11-25T17:59:27Z",
           "merged": false,
           "merged_at": null,
-          "number": 2437,
+          "number": 2677,
           "state": "open",
-          "title": "GPU: a marked copy-back advances the snapshot of declared ranges over its page",
-          "updated_at": "2026-11-25T15:34:09Z"
+          "title": "App: keep run paths stable when the title changes directory",
+          "updated_at": "2026-11-25T18:33:12Z"
         },
         {
-          "created_at": "2026-11-25T15:34:07Z",
+          "created_at": "2026-11-25T15:21:02Z",
           "merged": false,
           "merged_at": null,
-          "number": 2546,
+          "number": 2528,
           "state": "open",
-          "title": "Shaders: a table's address is not checked for a high half",
-          "updated_at": "2026-11-25T15:34:07Z"
+          "title": "GPU diagnostics: count texture data without row padding",
+          "updated_at": "2026-11-25T18:32:56Z"
         },
         {
-          "created_at": "2026-11-25T15:04:28Z",
+          "created_at": "2026-11-25T18:32:54Z",
           "merged": false,
           "merged_at": null,
-          "number": 2513,
+          "number": 2706,
           "state": "open",
-          "title": "GPU: a marked copy-back keeps a declared range's snapshot in step",
-          "updated_at": "2026-11-25T15:34:07Z"
+          "title": "victory-gpu: keep a pipeline library per translation, not one shared one (a translator edit destroyed a 926 MB / 7.5 min cache)",
+          "updated_at": "2026-11-25T18:32:54Z"
         },
         {
-          "created_at": "2026-11-25T11:44:22Z",
+          "created_at": "2026-11-25T17:44:06Z",
           "merged": false,
           "merged_at": null,
-          "number": 2358,
+          "number": 2665,
           "state": "open",
-          "title": "GPU: prepare and upload only dirty texture bands (opt-in)",
-          "updated_at": "2026-11-25T15:34:03Z"
+          "title": "Shaders/Bitcode: cache Shader::op declarations, primitive types, scalar constants, and zero-copy bitcode Writer",
+          "updated_at": "2026-11-25T18:32:52Z"
         },
         {
-          "created_at": "2026-11-25T11:35:37Z",
+          "created_at": "2026-11-24T23:44:30Z",
           "merged": false,
           "merged_at": null,
-          "number": 2357,
+          "number": 1862,
           "state": "open",
-          "title": "Shader tests: heap buffer views are raw, as the host makes them",
-          "updated_at": "2026-11-25T15:33:59Z"
+          "title": "GPU: index bindless texture slots for targeted release and preserve u\u2026",
+          "updated_at": "2026-11-25T18:32:48Z"
         },
         {
-          "created_at": "2026-11-25T11:34:34Z",
+          "created_at": "2026-11-25T15:19:02Z",
           "merged": false,
           "merged_at": null,
-          "number": 2355,
+          "number": 2527,
           "state": "open",
-          "title": "Shaders: a first interpolation half read early is the interpolation",
-          "updated_at": "2026-11-25T15:33:56Z"
+          "title": "GPU capture: decode R32G32_UINT targets",
+          "updated_at": "2026-11-25T18:32:38Z"
         },
         {
-          "created_at": "2026-11-25T11:29:07Z",
+          "created_at": "2026-11-25T15:13:44Z",
           "merged": false,
           "merged_at": null,
-          "number": 2354,
+          "number": 2520,
           "state": "open",
-          "title": "GPU: queries run on the host GPU",
-          "updated_at": "2026-11-25T15:33:53Z"
+          "title": "Shaders: walk a predecessor's live-out registers once instead of searching it per register",
+          "updated_at": "2026-11-25T18:32:19Z"
         },
         {
-          "created_at": "2026-11-25T15:33:50Z",
+          "created_at": "2026-11-25T15:13:07Z",
           "merged": false,
           "merged_at": null,
-          "number": 2545,
+          "number": 2519,
           "state": "open",
-          "title": "GPU: avoid illegal COPY_SOURCE self-transition and keep HostTexture alive in Host::present",
-          "updated_at": "2026-11-25T15:33:50Z"
+          "title": "HLE: optionally back physical page pools with temporary sparse files",
+          "updated_at": "2026-11-25T18:32:01Z"
+        },
+        {
+          "created_at": "2026-11-25T18:31:43Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 2705,
+          "state": "open",
+          "title": "GPU: opt-in video-memory side for host copies of title buffers",
+          "updated_at": "2026-11-25T18:31:43Z"
+        },
+        {
+          "created_at": "2026-11-25T15:09:46Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 2515,
+          "state": "open",
+          "title": "Shaders: VOP3 f16 interpolation attr63.w is not a 32-bit literal",
+          "updated_at": "2026-11-25T18:31:43Z"
         }
       ],
-      "pushed_at": "2026-11-25T15:33:25Z",
+      "pushed_at": "2026-11-25T16:51:05Z",
       "readme": {
         "path": "README.md",
-        "sha": "53e79748b14f8b6f29d2d8bea70775131dae95b3"
+        "sha": "a712650ae2c48873884a6be8723fd301fa9c45b8"
       },
       "releases": [],
       "renamed_to": null,
       "repo": "marvisak/VIctory",
-      "stars": 12250,
+      "stars": 12388,
       "state": "ok"
     },
     "mewiof/holy-interoperability": {
@@ -2147,13 +2264,76 @@
       "name": "xbox-emulator",
       "pulls": [
         {
+          "created_at": "2026-11-25T17:50:37Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 387,
+          "state": "open",
+          "title": "ISA sweep: run every case on RDNA2 silicon and pin the reference models to the record (stacked on #385)",
+          "updated_at": "2026-11-25T17:50:37Z"
+        },
+        {
+          "created_at": "2026-11-25T17:33:53Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 385,
+          "state": "open",
+          "title": "tombox-xshader: VOP3 op_sel, v_cube* denormals and v_sat_pk_u8_i16 as measured on RDNA2 silicon",
+          "updated_at": "2026-11-25T17:34:24Z"
+        },
+        {
+          "created_at": "2026-11-25T16:04:34Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 384,
+          "state": "open",
+          "title": "tombox-xshader: size tb_lds from COMPUTE_PGM_RSRC2 in every compute shader (follow-up to #257, #350)",
+          "updated_at": "2026-11-25T16:04:34Z"
+        },
+        {
+          "created_at": "2026-11-24T05:43:17Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 356,
+          "state": "open",
+          "title": "amd_fidelityfx_loader_xbox: add AMD FidelityFX console loader shim crate",
+          "updated_at": "2026-11-25T15:41:35Z"
+        },
+        {
+          "created_at": "2026-11-24T05:43:07Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 355,
+          "state": "open",
+          "title": "bink2scarlett: implement Bink2 video playback compat crate for Scarlett",
+          "updated_at": "2026-11-25T15:41:43Z"
+        },
+        {
+          "created_at": "2026-11-25T15:39:05Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 383,
+          "state": "open",
+          "title": "ISA sweep: s_bfe and v_cvt_(pk)norm reference models checked against RDNA2 hardware (resubmits #78)",
+          "updated_at": "2026-11-25T15:39:05Z"
+        },
+        {
+          "created_at": "2026-11-24T05:43:26Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 357,
+          "state": "open",
+          "title": "xboxbvhbuilder: add XboxBvhBuilder acceleration structure interface shim",
+          "updated_at": "2026-11-25T15:41:29Z"
+        },
+        {
           "created_at": "2026-11-24T05:43:35Z",
           "merged": false,
           "merged_at": null,
           "number": 358,
           "state": "open",
           "title": "xg_xs: implement XGSuggestSwizzleMode export",
-          "updated_at": "2026-11-25T15:36:11Z"
+          "updated_at": "2026-11-25T15:41:19Z"
         },
         {
           "created_at": "2026-11-23T01:06:00Z",
@@ -2217,69 +2397,6 @@
           "state": "open",
           "title": "xmem: hook NtFreeVirtualMemory, NtProtectVirtualMemory, VirtualProtectEx and use per-target hook slot tables",
           "updated_at": "2026-11-25T13:57:21Z"
-        },
-        {
-          "created_at": "2026-11-24T16:49:17Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 371,
-          "state": "closed",
-          "title": "Record GTA VI startup and sustained frame presentation",
-          "updated_at": "2026-11-25T13:51:52Z"
-        },
-        {
-          "created_at": "2026-11-24T16:48:27Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 370,
-          "state": "closed",
-          "title": "compat-common: allow XTaskQueueDispatch to dispatch queued items on serialized and pool ports",
-          "updated_at": "2026-11-25T13:51:50Z"
-        },
-        {
-          "created_at": "2026-11-24T16:45:28Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 369,
-          "state": "closed",
-          "title": "compat-common: leave async call pending on XAsyncCancel until provider completes it",
-          "updated_at": "2026-11-25T13:51:47Z"
-        },
-        {
-          "created_at": "2026-11-24T16:42:20Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 367,
-          "state": "closed",
-          "title": "compat-common: return distinct handle on XTaskQueueDuplicateHandle to match GDK reference",
-          "updated_at": "2026-11-25T13:51:45Z"
-        },
-        {
-          "created_at": "2026-11-24T05:43:26Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 357,
-          "state": "open",
-          "title": "xboxbvhbuilder: add XboxBvhBuilder acceleration structure interface shim",
-          "updated_at": "2026-11-25T13:51:43Z"
-        },
-        {
-          "created_at": "2026-11-24T05:43:17Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 356,
-          "state": "open",
-          "title": "amd_fidelityfx_loader_xbox: add AMD FidelityFX console loader shim crate",
-          "updated_at": "2026-11-25T13:51:42Z"
-        },
-        {
-          "created_at": "2026-11-24T05:43:07Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 355,
-          "state": "open",
-          "title": "bink2scarlett: implement Bink2 video playback compat crate for Scarlett",
-          "updated_at": "2026-11-25T13:51:41Z"
         }
       ],
       "pushed_at": "2026-11-25T13:47:56Z",
@@ -2290,7 +2407,7 @@
       "releases": [],
       "renamed_to": null,
       "repo": "omonkeyz/xbox-emulator",
-      "stars": 1841,
+      "stars": 1844,
       "state": "ok"
     },
     "onlymoisties/gta6-boottest": {
@@ -2357,65 +2474,29 @@
       "description": "Xbox Series X|S (Scarlett) GDK compatibility layer for Windows: runs the Xbox Series build of the game natively on PC from your own files. AMD Radeon fixes, water physics, optional AMD FSR frame generation. No game files.",
       "group": "projects",
       "head": {
-        "date": "2026-11-25T15:01:37Z",
-        "message": "Test builds now on this repository's beta branch; KLBF Lab Beta archived",
-        "sha": "092a824aaa0b4da2d46bcecee822a91a2c17b150"
+        "date": "2026-11-25T18:13:46Z",
+        "message": "README: one stability figure, our 77 min record",
+        "sha": "61bfe3d77f23d83213c2e034dcf7c5c4c4188bfe"
       },
       "name": "KLBF Lab",
       "pulls": [
         {
-          "created_at": "2026-11-25T15:31:48Z",
+          "created_at": "2026-11-25T18:03:27Z",
           "merged": false,
           "merged_at": null,
-          "number": 9,
+          "number": 29,
           "state": "open",
-          "title": "Add a scene timing summary for hardware test reports",
-          "updated_at": "2026-11-25T15:31:48Z"
+          "title": "perf(loader): patch mwaitx/clwb in-place to NOP and accelerate clzero loops",
+          "updated_at": "2026-11-25T18:03:27Z"
         },
         {
-          "created_at": "2026-11-25T15:26:49Z",
+          "created_at": "2026-11-25T17:30:30Z",
           "merged": false,
           "merged_at": null,
-          "number": 8,
+          "number": 27,
           "state": "open",
-          "title": "Reject simultaneous shader warm-up and full pipeline pre-build",
-          "updated_at": "2026-11-25T15:26:49Z"
-        },
-        {
-          "created_at": "2026-11-25T15:26:23Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 7,
-          "state": "open",
-          "title": "Stop scanning shader inputs when the warm-up time budget expires",
-          "updated_at": "2026-11-25T15:26:23Z"
-        },
-        {
-          "created_at": "2026-11-25T15:21:00Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 6,
-          "state": "open",
-          "title": "Add a fresh pipeline cache regression check",
-          "updated_at": "2026-11-25T15:21:00Z"
-        },
-        {
-          "created_at": "2026-11-25T15:08:42Z",
-          "merged": true,
-          "merged_at": "2026-11-25T15:17:44Z",
-          "number": 4,
-          "state": "closed",
-          "title": "Treat an explicit zero worker count as one across translate modes",
-          "updated_at": "2026-11-25T15:17:48Z"
-        },
-        {
-          "created_at": "2026-11-25T15:09:06Z",
-          "merged": true,
-          "merged_at": "2026-11-25T15:17:40Z",
-          "number": 5,
-          "state": "closed",
-          "title": "Correct Lab 39 menu guidance and stable branch link",
-          "updated_at": "2026-11-25T15:17:47Z"
+          "title": "Fix bounds-only depth testing on D3D12 WARP",
+          "updated_at": "2026-11-25T17:40:33Z"
         },
         {
           "created_at": "2026-11-25T14:27:19Z",
@@ -2424,27 +2505,126 @@
           "number": 2,
           "state": "open",
           "title": "Shaders: compile the four compute shaders the RDNA 4 compiler crashes on",
-          "updated_at": "2026-11-25T14:31:27Z"
+          "updated_at": "2026-11-25T17:39:07Z"
         },
         {
-          "created_at": "2026-11-25T12:51:55Z",
-          "merged": true,
-          "merged_at": "2026-11-25T12:59:52Z",
-          "number": 1,
-          "state": "closed",
-          "title": "Fix host pipeline caching on Wine",
-          "updated_at": "2026-11-25T12:59:54Z"
+          "created_at": "2026-11-25T16:40:54Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 18,
+          "state": "open",
+          "title": "Restore the beta asset-policy check",
+          "updated_at": "2026-11-25T17:39:06Z"
+        },
+        {
+          "created_at": "2026-11-25T17:03:14Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 23,
+          "state": "open",
+          "title": "Textures: let go of the staging buffer of a texture that stays unchanged (16 GB machines)",
+          "updated_at": "2026-11-25T17:38:33Z"
+        },
+        {
+          "created_at": "2026-11-25T17:32:08Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 28,
+          "state": "open",
+          "title": "Textures: hash big texture memory on several threads (same hash, up to 6x faster)",
+          "updated_at": "2026-11-25T17:32:08Z"
+        },
+        {
+          "created_at": "2026-11-25T17:24:07Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 26,
+          "state": "open",
+          "title": "Copy-back: look for changed runs a word at a time (same output, 4-6x faster search)",
+          "updated_at": "2026-11-25T17:24:07Z"
+        },
+        {
+          "created_at": "2026-11-25T17:21:09Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 25,
+          "state": "open",
+          "title": "Restore both strict Clippy checks on beta",
+          "updated_at": "2026-11-25T17:21:09Z"
+        },
+        {
+          "created_at": "2026-11-25T16:32:51Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 15,
+          "state": "open",
+          "title": "perf(cpu): pin GPU and host threads to P-cores and optional disk I/O to E-cores",
+          "updated_at": "2026-11-25T17:16:50Z"
+        },
+        {
+          "created_at": "2026-11-25T17:09:01Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 24,
+          "state": "open",
+          "title": "Run: Series S by default on PCs with less than 24 GB, with an upscaler that is there",
+          "updated_at": "2026-11-25T17:09:01Z"
+        },
+        {
+          "created_at": "2026-11-25T17:03:10Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 22,
+          "state": "open",
+          "title": "Use the discrete GPU on laptops instead of the integrated one",
+          "updated_at": "2026-11-25T17:03:10Z"
+        },
+        {
+          "created_at": "2026-11-25T16:57:27Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 21,
+          "state": "open",
+          "title": "Add an optional stage breakdown to the scene timing summary",
+          "updated_at": "2026-11-25T17:02:42Z"
+        },
+        {
+          "created_at": "2026-11-25T16:52:55Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 20,
+          "state": "open",
+          "title": "Report a missing shader pre-build input before creating the cache",
+          "updated_at": "2026-11-25T17:02:41Z"
+        },
+        {
+          "created_at": "2026-11-25T16:36:08Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 17,
+          "state": "open",
+          "title": "Log the selected GPU and Windows driver version at D3D12 startup",
+          "updated_at": "2026-11-25T17:02:37Z"
+        },
+        {
+          "created_at": "2026-11-25T16:32:53Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 16,
+          "state": "open",
+          "title": "perf(gpu): shard HostHeap::mirror across 256 descriptor stripes",
+          "updated_at": "2026-11-25T17:02:35Z"
         }
       ],
-      "pushed_at": "2026-11-25T15:17:44Z",
+      "pushed_at": "2026-11-25T18:13:55Z",
       "readme": {
         "path": "README.md",
-        "sha": "c9ffba1fd64c9f44ced98d2021a3317efd50374a"
+        "sha": "0704dc12d7848eaa23b5ce0409f0e9f228404b55"
       },
       "releases": [],
       "renamed_to": null,
       "repo": "PastiiJay/klbf-lab",
-      "stars": 65,
+      "stars": 91,
       "state": "ok"
     },
     "pragyaangaur/victory-macos": {
@@ -2452,12 +2632,138 @@
       "description": "Attempting to run GTA VI on macOS.",
       "group": "also_watched",
       "head": {
-        "date": "2026-11-25T15:12:23Z",
-        "message": "Merge pull request #130 from romainhedouin/perf/tracked-staging-scratch",
-        "sha": "45c4d63f4cebc894fcedf27efaf4fe92ac92c2fc"
+        "date": "2026-11-25T16:29:45Z",
+        "message": "Merge pull request #137 from cirddan/test/release-placed-descriptor-heaps",
+        "sha": "485b230ef596898cdd390cd5d9205b76e4289b82"
       },
       "name": "VIctory-macOS",
       "pulls": [
+        {
+          "created_at": "2026-11-25T18:33:40Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 151,
+          "state": "open",
+          "title": "[GPU/macOS] Defer texture descriptor materialization to reduce startup memory pressure",
+          "updated_at": "2026-11-25T18:33:40Z"
+        },
+        {
+          "created_at": "2026-11-25T18:27:55Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 150,
+          "state": "open",
+          "title": "test(gpu): hold the submission lock in the written-page mark tests",
+          "updated_at": "2026-11-25T18:28:01Z"
+        },
+        {
+          "created_at": "2026-11-25T18:16:07Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 148,
+          "state": "open",
+          "title": "fix(shader): run one-wave wave64 LDS groups on 32-lane hosts instead of skipping them",
+          "updated_at": "2026-11-25T18:19:50Z"
+        },
+        {
+          "created_at": "2026-11-25T18:16:59Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 149,
+          "state": "open",
+          "title": "test(gpu): hold the submission lock where shadow tests stand in for a submission",
+          "updated_at": "2026-11-25T18:16:59Z"
+        },
+        {
+          "created_at": "2026-11-25T18:04:05Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 147,
+          "state": "open",
+          "title": "loader: patch plain 256-bit stores named by RVA (#144)",
+          "updated_at": "2026-11-25T18:04:05Z"
+        },
+        {
+          "created_at": "2026-11-25T17:25:21Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 146,
+          "state": "open",
+          "title": "gpu: VICTORY_GPU_BUDGET_MB sets the texture budget; log textures given up",
+          "updated_at": "2026-11-25T17:25:21Z"
+        },
+        {
+          "created_at": "2026-11-25T16:59:01Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 145,
+          "state": "open",
+          "title": "fix(gpu): retire overlapping descriptor heap ranges",
+          "updated_at": "2026-11-25T18:12:53Z"
+        },
+        {
+          "created_at": "2026-11-25T16:41:14Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 143,
+          "state": "open",
+          "title": "diag(gpu): count the heap blocks Wine maps on their own, per frame",
+          "updated_at": "2026-11-25T16:41:14Z"
+        },
+        {
+          "created_at": "2026-11-25T16:17:52Z",
+          "merged": true,
+          "merged_at": "2026-11-25T16:29:46Z",
+          "number": 137,
+          "state": "closed",
+          "title": "test(gpu): release descriptor heaps before dropping backing memory",
+          "updated_at": "2026-11-25T16:30:09Z"
+        },
+        {
+          "created_at": "2026-11-25T16:19:26Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 139,
+          "state": "open",
+          "title": "fix(fleet): accept valid hundredths in timing validation",
+          "updated_at": "2026-11-25T16:30:07Z"
+        },
+        {
+          "created_at": "2026-11-25T16:12:23Z",
+          "merged": true,
+          "merged_at": "2026-11-25T16:29:35Z",
+          "number": 136,
+          "state": "closed",
+          "title": "Merge VIctory up to 67e8ae1",
+          "updated_at": "2026-11-25T16:29:36Z"
+        },
+        {
+          "created_at": "2026-11-25T16:24:25Z",
+          "merged": true,
+          "merged_at": "2026-11-25T16:28:00Z",
+          "number": 141,
+          "state": "closed",
+          "title": "README: maintainer note on the Claude limit",
+          "updated_at": "2026-11-25T16:28:00Z"
+        },
+        {
+          "created_at": "2026-11-25T16:18:38Z",
+          "merged": true,
+          "merged_at": "2026-11-25T16:22:56Z",
+          "number": 138,
+          "state": "closed",
+          "title": "diag(gpu): say when GPU timestamps do not advance instead of timing commands at 0 ms",
+          "updated_at": "2026-11-25T16:22:57Z"
+        },
+        {
+          "created_at": "2026-11-25T16:01:08Z",
+          "merged": true,
+          "merged_at": "2026-11-25T16:14:08Z",
+          "number": 134,
+          "state": "closed",
+          "title": "diag(gpu): VICTORY_STUB_DEVICE_QUERY to probe past the +0x1dac734 assert",
+          "updated_at": "2026-11-25T16:14:09Z"
+        },
         {
           "created_at": "2026-11-25T15:08:49Z",
           "merged": true,
@@ -2466,143 +2772,17 @@
           "state": "closed",
           "title": "perf(gpu): the ExecuteIndirect clamp stops at the count, not the maximum",
           "updated_at": "2026-11-25T15:12:27Z"
-        },
-        {
-          "created_at": "2026-11-25T15:09:08Z",
-          "merged": true,
-          "merged_at": "2026-11-25T15:12:24Z",
-          "number": 130,
-          "state": "closed",
-          "title": "perf(gpu): a tracked texture's refresh keeps no copy of its bytes",
-          "updated_at": "2026-11-25T15:12:30Z"
-        },
-        {
-          "created_at": "2026-11-25T15:05:28Z",
-          "merged": true,
-          "merged_at": "2026-11-25T15:09:38Z",
-          "number": 128,
-          "state": "closed",
-          "title": "perf(gpu): let a shader container's bytes go once it is translated",
-          "updated_at": "2026-11-25T15:09:41Z"
-        },
-        {
-          "created_at": "2026-11-25T15:04:52Z",
-          "merged": true,
-          "merged_at": "2026-11-25T15:08:24Z",
-          "number": 127,
-          "state": "closed",
-          "title": "perf(gpu): CopyMemoryToMemoryX copies through the title-copy step",
-          "updated_at": "2026-11-25T15:08:28Z"
-        },
-        {
-          "created_at": "2026-11-25T15:01:57Z",
-          "merged": true,
-          "merged_at": "2026-11-25T15:04:44Z",
-          "number": 126,
-          "state": "closed",
-          "title": "perf(gpu): copy back marked pages per copy, opening and guarding in runs",
-          "updated_at": "2026-11-25T15:05:24Z"
-        },
-        {
-          "created_at": "2026-11-25T15:01:52Z",
-          "merged": true,
-          "merged_at": "2026-11-25T15:04:02Z",
-          "number": 125,
-          "state": "closed",
-          "title": "perf(gpu): mark other mappings of a written page without opening them",
-          "updated_at": "2026-11-25T15:05:22Z"
-        },
-        {
-          "created_at": "2026-11-25T14:56:09Z",
-          "merged": true,
-          "merged_at": "2026-11-25T14:58:24Z",
-          "number": 124,
-          "state": "closed",
-          "title": "watch: guard one view per VirtualProtect call",
-          "updated_at": "2026-11-25T14:58:28Z"
-        },
-        {
-          "created_at": "2026-11-25T14:54:30Z",
-          "merged": true,
-          "merged_at": "2026-11-25T14:57:17Z",
-          "number": 123,
-          "state": "closed",
-          "title": "perf(shader): leave translated loops after 2^14 passes, not 2^20",
-          "updated_at": "2026-11-25T14:57:19Z"
-        },
-        {
-          "created_at": "2026-11-25T14:52:21Z",
-          "merged": true,
-          "merged_at": "2026-11-25T14:54:44Z",
-          "number": 122,
-          "state": "closed",
-          "title": "debug(loader): VICTORY_DUMP_REGISTRY to read the title registry at the +0x1dac734 assert",
-          "updated_at": "2026-11-25T14:54:47Z"
-        },
-        {
-          "created_at": "2026-11-25T14:51:05Z",
-          "merged": true,
-          "merged_at": "2026-11-25T14:53:24Z",
-          "number": 121,
-          "state": "closed",
-          "title": "Docs: host pipelines are kept on D3DMetal 3.0 since #74",
-          "updated_at": "2026-11-25T14:53:28Z"
-        },
-        {
-          "created_at": "2026-11-25T12:43:51Z",
-          "merged": true,
-          "merged_at": "2026-11-25T12:46:49Z",
-          "number": 74,
-          "state": "closed",
-          "title": "fix(gpu): ask for an empty pipeline library with a null pointer",
-          "updated_at": "2026-11-25T14:51:10Z"
-        },
-        {
-          "created_at": "2026-11-25T14:48:00Z",
-          "merged": true,
-          "merged_at": "2026-11-25T14:50:27Z",
-          "number": 120,
-          "state": "closed",
-          "title": "Fleet: a skipped old result no longer fails the claim reply",
-          "updated_at": "2026-11-25T14:50:32Z"
-        },
-        {
-          "created_at": "2026-11-25T14:42:23Z",
-          "merged": true,
-          "merged_at": "2026-11-25T14:44:39Z",
-          "number": 119,
-          "state": "closed",
-          "title": "Docs: keep the README light, move tester media to a gallery page",
-          "updated_at": "2026-11-25T14:44:44Z"
-        },
-        {
-          "created_at": "2026-11-25T14:33:33Z",
-          "merged": true,
-          "merged_at": "2026-11-25T14:37:55Z",
-          "number": 117,
-          "state": "closed",
-          "title": "perf(gpu): a title buffer copy makes only the bytes it wrote due again",
-          "updated_at": "2026-11-25T14:38:00Z"
-        },
-        {
-          "created_at": "2026-11-25T14:33:58Z",
-          "merged": true,
-          "merged_at": "2026-11-25T14:36:36Z",
-          "number": 118,
-          "state": "closed",
-          "title": "Docs: D3DMetal 4.0 beta 3 is recommended, not the whole story; add jgrizon's video",
-          "updated_at": "2026-11-25T14:36:41Z"
         }
       ],
-      "pushed_at": "2026-11-25T15:12:23Z",
+      "pushed_at": "2026-11-25T16:29:46Z",
       "readme": {
         "path": "README.md",
-        "sha": "821c81f20234fb879ca76d1ce9d3e7b732bb28fd"
+        "sha": "a2e8b401ba6593b421b0aa5c3f9ba5004c12fd07"
       },
       "releases": [],
       "renamed_to": null,
       "repo": "pragyaangaur/VIctory-macOS",
-      "stars": 120,
+      "stars": 128,
       "state": "ok"
     },
     "projectleonidal/leonida": {
@@ -2610,12 +2790,21 @@
       "description": "Continuation of Project Leonida, aiming to bring GTA VI from Xbox to PC through static recompilation.",
       "group": "also_watched",
       "head": {
-        "date": "2026-11-25T15:23:53Z",
-        "message": "Merge pull request #15 from zubovdev/gpu-test/rtx-3070-ti",
-        "sha": "f03ceb7a774e44a36de0881ead5bfd9bf9c2efc0"
+        "date": "2026-11-25T16:14:24Z",
+        "message": "Merge pull request #16 from ProjectLeonidaL/refactor/layers",
+        "sha": "89b95f3e2215cc7b078618c2878ded1567a3be18"
       },
       "name": "Leonida (ProjectLeonidaL)",
       "pulls": [
+        {
+          "created_at": "2026-11-25T16:14:11Z",
+          "merged": true,
+          "merged_at": "2026-11-25T16:14:24Z",
+          "number": 16,
+          "state": "closed",
+          "title": "Refactor/layers",
+          "updated_at": "2026-11-25T16:14:25Z"
+        },
         {
           "created_at": "2026-11-25T15:04:38Z",
           "merged": true,
@@ -2725,7 +2914,7 @@
           "updated_at": "2026-11-24T10:50:40Z"
         }
       ],
-      "pushed_at": "2026-11-25T15:23:53Z",
+      "pushed_at": "2026-11-25T16:14:24Z",
       "readme": {
         "path": "README.md",
         "sha": "c901cb7b2136e075fa380793838d174380357718"
@@ -2733,7 +2922,7 @@
       "releases": [],
       "renamed_to": null,
       "repo": "ProjectLeonidaL/leonida",
-      "stars": 427,
+      "stars": 437,
       "state": "ok"
     },
     "r0y00/xbox2windows": {
@@ -2741,74 +2930,110 @@
       "description": "Static recompilation research for Xbox Series X|S software on x64 Windows, with source-built CPU and GPU tests. Full-game startup is unverified.",
       "group": "projects",
       "head": {
-        "date": "2026-11-25T15:12:05Z",
-        "message": "tests: open the vm_translation_check section heaps from a mapped view (#2393)",
-        "sha": "7092683a9a9bfa8952e5df415b5ae0ee93220fc9"
+        "date": "2026-11-25T18:30:27Z",
+        "message": "startup: accept a null-export-only pixel stage in the slot 57 role check (#2421)",
+        "sha": "dbab5435326c84ee3929d4b5cd82c7e0c98a98ae"
       },
       "name": "Xbox2Windows",
       "pulls": [
         {
-          "created_at": "2026-11-25T15:35:31Z",
+          "created_at": "2026-11-25T18:33:31Z",
           "merged": false,
           "merged_at": null,
-          "number": 2408,
+          "number": 2493,
           "state": "open",
-          "title": "startup: refuse an image instruction without dim: or dmask:",
-          "updated_at": "2026-11-25T15:35:31Z"
+          "title": "startup: NOP a soft-assert site after the first continue",
+          "updated_at": "2026-11-25T18:33:31Z"
         },
         {
-          "created_at": "2026-11-25T15:35:08Z",
+          "created_at": "2026-11-25T17:00:21Z",
           "merged": false,
           "merged_at": null,
-          "number": 2407,
+          "number": 2445,
           "state": "open",
-          "title": "shader: extract main(argv), atomic output writes, and OSError/struct guards in mesh_dynamic_aot with CLI suite",
-          "updated_at": "2026-11-25T15:35:08Z"
+          "title": "startup: lower s_waitcnt_depctr as a wait without effect in gfx2hlsl",
+          "updated_at": "2026-11-25T18:32:34Z"
         },
         {
-          "created_at": "2026-11-25T15:30:30Z",
+          "created_at": "2026-11-25T17:54:29Z",
           "merged": false,
           "merged_at": null,
-          "number": 2406,
+          "number": 2477,
           "state": "open",
-          "title": "tests: report each split sampler mismatch and detect omitted stores",
-          "updated_at": "2026-11-25T15:30:30Z"
+          "title": "GPU: bind large backed views in translated indirect draws",
+          "updated_at": "2026-11-25T18:32:29Z"
         },
         {
-          "created_at": "2026-11-24T12:09:14Z",
+          "created_at": "2026-11-25T17:22:01Z",
           "merged": false,
           "merged_at": null,
-          "number": 1469,
+          "number": 2461,
           "state": "open",
-          "title": "startup: general GFX10 texture tiling and detiling runtime",
-          "updated_at": "2026-11-25T15:30:24Z"
+          "title": "gfx2hlsl: prove a compute formatted load whose table pointer copy is in a block above",
+          "updated_at": "2026-11-25T18:32:17Z"
         },
         {
-          "created_at": "2026-11-24T18:05:40Z",
+          "created_at": "2026-11-25T16:08:56Z",
           "merged": false,
           "merged_at": null,
-          "number": 1747,
+          "number": 2420,
           "state": "open",
-          "title": "startup: lower v_mul_hi_u32 in gfx2hlsl",
-          "updated_at": "2026-11-25T15:29:24Z"
+          "title": "startup: lower s_bitset0_b32 and s_bitset1_b32 in gfx2hlsl",
+          "updated_at": "2026-11-25T18:32:15Z"
         },
         {
-          "created_at": "2026-11-25T05:42:09Z",
+          "created_at": "2026-11-24T22:58:27Z",
           "merged": false,
           "merged_at": null,
-          "number": 2218,
+          "number": 2007,
           "state": "open",
-          "title": "gpu: back slot 133 linear buffers by sharing or a submit-time copy (opt-in)",
-          "updated_at": "2026-11-25T15:27:32Z"
+          "title": "startup: lower s_bfm_b64 in gfx2hlsl",
+          "updated_at": "2026-11-25T18:32:09Z"
         },
         {
-          "created_at": "2026-11-24T11:21:29Z",
+          "created_at": "2026-11-25T17:00:36Z",
           "merged": false,
           "merged_at": null,
-          "number": 1429,
+          "number": 2447,
           "state": "open",
-          "title": "startup: support interleaved chunked streams in DirectStorage",
-          "updated_at": "2026-11-25T15:27:18Z"
+          "title": "startup: translate slot 57 mesh requests of one group-memory shape",
+          "updated_at": "2026-11-25T18:32:05Z"
+        },
+        {
+          "created_at": "2026-11-25T17:46:44Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 2474,
+          "state": "open",
+          "title": "gpu: bind proven mesh root reads from ordinary XMem pages",
+          "updated_at": "2026-11-25T18:31:48Z"
+        },
+        {
+          "created_at": "2026-11-25T17:37:23Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 2470,
+          "state": "open",
+          "title": "startup: dispatch translated compute programs with raw table buffers",
+          "updated_at": "2026-11-25T18:31:47Z"
+        },
+        {
+          "created_at": "2026-11-25T18:07:35Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 2484,
+          "state": "open",
+          "title": "startup: name why s_getpc_b64 is refused instead of reporting the mnemonic alone",
+          "updated_at": "2026-11-25T18:31:45Z"
+        },
+        {
+          "created_at": "2026-11-25T17:36:53Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 2469,
+          "state": "open",
+          "title": "startup: refuse a short operand list in the scalar ALU handlers",
+          "updated_at": "2026-11-25T18:31:41Z"
         },
         {
           "created_at": "2026-11-25T15:26:43Z",
@@ -2817,76 +3042,40 @@
           "number": 2405,
           "state": "open",
           "title": "startup: lower v_mul_hi_i32 and s_mul_hi_i32 in gfx2hlsl",
-          "updated_at": "2026-11-25T15:26:43Z"
+          "updated_at": "2026-11-25T18:31:41Z"
         },
         {
-          "created_at": "2026-11-25T15:08:20Z",
+          "created_at": "2026-11-25T15:35:31Z",
           "merged": false,
           "merged_at": null,
-          "number": 2394,
+          "number": 2408,
           "state": "open",
-          "title": "shader: extract main(argv), atomic output writes, and error guards in mesh_entry_aot with CLI suite",
-          "updated_at": "2026-11-25T15:25:50Z"
+          "title": "startup: refuse an image instruction without dim: or dmask:",
+          "updated_at": "2026-11-25T18:31:35Z"
         },
         {
-          "created_at": "2026-11-25T15:22:47Z",
+          "created_at": "2026-11-25T15:10:50Z",
           "merged": false,
           "merged_at": null,
-          "number": 2404,
+          "number": 2396,
           "state": "open",
-          "title": "shader: lower bounded 128-bit LDS exchange and mixed-width reads in gfx2hlsl",
-          "updated_at": "2026-11-25T15:22:47Z"
+          "title": "startup: refuse a short operand list in four single-body handlers",
+          "updated_at": "2026-11-25T18:31:30Z"
         },
         {
-          "created_at": "2026-11-24T23:58:28Z",
+          "created_at": "2026-11-25T18:31:15Z",
           "merged": false,
           "merged_at": null,
-          "number": 2069,
+          "number": 2491,
           "state": "open",
-          "title": "shader: propagate descriptor pointers through s_add_u32/s_addc_u32 in gfx2hlsl (Part of #1723)",
-          "updated_at": "2026-11-25T15:22:40Z"
-        },
-        {
-          "created_at": "2026-11-25T14:57:32Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 2390,
-          "state": "open",
-          "title": "cpu: add dedicated cpu_avx_round_aot lifter for VROUNDPS, VROUNDPD, VROUNDSS, and VROUNDSD",
-          "updated_at": "2026-11-25T15:22:35Z"
-        },
-        {
-          "created_at": "2026-11-25T15:22:31Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 2403,
-          "state": "open",
-          "title": "tooling: index local compute container candidates",
-          "updated_at": "2026-11-25T15:22:31Z"
-        },
-        {
-          "created_at": "2026-11-25T15:21:54Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 2402,
-          "state": "open",
-          "title": "docs: add RTX 3070 Ti driver 610.88 GPU check report",
-          "updated_at": "2026-11-25T15:21:54Z"
-        },
-        {
-          "created_at": "2026-11-25T15:21:28Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 2401,
-          "state": "open",
-          "title": "startup: re-key saved shader requests after a cache revision change",
-          "updated_at": "2026-11-25T15:21:28Z"
+          "title": "d3d12: forward compute root bindings and Dispatch on console lists",
+          "updated_at": "2026-11-25T18:31:15Z"
         }
       ],
-      "pushed_at": "2026-11-25T15:22:10Z",
+      "pushed_at": "2026-11-25T18:33:18Z",
       "readme": {
         "path": "README.md",
-        "sha": "b26f710bbbb5dc3ccc113c240a997a5c61bf4aa5"
+        "sha": "9f2fc036a98e27cef3b8de22f024002b5618d943"
       },
       "releases": [
         {
@@ -2896,28 +3085,37 @@
       ],
       "renamed_to": null,
       "repo": "R0Y00/Xbox2Windows",
-      "stars": 1944,
+      "stars": 1950,
       "state": "ok"
     },
     "realblastex/flamingo": {
       "default_branch": "main",
-      "description": "VIctory / victory-fork based compatibility layer that runs a freshly released Xbox Series title on Windows from your own copy, with an RDNA2 shader recompiler to D3D12. About 14 fps on an RTX 4070 (Series S profile). No game files included.",
+      "description": "VIctory / victory-fork based compatibility layer that runs a freshly released Xbox Series title on Windows from your own copy, with an RDNA2 shader recompiler to D3D12. ",
       "group": "projects",
       "head": {
-        "date": "2026-11-25T15:19:41Z",
-        "message": "Boats float (vx-layer's texture copy-back), audio fixes (victory-fork #959), guard-page recovery (#2), two more programs in the wave-wide form, failed programs ",
-        "sha": "1f70cacba89a082a7cdd8d2a10113be2ea3f8396"
+        "date": "2026-11-25T18:26:46Z",
+        "message": "Remove console_insn (ported from XCL, which is GPL-2.0-only; victory-fork #1057, VIctory's crash handler instead); fewer VirtualProtect calls and kernel reads (",
+        "sha": "4825fdac916ffca659a90e650433f5cb8d1dd4eb"
       },
       "name": "Flamingo",
       "pulls": [
+        {
+          "created_at": "2026-11-25T18:03:09Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 4,
+          "state": "open",
+          "title": "Laptop GPU, Series S under 24 GB, faster copy-back and texture hashing, XG layouts from AnyXboxX",
+          "updated_at": "2026-11-25T18:26:09Z"
+        },
         {
           "created_at": "2026-11-25T14:30:36Z",
           "merged": false,
           "merged_at": null,
           "number": 2,
-          "state": "open",
+          "state": "closed",
           "title": "Recover guard-page faults in the fast copy routine",
-          "updated_at": "2026-11-25T14:30:36Z"
+          "updated_at": "2026-11-25T16:05:13Z"
         },
         {
           "created_at": "2026-11-25T11:45:37Z",
@@ -2929,7 +3127,7 @@
           "updated_at": "2026-11-25T12:33:50Z"
         }
       ],
-      "pushed_at": "2026-11-25T15:19:42Z",
+      "pushed_at": "2026-11-25T18:26:48Z",
       "readme": {
         "path": "README.md",
         "sha": "9515e6783f8365a37eeb2632a6fd1919593d0b8d"
@@ -2942,7 +3140,7 @@
       ],
       "renamed_to": null,
       "repo": "realblastex/flamingo",
-      "stars": 11,
+      "stars": 27,
       "state": "ok"
     },
     "rpatty-dev/percyscarlett": {
@@ -3008,7 +3206,7 @@
           "number": 15,
           "state": "open",
           "title": "fix: xapu Opus decoding, buffer views the host accepts, and tests that keep to themselves",
-          "updated_at": "2026-11-25T15:11:06Z"
+          "updated_at": "2026-11-25T15:44:33Z"
         },
         {
           "created_at": "2026-11-24T20:34:02Z",
@@ -3095,7 +3293,7 @@
       ],
       "renamed_to": null,
       "repo": "sammwyy/xvalkyrie",
-      "stars": 231,
+      "stars": 233,
       "state": "ok"
     },
     "thatrecompdev/five-star-recomp": {
@@ -3103,12 +3301,93 @@
       "description": "Pre-work for a PC port of the Xbox Series GTA VI release: formats, shader translation and an offline console runtime",
       "group": "projects",
       "head": {
-        "date": "2026-11-25T15:35:03Z",
-        "message": "Merge lane-dxilswitch: no program reads on game threads; failed builds always give a stand-in; ray-tracing markers survive translator updates",
-        "sha": "44afe4155e540e41029a76fa60cafd4097fa8aa6"
+        "date": "2026-11-25T18:12:41Z",
+        "message": "Merge lane-perf2: warn when a view's dimension differs from its resource's",
+        "sha": "f1ce50b4d67e0cc40cce40117a93ff7f23c319fd"
       },
       "name": "five-star-recomp",
       "pulls": [
+        {
+          "created_at": "2026-11-25T18:24:23Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 50,
+          "state": "open",
+          "title": "Shaders: a per-lane code load indexes only the program's data words",
+          "updated_at": "2026-11-25T18:24:23Z"
+        },
+        {
+          "created_at": "2026-11-25T17:51:04Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 49,
+          "state": "open",
+          "title": "D3D12.X: rectangle-list variants build off the game's threads",
+          "updated_at": "2026-11-25T17:51:04Z"
+        },
+        {
+          "created_at": "2026-11-25T17:36:48Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 48,
+          "state": "open",
+          "title": "Diagnostics: the return-address scan reads only an image's readable code",
+          "updated_at": "2026-11-25T17:36:48Z"
+        },
+        {
+          "created_at": "2026-11-25T17:30:32Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 47,
+          "state": "open",
+          "title": "Hang watch: each game event and semaphore keeps its last operations",
+          "updated_at": "2026-11-25T17:30:32Z"
+        },
+        {
+          "created_at": "2026-11-25T17:14:27Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 46,
+          "state": "open",
+          "title": "Diagnostics: a stack capture never reads the calling thread",
+          "updated_at": "2026-11-25T17:14:27Z"
+        },
+        {
+          "created_at": "2026-11-25T17:00:49Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 45,
+          "state": "open",
+          "title": "Shaders: a cycle entered at several blocks gets an entry guard instead of the whole program taking the dispatch form",
+          "updated_at": "2026-11-25T17:00:49Z"
+        },
+        {
+          "created_at": "2026-11-25T16:36:56Z",
+          "merged": true,
+          "merged_at": "2026-11-25T16:43:21Z",
+          "number": 44,
+          "state": "closed",
+          "title": "Diagnostics: stack captures never hold a thread while managed code runs",
+          "updated_at": "2026-11-25T16:43:33Z"
+        },
+        {
+          "created_at": "2026-11-25T16:36:53Z",
+          "merged": true,
+          "merged_at": "2026-11-25T16:43:21Z",
+          "number": 43,
+          "state": "closed",
+          "title": "Diagnostics: ray-tracing stand-in fills are logged and counted",
+          "updated_at": "2026-11-25T16:43:32Z"
+        },
+        {
+          "created_at": "2026-11-25T16:36:50Z",
+          "merged": true,
+          "merged_at": "2026-11-25T16:43:21Z",
+          "number": 42,
+          "state": "closed",
+          "title": "Diagnostics: a run log opens with the loader's build commit and command line",
+          "updated_at": "2026-11-25T16:43:30Z"
+        },
         {
           "created_at": "2026-11-25T13:55:09Z",
           "merged": true,
@@ -3162,90 +3441,9 @@
           "state": "closed",
           "title": "Loader: summaries take a snapshot of their concurrent dictionaries before LINQ",
           "updated_at": "2026-11-25T12:57:50Z"
-        },
-        {
-          "created_at": "2026-11-25T11:32:05Z",
-          "merged": true,
-          "merged_at": "2026-11-25T11:38:57Z",
-          "number": 27,
-          "state": "closed",
-          "title": "Shaders: readfirstlane on a wider hardware wave takes the max per program wave",
-          "updated_at": "2026-11-25T12:57:47Z"
-        },
-        {
-          "created_at": "2026-11-25T10:46:30Z",
-          "merged": true,
-          "merged_at": "2026-11-25T11:02:56Z",
-          "number": 26,
-          "state": "closed",
-          "title": "Shaders: lane masks keep their bool form unless a read may see an integer",
-          "updated_at": "2026-11-25T12:57:41Z"
-        },
-        {
-          "created_at": "2026-11-25T09:16:50Z",
-          "merged": true,
-          "merged_at": "2026-11-25T10:08:15Z",
-          "number": 24,
-          "state": "closed",
-          "title": "Shaders: the DXIL backend simplifies the entry function after value numbering",
-          "updated_at": "2026-11-25T12:57:38Z"
-        },
-        {
-          "created_at": "2026-11-25T11:53:06Z",
-          "merged": true,
-          "merged_at": "2026-11-25T12:43:43Z",
-          "number": 28,
-          "state": "closed",
-          "title": "Shaders: a wave32 compute program with wave operations is pinned to 32 lanes",
-          "updated_at": "2026-11-25T12:57:35Z"
-        },
-        {
-          "created_at": "2026-11-25T05:36:54Z",
-          "merged": true,
-          "merged_at": "2026-11-25T08:06:48Z",
-          "number": 21,
-          "state": "closed",
-          "title": "Shaders: readfirstlane reads the first active lane with WaveReadLaneFirst",
-          "updated_at": "2026-11-25T12:57:33Z"
-        },
-        {
-          "created_at": "2026-11-25T10:25:56Z",
-          "merged": true,
-          "merged_at": "2026-11-25T11:02:56Z",
-          "number": 25,
-          "state": "closed",
-          "title": "Shaders: the RDNA decoder accepts the inline 0 in an unread VOP3 source",
-          "updated_at": "2026-11-25T12:57:31Z"
-        },
-        {
-          "created_at": "2026-11-24T21:33:52Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 14,
-          "state": "closed",
-          "title": "Loader: speculative pipeline builds run below normal priority",
-          "updated_at": "2026-11-25T04:30:17Z"
-        },
-        {
-          "created_at": "2026-11-24T23:19:53Z",
-          "merged": true,
-          "merged_at": "2026-11-24T23:25:29Z",
-          "number": 18,
-          "state": "closed",
-          "title": "Shaders: refuse malformed DXBC headers and chunk tables",
-          "updated_at": "2026-11-24T23:25:31Z"
-        },
-        {
-          "created_at": "2026-11-24T23:08:26Z",
-          "merged": true,
-          "merged_at": "2026-11-24T23:25:24Z",
-          "number": 17,
-          "state": "closed",
-          "title": "CLI: report a PSO with no root instead of crashing",
-          "updated_at": "2026-11-24T23:25:26Z"
         }
       ],
-      "pushed_at": "2026-11-25T15:36:05Z",
+      "pushed_at": "2026-11-25T18:18:34Z",
       "readme": {
         "path": "README.md",
         "sha": "46c105a1e764ccf3697684a236f134fcb2cdf867"
@@ -3253,7 +3451,7 @@
       "releases": [],
       "renamed_to": null,
       "repo": "ThatRecompDev/five-star-recomp",
-      "stars": 216,
+      "stars": 217,
       "state": "ok",
       "status_docs": {
         "README.md": "46c105a1e764ccf3697684a236f134fcb2cdf867"
@@ -3264,149 +3462,149 @@
       "description": "A continuation of Leonida, the Xbox > PC port interface for GTA VI",
       "group": "also_watched",
       "head": {
-        "date": "2026-11-25T14:52:34Z",
-        "message": "Merge pull request #1631 from Tyrannys/title-window-overflow",
-        "sha": "b0f3d3998f0401eb7df8ddbb7a303d1e6bee9fb8"
+        "date": "2026-11-25T17:36:10Z",
+        "message": "Merge pull request #1812 from kirigayakazima/fix/bcpack-bptc-safety",
+        "sha": "b9320a118d46b24de665e30e577425c131b4a2ee"
       },
       "name": "Leonida Continued",
       "pulls": [
         {
-          "created_at": "2026-11-25T07:00:58Z",
+          "created_at": "2026-11-25T18:32:32Z",
           "merged": false,
           "merged_at": null,
-          "number": 1649,
+          "number": 2029,
           "state": "open",
-          "title": "windows-boot: report Vulkan fault classes in the digest",
-          "updated_at": "2026-11-25T15:36:52Z"
+          "title": "runtime: guard overflow/div-by-zero and remove duplicate passes in d3d12_xs_alloc_size",
+          "updated_at": "2026-11-25T18:32:46Z"
         },
         {
-          "created_at": "2026-11-25T15:36:17Z",
+          "created_at": "2026-11-25T11:37:58Z",
           "merged": false,
           "merged_at": null,
-          "number": 1911,
+          "number": 1763,
           "state": "open",
-          "title": "salu_diff: validate branch skips, register operands, arity, SIMM16, and comma sizing (SALU-DIFF-REF-VALIDATION)",
-          "updated_at": "2026-11-25T15:36:17Z"
+          "title": "OLD-9905: navmesh: rule out stream lengths as the 4 KiB boundary selector (ASSET-445)",
+          "updated_at": "2026-11-25T18:32:33Z"
         },
         {
-          "created_at": "2026-11-25T15:35:34Z",
+          "created_at": "2026-11-25T18:32:22Z",
           "merged": false,
           "merged_at": null,
-          "number": 1910,
+          "number": 2028,
           "state": "open",
-          "title": "runtime: cache helper Vulkan device procs, fix uncounted BDA fault and BAR/cleanup guards (RT-VK-HELPER-PROC-CACHE-AND-GUARDS)",
-          "updated_at": "2026-11-25T15:35:51Z"
+          "title": "Keep early process exits distinct from Wine run timeouts (GAME-RUN-SUMMARY-EARLY-EXIT)",
+          "updated_at": "2026-11-25T18:32:22Z"
         },
         {
-          "created_at": "2026-11-25T12:48:59Z",
+          "created_at": "2026-11-25T11:50:20Z",
           "merged": false,
           "merged_at": null,
-          "number": 1833,
+          "number": 1774,
           "state": "open",
-          "title": "vk_pipeline_check: choose robustBufferAccess and VK_EXT_robustness2 as the runtime does (RT-PIPELINE-CHECK-ROBUSTNESS)",
-          "updated_at": "2026-11-25T15:35:50Z"
+          "title": "rdna2spirv: --explicit-lod-bias applies the S# LOD bias where MoltenVK drops the sampler's; ps_ssharp passes on Macs (SHADER-EXPLICIT-LOD-BIAS-MVK)",
+          "updated_at": "2026-11-25T18:31:05Z"
         },
         {
-          "created_at": "2026-11-25T00:56:54Z",
+          "created_at": "2026-11-25T04:57:22Z",
           "merged": false,
           "merged_at": null,
-          "number": 1471,
+          "number": 1579,
           "state": "open",
-          "title": "docs/testing.md: Python 3.12+, as make_game.py requires (DOC-TESTING-PYTHON-MIN)",
-          "updated_at": "2026-11-25T15:35:45Z"
+          "title": "tests: resolve a writable temp dir instead of crashing on C:\\Windows",
+          "updated_at": "2026-11-25T18:31:03Z"
         },
         {
-          "created_at": "2026-11-25T00:49:30Z",
+          "created_at": "2026-11-24T19:03:29Z",
           "merged": false,
           "merged_at": null,
-          "number": 1467,
+          "number": 1133,
           "state": "open",
-          "title": "tests: skip honestly when push constants fall below the 144-byte contract",
-          "updated_at": "2026-11-25T15:34:48Z"
+          "title": "rdna2spirv: use subgroup ballot in quad_any for non-PS stages to avoid partial-quad UB (OLD-9833)",
+          "updated_at": "2026-11-25T18:30:25Z"
         },
         {
-          "created_at": "2026-11-25T05:27:14Z",
+          "created_at": "2026-11-25T18:30:04Z",
           "merged": false,
           "merged_at": null,
-          "number": 1592,
+          "number": 2027,
           "state": "open",
-          "title": "shaders: build the graphics program index for device slot 57 (RT-SLOT57-NATIVE-GRAPHICS-PSO)",
-          "updated_at": "2026-11-25T15:34:05Z"
+          "title": "runtime: guard align_up_saturating against zero alignment and add unit tests (RT-XS-ALLOC-SIZE-GUARDS-AND-TESTS)",
+          "updated_at": "2026-11-25T18:30:04Z"
         },
         {
-          "created_at": "2026-11-25T00:42:24Z",
+          "created_at": "2026-11-25T18:29:49Z",
           "merged": false,
           "merged_at": null,
-          "number": 1462,
+          "number": 2026,
           "state": "open",
-          "title": "ci: give the Windows semantic-tests leg 20 minutes; it was cancelled at 10 in 14 of 23 runs (CI-SEMANTIC-WIN-TIME-LIMIT)",
-          "updated_at": "2026-11-25T15:33:51Z"
+          "title": "Reject GPU disassembly replays with no runnable tests (GPU-RUNNER-REPLAY-NO-CASES)",
+          "updated_at": "2026-11-25T18:29:49Z"
         },
         {
-          "created_at": "2026-11-25T14:44:13Z",
+          "created_at": "2026-11-25T18:28:20Z",
           "merged": false,
           "merged_at": null,
-          "number": 1892,
+          "number": 2025,
           "state": "open",
-          "title": "runtime: guard draw zero-clears, AtomicCopyBuffer aliasing/overflow, and zero_image_aspect scratch (RT-VK-REPLAY-DRAW-ZERO-AND-ATOMIC-GUARDS)",
-          "updated_at": "2026-11-25T15:32:34Z"
+          "title": "runtime: early-exit pending_through and cache semaphore completions in RetireTickets",
+          "updated_at": "2026-11-25T18:28:32Z"
         },
         {
-          "created_at": "2026-11-25T13:20:54Z",
+          "created_at": "2026-11-25T11:34:56Z",
           "merged": false,
           "merged_at": null,
-          "number": 1859,
+          "number": 1760,
           "state": "open",
-          "title": "tools/cf_diff: validate CLI args, isolate SPIRV_VAL state, and enforce UTF-8 subprocess decoding",
-          "updated_at": "2026-11-25T15:32:15Z"
+          "title": "rpf9_carve: publish index.json atomically and guard stream outputs aliasing input archive (RPF9-CARVE-ATOMIC-INDEX-AND-INPUT-GUARD)",
+          "updated_at": "2026-11-25T18:28:32Z"
         },
         {
-          "created_at": "2026-11-25T13:22:58Z",
+          "created_at": "2026-11-24T11:18:49Z",
           "merged": false,
           "merged_at": null,
-          "number": 1861,
+          "number": 665,
           "state": "open",
-          "title": "tools/bc_feature: validate block dtype and guard smoothness mip-tail edge shapes",
-          "updated_at": "2026-11-25T15:32:14Z"
+          "title": "docs/design.md: one copy of each rule in the Global atomics row (OLD-9923)",
+          "updated_at": "2026-11-25T18:24:56Z"
         },
         {
-          "created_at": "2026-11-25T13:23:55Z",
+          "created_at": "2026-11-24T11:18:59Z",
           "merged": false,
           "merged_at": null,
-          "number": 1862,
+          "number": 669,
           "state": "open",
-          "title": "rdna2spirv: restore the dot4 inline op_sel_hi under exact re-anchoring too (SHADER-FSPX-DOT4-EXACT)",
-          "updated_at": "2026-11-25T15:32:13Z"
+          "title": "tests/test_first_look_rebuild.py: stub the three report tools first_look.ps1 runs, and check they are called (TEST-1421) (OLD-9942)",
+          "updated_at": "2026-11-25T18:24:53Z"
         },
         {
-          "created_at": "2026-11-25T13:41:19Z",
+          "created_at": "2026-11-25T11:20:51Z",
           "merged": false,
           "merged_at": null,
-          "number": 1866,
+          "number": 1757,
           "state": "open",
-          "title": "tools/compute_heap_layout_census: validate fspx user_sgprs, strip BOM logs, extract testable main",
-          "updated_at": "2026-11-25T15:32:10Z"
+          "title": "runtime/test: only release output pointer when SUCCEEDED(hr) in pipeline library host test (TEST-PIPELINE-LIBRARY-HOST-RELEASE)",
+          "updated_at": "2026-11-25T18:24:30Z"
         },
         {
-          "created_at": "2026-11-25T13:43:23Z",
+          "created_at": "2026-11-25T18:24:13Z",
           "merged": false,
           "merged_at": null,
-          "number": 1869,
+          "number": 2024,
           "state": "open",
-          "title": "tools/shader_carve_accel: release non-readonly/empty buffer pins and guard native fallback",
-          "updated_at": "2026-11-25T15:32:09Z"
+          "title": "runtime: make RewrittenBlob COM refcount atomic in d3d12_xs_rootsig",
+          "updated_at": "2026-11-25T18:24:21Z"
         },
         {
-          "created_at": "2026-11-25T15:07:43Z",
+          "created_at": "2026-11-25T10:00:22Z",
           "merged": false,
           "merged_at": null,
-          "number": 1899,
+          "number": 1730,
           "state": "open",
-          "title": "check_no_game_data: inspect legacy V7 tar archives",
-          "updated_at": "2026-11-25T15:32:08Z"
+          "title": "docs/boot_leads: say which leads are done and which have open pull requests (DOC-BOOT-LEADS-STATUS)",
+          "updated_at": "2026-11-25T18:23:16Z"
         }
       ],
-      "pushed_at": "2026-11-25T14:52:34Z",
+      "pushed_at": "2026-11-25T17:36:11Z",
       "readme": {
         "path": "README.md",
         "sha": "807cabd0109f7d4a38f687a808c6aa1af47d9201"
@@ -3414,7 +3612,7 @@
       "releases": [],
       "renamed_to": null,
       "repo": "ubiquitarianism/leonida",
-      "stars": 2210,
+      "stars": 2257,
       "state": "ok"
     },
     "uiliannn/vitoriabr": {
@@ -3422,119 +3620,20 @@
       "description": "VItoriaBr - Native Windows Xbox Series X|S runtime & D3D12/DXIL shader translator (PT-BR / EN)",
       "group": "projects",
       "head": {
-        "date": "2026-11-25T15:10:16Z",
-        "message": "gpu: port depth-shaded ambient light fallback from Belobug (GPL-3.0)",
-        "sha": "d0af132b6a1bd623ff8a7f70b01ca00fec8f385b"
+        "date": "2026-11-25T17:07:35Z",
+        "message": "gpu: reduce heap_buffers CPU overhead (64-frame rescan, cached spans, 4x fewer COM checks)",
+        "sha": "5a84eb41e10c736ed940cc454c75f46dc8369073"
       },
       "name": "VItoriaBr",
       "pulls": [
         {
-          "created_at": "2026-11-25T15:36:00Z",
+          "created_at": "2026-11-25T17:43:31Z",
           "merged": false,
           "merged_at": null,
-          "number": 25,
+          "number": 33,
           "state": "open",
-          "title": "GPU: give screen passes dedicated pipeline workers and wait budget",
-          "updated_at": "2026-11-25T15:36:00Z"
-        },
-        {
-          "created_at": "2026-11-25T15:34:49Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 24,
-          "state": "open",
-          "title": "CLI: apply VICTORY_HOST_WAVE and VICTORY_VIEW_LIMIT to victory warm",
-          "updated_at": "2026-11-25T15:34:49Z"
-        },
-        {
-          "created_at": "2026-11-25T15:09:30Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 23,
-          "state": "open",
-          "title": "fix(gpu,shader): fix WARP depth bounds, indirect budget group race, and Linux CI",
-          "updated_at": "2026-11-25T15:30:00Z"
-        },
-        {
-          "created_at": "2026-11-25T14:53:25Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 22,
-          "state": "open",
-          "title": "docs: adiciona preset e guia de ajustes para GPUs AMD de 8 GB e HDD",
-          "updated_at": "2026-11-25T14:57:38Z"
-        },
-        {
-          "created_at": "2026-11-25T14:13:45Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 21,
-          "state": "open",
-          "title": "Docs: clarify victory warm cache identity and verification",
-          "updated_at": "2026-11-25T14:13:45Z"
-        },
-        {
-          "created_at": "2026-11-25T13:56:31Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 20,
-          "state": "open",
-          "title": "Docs: comparative performance hypotheses across related forks",
-          "updated_at": "2026-11-25T13:56:31Z"
-        },
-        {
-          "created_at": "2026-11-25T13:09:47Z",
-          "merged": true,
-          "merged_at": "2026-11-25T13:46:54Z",
-          "number": 17,
-          "state": "closed",
-          "title": "XGameSave: a stray or unreadable version folder never costs the save (cherry-pick of upstream #1729)",
-          "updated_at": "2026-11-25T13:46:55Z"
-        },
-        {
-          "created_at": "2026-11-25T13:46:21Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 19,
-          "state": "open",
-          "title": "Docs: architectural performance review and optimization research directions",
-          "updated_at": "2026-11-25T13:46:21Z"
-        },
-        {
-          "created_at": "2026-11-25T11:08:08Z",
-          "merged": true,
-          "merged_at": "2026-11-25T12:50:13Z",
-          "number": 15,
-          "state": "closed",
-          "title": "fix(shader): lower MIMG offset/clamp/bias/LOD sample variants",
-          "updated_at": "2026-11-25T12:50:13Z"
-        },
-        {
-          "created_at": "2026-11-25T05:08:44Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 9,
-          "state": "closed",
-          "title": "fix(gpu): scan full dynamic descriptor wraparound window across cursor",
-          "updated_at": "2026-11-25T10:10:22Z"
-        },
-        {
-          "created_at": "2026-11-25T03:34:49Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 8,
-          "state": "closed",
-          "title": "Finish scanning past the dynamic descriptor cursor",
-          "updated_at": "2026-11-25T10:10:18Z"
-        },
-        {
-          "created_at": "2026-11-25T02:57:40Z",
-          "merged": true,
-          "merged_at": "2026-11-25T10:07:34Z",
-          "number": 6,
-          "state": "closed",
-          "title": "feat: `victory warm` translates the title's shaders into the cache be\u2026",
-          "updated_at": "2026-11-25T10:07:34Z"
+          "title": "gpu: hash card-copy pieces with a group of 64 threads (our card lists ~30 ms -> ~5 ms a frame)",
+          "updated_at": "2026-11-25T17:43:31Z"
         },
         {
           "created_at": "2026-11-25T01:30:26Z",
@@ -3543,36 +3642,135 @@
           "number": 3,
           "state": "closed",
           "title": "Contrib/linux portable ci",
-          "updated_at": "2026-11-25T10:07:34Z"
+          "updated_at": "2026-11-25T17:16:21Z"
         },
         {
-          "created_at": "2026-11-25T08:26:32Z",
+          "created_at": "2026-11-25T02:57:40Z",
           "merged": true,
-          "merged_at": "2026-11-25T09:49:04Z",
-          "number": 12,
+          "merged_at": "2026-11-25T10:07:34Z",
+          "number": 6,
           "state": "closed",
-          "title": "shader: lower packed dot products to DXIL dot4AddPacked and fmad",
-          "updated_at": "2026-11-25T09:49:05Z"
+          "title": "feat: `victory warm` translates the title's shaders into the cache be\u2026",
+          "updated_at": "2026-11-25T17:16:19Z"
         },
         {
-          "created_at": "2026-11-25T06:25:18Z",
+          "created_at": "2026-11-25T17:15:02Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 31,
+          "state": "open",
+          "title": "hle: VICTORY_HIDDEN_WINDOW keeps the title's window off the screens for unattended runs",
+          "updated_at": "2026-11-25T17:15:02Z"
+        },
+        {
+          "created_at": "2026-11-25T17:14:54Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 30,
+          "state": "open",
+          "title": "GPU: port texture streaming and draw submission improvements",
+          "updated_at": "2026-11-25T17:14:54Z"
+        },
+        {
+          "created_at": "2026-11-25T15:57:52Z",
           "merged": true,
-          "merged_at": "2026-11-25T09:49:04Z",
-          "number": 11,
+          "merged_at": "2026-11-25T16:49:14Z",
+          "number": 28,
           "state": "closed",
-          "title": "Formats: support console texture formats 189\u2013191 in texture layouts",
-          "updated_at": "2026-11-25T09:49:04Z"
+          "title": "Fix D3D12 device removal on oversized constant buffer views",
+          "updated_at": "2026-11-25T16:49:15Z"
+        },
+        {
+          "created_at": "2026-11-25T14:53:25Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 22,
+          "state": "open",
+          "title": "docs: adiciona preset e guia de ajustes para GPUs AMD de 8 GB e HDD",
+          "updated_at": "2026-11-25T16:31:44Z"
+        },
+        {
+          "created_at": "2026-11-25T15:34:49Z",
+          "merged": true,
+          "merged_at": "2026-11-25T16:28:52Z",
+          "number": 24,
+          "state": "closed",
+          "title": "CLI: apply VICTORY_HOST_WAVE and VICTORY_VIEW_LIMIT to victory warm",
+          "updated_at": "2026-11-25T16:28:52Z"
+        },
+        {
+          "created_at": "2026-11-25T14:13:45Z",
+          "merged": true,
+          "merged_at": "2026-11-25T16:28:48Z",
+          "number": 21,
+          "state": "closed",
+          "title": "Docs: clarify victory warm cache identity and verification",
+          "updated_at": "2026-11-25T16:28:48Z"
+        },
+        {
+          "created_at": "2026-11-25T13:46:21Z",
+          "merged": true,
+          "merged_at": "2026-11-25T16:28:44Z",
+          "number": 19,
+          "state": "closed",
+          "title": "Docs: architectural performance review and optimization research directions",
+          "updated_at": "2026-11-25T16:28:44Z"
+        },
+        {
+          "created_at": "2026-11-25T16:17:36Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 29,
+          "state": "closed",
+          "title": "docs: adiciona preset e guia de ajustes para GPUs AMD de 8 GB e HDD",
+          "updated_at": "2026-11-25T16:18:34Z"
+        },
+        {
+          "created_at": "2026-11-25T15:09:30Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 23,
+          "state": "open",
+          "title": "fix(gpu,shader): fix WARP depth bounds, indirect budget group race, and Linux CI",
+          "updated_at": "2026-11-25T15:54:11Z"
+        },
+        {
+          "created_at": "2026-11-25T13:56:31Z",
+          "merged": true,
+          "merged_at": "2026-11-25T15:49:45Z",
+          "number": 20,
+          "state": "closed",
+          "title": "Docs: comparative performance hypotheses across related forks",
+          "updated_at": "2026-11-25T15:49:46Z"
+        },
+        {
+          "created_at": "2026-11-25T15:48:26Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 27,
+          "state": "open",
+          "title": "fix(shader): keep absent BVH children out of sorted box hits",
+          "updated_at": "2026-11-25T15:48:26Z"
+        },
+        {
+          "created_at": "2026-11-25T15:40:39Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 26,
+          "state": "open",
+          "title": "shader: fix v_dot2_f32_f16 double negation and expand dot4 constant multiplicands",
+          "updated_at": "2026-11-25T15:40:39Z"
         }
       ],
-      "pushed_at": "2026-11-25T15:10:19Z",
+      "pushed_at": "2026-11-25T17:07:39Z",
       "readme": {
         "path": "README.md",
-        "sha": "03ea9b521706cf5ebfd7d4d02afda469025fa859"
+        "sha": "d92b18d45adfbc1203f3eeafc8beee8b349b8d62"
       },
       "releases": [],
       "renamed_to": null,
       "repo": "uiliannn/VItoriaBr",
-      "stars": 163,
+      "stars": 180,
       "state": "ok"
     },
     "vitutu1/victory-perf": {
@@ -3580,12 +3778,93 @@
       "description": "Xbox Series X|S (Scarlett) GDK compatibility layer for Windows focused on GPU/CPU sync performance, lighting stand-ins, and RDNA2 shader precompilation (derived from VIctory). No game files.",
       "group": "projects",
       "head": {
-        "date": "2026-11-25T15:36:17Z",
-        "message": "Merge pull request #9 from vitutu1/perf/belobug-hoist-p0-p2",
-        "sha": "52a60947ff93998675d3c5171ba1d79b312a0761"
+        "date": "2026-11-25T18:27:44Z",
+        "message": "Merge pull request #12 from Vladimir-Human/shader/wave32-lds-disjoint",
+        "sha": "8979c9e621eb574d64c47ed00216fe89edd4f188"
       },
       "name": "victory-perf",
       "pulls": [
+        {
+          "created_at": "2026-11-25T18:29:14Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 19,
+          "state": "open",
+          "title": "feat: DexNom shader/memory/upload ports, water texback, wave64 pre-check, and Series S >0.5 render scale",
+          "updated_at": "2026-11-25T18:29:14Z"
+        },
+        {
+          "created_at": "2026-11-25T18:28:57Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 18,
+          "state": "open",
+          "title": "perf(formats,gpu): add AVX2/SSE2 micro-tile detiler pool and adaptive shared pipeline pacing",
+          "updated_at": "2026-11-25T18:28:57Z"
+        },
+        {
+          "created_at": "2026-11-25T16:10:19Z",
+          "merged": true,
+          "merged_at": "2026-11-25T18:27:44Z",
+          "number": 12,
+          "state": "closed",
+          "title": "shader: recover disjoint and lane-private wave64 LDS on wave32 hosts",
+          "updated_at": "2026-11-25T18:27:45Z"
+        },
+        {
+          "created_at": "2026-11-25T15:48:31Z",
+          "merged": true,
+          "merged_at": "2026-11-25T18:27:40Z",
+          "number": 11,
+          "state": "closed",
+          "title": "perf(gpu): shard HostHeap::mirror across 256 descriptor stripes",
+          "updated_at": "2026-11-25T18:27:40Z"
+        },
+        {
+          "created_at": "2026-11-25T15:44:34Z",
+          "merged": true,
+          "merged_at": "2026-11-25T18:27:35Z",
+          "number": 10,
+          "state": "closed",
+          "title": "perf(cpu): pin critical GPU threads to P-cores and optional dstorage to E-cores",
+          "updated_at": "2026-11-25T18:27:35Z"
+        },
+        {
+          "created_at": "2026-11-25T18:20:31Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 17,
+          "state": "open",
+          "title": "perf(shader): sound DXIL LICM, load/store forwarding, algebraic folding, and barrier dedup",
+          "updated_at": "2026-11-25T18:20:31Z"
+        },
+        {
+          "created_at": "2026-11-25T17:18:37Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 14,
+          "state": "open",
+          "title": "perf(loader): atomically NOP-patch monitorx/mwaitx/clwb and generalize clzero loops",
+          "updated_at": "2026-11-25T18:17:29Z"
+        },
+        {
+          "created_at": "2026-11-25T18:13:05Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 16,
+          "state": "open",
+          "title": "perf(gpu): batch scattered indirect clamps and coalesce adjacent ready command parts",
+          "updated_at": "2026-11-25T18:13:05Z"
+        },
+        {
+          "created_at": "2026-11-25T17:55:27Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 15,
+          "state": "open",
+          "title": "perf(gpu): fix 12 GB VRAM eviction dead-zone, staging trim, and O(1) dynamic slots",
+          "updated_at": "2026-11-25T17:55:27Z"
+        },
         {
           "created_at": "2026-11-25T15:33:37Z",
           "merged": true,
@@ -3623,7 +3902,7 @@
           "updated_at": "2026-11-25T13:30:42Z"
         }
       ],
-      "pushed_at": "2026-11-25T15:36:17Z",
+      "pushed_at": "2026-11-25T18:29:12Z",
       "readme": {
         "path": "README.md",
         "sha": "a3db7001645d077f85fc69cae4db9cbba6389e0a"
@@ -3639,316 +3918,165 @@
       "description": "Xbox Series compatibility layer for Windows - runs console game code natively, reimplements the console system libraries and recompiles RDNA2 shaders to DXIL",
       "group": "projects",
       "head": {
-        "date": "2026-11-25T15:20:32Z",
-        "message": "D3D12.X: the scratch of split dispatches is bounded over all recordings",
-        "sha": "082944135cd2b96288470a595861fa608eee08dc"
+        "date": "2026-11-25T18:28:16Z",
+        "message": "Merge pull request #2342 from ChalanaGimhanaX/d3d12x/execute-indirect-shared-standin",
+        "sha": "3ceb5507a05355719ff1d7b5c29bc52aff142000"
       },
       "name": "XCL",
       "pulls": [
         {
-          "created_at": "2026-11-24T14:05:54Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 1274,
-          "state": "open",
-          "title": "d3d12x: implement console command allocator, queue, and command list slots",
-          "updated_at": "2026-11-25T15:36:13Z"
-        },
-        {
-          "created_at": "2026-11-24T15:39:50Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 1406,
-          "state": "open",
-          "title": "XGameRuntime: validate XAsyncBlock before forwarding to system runtime (#1390)",
-          "updated_at": "2026-11-25T15:36:10Z"
-        },
-        {
-          "created_at": "2026-11-24T04:44:10Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 759,
-          "state": "open",
-          "title": "Shaders: xcl pipelines compiles a run's queued pipelines outside the title",
-          "updated_at": "2026-11-25T15:35:56Z"
-        },
-        {
-          "created_at": "2026-11-24T17:59:40Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 1587,
-          "state": "open",
-          "title": "Scripts: harden gen_tiling CLI argument handling and output option",
-          "updated_at": "2026-11-25T15:35:55Z"
-        },
-        {
-          "created_at": "2026-11-24T15:37:48Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 1399,
-          "state": "open",
-          "title": "Scripts: add .env configuration support and launcher scripts",
-          "updated_at": "2026-11-25T15:35:51Z"
-        },
-        {
-          "created_at": "2026-11-25T01:57:49Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 2045,
-          "state": "open",
-          "title": "Docs: add PR triage dashboard",
-          "updated_at": "2026-11-25T15:35:48Z"
-        },
-        {
-          "created_at": "2026-11-25T15:35:00Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 2339,
-          "state": "open",
-          "title": "Tests: synchronize DirectStorage queue option readbacks",
-          "updated_at": "2026-11-25T15:35:00Z"
-        },
-        {
-          "created_at": "2026-11-25T03:25:15Z",
+          "created_at": "2026-11-25T16:19:46Z",
           "merged": true,
-          "merged_at": "2026-11-25T13:36:36Z",
-          "number": 2080,
+          "merged_at": "2026-11-25T18:17:21Z",
+          "number": 2352,
           "state": "closed",
-          "title": "Recompiler: split large direct compute pipelines at CFG edges",
-          "updated_at": "2026-11-25T15:34:53Z"
+          "title": "GPU: fail closed on unresolved control flow and errored FSSMs in effects",
+          "updated_at": "2026-11-25T18:33:26Z"
         },
         {
-          "created_at": "2026-11-24T12:54:23Z",
+          "created_at": "2026-11-25T18:31:56Z",
           "merged": false,
           "merged_at": null,
-          "number": 1182,
+          "number": 2425,
           "state": "open",
-          "title": "D3D12.X: render targets on one physical page share its video memory",
-          "updated_at": "2026-11-25T15:34:51Z"
+          "title": "Tests: pin VFS overlay / whiteout / open-decision contracts",
+          "updated_at": "2026-11-25T18:31:56Z"
         },
         {
-          "created_at": "2026-11-25T14:46:07Z",
+          "created_at": "2026-11-25T00:14:52Z",
           "merged": false,
           "merged_at": null,
-          "number": 2329,
+          "number": 1976,
           "state": "open",
-          "title": "D3D12.X: the list's ClearUnorderedAccessViewUint / Float get the PC's handles of the view",
-          "updated_at": "2026-11-25T15:34:03Z"
+          "title": "recomp/dxil: straddling 16-bit LDS, XCL_SHADER_LOOP_LIMIT, and safe MS barriers",
+          "updated_at": "2026-11-25T18:31:14Z"
         },
         {
-          "created_at": "2026-11-25T14:28:51Z",
+          "created_at": "2026-11-25T00:13:22Z",
           "merged": false,
           "merged_at": null,
-          "number": 2324,
+          "number": 1975,
           "state": "open",
-          "title": "GPU: use CreateDXGIFactory2 and clean fallback/skip in large texture upload test",
-          "updated_at": "2026-11-25T15:34:01Z"
+          "title": "recomp/dxil: CFG v_interp modes, bounded movrel/M0[7:0], and MS barrier guard",
+          "updated_at": "2026-11-25T18:31:08Z"
         },
         {
-          "created_at": "2026-11-25T13:18:13Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 2304,
-          "state": "open",
-          "title": "Scripts: summarize live and saved test results",
-          "updated_at": "2026-11-25T15:33:59Z"
+          "created_at": "2026-11-25T16:10:31Z",
+          "merged": true,
+          "merged_at": "2026-11-25T18:27:19Z",
+          "number": 2345,
+          "state": "closed",
+          "title": "D3D12.X: quarantine unmapped parked sparse tiles behind GPU fences",
+          "updated_at": "2026-11-25T18:29:37Z"
         },
         {
-          "created_at": "2026-11-25T12:45:38Z",
+          "created_at": "2026-11-25T11:28:13Z",
           "merged": false,
           "merged_at": null,
-          "number": 2293,
+          "number": 2254,
           "state": "open",
-          "title": "kernelx: physical pages as section slices that can be mapped at many addresses",
-          "updated_at": "2026-11-25T15:33:57Z"
+          "title": "Recompiler: direct DXIL geometry shaders read ES inputs from window 0's heap view",
+          "updated_at": "2026-11-25T18:29:16Z"
         },
         {
-          "created_at": "2026-11-25T12:49:11Z",
+          "created_at": "2026-11-25T01:14:00Z",
           "merged": false,
           "merged_at": null,
-          "number": 2295,
+          "number": 2027,
           "state": "open",
-          "title": "Build: pin Rust toolchain to 1.96.0 and enforce Cargo.lock (FIx #2214)",
-          "updated_at": "2026-11-25T15:33:56Z"
+          "title": "Recompiler: D16 format loads of UNORM / SNORM data round once to nearest",
+          "updated_at": "2026-11-25T18:29:13Z"
         },
         {
-          "created_at": "2026-11-24T17:42:49Z",
+          "created_at": "2026-11-24T02:12:33Z",
           "merged": false,
           "merged_at": null,
-          "number": 1563,
+          "number": 592,
           "state": "open",
-          "title": "D3D12.X: mark GPU writes and map formats in ResolveSubresource",
-          "updated_at": "2026-11-25T15:33:56Z"
+          "title": "D3D12.X: preserve unwritten gaps when tracking same-list waits",
+          "updated_at": "2026-11-25T18:28:52Z"
+        },
+        {
+          "created_at": "2026-11-25T16:29:46Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 2357,
+          "state": "open",
+          "title": "D3D12.X: bound target-page pools by title and adapter VRAM budgets",
+          "updated_at": "2026-11-25T18:28:48Z"
+        },
+        {
+          "created_at": "2026-11-25T01:31:04Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 2038,
+          "state": "open",
+          "title": "D3D12.X: drop conservative rasterization where the GPU has none",
+          "updated_at": "2026-11-25T18:28:44Z"
+        },
+        {
+          "created_at": "2026-11-25T07:54:54Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 2179,
+          "state": "open",
+          "title": "Shaders: gate offline --pipelines large DXIL builds on commit headroom",
+          "updated_at": "2026-11-25T18:28:42Z"
+        },
+        {
+          "created_at": "2026-11-25T12:35:33Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 2292,
+          "state": "open",
+          "title": "Build: opt integration tests out of high-entropy VA alongside xcl.exe",
+          "updated_at": "2026-11-25T18:28:39Z"
+        },
+        {
+          "created_at": "2026-11-25T06:24:47Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 2152,
+          "state": "open",
+          "title": "Scripts: restore caller directory and list XCL_SAMPLE_FSPX in test.ps1",
+          "updated_at": "2026-11-25T18:28:32Z"
+        },
+        {
+          "created_at": "2026-11-25T09:32:06Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 2204,
+          "state": "open",
+          "title": "Scripts: validate DXIL in coverage gate sweeps",
+          "updated_at": "2026-11-25T18:28:31Z"
+        },
+        {
+          "created_at": "2026-11-25T09:23:26Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 2202,
+          "state": "open",
+          "title": "Scripts: the coverage gate's sweep runs the validator",
+          "updated_at": "2026-11-25T18:28:29Z"
         }
       ],
-      "pushed_at": "2026-11-25T15:20:35Z",
+      "pushed_at": "2026-11-25T18:31:43Z",
       "readme": {
         "path": "README.md",
-        "sha": "0af03d753ce01b9484fee9759f774053bf485c18"
+        "sha": "2adb044fab97d6cfd78d91017776179d11c2bbe0"
       },
       "releases": [],
       "renamed_to": null,
       "repo": "xcl-dev/xcl",
-      "stars": 8165,
+      "stars": 8236,
       "state": "ok"
     },
     "zettrox/ztrx": {
-      "default_branch": "main",
-      "description": "Run the Xbox Series build of the game natively on Windows PCs with NVIDIA GPUs",
+      "error": "gh: Not Found (HTTP 404)",
       "group": "projects",
-      "head": {
-        "date": "2026-11-25T01:11:52Z",
-        "message": "ztrx: own README and a launcher for normal play",
-        "sha": "90b529f878a470fec9bf07b7be316bc769a12232"
-      },
       "name": "ztrx",
-      "pulls": [
-        {
-          "created_at": "2026-11-25T09:12:33Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 82,
-          "state": "open",
-          "title": "GPU: export optional frame cadence and existing meter counters",
-          "updated_at": "2026-11-25T15:36:28Z"
-        },
-        {
-          "created_at": "2026-11-25T11:14:04Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 99,
-          "state": "open",
-          "title": "GPU: parallelize relay copy-back merges, batch mapped_bytes probes, and trim caches on low commit",
-          "updated_at": "2026-11-25T15:34:13Z"
-        },
-        {
-          "created_at": "2026-11-25T14:54:28Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 149,
-          "state": "open",
-          "title": "GPU: reuse indexed buffer spans and retain bound heaps on recorded lists",
-          "updated_at": "2026-11-25T15:32:39Z"
-        },
-        {
-          "created_at": "2026-11-25T15:31:48Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 154,
-          "state": "open",
-          "title": "GPU: parallelize large tiled texture uploads on bounded workers",
-          "updated_at": "2026-11-25T15:31:48Z"
-        },
-        {
-          "created_at": "2026-11-25T15:05:12Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 151,
-          "state": "open",
-          "title": "Allow a custom launcher log path",
-          "updated_at": "2026-11-25T15:28:37Z"
-        },
-        {
-          "created_at": "2026-11-25T13:13:14Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 126,
-          "state": "open",
-          "title": "scripts: ask for the high-performance GPU on two-GPU laptops",
-          "updated_at": "2026-11-25T15:24:45Z"
-        },
-        {
-          "created_at": "2026-11-25T10:38:35Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 94,
-          "state": "open",
-          "title": "Coalesce adjacent D3D12 card readback copies",
-          "updated_at": "2026-11-25T15:23:50Z"
-        },
-        {
-          "created_at": "2026-11-25T15:07:52Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 152,
-          "state": "open",
-          "title": "Formats: treat XMA2 PacketSkipCount 0xff as end-of-stream",
-          "updated_at": "2026-11-25T15:23:47Z"
-        },
-        {
-          "created_at": "2026-11-25T10:38:10Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 93,
-          "state": "open",
-          "title": "GPU: parallelize card compare shader and cut write-watch/refresh overhead",
-          "updated_at": "2026-11-25T15:23:11Z"
-        },
-        {
-          "created_at": "2026-11-25T15:18:36Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 153,
-          "state": "open",
-          "title": "GPU: allocate copy-back scratch only for changed bytes",
-          "updated_at": "2026-11-25T15:18:36Z"
-        },
-        {
-          "created_at": "2026-11-25T06:48:20Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 59,
-          "state": "open",
-          "title": "Shaders: inflate XBCH streams to exactly their stated size",
-          "updated_at": "2026-11-25T15:15:11Z"
-        },
-        {
-          "created_at": "2026-11-25T06:46:40Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 58,
-          "state": "open",
-          "title": "Shaders: lower buffer record-count reads without buffer uses",
-          "updated_at": "2026-11-25T15:15:08Z"
-        },
-        {
-          "created_at": "2026-11-25T06:45:47Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 57,
-          "state": "open",
-          "title": "GPU: check the crate on a host that is not Windows",
-          "updated_at": "2026-11-25T15:15:05Z"
-        },
-        {
-          "created_at": "2026-11-25T05:58:02Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 47,
-          "state": "open",
-          "title": "Fix shader translation error",
-          "updated_at": "2026-11-25T15:14:53Z"
-        },
-        {
-          "created_at": "2026-11-25T13:21:58Z",
-          "merged": false,
-          "merged_at": null,
-          "number": 131,
-          "state": "open",
-          "title": "formats: the full mip chain and the stencil plane, held at their limits",
-          "updated_at": "2026-11-25T15:14:38Z"
-        }
-      ],
-      "pushed_at": "2026-11-25T01:12:15Z",
-      "readme": {
-        "path": "README.md",
-        "sha": "b6a57a9e29f54fbc9438f6edf1e4c83ad1696899"
-      },
-      "releases": [],
-      "renamed_to": null,
       "repo": "Zettrox/ztrx",
-      "stars": 1492,
-      "state": "ok"
+      "state": "gone"
     },
     "zigzagboi1/scarlettport": {
       "default_branch": "main",
@@ -3961,6 +4089,24 @@
       },
       "name": "ScarlettPort",
       "pulls": [
+        {
+          "created_at": "2026-11-25T18:19:39Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 16,
+          "state": "open",
+          "title": "Launcher: drop stale managed keys from victory.toml (fixes #15)",
+          "updated_at": "2026-11-25T18:19:39Z"
+        },
+        {
+          "created_at": "2026-11-25T17:02:35Z",
+          "merged": false,
+          "merged_at": null,
+          "number": 14,
+          "state": "open",
+          "title": "runtime: accept the launcher's victory.toml sections (fixes Build shaders failing on [display])",
+          "updated_at": "2026-11-25T17:02:35Z"
+        },
         {
           "created_at": "2026-11-25T02:14:44Z",
           "merged": true,
@@ -4028,7 +4174,7 @@
       ],
       "renamed_to": null,
       "repo": "ZigZagBoi1/ScarlettPort",
-      "stars": 331,
+      "stars": 343,
       "state": "ok"
     }
   }

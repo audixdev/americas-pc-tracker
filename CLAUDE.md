@@ -28,8 +28,14 @@ Local preview uses `.claude/launch.json` (`tracker`, port 8765).
 ## Data rules (build.py enforces most of them)
 
 - All times are UTC in the form `2026-11-24T18:20:00Z`. Nothing can be later than `checked_at`.
-- `projects` array order **is the ranking**. Stages must never increase down the list. Within a stage, order by the furthest point reached in the game's own sequence of screens, furthest first; break near-ties by measured frame rate, then unmodified over modified builds, then public first-hand sources over unconfirmed ones. Set `tied_with_previous: true` (shown as "3=") only when none of these separates two projects.
-- Every project has a `furthest` field: one short phrase naming the furthest point it has reached. It is shown above the status and must justify the project's position.
+- `projects` array order **is the ranking**. Stages must never increase down the list. Below stage 6, order within a stage by the furthest point reached in the game's own sequence of screens, furthest first; break near-ties by measured frame rate, then unmodified over modified builds, then public first-hand sources over unconfirmed ones. Set `tied_with_previous: true` (shown as "3=") only when none of these separates two projects.
+- **Stage 6 is ordered by its lanes and nothing else** (build.py enforces the order and the ties). Every project at stage 6 or 7 has `lanes` with `picture` (`step` 1–5), `speed` (`fps`) and `stability` (`minutes`), each with a short `note`, or `null` when the source gives no figure (an empty meter). The lane steps are defined in the top-level `lanes` array.
+  - Picture: what the source says is on screen in the world (1 dark or unlit, 2 lit where the sun falls, 3 lit in light and shade with visible faults, 4 lit and whole, 5 the console's picture with ray tracing).
+  - Speed: the middle of the frame rates it reports in play (the midpoint of the range it gives). Steps from 2, 5, 10, 20 and 30 fps; 20 and up meet the bar.
+  - Stability: the longest session it reports without a crash; a session that ended in a crash counts up to the crash, and the note says how it ended. Steps from 10, 30 and 60 minutes; 30 and up meet the bar. Unmeasured or second-hand sessions don't count, but the note can mention them.
+  - Order: fewest steps short of the bar on speed and stability together, then picture step, then fps, then minutes. Exact equality is a tie. When a reading is ambiguous, take the lower step.
+- Every project has a `furthest` field: one short phrase naming the furthest point it has reached. It is shown above the status and must justify the project's position (below stage 6) or describe it (at stage 6).
+- Optional `tested_on`: the OS and graphics card the source tested on, like `Windows 11 · AMD RX 9070 XT`.
 - `state` is one of `active`, `halted`, `gone` or `unverified`. Use `unverified` for builds with no public code that are known only from press.
 - `changed_at` is when **this page's entry** for the project last changed, not the repo's last push. The page reads the last commit time from `last-seen.json`.
 - `updates` are newest first, each with a title and 1–4 points. The first 5 are shown and the rest collapse.

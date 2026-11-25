@@ -26,6 +26,9 @@ OUT = ROOT / "index.html"
 ASSETS = [ROOT / "assets" / "site.css", ROOT / "assets" / "site.js"]
 
 RECENT_UPDATES = 5
+LANE_STAGE = 6                 # projects at this stage or above are read on the lanes
+LANE_IDS = ("picture", "speed", "stability")
+LANE_VALUE = {"speed": "fps", "stability": "minutes"}   # picture is read as a step directly
 STATES = {"active", "halted", "gone", "unverified"}
 STATE_LABEL = {"halted": "Halted", "gone": "Gone", "unverified": "Unconfirmed"}
 REPO_RE = re.compile(r"^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$")
@@ -101,6 +104,8 @@ def validate(d: dict) -> None:
         if p.get("tied_with_previous") and p["stage"] != projects[i - 1]["stage"]:
             raise Invalid(f"{where}: tied_with_previous but its stage differs from the project above")
 
+    validate_lanes(d, projects)
+
     for group in ("also_watched", "checked_idle"):
         for i, w in enumerate(d.get(group, [])):
             need(w, "name", f"{group}[{i}]")
@@ -142,6 +147,105 @@ def validate(d: dict) -> None:
     for i, m in enumerate(need(d, "method", "root", list)):
         need(m, "label", f"method[{i}]")
         need(m, "text", f"method[{i}]")
+
+
+def validate_lanes(d: dict, projects: list[dict]) -> None:
+    defs = need(d, "lanes", "root", list)
+    if [ln.get("id") for ln in defs] != list(LANE_IDS):
+        raise Invalid(f"lanes: expected the ids {list(LANE_IDS)} in that order")
+    for ln in defs:
+        where = f"lanes[{ln['id']}]"
+        need(ln, "name", where)
+        need(ln, "about", where)
+        steps = need(ln, "steps", where, list)
+        if len(steps) < 2:
+            raise Invalid(f"{where}.steps: at least two steps are required")
+        for k, st in enumerate(steps):
+            need(st, "label", f"{where}.steps[{k}]")
+        if ln["id"] in LANE_VALUE:
+            mins = [st.get("min") for st in steps]
+            if any(not isinstance(m, (int, float)) or isinstance(m, bool) for m in mins) or mins[0] != 0 \
+                    or mins != sorted(set(mins)):
+                raise Invalid(f"{where}.steps: each needs a numeric 'min', starting at 0 and rising")
+            bar = [bool(st.get("bar")) for st in steps]
+            if not any(bar) or bar != sorted(bar):
+                raise Invalid(f"{where}.steps: 'bar' must mark the top steps, and at least one")
+    for k in ("intro", "order"):
+        need(d, f"lanes_{k}", "root")
+
+    for i, p in enumerate(projects):
+        where = f"projects[{i}] ({p['name']})"
+        lanes = p.get("lanes")
+        if p["stage"] < LANE_STAGE:
+            if lanes is not None:
+                raise Invalid(f"{where}: only projects at stage {LANE_STAGE} or above are read on lanes")
+            continue
+        if not isinstance(lanes, dict) or set(lanes) != set(LANE_IDS):
+            raise Invalid(f"{where}.lanes: needs exactly {list(LANE_IDS)}, each an object or null")
+        for lid in LANE_IDS:
+            v = lanes[lid]
+            if v is None:
+                continue
+            lw = f"{where}.lanes.{lid}"
+            if not isinstance(v, dict):
+                raise Invalid(f"{lw}: must be an object or null")
+            need(v, "note", lw)
+            if lid == "picture":
+                n = need(v, "step", lw, int)
+                if not 1 <= n <= len(defs[0]["steps"]):
+                    raise Invalid(f"{lw}.step: must be 1-{len(defs[0]['steps'])}")
+            else:
+                x = v.get(LANE_VALUE[lid])
+                if not isinstance(x, (int, float)) or isinstance(x, bool) or x <= 0:
+                    raise Invalid(f"{lw}.{LANE_VALUE[lid]}: must be a number above 0")
+
+    # Stage 6 is ordered by its lanes and nothing else; equal lanes must be marked as a tie.
+    lane_defs = {ln["id"]: ln for ln in defs}
+    for i in range(1, len(projects)):
+        a, b = projects[i - 1], projects[i]
+        if a["stage"] != LANE_STAGE or b["stage"] != LANE_STAGE:
+            continue
+        ka, kb = lane_key(a, lane_defs), lane_key(b, lane_defs)
+        where = f"projects[{i}] ({b['name']})"
+        if kb < ka:
+            raise Invalid(f"{where}: its lanes rank it above {a['name']}; stage {LANE_STAGE} is ordered by "
+                          "steps short of the bar, then picture, frame rate and session length")
+        if ka == kb and not b.get("tied_with_previous"):
+            raise Invalid(f"{where}: its lanes equal {a['name']}'s, so set tied_with_previous")
+        if ka != kb and b.get("tied_with_previous"):
+            raise Invalid(f"{where}: tied_with_previous, but its lanes differ from {a['name']}'s")
+
+
+# ---------------------------------------------------------------- lanes
+
+def lane_step(lane: dict, entry: dict | None) -> int:
+    """1-based step reached on a lane, 0 when no figure is reported."""
+    if entry is None:
+        return 0
+    if lane["id"] == "picture":
+        return entry["step"]
+    value = entry[LANE_VALUE[lane["id"]]]
+    return sum(1 for st in lane["steps"] if value >= st["min"])
+
+
+def bar_step(lane: dict) -> int:
+    return next(k for k, st in enumerate(lane["steps"], 1) if st.get("bar"))
+
+
+def steps_short(p: dict, lane_defs: dict) -> int:
+    return sum(max(0, bar_step(lane_defs[lid]) - lane_step(lane_defs[lid], p["lanes"][lid]))
+               for lid in ("speed", "stability"))
+
+
+def lane_key(p: dict, lane_defs: dict) -> tuple:
+    """Smaller sorts first: fewest steps short, then better picture, more fps, longer session."""
+    ln = p["lanes"]
+    return (
+        steps_short(p, lane_defs),
+        -lane_step(lane_defs["picture"], ln["picture"]),
+        -(ln["speed"]["fps"] if ln["speed"] else 0),
+        -(ln["stability"]["minutes"] if ln["stability"] else 0),
+    )
 
 
 # ---------------------------------------------------------------- formatting
@@ -228,9 +332,44 @@ def rank(projects: list[dict]) -> list[str]:
     return out
 
 
-def meter(stage: int, cls: str = "meter") -> str:
-    segs = "".join(f'<span class="{cls}__seg{" is-on" if i < stage else ""}"></span>' for i in range(7))
-    return f'<span class="{cls}" aria-hidden="true">{segs}</span>'
+def meter(on: int, total: int, bar_from: int | None = None, cls: str = "meter") -> str:
+    """Segmented meter. Segments from bar_from (1-based) up meet the playable bar."""
+    segs = []
+    for k in range(1, total + 1):
+        c = "meter__seg"
+        if bar_from is not None and k >= bar_from:
+            c += " is-bar"
+        if k <= on:
+            c += " is-on"
+        segs.append(f'<span class="{c}"></span>')
+    return f'<span class="{cls}" aria-hidden="true">{"".join(segs)}</span>'
+
+
+def gauges(p: dict, stages: list[dict], lane_defs: dict | None) -> list[str]:
+    """Stage meter for every row, plus the three lanes for in-game rows."""
+    n = p["stage"]
+    out = ['<div class="gauges">',
+           f'  <div class="gauge gauge--stage">{meter(n, len(stages), cls="meter meter--stage")}'
+           f'<p><b>Stage {n} of {len(stages)}:</b> {e(stages[n - 1]["name"].lower())}</p></div>']
+    if lane_defs and p.get("lanes"):
+        for lid in LANE_IDS:
+            lane, entry = lane_defs[lid], p["lanes"][lid]
+            total = len(lane["steps"])
+            step = lane_step(lane, entry)
+            bar = bar_step(lane) if lid in LANE_VALUE else None
+            if entry is None:
+                label = f'<b>{e(lane["name"])}:</b> <span class="quiet">not reported</span>'
+            else:
+                label = f'<b>{e(lane["name"])} {step} of {total}:</b> {nb(entry["note"])}'
+            out.append(f'  <div class="gauge gauge--lane">{meter(step, total, bar)}<p>{label}</p></div>')
+        short = steps_short(p, lane_defs)
+        if short:
+            out.append(f'  <p class="gauges__short">{short} step{"s" if short != 1 else ""} '
+                       f'short of the playable bar</p>')
+        else:
+            out.append('  <p class="gauges__short is-met">Meets the speed and stability of the playable bar</p>')
+    out.append('</div>')
+    return out
 
 
 def build_html(d: dict, last_seen: dict) -> str:
@@ -244,6 +383,7 @@ def build_html(d: dict, last_seen: dict) -> str:
     fc = d["forecast"]
     target = ts(fc["target"])
     playable = [p for p in projects if p["stage"] == 7]
+    lane_defs = {ln["id"]: ln for ln in d["lanes"]}
 
     # --- hero copy
     at_top = [p for p in projects if p["stage"] == top_stage]
@@ -322,6 +462,11 @@ def build_html(d: dict, last_seen: dict) -> str:
             f'<span class="group__name">{e(stages[n - 1]["name"])}</span> '
             f'<span class="group__count">{num_word(len(members)).capitalize()} '
             f'project{"s" if len(members) != 1 else ""}, {where}</span></h3>',
+        ]
+        if n == LANE_STAGE:
+            groups.append(f'  <p class="group__note">{nb(d["lanes_order"])} '
+                          f'<a href="#lanes">How the lanes are read</a>.</p>')
+        groups += [
             '  <ol class="group__list">',
         ]
         for i, p, pos in members:
@@ -343,6 +488,8 @@ def build_html(d: dict, last_seen: dict) -> str:
                 f'      <div class="entry__who">',
                 f'        <h4>{repo_link(p["name"], p.get("repo"))}{tag}</h4>',
                 f'        <p class="entry__tagline">{nb(p["tagline"])}</p>',
+                *([f'        <p class="entry__tested">Tested on {e(p["tested_on"])}</p>'] if p.get("tested_on") else []),
+                *["        " + line for line in gauges(p, stages, lane_defs)],
                 f'      </div>',
                 f'      <div class="entry__status">',
                 f'        <p class="entry__furthest"><span class="entry__label">Furthest point</span> {nb(p["furthest"])}</p>',
@@ -367,8 +514,9 @@ def build_html(d: dict, last_seen: dict) -> str:
     else:
         idle_line = ""
 
-    standings_note = (f"Ranked by stage, then within each stage by the furthest point reached in the game, "
-                      f"furthest first. {len(projects)} projects.")
+    standings_note = (f"Ranked by stage. In-game projects are then ordered by their picture, speed and "
+                      f"stability lanes; the other stages by the furthest point reached in the game. "
+                      f"{len(projects)} projects.")
 
     # --- forecast
     fc_reasons = indent([f"<li>{nb(r)}</li>" for r in fc["rests_on"]], 10)
@@ -428,6 +576,19 @@ def build_html(d: dict, last_seen: dict) -> str:
         for i, s in enumerate(stages, 1)
     ], 8)
 
+    # --- the three lanes, explained under Method
+    lane_cols = []
+    for ln in d["lanes"]:
+        bar = bar_step(ln) if ln["id"] in LANE_VALUE else None
+        items = "".join(
+            f'<li{" class=\"is-bar\"" if bar and k >= bar else ""}><span class="lanes__n">{k}</span>'
+            f'<span>{nb(st["label"])}</span></li>'
+            for k, st in enumerate(ln["steps"], 1)
+        )
+        lane_cols.append(f'<div class="lanes__col"><h4>{e(ln["name"])}</h4>'
+                         f'<p class="lanes__about">{nb(ln["about"])}</p><ol>{items}</ol></div>')
+    lane_key_html = indent(lane_cols, 8)
+
     asset_version = hashlib.sha1(b"".join(a.read_bytes() for a in ASSETS if a.exists())).hexdigest()[:10]
     jsonld = json.dumps({
         "@context": "https://schema.org",
@@ -475,6 +636,9 @@ def build_html(d: dict, last_seen: dict) -> str:
         "updates_older": updates_older,
         "method_rows": method_rows,
         "stage_defs": stage_defs,
+        "lanes_intro": nb(d["lanes_intro"]),
+        "lanes_order": nb(d["lanes_order"]),
+        "lane_key": lane_key_html,
     }
     html = Template(TEMPLATE.read_text(encoding="utf-8")).substitute(values)
     return re.sub(r"[ \t]+\n", "\n", html)
