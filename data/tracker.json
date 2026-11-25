@@ -6,7 +6,7 @@
     "repo": "audixdev/americas-pc-tracker",
     "description": "Live standings of the unofficial projects trying to run the Xbox build of GTA VI on a PC: how far each has got, what changed, and a best guess at when it becomes playable."
   },
-  "checked_at": "2026-11-25T18:31:00Z",
+  "checked_at": "2026-11-25T18:44:00Z",
   "headline_note": "None is playable yet. The closest, KLBF Lab, reports 77 minutes without a crash, but at about 5 to 9 frames a second; playable needs 20.",
   "stages": [
     {
@@ -408,6 +408,19 @@
       ]
     },
     {
+      "id": "leonida",
+      "name": "Leonida",
+      "repo": "ubiquitarianism/leonida",
+      "tagline": "The first large recompilation effort; the original repository is gone, and the work goes on with its full history as Leonida Continued",
+      "furthest": "The landing prompt, then the story load runs to its end; no world frame yet",
+      "stage": 5,
+      "state": "active",
+      "status": "The original repository, NotRexed's ItsNotRexed/Leonida, now returns 404, and according to press reports its lead stepped away. Leonida Continued carries on the same code with its full commit history. Its README (25 Nov) says the game boots on native Windows and on Linux through Proton, shows the launch movie, the first-run pages and the landing prompt, which respond to a pad, then runs the story load to its end and enters the world phase. No world frame has been verified on any test machine yet. All 26,503 of the game's shaders translate to SPIR-V and pass validation.",
+      "source": "Leonida Continued's README (status of 25 Nov) and its Linux and Windows test report; the original repository returns 404 (checked 25 Nov); the lead's departure is from press reports",
+      "tested_on": "Windows 11 · NVIDIA RTX 4070 Ti; Linux · NVIDIA RTX 4070",
+      "changed_at": "2026-11-25T18:44:00Z"
+    },
+    {
       "id": "openscarlett-ce",
       "name": "OpenScarlett (Community Edition)",
       "repo": "OpenCommunityEdition/OpenScarlett",
@@ -540,11 +553,6 @@
       "note": "Renamed from VIctory V2. An integration fork of VIctory that merged open community pull requests in batches; its README says it has not merged from upstream since 25 Nov. Its status text repeats VIctory's own figures (world at 1 to 2 seconds a frame, unlit) and gives no measurement of its own, so it is not ranked."
     },
     {
-      "name": "Leonida Continued",
-      "repo": "ubiquitarianism/leonida",
-      "note": "Carries on Leonida, the first large recompilation effort, with its full history; the original repository is gone and, according to press reports, its lead stepped away. Its README says the game has never booted under this code, although all 26,503 shaders translate to SPIR-V and pass validation."
-    },
-    {
       "name": "Leonida (ProjectLeonidaL)",
       "repo": "ProjectLeonidaL/leonida",
       "note": "Another continuation of Leonida, started on 24 Nov. Its README says the game does not boot yet; all 26,503 shaders translate to SPIR-V and pass validation."
@@ -625,6 +633,15 @@
     "revision_note": "Moved forward from Tue 1 Dec to Sun 29 Nov. The pace has been faster than this forecast assumed: frame rate roughly tripled in a day, and XCL took two smaller retail games from a new repository to playable in about two days. Reaching playable does not require ray-traced lighting, so the remaining gap is mainly speed and stability. The Take-Two notice against Leonida's 3,007-repository network is a new risk to the public projects, which is why the chance by Fri 4 Dec rises only to 7 in 10."
   },
   "updates": [
+    {
+      "at": "2026-11-25T18:44:00Z",
+      "title": "Leonida returns to the standings at stage 5",
+      "points": [
+        "Leonida, the first large recompilation effort, is back in the ranking at stage 5. Its original repository is gone, so its entry follows Leonida Continued, which keeps the full history.",
+        "Leonida Continued's README now says the game shows its launch movie, first-run pages and landing prompt on Windows and Linux, then finishes the story load. No world frame is verified yet, so it ranks second in stage 5, behind five-star-recomp.",
+        "The forecast is unchanged."
+      ]
+    },
     {
       "at": "2026-11-25T18:31:00Z",
       "title": "In-game projects are now read on picture, speed and stability",
