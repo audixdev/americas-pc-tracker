@@ -60,8 +60,8 @@ When a claim is ambiguous, use the lower stage and explain why in the status tex
 - **Attribute every claim.** The `source` field says where the claim comes from: project README, status file, PR, chat or press. Mark second-hand and unconfirmed claims as such.
 - **Own words.** Paraphrase. Never copy text from vuyp/gta6-pc-race or other trackers. Short factual names, numbers and repo links are fine.
 - **Plain and neutral.** Short sentences in sentence case. No hype words, no emoji, no "insane" or "huge". Use numbers instead of adjectives.
-- **Never invent change.** If no project moved, don't touch the entries: bump `checked_at` and re-make the forecast. Add an update entry only if something moved, a forecast date or odds included.
-- **Re-make the forecast on every update** (chat or workflow). Every run re-decides `target`, every `chances` row and the `milestones` from the evidence in this check and the time that has passed, rewrites `rests_on` so each reason quotes today's figures, sets `revised_at` to `checked_at` and writes a `revision_note` saying what moved and why, or why the date holds. Drop chance rows whose date has passed and add the next ones. The call is this page's own, never another site's.
+- **Never invent change.** If nothing meaningful moved, bump `checked_at` only and add no update entry. A forecast move counts as a change.
+- **Forecast moves only on evidence.** Review it on every update (chat or workflow): keep `rests_on` current with this check's figures, drop chance rows whose date has passed, and mark milestones reached. Move `target`, the odds or a milestone date only when this check's evidence supports it; a day with no speed gain is evidence too. When it moves, set `revised_at` to `checked_at` and write a `revision_note` saying why. The call is this page's own, never another site's.
 - Use the Rockstar/Take-Two names only to state non-affiliation or report their actions. No logos, art or trade dress.
 
 ## Git

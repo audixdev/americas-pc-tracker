@@ -31,19 +31,18 @@ You are the editor of this page. The user wants it updated end to end, all the w
    - Stage 6: re-read each project's picture, speed and stability from its sources and set `lanes` (rules in CLAUDE.md). A project entering stage 6 needs `lanes`; one leaving it loses them. Then sort stage 6 by its lanes; `build.py` reports any row that is out of order or a tie that is not marked.
    - Status text out of date? Rewrite it in 1–3 plain sentences in your own words. Set `changed_at` to the new `checked_at`, and set `source`.
    - A new GTA VI project with a real claim goes in `projects`. A new project with no claim yet goes in `also_watched` with a one-line note.
-   - **Forecast: re-make it every run**, routine or workflow, even when no project moved. Nothing in it carries over unexamined.
-     - `target`: re-decide the date from today's evidence: the best free-roam frame rate and session length, how fast those have moved since the last check, where the projects say their frame time goes, and the takedown risk. Time passing without progress is evidence too: if a day goes by with no speed gain, the date moves out.
-     - `chances`: recompute every row. Drop rows whose date has passed; keep a row for the target date, one a few days later, one at the end of the month and the "stalls until an official PC release" row. Odds for a fixed date fall as it nears without progress.
-     - `milestones`: mark what was reached (with the date and "self-reported" where it is) and re-date the rest.
-     - `rests_on`: rewrite each reason with this check's figures and project names; drop reasons that no longer hold. Keep at least one reason that is this page's own analysis.
-     - Always set `revised_at` to `checked_at` and write `revision_note`: what moved (date, odds) and why, or why the date holds despite the new evidence.
-     - Say the forecast change in the update entry's last point. If no project moved but the date or odds did, that change alone is the update entry; if the forecast holds too, add no entry.
+   - **Forecast: review it every run; move it only on evidence.**
+     - `rests_on`: keep every reason current with this check's figures and project names, and drop reasons that no longer hold. Keep at least one reason that is this page's own analysis.
+     - `chances`: drop rows whose date has passed and add the next one. Change the odds only when this check's evidence supports it.
+     - `milestones`: mark what was reached, with the date and "self-reported" where it is.
+     - `target`: move it only on evidence from this check: frame rate or session length moving, where the projects say their frame time goes, takedowns. A day that passes with no speed gain is evidence for a later date.
+     - When the date, odds or a milestone date moves, set `revised_at` to `checked_at`, write `revision_note` saying why, and say so in the update entry. If it holds, leave `revised_at` and `revision_note` alone and say in the report why it holds.
    - **Other trackers, posts and press are leads, never the basis.** Before using any claim from them (in `rests_on`, a status or the forecast), check it against a first-hand source yourself: the project's README or status file, commit messages and dates (`gh api "repos/OWNER/NAME/commits?..."`), PR bodies, or the primary document (for example GitHub's `github/dmca` repo for takedowns). Recompute their numbers rather than repeating them. Drop what you cannot confirm, or mark it unconfirmed. Make your own forecast call from the evidence, with at least one reason of your own, and don't simply adopt another site's date.
    - Also update `headline_note` if it is no longer true.
 6. **Edit `data/tracker.json`.**
    - Always set `checked_at` to now: `date -u +%Y-%m-%dT%H:%M:00Z`.
    - If anything meaningful changed, insert one entry at the **top** of `updates`. Its `at` equals `checked_at`. Give it a headline-style title, such as "Palmwave lights the world", and 1–4 points. Each point is a complete sentence that names the project.
-   - If no project moved, add no project news; bump `checked_at`, and still write the re-made forecast (A.5). Add an update entry only when the forecast's date or odds moved.
+   - If nothing meaningful changed, add no update entry. Bump `checked_at` only. A forecast move counts as a change.
 7. **Save the snapshot.** `python3 tools/check_sources.py --save`. This reruns the queries, which takes about 10 seconds, so the next check diffs from now. It must come **before** the build, because the page reads "last commit" times from `data/last-seen.json`.
 8. **Build and validate.** Run `python3 tools/build.py`, then `python3 tools/build.py --check`. Fix any validation error in the JSON. Never hand-edit `index.html`.
 9. **Commit and push.** The user has given standing approval for this step.
@@ -53,7 +52,7 @@ You are the editor of this page. The user wants it updated end to end, all the w
    git push origin main
    ```
 10. **Confirm it is live.** Run `gh api repos/audixdev/americas-pc-tracker/pages/builds/latest --jq '.status'`. The status should go to `built` within about a minute. If it is still `building`, it is fine to report it as deploying.
-11. **Report** to the user in 3–6 short lines: what moved (or "no project changes"), the forecast's new date and odds and why, and the link https://audixdev.github.io/americas-pc-tracker/.
+11. **Report** to the user in 3–6 short lines: what moved (or "no changes, check time bumped"), whether the forecast moved and why, or why it holds, and the link https://audixdev.github.io/americas-pc-tracker/.
 
 ## B. Direct edit requests
 
@@ -73,7 +72,7 @@ The `Update tracker` workflow (`.github/workflows/update-tracker.yml`) runs this
 - **Skip the git steps.** The checkout is already current, so skip A.1 and B.1. Never commit or push, and skip A.9 and A.10. The workflow's publish job re-runs `build.py --check`, keeps only `data/` and `index.html`, and then commits and pushes.
 - **The same source rules apply.** Re-read every entry against its README and commits (A.3) and look for new projects (A.4). If the turn budget runs short, finish comparing the ranked projects first, and say in the report which ones you could not re-read.
 - **Do everything else**, A.2 to A.8, or B.2 to B.4 when the prompt contains a request from the user. Treat that request like a chat message from the user.
-- **Never stop to ask.** If something is ambiguous, take the cautious option: the lower stage, the later forecast date and lower odds, or no change to an entry. Still re-make the forecast (A.5). Explain it in the report.
+- **Never stop to ask.** If something is ambiguous, take the cautious option: the lower stage, no forecast move, or no change. Still review the forecast (A.5). Explain it in the report.
 - **No WebSearch?** If the tool is unavailable or fails, skip A.4 and say so in the report.
 - **Report to a file.** Write the A.11 report to `tracker-report.md` in the repo root, in Markdown, 3 to 8 short lines. The workflow shows it on the run's summary page. The report is never committed.
 - **Only touch** `data/`, `index.html` and `tracker-report.md`. Any other changed file fails the run.
@@ -88,4 +87,4 @@ The `Update tracker` workflow (`.github/workflows/update-tracker.yml`) runs this
 - [ ] The text is in my own words, with nothing copied from other trackers.
 - [ ] Numbers are specific (fps, seconds, stage), with no hype.
 - [ ] The update title says what happened, not how exciting it is.
-- [ ] The forecast was re-made: target, every chance row, milestones and every reason reflect this check, and `revised_at` equals `checked_at`.
+- [ ] The forecast was reviewed: reasons, chance rows and milestones reflect this check, and any move has a `revision_note` with `revised_at` set.
