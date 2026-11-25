@@ -6,8 +6,8 @@
     "repo": "audixdev/americas-pc-tracker",
     "description": "Live standings of the unofficial projects trying to run the Xbox build of GTA VI on a PC: how far each has got, what changed, and a best guess at when it becomes playable."
   },
-  "checked_at": "2026-11-24T21:08:00Z",
-  "headline_note": "None is playable yet. The best picture is lit only where sunlight falls, at 2 to 4 frames a second.",
+  "checked_at": "2026-11-25T06:41:00Z",
+  "headline_note": "None is playable yet. The best pictures are lit only where sunlight falls, at 2 to 5 frames a second.",
   "stages": [
     {
       "name": "Loads",
@@ -40,6 +40,18 @@
   ],
   "projects": [
     {
+      "id": "anyxboxx",
+      "name": "AnyXboxX",
+      "repo": "LooperSalty/AnyXboxX",
+      "tagline": "Xbox Series emulator focused on this one game, built on VIctory",
+      "furthest": "The first two missions, reported played through by a contributor at about 2 fps",
+      "stage": 6,
+      "state": "active",
+      "status": "It runs the world on a pinned build of the victory-fork code (commit 80d58f8 of its own branch). Its README says the maintainer measured 4.8 to 5.4 fps in the world, with the character under control, over about 4 min 20 s with no device loss. It also says all cutscenes play in full, at 7 to 8 fps in the maintainer's view and 2 to 3 fps in one logged run. A contributor reportedly played about 45 minutes at about 2 fps and finished the first two missions; that is second-hand and was not measured in the project's logs. Long-run stability is only measured over about 4 min 20 s.",
+      "source": "project README (status dated 25 Nov); maintainer's RTX 4070 SUPER; the 45-minute report is a contributor's, not measured",
+      "changed_at": "2026-11-25T06:41:00Z"
+    },
+    {
       "id": "victory-gta6",
       "name": "victory-fork",
       "repo": "fxceless/victory-fork",
@@ -47,57 +59,45 @@
       "furthest": "The first gameplay scene, lit by sunlight, with the player in control",
       "stage": 6,
       "state": "active",
-      "status": "Plays the opening cutscene lit and in order, then renders the first gameplay scene with characters, textures, sky and a sunlit exterior; the HUD, pause menu and gamepad work. Anything out of direct sunlight is black because ray-traced light does not run yet. The world runs at 2 to 4 frames a second, or 240 to 350 ms a frame with opt-in switches. A device loss added by a wave64 update was fixed on 24 Nov, and the README reports no hang or device loss in normal runs. The repository was renamed from victory-gta6. A commit at 20:35 on 24 Nov lets two irradiance-cache programs translate; they had been dropped every frame, and no new frame rate is reported.",
-      "source": "the fork's own README section (dated 25 Nov) and commits e9765a7 and 90228a7, tested on one RTX 4070",
-      "changed_at": "2026-11-24T21:08:00Z"
-    },
-    {
-      "id": "anyxboxx",
-      "name": "AnyXboxX",
-      "repo": "LooperSalty/AnyXboxX",
-      "tagline": "Xbox Series emulator focused on this one game, built on VIctory",
-      "furthest": "About 13 minutes in the starting area with a picture, at about 4 fps",
-      "stage": 6,
-      "state": "active",
-      "status": "It runs the world on the victory-fork repository (formerly victory-gta6), now pinned at commit 7b0f736. Its README reports the maintainer playing about 13 minutes in the starting area at about 4 frames a second on the earlier pin d279e69, with the 3D picture shown, the character under control and the first characters met, before the host device was lost. On the new pin, which includes the device-loss fix, one run reached the world in about 1 min 25 s, ran at 3.5 to 4.5 fps and had no device loss in about 2 min 40 s; stability beyond 13 minutes is not yet measured.",
-      "source": "project README (status dated 24 Nov); observed by the maintainer on an RTX 4070 SUPER",
-      "changed_at": "2026-11-24T21:08:00Z"
+      "status": "Plays the opening cutscene lit and in order, then renders the first gameplay scene with characters, textures, sky and a sunlit exterior; the HUD, pause menu and gamepad work. Anything out of direct sunlight is black because ray-traced light does not run yet. The README gives 2.5 to 4 frames a second in the world (240 to 350 ms a frame with opt-in switches) and reports no driver hang or device loss in normal runs. Its newest changes make a write through one view of a memory page visible at the page's other views; the first room had its walls in later frames in 4 runs out of 4, against 2 of 5 before.",
+      "source": "the fork's own README section (dated 25 Nov), tested on one RTX 4070",
+      "changed_at": "2026-11-25T06:41:00Z"
     },
     {
       "id": "scarlettport",
       "name": "ScarlettPort",
       "repo": "ZigZagBoi1/ScarlettPort",
       "tagline": "Packages VIctory and XCL with its own fixes and launcher; started 24 Nov",
-      "furthest": "The movement tutorial prompt; the 3D picture behind it is black",
+      "furthest": "The lit gameplay view, with shadowed areas too dark",
       "stage": 6,
       "state": "active",
-      "status": "Its README says that on an RTX 3060, using VIctory with community pull requests, the game gets past its opening to the movement tutorial at about 1 frame a second. The final picture is black because some lighting shaders do not translate yet; a debug view shows the world's geometry. A second path on XCL runs the menus and loading screens at 30 fps. Commit b996757 adds a view of the world under the project's own stand-in lighting (sky, sun, fog, fences, a bin and props) at about 1 fps; terrain and most surface colours are still missing.",
-      "source": "project README and commits 87116d5 and b996757 (24 Nov), one RTX 3060; this page has not checked its prebuilt launcher",
-      "changed_at": "2026-11-24T21:08:00Z"
+      "status": "Its README says that on an RTX 3060 it reaches the lit world at about 3 to 4 fps on the Series S profile, and that it is not yet verified playable. Shadowed areas are still too dark. It builds on the public victory-fork code; the newest commit (48ba23a) updates its bundled copy of that runtime. A second path on XCL runs the menus and loading screens at 30 fps.",
+      "source": "project README (25 Nov) and commit 48ba23a, one RTX 3060; this page has not checked its prebuilt launcher",
+      "changed_at": "2026-11-25T06:41:00Z"
     },
     {
       "id": "victory",
       "name": "VIctory",
       "repo": "marvisak/VIctory",
       "tagline": "Runs the game's Xbox code natively on Windows",
-      "furthest": "The first mission's title card; the world behind it stays dark",
+      "furthest": "The first mission's intro, drawn but unlit",
       "stage": 6,
       "state": "active",
-      "status": "The upstream code base that victory-gta6 and AnyXboxX build on. Its README boots the game, runs the menus at 30 fps and loads into the world in about 50 seconds, where the first mission's title card renders but the scene after it stays dark, at 0.5 to 1.8 seconds a frame. Entering the world can hang a real graphics card.",
-      "source": "project README (status dated 23 Nov), tested on one RX 6700 XT",
-      "changed_at": "2026-11-24T19:30:00Z"
+      "status": "The upstream code base that victory-fork and AnyXboxX build on. Its README boots the game, runs the menus at 30 fps and loads into the world in about 50 seconds. The first mission's intro is drawn, with streets, buildings, vehicles, characters and the title card, at 1 to 2 seconds a frame. Surfaces are unlit, a band of distant geometry is missing and characters look broken in some shots. The README warns that entering the world hung a real graphics card in earlier builds; the latest runs did not.",
+      "source": "project README (status dated 24 Nov), tested on one RX 6700 XT",
+      "changed_at": "2026-11-25T06:41:00Z"
     },
     {
-      "id": "palmwave",
-      "name": "Palmwave",
-      "repo": "fablinoo/palmwave",
-      "tagline": "Xbox Series to Windows layer with its own shader path",
-      "furthest": "The first mission, with the street, trees and people drawn and the picture almost one dark colour (modified run)",
+      "id": "xcl",
+      "name": "XCL",
+      "repo": "xcl-dev/xcl",
+      "tagline": "General Xbox Series to Windows compatibility layer, in the spirit of Proton",
+      "furthest": "Its 3D world at 5 to 6 fps, on an unmerged integration branch (picture incomplete)",
       "stage": 6,
       "state": "active",
-      "status": "The first mission starts and the world is drawn: the street, ground, palm trees, traffic lights, people and a car reach the game's G-buffer, and a debug view shows them under one fixed light. The picture the game itself presents is still almost one dark colour because its lighting does not work yet. A world frame takes 2 to 5 seconds, and the newest run's GPU faulted after about 245 seconds. The runs use byte patches to the game, which switch off its hang detector and several heavy render passes.",
-      "source": "project README and commits 14b233d and 16bae47 (24 Nov); a modified run, RTX 5080",
-      "changed_at": "2026-11-24T21:08:00Z"
+      "status": "The README says the game starts in about 4 seconds and holds 30 fps in its menus. With an NVIDIA integration branch, a draft pull request that is not meant to be merged, it goes on into its 3D world at 5 to 6 fps on an RTX 5090. The README says the world's picture is incomplete, some mesh pipelines are refused and it does not keep running there for long. It rates the game at about 60 % of the way to playable, an estimate. All 26,698 of the game's GPU programs translate.",
+      "source": "project README (25 Nov, commit f0e1b2f) and draft PR #2057, not merged; it calls the game \"a newer retail game\"",
+      "changed_at": "2026-11-25T06:41:00Z"
     },
     {
       "id": "cgbj",
@@ -112,16 +112,28 @@
       "changed_at": "2026-11-24T19:30:00Z"
     },
     {
+      "id": "palmwave",
+      "name": "Palmwave",
+      "repo": "fablinoo/palmwave",
+      "tagline": "Xbox Series to Windows layer with its own shader path",
+      "furthest": "The first mission, with the world drawn into the G-buffer (modified run, last recorded 24 Nov)",
+      "stage": 6,
+      "state": "gone",
+      "status": "The repository now returns 404 and no source this page has read says why. Its README, as read here on 24 Nov, described a first mission with the world drawn into the game's G-buffer in modified runs. That cannot be re-checked. It is kept at the end of stage 6 until a source says more.",
+      "source": "repository returns 404 on 25 Nov; last recorded from its README and commits on 24 Nov",
+      "changed_at": "2026-11-25T06:41:00Z"
+    },
+    {
       "id": "five-star-recomp",
       "name": "five-star-recomp",
       "repo": "ThatRecompDev/five-star-recomp",
       "tagline": "Native recompilation of the Xbox Series release",
-      "furthest": "The opening cutscene starts, below 2 fps",
+      "furthest": "The opening cutscene's art, cards and sound at 30 fps; its 3D world does not draw",
       "stage": 5,
       "state": "active",
-      "status": "Starts, shows the logo, intro art and first-run screens, loads story mode and starts the opening cutscene, with its art, credit cards and sound, at under 2 frames a second. The newest commit says the story load now finishes; the README's Graphics API row still lists it as open, and no in-world frame is reported. All 25,908 of the game's shader programs translate and compile.",
-      "source": "project README status section and commit 4b52fcd (24 Nov)",
-      "changed_at": "2026-11-24T21:08:00Z",
+      "status": "Starts, shows the logo, intro art and first-run screens, loads story mode and plays the opening cutscene's art, credit cards, dialogue and sound at 30 frames a second. The README says the cutscene's 3D world does not draw yet, and its Graphics API row still lists the story load as open. All 25,908 of the game's shader programs translate and compile.",
+      "source": "project README status section (25 Nov)",
+      "changed_at": "2026-11-25T06:41:00Z",
       "status_docs": [
         "README.md"
       ]
@@ -134,9 +146,9 @@
       "furthest": "The start screen after the intro movie, at 30 fps",
       "stage": 5,
       "state": "active",
-      "status": "Runs the first-boot settings, legal and start screens at 30 fps and plays the 4K intro movie with sound, then stops while it streams in the scene behind the menus. About nine in ten of the game's shaders translate.",
-      "source": "project README (it calls the game \"a newer retail game\")",
-      "changed_at": "2026-11-24T18:20:00Z"
+      "status": "Runs the first-boot settings, legal and start screens at a steady 30 fps and plays the 4K intro movie with sound, then stops while it streams in the scene behind the menus, according to its README. About nine in ten of the game's shaders translate. Commits on 25 Nov mention fixes found in a newer title's first scene, but the README does not say that a scene is shown.",
+      "source": "project README (it calls the game \"a newer retail game\") and commits 9b5f556 and 1b7c40d (25 Nov)",
+      "changed_at": "2026-11-25T06:41:00Z"
     },
     {
       "id": "percyscarlett",
@@ -148,18 +160,6 @@
       "state": "active",
       "status": "Renders the account picker, plays the game's 4K video and walks through the full first-run setup with a gamepad, saving settings and starting to stream the world.",
       "source": "project README, which refers to the game by a nickname",
-      "changed_at": "2026-11-24T18:20:00Z"
-    },
-    {
-      "id": "xcl",
-      "name": "XCL",
-      "repo": "xcl-dev/xcl",
-      "tagline": "General Xbox Series to Windows compatibility layer, in the spirit of Proton",
-      "furthest": "The menus and settings screens, at 30 fps",
-      "stage": 5,
-      "state": "active",
-      "status": "Starts the game in about four seconds and holds a steady 30 fps through its menus and on to the settings screens without crashing. Gameplay is not reached yet. All 26,698 of the game's GPU programs translate.",
-      "source": "project README (it calls the game \"a newer retail game\")",
       "changed_at": "2026-11-24T18:20:00Z"
     },
     {
@@ -191,12 +191,12 @@
       "name": "TuxBox",
       "repo": "brcly/TuxBox",
       "tagline": "Runs Xbox Series games on Linux through Proton",
-      "furthest": "The player-selection prompt",
+      "furthest": "The story intro, on Linux; the recorded run crashed after about ten minutes",
       "stage": 5,
       "state": "active",
-      "status": "Shows the game's player-selection prompt at 3840 by 2160 on stock Proton Experimental. It is the furthest Linux-first project.",
-      "source": "project README",
-      "changed_at": "2026-11-24T18:20:00Z"
+      "status": "Its README says the game gets into the story intro on Linux with stock Proton Experimental. It is not playable: many shaders are unsupported, and the recorded run crashed after about ten minutes. It is the furthest Linux-first project.",
+      "source": "project README and commit a93613a (25 Nov)",
+      "changed_at": "2026-11-25T06:41:00Z"
     },
     {
       "id": "gta6-boottest",
@@ -218,9 +218,9 @@
       "furthest": "The game's 4K interface and a full-colour video render, according to its commits",
       "stage": 5,
       "state": "active",
-      "status": "Commit ef763eb says GTA VI finishes all 249 of its start-up tasks and runs its interface loop at 30 fps. Two later commits that day report the retail title's interface rendering at 3840 by 2160 on a GTX 1650 Ti (f8e24d4) and full-colour 4K video playback (c382f68). They do not name the title again or say which screens were reached, so it ranks last in stage 5.",
-      "source": "commits ef763eb, f8e24d4 and c382f68 (24 Nov); the README does not cover the game yet",
-      "changed_at": "2026-11-24T20:04:00Z"
+      "status": "Commit ef763eb says GTA VI finishes all 249 of its start-up tasks and runs its interface loop at 30 fps. Two later commits that day report the retail title's interface rendering at 3840 by 2160 on a GTX 1650 Ti (f8e24d4) and full-colour 4K video playback (c382f68). A newer commit (022a8b2, 24 Nov) mentions 'RAGE9' rendering at 720p and 4K and a locked 30 fps landing screen. None says which screens were reached, so it ranks last in stage 5.",
+      "source": "commits ef763eb, f8e24d4, c382f68 and 022a8b2 (24 Nov); the README does not cover the game yet",
+      "changed_at": "2026-11-25T06:41:00Z"
     },
     {
       "id": "palmetto",
@@ -230,9 +230,9 @@
       "furthest": "A window shows presented frames, all black",
       "stage": 4,
       "state": "active",
-      "status": "Commits on 24 Nov wire the game's present call to a real window and put the game's memory pages into the graphics card's address space, so draws now execute without a hang. A 150-second run submitted about 15,500 draws and as many presents with no device loss, but a read-back of the drawn target is uniformly black. A later commit rules out culling, depth clipping and the pipeline stand-ins as the cause of the black frame. A 300-second boot ran with no device loss, about 33,300 presents and 17 sampled frames, all pure black; the game issued no copies or dispatches in that window. The README still describes the older state.",
-      "source": "commits 523d947, ea771ec, 38c8451, 29de70e and 1b05e01, measured on an RTX 4090",
-      "changed_at": "2026-11-24T21:08:00Z"
+      "status": "Per its commits, the game's present call goes to a real window and draws execute without a hang. A 300-second boot presented about 33,300 frames, all pure black. A newer commit (f5596dc, 25 Nov) says a 1,200-second boot shows the same black frames and a repeating two-pass blit loop with no new content, which it reads as a loading state that does not advance. The README still describes the older state.",
+      "source": "commits 523d947 to f5596dc (24 to 25 Nov), measured on an RTX 4090",
+      "changed_at": "2026-11-25T06:41:00Z"
     },
     {
       "id": "xbox-emulator",
@@ -263,12 +263,12 @@
       "name": "Leonida CE",
       "repo": "IAmNotSiob/leonida-ce",
       "tagline": "Community continuation of Leonida, the first large recompilation effort",
-      "furthest": "The real executable submits GPU work under Wine, with stand-ins (modified)",
-      "stage": 3,
+      "furthest": "Black frames presented to the game window for 10+ minutes, with stand-ins (modified)",
+      "stage": 4,
       "state": "active",
-      "status": "With exploratory stand-ins from its boot-hacks branch, the game's executable runs about a minute into start-up under Wine and submits GPU work. The README mentions a first presented frame but its own table says no frame is on screen yet, so it is placed at stage 3. A commit on 24 Nov traces a stop at 120 to 140 seconds to an incomplete pipeline map. Commit 0455b51 says that on Windows a root-signature fix removes a crash at about 53 seconds, and the run then goes past three minutes without a crash.",
-      "source": "project README and commits (24 Nov, latest 0455b51); a modified build",
-      "changed_at": "2026-11-24T21:08:00Z"
+      "status": "Its README says the real executable boots on native Windows and Wine and runs more than 10 minutes without a crash, loads saves and the profile and submits tens of thousands of draws. Every frame is presented into the game window but is black, because the final UI composite draw writes no pixels. Many fixes are deliberate stand-ins, each behind a switch. It moves up from stage 3.",
+      "source": "project README (25 Nov) and commit 93c9a22; a modified build",
+      "changed_at": "2026-11-25T06:41:00Z"
     }
   ],
   "also_watched": [
@@ -319,8 +319,8 @@
       "Other games show the pace. XCL's repository opened on the evening of 20 November, and by the evening of 22 November it listed two smaller retail games, Minecraft Preview and Unicorn Overlord, as fully playable. No project has done this with a game the size of GTA VI.",
       "The picture is arriving. victory-fork renders the first gameplay scene with textures, sky and sunlit surfaces. Anything in shadow is still black, because no build runs the game's ray-traced lighting yet.",
       "Speed is the long pole. VIctory took 0.5 to 1.8 seconds per world frame on 23 November; a day later the victory-fork repository runs at 2 to 4 frames a second, roughly three times faster, though on a different graphics card. Playable needs 20, so another five- to tenfold gain is still needed.",
-      "The playable bar does not require correct lighting, only 20 frames a second for 30 minutes. A build could skip the ray-traced passes to get there, as Palmwave already does with other heavy passes in its modified runs. Stability is improving: the longest reported session lasted about 13 minutes before the GPU device was lost, and on 24 Nov victory-fork fixed a device loss and now reports none in normal runs.",
-      "Work is shared across projects. victory-fork, AnyXboxX and ScarlettPort build on VIctory, and fixes move between XCL, VIctory and Palmwave within days.",
+      "The playable bar does not require correct lighting, only 20 frames a second for 30 minutes. A build could skip the ray-traced passes to get there. Stability is improving: the longest reported session lasted about 13 minutes before the GPU device was lost, and on 24 Nov victory-fork fixed a device loss and now reports none in normal runs.",
+      "Work is shared across projects. victory-fork, AnyXboxX and ScarlettPort build on VIctory, and fixes move between XCL and the VIctory family within days.",
       "Takedowns are now on the record. On 24 November GitHub published a Take-Two notice against Leonida and applied it to its whole network of 3,007 repositories. The notice argues that requiring the game files, given when the project appeared and what it targets, points to the leaked copy. That argument would fit most projects listed here, though none has been named so far. A notice cannot stop private builds, but it could break up the open work the public projects depend on."
     ],
     "chances": [
@@ -363,6 +363,16 @@
     "revision_note": "Moved forward from Tue 1 Dec to Sun 29 Nov. The pace has been faster than this forecast assumed: frame rate roughly tripled in a day, and XCL took two smaller retail games from a new repository to playable in about two days. Reaching playable does not require ray-traced lighting, so the remaining gap is mainly speed and stability. The Take-Two notice against Leonida's 3,007-repository network is a new risk to the public projects, which is why the chance by Fri 4 Dec rises only to 7 in 10."
   },
   "updates": [
+    {
+      "at": "2026-11-25T06:41:00Z",
+      "title": "AnyXboxX reports two missions played; XCL enters its 3D world",
+      "points": [
+        "AnyXboxX's README now reports 4.8 to 5.4 fps in the world and, second-hand, a contributor playing about 45 minutes at about 2 fps and finishing the first two missions. It moves to the top of stage 6; the 20 fps bar is not met.",
+        "XCL's README says that on an unmerged integration branch the game reaches its 3D world at 5 to 6 fps, with an incomplete picture. XCL moves from stage 5 to stage 6.",
+        "Leonida CE moves from stage 3 to stage 4: its README reports 10+ minutes without a crash, with black frames presented. palmetto's 1,200-second run is still black.",
+        "Palmwave's repository now returns 404 and is marked gone. five-star-recomp's README now gives 30 fps for its cutscene art, and TuxBox reports the story intro on Linux. The forecast is unchanged."
+      ]
+    },
     {
       "at": "2026-11-24T21:08:00Z",
       "title": "Palmwave draws the world; five-star-recomp starts the opening cutscene",
