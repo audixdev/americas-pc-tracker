@@ -6,7 +6,7 @@
     "repo": "audixdev/americas-pc-tracker",
     "description": "Live standings of the unofficial projects trying to run the Xbox build of GTA VI on a PC: how far each has got, what changed, and a best guess at when it becomes playable."
   },
-  "checked_at": "2026-11-25T19:16:00Z",
+  "checked_at": "2026-11-25T20:10:00Z",
   "headline_note": "None is playable yet. The closest, KLBF Lab, reports 77 minutes without a crash, but at about 5 to 9 frames a second; playable needs 20.",
   "stages": [
     {
@@ -94,6 +94,33 @@
       }
     },
     {
+      "id": "victory-gta6",
+      "name": "victory-fork",
+      "repo": "fxceless/victory-fork",
+      "tagline": "Fork of VIctory aimed at a correct, playable picture",
+      "furthest": "The open world, in one play session that ended in a device loss",
+      "stage": 6,
+      "state": "active",
+      "status": "Its README status header (25 Nov) gives about 8 to 10 fps in the first rooms and 5 to 8.5 through the opening cutscene, measured with a set of switches, on one RTX 4070; an earlier section measured a 4.5 fps mean over a 370-second play session. Anything out of direct sunlight is black because ray-traced light does not run. A first play session past the first rooms reached the open world and lost the device there, with the card out of room for textures; the cause is not known. Its newest section claims no further frame-rate gain.",
+      "source": "the fork's own README (status header and sections of 25 Nov) and commits to the README update of 19:39 UTC; one RTX 4070",
+      "changed_at": "2026-11-25T20:10:00Z",
+      "tested_on": "Windows 11 · NVIDIA RTX 4070",
+      "lanes": {
+        "picture": {
+          "step": 2,
+          "note": "sunlit, out of the sun black"
+        },
+        "speed": {
+          "fps": 7.3,
+          "note": "4.5 to 10 fps; 8 to 10 in the first rooms"
+        },
+        "stability": {
+          "minutes": 13,
+          "note": "about 13 minutes, ended by a device loss"
+        }
+      }
+    },
+    {
       "id": "anyxboxx",
       "name": "AnyXboxX",
       "repo": "LooperSalty/AnyXboxX",
@@ -117,33 +144,6 @@
         "stability": {
           "minutes": 23,
           "note": "23 minutes on Linux; a contributor's 45 is unmeasured"
-        }
-      }
-    },
-    {
-      "id": "victory-gta6",
-      "name": "victory-fork",
-      "repo": "fxceless/victory-fork",
-      "tagline": "Fork of VIctory aimed at a correct, playable picture",
-      "furthest": "The open world, in one play session that ended in a device loss",
-      "stage": 6,
-      "state": "active",
-      "status": "Its README status table (25 Nov) gives 2.5 to 4 fps in the world, with anything out of direct sunlight black because ray-traced light does not run. Later sections that day say the first room renders right, with walls, textures, people and lamps, and measure 9.6 to 10.3 fps there with switches that are off by default; over a 370-second play session the mean was 4.5 fps. A first play session past the first rooms reached the open world and lost the device there, with the card out of room for textures; the cause is not known.",
-      "source": "the fork's own README (dated 25 Nov) and commits to d510ee4; one RTX 4070",
-      "changed_at": "2026-11-25T18:31:00Z",
-      "tested_on": "Windows 11 · NVIDIA RTX 4070",
-      "lanes": {
-        "picture": {
-          "step": 2,
-          "note": "sunlit, out of the sun black"
-        },
-        "speed": {
-          "fps": 4.5,
-          "note": "4.5 fps mean over a 6-minute session"
-        },
-        "stability": {
-          "minutes": 13,
-          "note": "about 13 minutes, ended by a device loss"
         }
       }
     },
@@ -568,9 +568,9 @@
       "note": "Renamed from VIctory V2. An integration fork of VIctory that merged open community pull requests in batches; its README says it has not merged from upstream since 25 Nov. Its status text repeats VIctory's own figures (world at 1 to 2 seconds a frame, unlit) and gives no measurement of its own, so it is not ranked."
     },
     {
-      "name": "Leonida (ProjectLeonidaL)",
+      "name": "Leonida Legacy (ProjectLeonidaL)",
       "repo": "ProjectLeonidaL/leonida",
-      "note": "Another continuation of Leonida, started on 24 Nov. Its README says the game does not boot yet; all 26,503 shaders translate to SPIR-V and pass validation."
+      "note": "On 25 Nov this repository replaced its Leonida code with Leonida Legacy, a renamed copy of the victory-fork code. Its README says its world frame rates are victory-fork's and have not been measured again on its own machine, so it is not ranked."
     },
     {
       "name": "G6Recomp",
@@ -603,7 +603,7 @@
       "The executable surfaced on 23 November. Two days later twelve public projects report the game world running, and one, KLBF Lab, reports finishing the first mission and reaching free roam. A private build, CGBJ, is said to be in the world too, but that comes from press reports only.",
       "Other games show the pace. XCL's repository opened on the evening of 20 November, and by the evening of 22 November it listed two smaller retail games, Minecraft Preview and Unicorn Overlord, as fully playable. No project has done this with a game the size of GTA VI.",
       "The picture is arriving. KLBF Lab, Belobug's AMD fork and victory-perf light shaded places with stand-ins or fixes of their own; others still show anything out of the sun as black, because no build runs the game's ray-traced lighting properly yet.",
-      "Speed is the long pole. VIctory took 0.5 to 1.8 seconds per world frame on 23 November. Two days later the best free-roam figure on this page is about 5 to 8 fps, in KLBF Lab; Flamingo's 9 to 14 is indoors in the first scene, self-reported on one machine. PortWatch's owner has said it has seen no evidence of any build above 10 fps in free roam. Playable needs 20, so the gap is still two- to threefold.",
+      "Speed is the long pole. VIctory took 0.5 to 1.8 seconds per world frame on 23 November. Two days later the best free-roam figure on this page is about 5 to 8 fps, in KLBF Lab. Indoors in the first scene, Flamingo reports 9 to 14 fps and victory-fork 8 to 10, each self-reported on one machine. PortWatch's owner has said it has seen no evidence of any build above 10 fps in free roam. Playable needs 20, so the gap is still two- to threefold.",
       "Where the time goes is now measured, and it is not mostly the graphics card. rorodev6's build spends 22 to 40 ms of a 113 to 141 ms frame on GPU work and the rest copying the game's memory to and from the card, on one thread. victory-fork finds its submit thread and the card both close to full, and cutting one alone moved the frame by 0 to 7%. Getting to 20 fps means removing most of that copying, which is deeper work than the gains of the first two days.",
       "The playable bar does not require correct lighting, only 20 frames a second for 30 minutes. A build could skip the ray-traced passes to get there. Stability has moved: KLBF Lab reports a 77-minute session on a test build that the testers ended themselves, so speed is now the main gap.",
       "Work is shared across projects. victory-fork, AnyXboxX and ScarlettPort build on VIctory, and fixes move between XCL and the VIctory family within days.",
@@ -661,6 +661,15 @@
     "revision_note": "Moved back from Sun 29 Nov to Tue 1 Dec. Stability is no longer the main gap: KLBF Lab reports 77 minutes without a crash on a test build. Speed is. The best free-roam figure on this page is about 5 to 8 fps, PortWatch's owner reports seeing no build above 10 fps in free roam, and the projects' own measurements show most of each frame going to memory copies that need deeper changes to remove. Two repositories disappeared on 25 Nov without a stated reason, which adds to the takedown risk. The chance by Sun 29 Nov falls from 5 in 10 to 3 in 10."
   },
   "updates": [
+    {
+      "at": "2026-11-25T20:10:00Z",
+      "title": "victory-fork moves up on a higher frame rate",
+      "points": [
+        "victory-fork's README now gives about 8 to 10 fps in the first rooms and 5 to 8.5 in the opening cutscene, on one RTX 4070. Its speed meter rises a step, and it moves above AnyXboxX to third in stage 6.",
+        "The ProjectLeonidaL repository now holds Leonida Legacy, a renamed copy of the victory-fork code with no measurements of its own. It stays on the watch list.",
+        "The forecast holds at Tue 1 Dec: no project reports a speed gain in free roam since the last check."
+      ]
+    },
     {
       "at": "2026-11-25T19:16:00Z",
       "title": "Forecast moves to Tue 1 Dec; victory-perf's repository is gone",
