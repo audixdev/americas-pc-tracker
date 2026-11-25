@@ -6,8 +6,8 @@
     "repo": "audixdev/americas-pc-tracker",
     "description": "Live standings of the unofficial projects trying to run the Xbox build of GTA VI on a PC: how far each has got, what changed, and a best guess at when it becomes playable."
   },
-  "checked_at": "2026-11-25T08:45:00Z",
-  "headline_note": "None is playable yet. The best pictures are lit only where sunlight falls, at 2 to 5 frames a second.",
+  "checked_at": "2026-11-25T10:33:00Z",
+  "headline_note": "None is playable yet. The best pictures are lit only where sunlight falls, at about 2 to 7 frames a second.",
   "stages": [
     {
       "name": "Loads",
@@ -59,9 +59,9 @@
       "furthest": "The first gameplay scene, lit by sunlight, with the player in control",
       "stage": 6,
       "state": "active",
-      "status": "Plays the opening cutscene lit and in order, then renders the first gameplay scene with characters, textures, sky and a sunlit exterior; the HUD, pause menu and gamepad work. Anything out of direct sunlight is black because ray-traced light does not run yet. The README's table gives 2 to 4 frames a second in the world, and its newest section says the first room now renders with walls, textures, people and lamps on the test machine, at 190 to 450 ms a frame. It reports no driver hang or device loss in normal runs. The newest commit (9376fd6) cuts processor-side work in the descriptor sync; its author says the card is now the limit at 250 to 380 ms a frame.",
-      "source": "the fork's own README section (dated 25 Nov) and commits a26859f and 9376fd6; tested on one RTX 4070",
-      "changed_at": "2026-11-25T08:45:00Z"
+      "status": "Plays the opening cutscene lit and in order, then renders the first gameplay scene with characters, textures, sky and a sunlit exterior; the HUD, pause menu and gamepad work. Anything out of direct sunlight is black because ray-traced light does not run yet. The README's status table gives 2 to 4 fps in the world, and its newest section says the first room renders with walls, textures, people and lamps. A second-night section reports the first room going from about 3.5-4 to 6-7 fps on an RTX 4070 with all of its new switches on, which are off by default; the defaults give about 4.5 to 5. It reports no driver hang or device loss in normal runs. Newest commit: f85101b.",
+      "source": "the fork's own README section (dated 25 Nov) and commits a26859f, 9376fd6 and f85101b; tested on one RTX 4070",
+      "changed_at": "2026-11-25T10:33:00Z"
     },
     {
       "id": "scarlettport",
@@ -71,9 +71,21 @@
       "furthest": "The lit gameplay view, with shadowed areas too dark",
       "stage": 6,
       "state": "active",
-      "status": "Its README says that on an RTX 3060 it reaches the lit world at about 3 to 4 fps on the Series S profile, and that it is not yet verified playable. Shadowed areas are still too dark. It builds on the public victory-fork code; the newest commit (48ba23a) updates its bundled copy of that runtime. A second path on XCL runs the menus and loading screens at 30 fps.",
-      "source": "project README (25 Nov) and commit 48ba23a, one RTX 3060; this page has not checked its prebuilt launcher",
-      "changed_at": "2026-11-25T06:41:00Z"
+      "status": "Its README says that on an RTX 3060 it reaches the lit world at about 4 fps in the prologue on the Series S profile, up from 2.6, and that it is not yet verified playable. Shadowed areas are still too dark and a frozen tile-grid overlay sits over gameplay. It builds on the public victory-fork code; the newest commit (56e088e) syncs its bundled copy of that runtime to victory-fork's 26f8afd. A second path on XCL runs the menus and loading screens at 30 fps.",
+      "source": "project README (25 Nov) and commits 48ba23a and 56e088e, one RTX 3060; this page has not checked its prebuilt launcher",
+      "changed_at": "2026-11-25T10:33:00Z"
+    },
+    {
+      "id": "percyscarlett",
+      "name": "PercyScarlett",
+      "repo": "rpatty-dev/PercyScarlett",
+      "tagline": "Rust Xbox Series runtime; README also shows Minecraft's Series build in-world",
+      "furthest": "The opening prison scene, lit and textured, at about 2 to 3 fps",
+      "stage": 6,
+      "state": "active",
+      "status": "Its v1.0 README says the game reaches the opening prison scene, lit and textured, on the Series S profile with an 8 GB card, at about 2 to 3 fps on an RTX 2060 SUPER. Menus, the 4K video, save data and world streaming work. Shaded areas are still too dark. Its runtime is built on VIctory, victory-fork and ScarlettPort. It is not playable: the first visit to a scene can show a black or incomplete picture for a few minutes while pipelines compile.",
+      "source": "project README (v1.0, 25 Nov) and commits 43bd6c9 and 41bfac6; one RTX 2060 SUPER; the README refers to the game by a nickname",
+      "changed_at": "2026-11-25T10:33:00Z"
     },
     {
       "id": "victory",
@@ -146,21 +158,9 @@
       "furthest": "The start screen after the intro movie, at 30 fps",
       "stage": 5,
       "state": "active",
-      "status": "Runs the first-boot settings, legal and start screens at a steady 30 fps and plays the 4K intro movie with sound, then stops while it streams in the scene behind the menus, according to its README. About nine in ten of the game's shaders translate. Commits on 25 Nov describe fixes found in a newer title's first scene; the newest (e6b7abc) says that scene ran to its 228-second test limit without a GPU reset. The README does not say the scene is shown, so the stage is unchanged.",
-      "source": "project README (it calls the game \"a newer retail game\") and commits 1b7c40d, c1751e2 and e6b7abc (25 Nov)",
-      "changed_at": "2026-11-25T08:45:00Z"
-    },
-    {
-      "id": "percyscarlett",
-      "name": "PercyScarlett",
-      "repo": "rpatty-dev/PercyScarlett",
-      "tagline": "Xbox Series runtime; already runs Minecraft's Series build in-world",
-      "furthest": "The whole first-run setup, then the world starts to stream in",
-      "stage": 5,
-      "state": "active",
-      "status": "Renders the account picker, plays the game's 4K video and walks through the full first-run setup with a gamepad, saving settings and starting to stream the world.",
-      "source": "project README, which refers to the game by a nickname",
-      "changed_at": "2026-11-24T18:20:00Z"
+      "status": "Runs the first-boot settings, legal and start screens at a steady 30 fps and plays the 4K intro movie with sound, then stops while it streams in the scene behind the menus, according to its README. About nine in ten of the game's shaders translate. Commits on 25 Nov describe fixes found in a newer title's first scene. e6b7abc says that scene ran to its 228-second test limit without a GPU reset. e043ba4 says its world was still empty, with every G-buffer target black, and describes a shader fix it had not yet verified. The README does not say the scene is shown, so the stage is unchanged.",
+      "source": "project README (it calls the game \"a newer retail game\") and commits 1b7c40d, c1751e2, e6b7abc and e043ba4 (25 Nov)",
+      "changed_at": "2026-11-25T10:33:00Z"
     },
     {
       "id": "xbox2windows",
@@ -230,9 +230,9 @@
       "furthest": "A window shows presented frames, all black",
       "stage": 4,
       "state": "active",
-      "status": "Per its commits, the game's present call goes to a real window and draws execute without a hang. A 300-second boot presented about 33,300 frames, all pure black. A newer commit (f5596dc, 25 Nov) says a 1,200-second boot shows the same black frames and a repeating two-pass blit loop with no new content, which it reads as a loading state that does not advance. Commit d641842 reports that nothing re-arms the loader after start-up, which it places in the game's stage manager. The README still describes the older state.",
-      "source": "commits 523d947 to d641842 (24 to 25 Nov), measured on an RTX 4090",
-      "changed_at": "2026-11-25T08:45:00Z"
+      "status": "Per its commits, the game's present call goes to a real window and draws execute without a hang. A 300-second boot presented about 33,300 frames, all pure black. A 1,200-second boot (f5596dc, 25 Nov) shows the same black frames and a repeating two-pass blit loop with no new content. The newest commit (9611b22, 25 Nov) says the status arrays are complete and the stalled wait is the title's own armed-flag lifecycle, so the loader is never re-armed after start-up. The README still describes the older state.",
+      "source": "commits 523d947 to 9611b22 (24 to 25 Nov), measured on an RTX 4090",
+      "changed_at": "2026-11-25T10:33:00Z"
     },
     {
       "id": "xbox-emulator",
@@ -280,7 +280,7 @@
     {
       "name": "VIctory V2",
       "repo": "DesertGamer/VIctory-V2",
-      "note": "Integration fork of VIctory that merges open community pull requests in batches. Its README makes no progress claim of its own."
+      "note": "Integration fork of VIctory that merged open community pull requests in batches. Its README says it no longer merges from upstream, and asks for help. It makes no progress claim of its own."
     },
     {
       "name": "Leonida Continued",
@@ -368,6 +368,16 @@
     "revision_note": "Moved forward from Tue 1 Dec to Sun 29 Nov. The pace has been faster than this forecast assumed: frame rate roughly tripled in a day, and XCL took two smaller retail games from a new repository to playable in about two days. Reaching playable does not require ray-traced lighting, so the remaining gap is mainly speed and stability. The Take-Two notice against Leonida's 3,007-repository network is a new risk to the public projects, which is why the chance by Fri 4 Dec rises only to 7 in 10."
   },
   "updates": [
+    {
+      "at": "2026-11-25T10:33:00Z",
+      "title": "PercyScarlett reaches the opening prison scene; victory-fork reports 6 to 7 fps with switches on",
+      "points": [
+        "PercyScarlett's v1.0 README says the game reaches the opening prison scene, lit and textured, at about 2 to 3 fps on an RTX 2060 SUPER. It moves from stage 5 to stage 6.",
+        "victory-fork's README reports the first room at 6 to 7 fps on an RTX 4070 with all its new switches on; the defaults give about 4.5 to 5. The 20 fps bar is not met.",
+        "ScarlettPort reports about 4 fps in the prologue and has synced its runtime copy to victory-fork. palmetto's newest commit says its loader is never re-armed, and it stays at stage 4.",
+        "OpenScarlett (Community Edition) has a commit saying a newer title's world was still empty, so it stays at stage 5. The forecast is unchanged."
+      ]
+    },
     {
       "at": "2026-11-25T08:45:00Z",
       "title": "victory-fork renders the first room; five-star-recomp draws the cutscene world offscreen",
