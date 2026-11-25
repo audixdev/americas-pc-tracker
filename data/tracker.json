@@ -6,7 +6,7 @@
     "repo": "audixdev/americas-pc-tracker",
     "description": "Live standings of the unofficial projects trying to run the Xbox build of GTA VI on a PC: how far each has got, what changed, and a best guess at when it becomes playable."
   },
-  "checked_at": "2026-11-25T13:20:00Z",
+  "checked_at": "2026-11-25T15:37:00Z",
   "headline_note": "None is playable yet. The best pictures are lit only where sunlight falls, at about 2 to 8 frames a second.",
   "stages": [
     {
@@ -47,9 +47,9 @@
       "furthest": "The first mission after the prologue, up to the seaplane, at about 5 to 7 fps",
       "stage": 6,
       "state": "active",
-      "status": "Its README (Lab 35) says the player controls the character through the prison prologue and into the first mission after it, up to a seaplane, at about 5.7 to 7.3 fps in the world on one RX 9070 XT, with the game drawn at 1280 by 720 and upscaled. It reports 74 minutes in one session without a crash. The part about the seaplane comes from a 41-minute session on a newer test build in a separate beta repository. Boats and the seaplane do not behave correctly because water physics is wrong; a fix is reported on that test build only. Some faces and small objects render wrongly, and the menus stay black without a button press. The 20 fps bar is not met.",
-      "source": "project README (status dated 25 Nov, Lab 35) and commits to abcae13; one RX 9070 XT, self-reported; the water fix is on a test build outside this repository",
-      "changed_at": "2026-11-25T13:17:00Z"
+      "status": "Its README (Lab 35) says the player controls the character through the prison prologue and into the first mission after it, up to a seaplane, at about 5.7 to 7.3 fps in the world on one RX 9070 XT, with the game drawn at 1280 by 720 and upscaled. It reports 74 minutes in one session without a crash. The part about the seaplane comes from a 41-minute session on a newer test build in a separate beta repository. Boats did not behave correctly because of water physics; the README says a test build (Lab 39, on a beta branch) fixes it, with the boat, seaplane take-off, flight and water landing working at about 9 fps in the authors' own play-through. Some faces and small objects render wrongly, and the menus stay black without a button press. The 20 fps bar is not met.",
+      "source": "project README (status dated 25 Nov, Lab 35, plus its Lab 39 test-build notes) and commits to 092a824; one RX 9070 XT, self-reported; the water fix is on a test build, not the main build",
+      "changed_at": "2026-11-25T15:37:00Z"
     },
     {
       "id": "anyxboxx",
@@ -86,6 +86,18 @@
       "status": "Its README says the prologue runs with character control, a HUD, a pause menu and gamepad and keyboard input. It reports 14 fps in the prison corridor, 11 in the heist interior and 9 in the cell, and 4.5 to 6.5 fps in heavy scenes, on an RTX 4070 SUPER at half render scale, with lighting stand-ins switched on. Real ray-traced lighting is not done. All numbers are self-reported on one machine. Its last commit is from 25 Nov, 06:51 UTC. The 20 fps bar is not met.",
       "source": "project README (undated, commits of 25 Nov to 97c3aa2); one RTX 4070 SUPER, self-reported",
       "changed_at": "2026-11-25T13:17:00Z"
+    },
+    {
+      "id": "flamingo",
+      "name": "Flamingo",
+      "repo": "realblastex/flamingo",
+      "tagline": "NVIDIA-tuned fork of victory-fork with a stats overlay and speed work; created 25 Nov",
+      "furthest": "The first gameplay scene with the player in control, at about 14 fps",
+      "stage": 6,
+      "state": "active",
+      "status": "Its README (status dated 25 Nov) says the first gameplay scene renders with the player in control at about 14 fps facing the window and 9 to 12 fps turned toward the room, on one RTX 4070 with the Series S profile. The opening cutscene plays through but is dark, with dithered faces and white eyes. Shadowed areas are dark because ray-traced light does not run, some geometry and character assets are missing or wrong, and 15-minute runs end without a device loss. After merging the newest victory-fork code, it measures 9 to 10 fps with a cold shader cache. It is not playable: the 30-minute bar is not met.",
+      "source": "project README (status dated 25 Nov), FLAMINGO.md and commit 1f70cac; one RTX 4070, self-reported; new to this page",
+      "changed_at": "2026-11-25T15:37:00Z"
     },
     {
       "id": "victory-gta6",
@@ -146,6 +158,18 @@
       "status": "Its v1.0 README says the game reaches the opening prison scene, lit and textured, on the Series S profile with an 8 GB card, at about 2 to 3 fps on an RTX 2060 SUPER. Menus, the 4K video, save data and world streaming work. Shaded areas are still too dark. Its runtime is built on VIctory, victory-fork and ScarlettPort. It is not playable: the first visit to a scene can show a black or incomplete picture for a few minutes while pipelines compile.",
       "source": "project README (v1.0, 25 Nov) and commits 43bd6c9 and 41bfac6; one RTX 2060 SUPER; the README refers to the game by a nickname",
       "changed_at": "2026-11-25T10:33:00Z"
+    },
+    {
+      "id": "dexnom-runtime",
+      "name": "DexNom Runtime",
+      "repo": "DexNom/VIctory",
+      "tagline": "Source-only Windows fork of VIctory for Radeon cards, with experimental ray tracing; created 25 Nov",
+      "furthest": "The outdoor City scene, loaded from an autosave, at about 1 fps with experimental ray tracing",
+      "stage": 6,
+      "state": "active",
+      "status": "Its test report (BENCHMARK.md, 25 Nov) says an RX 7900 XTX reached the outdoor City scene from a copied autosave. With the experimental ray-tracing switches on, frames took about 1 second on average after a fix, down from about 3.5 seconds. An earlier indoor comparison gave 3.5 to 4 fps. The report says some dock objects and a doorway still render too dark or overexposed, and in-game ray-traced lighting is experimental. It does not claim gameplay, so it is ranked low in the stage.",
+      "source": "project README and BENCHMARK.md (25 Nov) and commit 921d8d3; one RX 7900 XTX, self-reported; new to this page",
+      "changed_at": "2026-11-25T15:37:00Z"
     },
     {
       "id": "victory",
@@ -428,6 +452,15 @@
     "revision_note": "Moved forward from Tue 1 Dec to Sun 29 Nov. The pace has been faster than this forecast assumed: frame rate roughly tripled in a day, and XCL took two smaller retail games from a new repository to playable in about two days. Reaching playable does not require ray-traced lighting, so the remaining gap is mainly speed and stability. The Take-Two notice against Leonida's 3,007-repository network is a new risk to the public projects, which is why the chance by Fri 4 Dec rises only to 7 in 10."
   },
   "updates": [
+    {
+      "at": "2026-11-25T15:37:00Z",
+      "title": "Flamingo and DexNom Runtime join at stage 6",
+      "points": [
+        "Flamingo joins above victory-fork: its README reports the first gameplay scene under player control at about 14 fps on one RTX 4070, and 9 to 12 fps looking into the room.",
+        "DexNom Runtime, a Radeon-focused fork of VIctory, joins low in stage 6: its test report reaches the outdoor City scene from a save at about 1 fps with experimental ray tracing on an RX 7900 XTX.",
+        "KLBF Lab's README now says a test build fixes the boat in the first mission, with seaplane take-off and flight working. Neither new project meets the 20 fps bar, so the forecast is unchanged."
+      ]
+    },
     {
       "at": "2026-11-25T13:20:00Z",
       "title": "Four projects join at stage 6; KLBF Lab takes the lead",
