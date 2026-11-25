@@ -6,8 +6,8 @@
     "repo": "audixdev/americas-pc-tracker",
     "description": "Live standings of the unofficial projects trying to run the Xbox build of GTA VI on a PC: how far each has got, what changed, and a best guess at when it becomes playable."
   },
-  "checked_at": "2026-11-25T20:10:00Z",
-  "headline_note": "None is playable yet. The closest, KLBF Lab, reports 77 minutes without a crash, but at about 5 to 9 frames a second; playable needs 20.",
+  "checked_at": "2026-11-25T21:35:00Z",
+  "headline_note": "None is playable yet. AnyXboxX reports a median of about 12.5 frames a second in the open world, KLBF Lab 77 minutes without a crash at 5 to 9, and Kelvaroq 36 minutes at about 10; playable needs 20 for 30 minutes.",
   "stages": [
     {
       "name": "Loads",
@@ -40,6 +40,33 @@
   ],
   "projects": [
     {
+      "id": "anyxboxx",
+      "name": "AnyXboxX",
+      "repo": "LooperSalty/AnyXboxX",
+      "tagline": "Xbox Series emulator focused on this one game, built on VIctory",
+      "furthest": "The open world at a median of about 12.5 fps on a new base (maintainer's measurement)",
+      "stage": 6,
+      "state": "active",
+      "status": "Its README and commit 222b021 (25 Nov, evening) say the project's copy of the VIctory code now stands on a build called Neptune (VIctory Edit.). The maintainer measured a median of about 12.5 fps in the open world, about 15 over the last minute and peaks at 30, on an RTX 4070 SUPER, with no crash; the previous copy ran at about 5 fps there. The run length is not given, and the README's own limits section still says long-run stability was measured only over about 4 min 20 s. The longest measured session is a 23-minute Linux run on an RX 9070 XT at a median 3.7 fps, with no crash. Lighting is an even ambient stand-in, not ray tracing, and objects go briefly black while textures swap. A contributor reportedly played about 45 minutes at about 2 fps and finished the first two missions; that is second-hand and was not measured in the project's logs.",
+      "source": "project README (status dated 25 Nov) and commit 222b021 (merges to 192affb); maintainer's RTX 4070 SUPER and one RX 9070 XT on Linux, self-reported; the 45-minute report is a contributor's, not measured",
+      "changed_at": "2026-11-25T21:35:00Z",
+      "tested_on": "Windows 11 · NVIDIA RTX 4070 SUPER; Linux · AMD RX 9070 XT",
+      "lanes": {
+        "picture": {
+          "step": 3,
+          "note": "lit, with an ambient stand-in for ray-traced light"
+        },
+        "speed": {
+          "fps": 12.5,
+          "note": "median about 12.5 fps in the open world; peaks at 30"
+        },
+        "stability": {
+          "minutes": 23,
+          "note": "23 minutes on Linux; the 12.5 fps run's length is not stated"
+        }
+      }
+    },
+    {
       "id": "klbf-lab",
       "name": "KLBF Lab",
       "repo": "PastiiJay/klbf-lab",
@@ -48,7 +75,7 @@
       "stage": 6,
       "state": "active",
       "status": "Its README (Lab 35) says the player controls the character from the prison prologue into Jason's first mission, at about 5.7 fps while playing the prologue and 6.3 on the boat, on one RX 9070 XT with the game drawn at 1280 by 720 and upscaled. On test build Lab 39, from its beta branch, it reports finishing that mission, saving and reaching free roam in a 77-minute session that the testers ended themselves, not a crash. Walls, lighting, hair and outfits are drawn; small flat objects get a purple tint, some faces are deformed, faint diagonal lines cross some surfaces and vegetation turns magenta at night. The 20 fps bar is not met.",
-      "source": "project README (status dated 25 Nov, Lab 35, with Lab 39 test-build results) and commits to 61bfe3d; one RX 9070 XT, self-reported",
+      "source": "project README (status dated 25 Nov, Lab 35, with Lab 39 test-build results) and commits to 94cf8a7; one RX 9070 XT, self-reported",
       "changed_at": "2026-11-25T18:31:00Z",
       "tested_on": "Windows 11 · AMD RX 9070 XT",
       "lanes": {
@@ -94,6 +121,30 @@
       }
     },
     {
+      "id": "kelvaroq",
+      "name": "Kelvaroq",
+      "repo": "fablinoo/kelvaroq",
+      "tagline": "Rust-based Xbox Series runtime for Windows built on VIctory and victory-fork; repository opened 24 Nov",
+      "furthest": "The prologue and first mission, 36 minutes without a crash at about 10 fps (outside tester)",
+      "stage": 6,
+      "state": "active",
+      "status": "Its README (25 Nov) says the prologue runs at about 10 fps in typical views and 7 to 8 in the heaviest scenes, on one RTX 5080 at 3840 by 2160, with menus, character control, HUD and pause verified in play. It also reports an outside tester's monitored session on an RTX 4090 at 2560 by 1440: 36 min 46 s without a crash, mean 10 fps, median 11, range 1 to 20, and 9 to 12 after the first 10 minutes. That session covered the prologue and the first mission and is one session only. The README says about 7% of draws are still dropped, mostly because ray-tracing structures are not built, and that the thread preparing GPU work limits heavy frames. Its badge calls the project playable; this page's bar is 20 fps, which is not met. The README does not describe the picture, so that lane is empty.",
+      "source": "project README (25 Nov) and commits to 132217b; developer's RTX 5080 and an outside tester's RTX 4090, self-reported; new to this page",
+      "changed_at": "2026-11-25T21:35:00Z",
+      "tested_on": "Windows · NVIDIA RTX 5080; RTX 4090 (outside tester)",
+      "lanes": {
+        "picture": null,
+        "speed": {
+          "fps": 9.5,
+          "note": "7 to 12 fps; about 10 in typical views"
+        },
+        "stability": {
+          "minutes": 36,
+          "note": "36 min 46 s by an outside tester, no crash"
+        }
+      }
+    },
+    {
       "id": "victory-gta6",
       "name": "victory-fork",
       "repo": "fxceless/victory-fork",
@@ -101,9 +152,9 @@
       "furthest": "The open world, in one play session that ended in a device loss",
       "stage": 6,
       "state": "active",
-      "status": "Its README status header (25 Nov) gives about 8 to 10 fps in the first rooms and 5 to 8.5 through the opening cutscene, measured with a set of switches, on one RTX 4070; an earlier section measured a 4.5 fps mean over a 370-second play session. Anything out of direct sunlight is black because ray-traced light does not run. A first play session past the first rooms reached the open world and lost the device there, with the card out of room for textures; the cause is not known. Its newest section claims no further frame-rate gain.",
-      "source": "the fork's own README (status header and sections of 25 Nov) and commits to the README update of 19:39 UTC; one RTX 4070",
-      "changed_at": "2026-11-25T20:10:00Z",
+      "status": "Its README status header (25 Nov) gives about 8 to 10 fps in the first rooms and 5 to 8.5 through the opening cutscene, measured with a set of switches, on one RTX 4070; an earlier section measured a 4.5 fps mean over a 370-second play session. Anything out of direct sunlight is black because ray-traced light does not run. A first play session past the first rooms reached the open world and lost the device there, with the card out of room for textures; the cause is not known. Its newest section claims no further frame-rate gain. A merged switch for copying water textures back into the game's memory let a boat mission get past the point where the boat used to sink, in a six-minute run (run 276); that run then ended with the device lost, cause not known, while the same run without the switch played twenty minutes without an error.",
+      "source": "the fork's own README (status header and sections of 25 Nov) and commits to 9c184b3; one RTX 4070",
+      "changed_at": "2026-11-25T21:35:00Z",
       "tested_on": "Windows 11 · NVIDIA RTX 4070",
       "lanes": {
         "picture": {
@@ -121,30 +172,27 @@
       }
     },
     {
-      "id": "anyxboxx",
-      "name": "AnyXboxX",
-      "repo": "LooperSalty/AnyXboxX",
-      "tagline": "Xbox Series emulator focused on this one game, built on VIctory",
-      "furthest": "The first two missions, reported played through by a contributor at about 2 fps",
+      "id": "darkworldhm-build",
+      "name": "darkworldhm's stream build",
+      "repo": null,
+      "tagline": "Private build shown on a Rumble stream, reportedly based on VIctory. No public code",
+      "furthest": "Free roam at about 12 to 15 fps, as far into the story as the leading builds (unconfirmed)",
       "stage": 6,
-      "state": "active",
-      "status": "It runs the world on its own copy of the victory-fork code, from commit 80d58f8. Its README says the maintainer measured 4.8 to 5.4 fps in the world with the character under control, over about 4 min 20 s with no device loss, on an RTX 4070 SUPER. A Linux run under Proton on an RX 9070 XT went past the prologue into the first chapter: 23 minutes without a crash at a median 3.7 fps, with shadowed and indoor areas black. A contributor reportedly played about 45 minutes at about 2 fps and finished the first two missions; that is second-hand and was not measured in the project's logs.",
-      "source": "project README (status dated 25 Nov) and merges to 192affb; maintainer's RTX 4070 SUPER and one RX 9070 XT on Linux; the 45-minute report is a contributor's, not measured",
-      "changed_at": "2026-11-25T18:31:00Z",
-      "tested_on": "Windows 11 · NVIDIA RTX 4070 SUPER; Linux · AMD RX 9070 XT",
+      "state": "unverified",
+      "status": "A build shown on darkworldhm's Rumble stream on 25 Nov is reported to run free roam at about 12 to 15 fps, swinging between 5 and 24, with no crash so far. The picture is said to look acceptable with some texture or ray-tracing glitches. The card is reportedly an NVIDIA RTX 50-series. It is said to be built on VIctory, but which fork is not known. This page has not seen the stream and no code is public, so every figure is second-hand and unconfirmed. No session length is given, so the stability lane is empty and it ranks below victory-fork.",
+      "source": "report passed to this page's editor about a Rumble stream on 25 Nov; not seen or confirmed by this page; no public code",
+      "changed_at": "2026-11-25T21:35:00Z",
+      "tested_on": "NVIDIA RTX 50-series (reported)",
       "lanes": {
         "picture": {
-          "step": 2,
-          "note": "3D picture shown, shadowed and indoor areas black"
+          "step": 3,
+          "note": "looks acceptable, texture or ray-tracing glitches (reported)"
         },
         "speed": {
-          "fps": 5.1,
-          "note": "4.8 to 5.4 fps in the world"
+          "fps": 13.5,
+          "note": "12 to 15 fps, swinging 5 to 24 (reported)"
         },
-        "stability": {
-          "minutes": 23,
-          "note": "23 minutes on Linux; a contributor's 45 is unmeasured"
-        }
+        "stability": null
       }
     },
     {
@@ -152,12 +200,12 @@
       "name": "VIctory-Belobug-AMD",
       "repo": "Belobug/VIctory-Belobug-AMD",
       "tagline": "AMD Radeon fork of VIctory, created 25 Nov",
-      "furthest": "A lit world with people, vehicles and sky, at 5 to 7 fps",
+      "furthest": "A lit world with people, vehicles and sky, at 5 to 8 fps",
       "stage": 6,
       "state": "active",
-      "status": "Its README says the world renders lit, with textures, people, vehicles, vegetation, water and sky, at 5 to 7 fps on an RX 9070 XT (5.4 to 6.7 standing still in a busy scene, less while driving). Shade gets a constant stand-in light because ray-traced light does not run; the game's own sun and lamp shadows work. The in-game phone is broken, and one driver timeout happened in the session the README was written in. It is not playable.",
-      "source": "project README (25 Nov) and commits to 000ffdd; one RX 9070 XT, self-reported",
-      "changed_at": "2026-11-25T18:31:00Z",
+      "status": "Its README (25 Nov) says the world renders lit, with textures, people, vehicles, vegetation, water and sky, at 5 to 8 fps on an RX 9070 XT (7.2 to 7.7 standing still in a scene of 8,800 draws, less while driving; its headline still says 5 to 7). Shade gets a stand-in light that follows the game's sky, because ray-traced light does not run; the game's own sun and lamp shadows work. The in-game phone is broken, and one driver timeout happened in the session the README was written in. It is not playable.",
+      "source": "project README (25 Nov) and commits to the ambient-light change; one RX 9070 XT, self-reported",
+      "changed_at": "2026-11-25T21:35:00Z",
       "tested_on": "Windows 11 · AMD RX 9070 XT",
       "lanes": {
         "picture": {
@@ -165,8 +213,8 @@
           "note": "lit, shade filled by a constant stand-in"
         },
         "speed": {
-          "fps": 6,
-          "note": "5 to 7 fps, less while driving"
+          "fps": 6.5,
+          "note": "5 to 8 fps, less while driving"
         },
         "stability": null
       }
@@ -542,21 +590,19 @@
       "status": "A retail title it does not name loads, creates its graphics device, streams its start-up data and presents its first frame after about 30 seconds, then stops in its own start-up code. The README says nothing it draws has been seen yet.",
       "source": "project README",
       "changed_at": "2026-11-24T19:30:00Z"
-    },
-    {
-      "id": "leonida-ce",
-      "name": "Leonida CE",
-      "repo": "IAmNotSiob/leonida-ce",
-      "tagline": "Community continuation of Leonida, the first large recompilation effort",
-      "furthest": "Black frames presented to the game window for 10+ minutes, with stand-ins (modified)",
-      "stage": 4,
-      "state": "active",
-      "status": "Its README says the real executable boots on native Windows and Wine and runs more than 10 minutes without a crash, loads saves and the profile and submits tens of thousands of draws. Every frame is presented into the game window but is black, because the final UI composite draw writes no pixels. Many fixes are deliberate stand-ins, each behind a switch. It moves up from stage 3.",
-      "source": "project README (25 Nov) and commit 93c9a22; a modified build",
-      "changed_at": "2026-11-25T06:41:00Z"
     }
   ],
   "also_watched": [
+    {
+      "name": "Leonida CE",
+      "repo": "IAmNotSiob/leonida-ce",
+      "note": "Was ranked at stage 4. On 25 Nov its main branch was rebased onto VIctory's code and its README now carries VIctory's own status text below a short note, with no measurement of its own, so it is not ranked. Its older runtime, which its README says reaches the legal terms screen, is kept on a legacy branch."
+    },
+    {
+      "name": "Project ReCity",
+      "repo": "pixl27/ProjectReCity",
+      "note": "Static recompilation toolchain with a Vulkan renderer. Its README says the game does not boot yet (status pre-boot), so it is not ranked."
+    },
     {
       "name": "VIctory-macOS",
       "repo": "pragyaangaur/VIctory-macOS",
@@ -597,30 +643,30 @@
     }
   ],
   "forecast": {
-    "target": "2026-12-01T15:00:00Z",
+    "target": "2026-11-30T15:00:00Z",
     "definition": "At least one project shows 30 minutes or more in the game world under player control, at 20 frames a second or better on some PC, without a crash.",
     "rests_on": [
-      "The executable surfaced on 23 November. Two days later twelve public projects report the game world running, and one, KLBF Lab, reports finishing the first mission and reaching free roam. A private build, CGBJ, is said to be in the world too, but that comes from press reports only.",
+      "The executable surfaced on 23 November. Two days later thirteen public projects report the game world running, and one, KLBF Lab, reports finishing the first mission and reaching free roam. Two private builds, CGBJ and one shown on a Rumble stream, are said to be in the world too, but both rest on reports this page has not confirmed.",
       "Other games show the pace. XCL's repository opened on the evening of 20 November, and by the evening of 22 November it listed two smaller retail games, Minecraft Preview and Unicorn Overlord, as fully playable. No project has done this with a game the size of GTA VI.",
       "The picture is arriving. KLBF Lab, Belobug's AMD fork and victory-perf light shaded places with stand-ins or fixes of their own; others still show anything out of the sun as black, because no build runs the game's ray-traced lighting properly yet.",
-      "Speed is the long pole. VIctory took 0.5 to 1.8 seconds per world frame on 23 November. Two days later the best free-roam figure on this page is about 5 to 8 fps, in KLBF Lab. Indoors in the first scene, Flamingo reports 9 to 14 fps and victory-fork 8 to 10, each self-reported on one machine. PortWatch's owner has said it has seen no evidence of any build above 10 fps in free roam. Playable needs 20, so the gap is still two- to threefold.",
+      "Speed is the long pole. VIctory took 0.5 to 1.8 seconds per world frame on 23 November. On 25 November AnyXboxX's maintainer measured a median of about 12.5 fps in the open world after moving to a new code base, up from about 5 the same day; that is one machine and self-reported. Kelvaroq reports about 10 fps over a 36-minute outside session, KLBF Lab 5 to 8 in free roam, and indoors in the first scene Flamingo reports 9 to 14 fps and victory-fork 8 to 10. A private build on a stream is said to show 12 to 15, unconfirmed. Playable needs 20, so the gap is now under twofold on the best figure.",
       "Where the time goes is now measured, and it is not mostly the graphics card. rorodev6's build spends 22 to 40 ms of a 113 to 141 ms frame on GPU work and the rest copying the game's memory to and from the card, on one thread. victory-fork finds its submit thread and the card both close to full, and cutting one alone moved the frame by 0 to 7%. Getting to 20 fps means removing most of that copying, which is deeper work than the gains of the first two days.",
-      "The playable bar does not require correct lighting, only 20 frames a second for 30 minutes. A build could skip the ray-traced passes to get there. Stability has moved: KLBF Lab reports a 77-minute session on a test build that the testers ended themselves, so speed is now the main gap.",
-      "Work is shared across projects. victory-fork, AnyXboxX and ScarlettPort build on VIctory, and fixes move between XCL and the VIctory family within days.",
+      "The playable bar does not require correct lighting, only 20 frames a second for 30 minutes. A build could skip the ray-traced passes to get there. Stability has moved: KLBF Lab reports a 77-minute session on a test build that the testers ended themselves, and Kelvaroq an outside tester's 36 minutes at about 10 fps. No project yet shows 20 fps and 30 minutes together, so speed is the main gap.",
+      "Work is shared across projects. victory-fork, AnyXboxX, Kelvaroq and ScarlettPort build on VIctory, and fixes move between XCL and the VIctory family within days. AnyXboxX's jump came from taking in a bundle of those fixes at once, which is the kind of gain that can repeat.",
       "Takedowns are now on the record. On 24 November GitHub published a Take-Two notice against Leonida and applied it to its whole network of 3,007 repositories. The notice argues that requiring the game files, given when the project appeared and what it targets, points to the leaked copy. That argument would fit most projects listed here, though none has been named so far. A notice cannot stop private builds, but it could break up the open work the public projects depend on. On 25 November two more ranked repositories, ztrx and victory-perf, disappeared; no source says why."
     ],
     "chances": [
       {
         "label": "By Sun 29 Nov",
-        "value": "3 in 10"
+        "value": "4 in 10"
       },
       {
         "label": "By Tue 1 Dec",
-        "value": "5 in 10"
+        "value": "6 in 10"
       },
       {
         "label": "By Fri 4 Dec",
-        "value": "6 in 10"
+        "value": "7 in 10"
       },
       {
         "label": "By 31 Dec",
@@ -650,17 +696,28 @@
       },
       {
         "label": "10 fps in free roam",
-        "value": "around Fri 27 Nov"
+        "value": "reached Wed 25 Nov, self-reported (AnyXboxX, median about 12.5 fps in the open world)"
       },
       {
         "label": "Playable",
-        "value": "around Tue 1 Dec"
+        "value": "around Mon 30 Nov"
       }
     ],
-    "revised_at": "2026-11-25T19:16:00Z",
-    "revision_note": "Moved back from Sun 29 Nov to Tue 1 Dec. Stability is no longer the main gap: KLBF Lab reports 77 minutes without a crash on a test build. Speed is. The best free-roam figure on this page is about 5 to 8 fps, PortWatch's owner reports seeing no build above 10 fps in free roam, and the projects' own measurements show most of each frame going to memory copies that need deeper changes to remove. Two repositories disappeared on 25 Nov without a stated reason, which adds to the takedown risk. The chance by Sun 29 Nov falls from 5 in 10 to 3 in 10."
+    "revised_at": "2026-11-25T21:35:00Z",
+    "revision_note": "Moved forward from Tue 1 Dec to Mon 30 Nov. This check adds evidence on speed, the gap the earlier move rested on: AnyXboxX's maintainer measured a median of about 12.5 fps in the open world after switching code base, up from about 5 earlier the same day, and Kelvaroq reports about 10 fps over a 36-minute outside session. Both are self-reported on one machine each, and no project shows 20 fps and 30 minutes together, so the move is one day, not more. A private build said to run 12 to 15 fps on a stream is unconfirmed and was not used. Takedown risk is unchanged. The chance by Sun 29 Nov rises from 3 in 10 to 4 in 10."
   },
   "updates": [
+    {
+      "at": "2026-11-25T21:35:00Z",
+      "title": "AnyXboxX reports about 12.5 fps and takes the lead; Kelvaroq and a stream build join",
+      "points": [
+        "AnyXboxX's README says its maintainer measured a median of about 12.5 fps in the open world on an RTX 4070 SUPER after moving to a new code base, up from about 5. Its longest measured session is still the 23-minute Linux run, so it leads stage 6 by picture and frame rate, two steps short of the playable bar.",
+        "Kelvaroq, opened on 24 Nov, joins fourth, level with the leaders on steps short: its README reports the prologue at about 10 fps and an outside tester's 36-minute session without a crash. It calls itself playable; this page's 20 fps bar is not met, and its picture lane is empty.",
+        "A private build shown on darkworldhm's Rumble stream is added as unverified: reported at 12 to 15 fps in free roam, swinging 5 to 24, with no crash so far. Code is not public and this page has not seen it, and no session length is given, so its stability lane is empty and it ranks sixth in stage 6, below victory-fork.",
+        "victory-fork's README reports a water read-back switch that gets a boat mission past its sinking point, in a run that then lost the device. Leonida CE moves to the watch list because its main branch is now VIctory's code with no measurement of its own.",
+        "The forecast moves from Tue 1 Dec to Mon 30 Nov, because the best open-world frame rate on this page rose from about 7 to about 12.5 in one day."
+      ]
+    },
     {
       "at": "2026-11-25T20:10:00Z",
       "title": "victory-fork moves up on a higher frame rate",
