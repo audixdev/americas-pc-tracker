@@ -411,11 +411,11 @@
       "id": "leonida",
       "name": "Leonida",
       "repo": "ubiquitarianism/leonida",
-      "tagline": "The first large recompilation effort; the original repository is gone, and the work goes on with its full history as Leonida Continued",
+      "tagline": "The first large recompilation effort. Its repository is gone; Leonida Continued carries on the code with its full history",
       "furthest": "The landing prompt, then the story load runs to its end; no world frame yet",
       "stage": 5,
-      "state": "active",
-      "status": "The original repository, NotRexed's ItsNotRexed/Leonida, now returns 404, and according to press reports its lead stepped away. Leonida Continued carries on the same code with its full commit history. Its README (25 Nov) says the game boots on native Windows and on Linux through Proton, shows the launch movie, the first-run pages and the landing prompt, which respond to a pad, then runs the story load to its end and enters the world phase. No world frame has been verified on any test machine yet. All 26,503 of the game's shaders translate to SPIR-V and pass validation.",
+      "state": "gone",
+      "status": "Gone: the original repository, NotRexed's ItsNotRexed/Leonida, now returns 404, and according to press reports its lead stepped away. Leonida Continued carries on the same code with its full commit history. Its README (25 Nov) says the game boots on native Windows and on Linux through Proton, shows the launch movie, the first-run pages and the landing prompt, which respond to a pad, then runs the story load to its end and enters the world phase. No world frame has been verified on any test machine yet. All 26,503 of the game's shaders translate to SPIR-V and pass validation.",
       "source": "Leonida Continued's README (status of 25 Nov) and its Linux and Windows test report; the original repository returns 404 (checked 25 Nov); the lead's departure is from press reports",
       "tested_on": "Windows 11 · NVIDIA RTX 4070 Ti; Linux · NVIDIA RTX 4070",
       "changed_at": "2026-11-25T18:44:00Z"
@@ -637,7 +637,7 @@
       "at": "2026-11-25T18:44:00Z",
       "title": "Leonida returns to the standings at stage 5",
       "points": [
-        "Leonida, the first large recompilation effort, is back in the ranking at stage 5. Its original repository is gone, so its entry follows Leonida Continued, which keeps the full history.",
+        "Leonida, the first large recompilation effort, is back in the ranking at stage 5, marked as gone because its original repository no longer exists. Its entry follows Leonida Continued, which keeps the full history.",
         "Leonida Continued's README now says the game shows its launch movie, first-run pages and landing prompt on Windows and Linux, then finishes the story load. No world frame is verified yet, so it ranks second in stage 5, behind five-star-recomp.",
         "The forecast is unchanged."
       ]
