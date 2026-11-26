@@ -6,7 +6,7 @@
     "repo": "audixdev/americas-pc-tracker",
     "description": "Live standings of the unofficial projects trying to run the Xbox build of GTA VI on a PC: how far each has got, what changed, and a best guess at when it becomes playable."
   },
-  "checked_at": "2026-11-26T07:00:00Z",
+  "checked_at": "2026-11-26T08:45:00Z",
   "headline_note": "None is playable yet. AnyXboxX reports a median of 13.8 frames a second in the open world in 13-minute runs, KLBF Lab 77 minutes without a crash at 5 to 9, and Kelvaroq 36 minutes at about 10; playable needs 20 for 30 minutes.",
   "stages": [
     {
@@ -413,13 +413,13 @@
       "id": "cgbj",
       "name": "CGBJ",
       "repo": null,
-      "tagline": "Private VIctory/XCL build, reportedly verified by PortWatch. No public code",
+      "tagline": "Private VIctory/XCL build, reportedly the one briefly public as codec-d/cool_fox. No public code now",
       "furthest": "Free roam at an average of 20 fps on NVIDIA, as claimed by its owner (unconfirmed)",
       "stage": 6,
       "state": "unverified",
-      "status": "The owner reportedly rates story progress at 80%, rendering at 0.85 and stability at 0.85, with an average of 20 fps on an NVIDIA card with 10 GB of RAM and 16 GB of VRAM, which the owner says is not a typo. PortWatch, another tracker, is reported to have verified the build; this page has seen neither that check nor the build, and no code is public. The ratings are not measurements with units. Because the 20 fps average is a relayed owner claim with no scene or method, this page leaves the speed lane empty rather than rank the build on it. The picture lane keeps the earlier press reading, since 0.85 does not describe the picture, and no session length is given, so stability is empty.",
-      "source": "report passed to this page's editor with the owner's figures and a PortWatch verification claim, 26 Nov; second-hand, not seen or confirmed by this page; earlier press reports; no public code",
-      "changed_at": "2026-11-26T07:00:00Z",
+      "status": "A report passed to this page says CGBJ was public for a short time as codec-d/cool_fox, was cloned and forked by many people, and is now private again. This page confirmed that the repository returns 404 and that a re-upload of its commits exists (last commit 2026-11-26T06:33Z, a Windows build and NVIDIA shader work), but no source read here ties the name CGBJ to that account, so the link is unconfirmed. The README in that copy carries the VIctory-7900XTX figures, so it is not used for CGBJ's lanes. The owner reportedly rates story progress at 80%, rendering at 0.85 and stability at 0.85, with an average of 20 fps on an NVIDIA card with 10 GB of RAM and 16 GB of VRAM, which the owner says is not a typo. PortWatch, another tracker, is reported to have verified the build; this page has seen neither that check nor the build. The ratings are not measurements with units. Because the 20 fps average is a relayed owner claim with no scene or method, this page leaves the speed lane empty rather than rank the build on it. The picture lane keeps the earlier press reading, since 0.85 does not describe the picture, and no session length is given, so stability is empty.",
+      "source": "reports passed to this page's editor with the owner's figures, a PortWatch claim and the cool_fox history, 26 Nov; repo codec-d/cool_fox returns 404; commit list of a third-party copy read 26 Nov (not linked); second-hand, identity unconfirmed; earlier press reports",
+      "changed_at": "2026-11-26T08:45:00Z",
       "tested_on": "NVIDIA, card not named (reported)",
       "lanes": {
         "picture": {
@@ -735,6 +735,15 @@
     "revision_note": "Moved forward from Tue 1 Dec to Mon 30 Nov. This check adds evidence on speed, the gap the earlier move rested on: AnyXboxX's maintainer measured a median of about 12.5 fps in the open world after switching code base, up from about 5 earlier the same day, and Kelvaroq reports about 10 fps over a 36-minute outside session. Both are self-reported on one machine each, and no project shows 20 fps and 30 minutes together, so the move is one day, not more. A private build said to run 12 to 15 fps on a stream is unconfirmed and was not used. Takedown risk is unchanged. The chance by Sun 29 Nov rises from 3 in 10 to 4 in 10."
   },
   "updates": [
+    {
+      "at": "2026-11-26T08:45:00Z",
+      "title": "CGBJ reported to have been public briefly as cool_fox",
+      "points": [
+        "A report says CGBJ was public for a short time as codec-d/cool_fox, widely cloned and forked, and is private again; the repository now returns 404.",
+        "A copy of that repository's history shows commits by codec_d up to 2026-11-26T06:33Z, so work is likely still going on, but this page could not confirm that CGBJ and codec_d are the same project.",
+        "CGBJ's stage, lanes and rank are unchanged: no first-hand figures for it were available to read."
+      ]
+    },
     {
       "at": "2026-11-26T07:00:00Z",
       "title": "VIctory-7900XTX added; CGBJ owner reports 20 fps",
