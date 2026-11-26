@@ -6,7 +6,7 @@
     "repo": "audixdev/americas-pc-tracker",
     "description": "Live standings of the unofficial projects trying to run the Xbox build of GTA VI on a PC: how far each has got, what changed, and a best guess at when it becomes playable."
   },
-  "checked_at": "2026-11-26T06:51:00Z",
+  "checked_at": "2026-11-26T07:00:00Z",
   "headline_note": "None is playable yet. AnyXboxX reports a median of 13.8 frames a second in the open world in 13-minute runs, KLBF Lab 77 minutes without a crash at 5 to 9, and Kelvaroq 36 minutes at about 10; playable needs 20 for 30 minutes.",
   "stages": [
     {
@@ -144,6 +144,33 @@
         "stability": {
           "minutes": 49,
           "note": "49 minutes, ended by a device loss"
+        }
+      }
+    },
+    {
+      "id": "victory-7900xtx",
+      "name": "VIctory-7900XTX",
+      "repo": "avatarmanz/VIctory-7900XTX",
+      "tagline": "VIctory and victory-fork build tuned for speed on an AMD RX 7900 XTX; created 25 Nov",
+      "furthest": "The first boat mission at 19 to 22 fps, and a 41-minute session without a crash",
+      "stage": 6,
+      "state": "active",
+      "status": "Its README (status dated 25 Nov) gives figures from one machine, on the Series X profile. It reports 13 to 20 fps in the prologue indoors, 19 to 22 in the first boat mission, 11 to 17 outdoors on foot, 17 to 24 in flight and 6 to 10 in a street chase with many cars and people. The longest session is 41 minutes with no crash. Rooms with little direct light are too dark without the ray-tracing switch, and trees, plants and far buildings flicker outdoors. It lists 40 to 46 GB of memory use and recommends 64 GB of RAM. This page takes the lowest scene for speed. The author says it has not reached 30 fps.",
+      "source": "project README (status dated 25 Nov, read 26 Nov) and commits to f249fe0; one i9-12900K and RX 7900 XTX, self-reported; new to this page; frame times in the README converted to fps by this page",
+      "changed_at": "2026-11-26T07:00:00Z",
+      "tested_on": "Windows 11 · AMD RX 7900 XTX",
+      "lanes": {
+        "picture": {
+          "step": 2,
+          "note": "lit, but rooms with little light are too dark without ray tracing"
+        },
+        "speed": {
+          "fps": 8,
+          "note": "6 to 10 fps in the street chase, the lowest scene named; 19 to 22 in the first mission"
+        },
+        "stability": {
+          "minutes": 41,
+          "note": "41 minutes, no crash"
         }
       }
     },
@@ -386,17 +413,18 @@
       "id": "cgbj",
       "name": "CGBJ",
       "repo": null,
-      "tagline": "Private build, reportedly based on VIctory. No public code",
-      "furthest": "A player walking in an unlit world, according to press reports (unconfirmed)",
+      "tagline": "Private VIctory/XCL build, reportedly verified by PortWatch. No public code",
+      "furthest": "Free roam at an average of 20 fps on NVIDIA, as claimed by its owner (unconfirmed)",
       "stage": 6,
       "state": "unverified",
-      "status": "Press coverage has described a private build in the game world with a player walking, unlit and very slow. Nobody outside the group can test it, and this page has found no first-hand source, so its lanes rest on press reports only and give no frame rate.",
-      "source": "press reports only; not confirmed by this page",
-      "changed_at": "2026-11-25T18:31:00Z",
+      "status": "The owner reportedly rates story progress at 80%, rendering at 0.85 and stability at 0.85, with an average of 20 fps on an NVIDIA card with 10 GB of RAM and 16 GB of VRAM, which the owner says is not a typo. PortWatch, another tracker, is reported to have verified the build; this page has seen neither that check nor the build, and no code is public. The ratings are not measurements with units. Because the 20 fps average is a relayed owner claim with no scene or method, this page leaves the speed lane empty rather than rank the build on it. The picture lane keeps the earlier press reading, since 0.85 does not describe the picture, and no session length is given, so stability is empty.",
+      "source": "report passed to this page's editor with the owner's figures and a PortWatch verification claim, 26 Nov; second-hand, not seen or confirmed by this page; earlier press reports; no public code",
+      "changed_at": "2026-11-26T07:00:00Z",
+      "tested_on": "NVIDIA, card not named (reported)",
       "lanes": {
         "picture": {
           "step": 1,
-          "note": "unlit, per press reports"
+          "note": "unlit per earlier press reports; the 0.85 rating is not a picture description"
         },
         "speed": null,
         "stability": null
@@ -707,6 +735,15 @@
     "revision_note": "Moved forward from Tue 1 Dec to Mon 30 Nov. This check adds evidence on speed, the gap the earlier move rested on: AnyXboxX's maintainer measured a median of about 12.5 fps in the open world after switching code base, up from about 5 earlier the same day, and Kelvaroq reports about 10 fps over a 36-minute outside session. Both are self-reported on one machine each, and no project shows 20 fps and 30 minutes together, so the move is one day, not more. A private build said to run 12 to 15 fps on a stream is unconfirmed and was not used. Takedown risk is unchanged. The chance by Sun 29 Nov rises from 3 in 10 to 4 in 10."
   },
   "updates": [
+    {
+      "at": "2026-11-26T07:00:00Z",
+      "title": "VIctory-7900XTX added; CGBJ owner reports 20 fps",
+      "points": [
+        "VIctory-7900XTX, a VIctory-based build for the RX 7900 XTX, is new on the page: its README reports 19 to 22 fps in the first boat mission and a 41-minute session without a crash, with 6 to 10 fps in a street chase.",
+        "CGBJ's owner reportedly claims an average of 20 fps on an NVIDIA card, story progress at 80% and PortWatch verification; this page has seen neither the build nor the check, so the figures are marked unconfirmed and kept out of its ranking lanes.",
+        "The VIctory-Belobug-AMD README now carries the same text and figures as VIctory-7900XTX, which explains the provenance question noted earlier."
+      ]
+    },
     {
       "at": "2026-11-26T06:51:00Z",
       "title": "AnyXboxX reports 13.8 fps; victory-fork logs 49-minute sessions",
