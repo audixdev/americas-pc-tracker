@@ -6,8 +6,8 @@
     "repo": "audixdev/americas-pc-tracker",
     "description": "Live standings of the unofficial projects trying to run the Xbox build of GTA VI on a PC: how far each has got, what changed, and a best guess at when it becomes playable."
   },
-  "checked_at": "2026-11-27T06:54:00Z",
-  "headline_note": "No project is confirmed playable yet. Vice-Tay's README reports a median of 21.1 frames a second over a 30-minute session by hand on an RTX 4090, but one session, self-reported, and it does not say how the session ended. AnyXboxX reports a median of about 24 over a 14-minute session on an RTX 4070 SUPER, also self-reported. KLBF Lab reports an average of 14 over 37 minutes so far and 77 minutes on an earlier build; VIctory-7900XTX reports about 16 to 20 in short runs. Playable needs 20 for 30 minutes without a crash.",
+  "checked_at": "2026-11-27T13:20:00Z",
+  "headline_note": "No project is confirmed playable yet. Vice-Tay's README reports a median of 21.1 frames a second over a 30-minute session by hand on an RTX 4090, but one session, self-reported, and it does not say how the session ended. playablegames-peppa reports 23.5 over 12 minutes standing in a house and, separately, a 55-minute session without a crash on an RTX 5080. AnyXboxX reports a median of about 24 over a 14-minute session on an RTX 4070 SUPER. KLBF Lab reports 60-minute scripted runs without a crash at 16.9 fps on its released build and 21.8 on an unreleased one. Playable needs 20 for 30 minutes without a crash.",
   "stages": [
     {
       "name": "Loads",
@@ -39,6 +39,33 @@
     }
   ],
   "projects": [
+    {
+      "id": "playablegames-peppa",
+      "name": "playablegames-peppa",
+      "repo": "Peppacodes/playablegames-peppa",
+      "tagline": "NVIDIA-tuned build on VIctory, victory-fork and VIctory-7900XTX; created 26 Nov",
+      "furthest": "The open world and first missions: 23.5 fps over a 12-minute run standing in a house, and a 55-minute session without a crash (self-reported)",
+      "stage": 6,
+      "state": "active",
+      "status": "Its README (27 Nov) says the game runs from a save into the open world and plays with a controller. It reports 23.5 fps average over a 12-minute run standing in a house interior at about 5,200 draws (three 5-minute runs: 22.8 to 23.9) on an RTX 5080, Ryzen 7 5700X3D and 32 GB with the Series S profile and ray tracing left out. Separately it reports a 55-minute session without a crash and the first mission completed, but gives no frame rate for that session, and the speed figure comes from a standing character with a button pressed every 10 seconds. The README says the picture is lit and whole with known faults. It links a recorded stream, which this page has not seen. Because the speed and session figures come from different runs, are self-reported and the speed is measured standing still, this page keeps it at stage 6 rather than calling it playable.",
+      "source": "project README (27 Nov) and commits to 14d8e9d; one RTX 5080, self-reported; stream not seen by this page; new to this page",
+      "changed_at": "2026-11-27T13:20:00Z",
+      "tested_on": "Windows 11 · NVIDIA RTX 5080",
+      "lanes": {
+        "picture": {
+          "step": 3,
+          "note": "lit and whole with known faults; ray tracing off"
+        },
+        "speed": {
+          "fps": 23.5,
+          "note": "23.5 over 12 minutes standing in one house interior; a recorded stream is said to show 20 to 25"
+        },
+        "stability": {
+          "minutes": 55,
+          "note": "55-minute session without a crash; the frame rate of that session is not given"
+        }
+      }
+    },
     {
       "id": "vice-tay",
       "name": "Vice-Tay",
@@ -98,12 +125,12 @@
       "name": "KLBF Lab",
       "repo": "PastiiJay/klbf-lab",
       "tagline": "VIctory and victory-fork build with its own fixes, tested first on an AMD card; repository opened 25 Nov",
-      "furthest": "Free roam after the first mission, at an average of 14 fps over 37 minutes so far on a test build (self-reported)",
+      "furthest": "Free roam after the first mission; 60-minute scripted runs without a crash at 16.9 fps on the released AMD build, 21.8 fps on an unreleased one (self-reported)",
       "stage": 6,
       "state": "active",
-      "status": "Its README (26 Nov) reports test build Lab 61, on a separate beta-2 branch, measured in ordinary play on one RX 9070 XT with a controller, the Series S profile and upscaling. A session still running at 37 minutes without a crash averaged 14.0 fps, median 14.5, with 16% of the time at 18 fps or more and 6% under 5 fps in freezes. Peaks run from 27 fps looking at the sky to 12 to 17 in traffic and driving. Water surfaces and car glass are not drawn and mirrors are black. The longest finished session it states is 77 minutes on the earlier test build Lab 39, ended by the testers, not a crash, which reached free roam after the first mission. Those two results come from different builds, and the 20 fps bar is not met. The README also points to a newer test build, Lab 63, which it says fixes dark faces in shade, and to a shared 5-minute test. Its latest-run line (26 Nov) now gives 16.3 fps average (1% low 6.2, 4 freezes) for a new AMD beta branch on the same card in that 5-minute test; this page keeps the longer Lab 61 figures for the lanes.",
-      "source": "project README (26 Nov, Lab 61 on beta-2, with Lab 35 and Lab 39 results and the AMD beta latest-run line) and its latest commits; one RX 9070 XT, self-reported; the 37-minute session was still running when the README was written",
-      "changed_at": "2026-11-27T06:54:00Z",
+      "status": "Its README (27 Nov) now leads with an AMD line on one RX 9070 XT, Ryzen 7 9800X3D and 32 GB. The released beta v12 (branch beta-amd, also the stable branch) is certified on its own bench: 16.4 fps average over 5 minutes on Series X, 18.5 with Series S and FSR 4, and 16.9 fps average over a 60-minute scripted run without a crash. An in-development, unreleased build is reported at 21.8 and 21.1 fps average over two 60-minute scripted runs with no crash, both ended by the testers. All of these used scripted input, not play by hand, and picture fixes for the unreleased build are still in progress, so this page does not count them as a player-controlled session and keeps stage 6. Known faults: some vehicles partly green, see-through trees, flashing tree shadows and dark patches on far ground. The earlier hand-played results stay in the README: Lab 61 at 14.0 fps average over a session shown at 37 minutes so far, and 77 minutes without a crash on Lab 39, ended by the testers.",
+      "source": "project README (27 Nov: stable v12 and in-development tables, Lab 61 and Lab 39 sections) and its latest commits; one RX 9070 XT, self-reported; the 21.8 fps build is unreleased and the 60-minute runs used scripted input",
+      "changed_at": "2026-11-27T13:20:00Z",
       "tested_on": "Windows 11 · AMD RX 9070 XT",
       "lanes": {
         "picture": {
@@ -111,12 +138,12 @@
           "note": "lit; water and car glass not drawn, mirrors black"
         },
         "speed": {
-          "fps": 14,
-          "note": "average 14.0, median 14.5 over 37 minutes on Lab 61"
+          "fps": 16.9,
+          "note": "16.9 average over a 60-minute scripted run on released v12; 14.0 on Lab 61 by hand; 21.8 on an unreleased build, not used"
         },
         "stability": {
           "minutes": 77,
-          "note": "77 minutes on Lab 39, ended by choice; Lab 61 is at 37 minutes so far"
+          "note": "77 minutes by hand on Lab 39, ended by choice; 60-minute scripted runs on v12 and an unreleased build, no crash"
         }
       }
     },
@@ -148,16 +175,40 @@
       }
     },
     {
+      "id": "vi-br-port",
+      "name": "VI-BR-PORT",
+      "repo": "edsuuu/VI-BR-PORT",
+      "tagline": "VIctory fork for 8 GB NVIDIA cards at 1080p; created 24 Nov",
+      "furthest": "The prison and the first boat mission at 26 to 29 fps in short scripted runs of up to 3 minutes",
+      "stage": 6,
+      "state": "active",
+      "status": "Its README (27 Nov) says the game plays from the opening through the prison prologue and into the first open-world mission, the boat, with the player in control on the Series S profile at 1080p. On one RTX 4060 Ti 8 GB and i7-13700K the log's frame lines average 26.6 to 27.9 fps over a scripted 3-minute prison walk, 28.7 to 29.1 over 70 seconds driving the boat and 25.6 over the first two minutes of a new game, with the title's 30 fps cap in lighter stretches and 18 to 24 in heavy ones. The longest run it gives is 3 minutes, so stability is a short figure only. The README does not describe the picture and does not claim the 30 fps goal is reached.",
+      "source": "project README (27 Nov) and commits to 94e5841; one RTX 4060 Ti, self-reported; new to this page",
+      "changed_at": "2026-11-27T13:20:00Z",
+      "tested_on": "Windows 11 · NVIDIA RTX 4060 Ti",
+      "lanes": {
+        "picture": null,
+        "speed": {
+          "fps": 27.4,
+          "note": "25.6 to 29.1 across the opening, prison walk and boat, short scripted runs"
+        },
+        "stability": {
+          "minutes": 3,
+          "note": "longest run stated is a 3-minute scripted walk"
+        }
+      }
+    },
+    {
       "id": "kelvaroq",
       "name": "Kelvaroq",
-      "repo": "fablinoo/kelvaroq",
+      "repo": "stellarr-studio/kelvaroq",
       "tagline": "Rust-based Xbox Series runtime for Windows built on VIctory and victory-fork; repository opened 24 Nov",
       "furthest": "The prologue and first mission, 36 minutes without a crash at about 10 fps (outside tester)",
       "stage": 6,
       "state": "active",
-      "status": "Its README (25 Nov) says the prologue runs at about 10 fps in typical views and 7 to 8 in the heaviest scenes, on one RTX 5080 at 3840 by 2160, with menus, character control, HUD and pause verified in play. It also reports an outside tester's monitored session on an RTX 4090 at 2560 by 1440: 36 min 46 s without a crash, mean 10 fps, median 11, range 1 to 20, and 9 to 12 after the first 10 minutes. That session covered the prologue and the first mission and is one session only. The README says about 7% of draws are still dropped, mostly because ray-tracing structures are not built, and that the thread preparing GPU work limits heavy frames. Its badge calls the project playable; this page's bar is 20 fps, which is not met. The README does not describe the picture, so that lane is empty. Its README (26 Nov) adds that a new memory layer and native ray tracing work in a build under test that is not public, and says the first scenes copy under 8 MB a frame instead of over 100 MB; it gives no frame rate for that build, so the lanes still use the public build. The repository has moved to a studio's organisation.",
-      "source": "project README (26 Nov) and commits to e062a82; developer's RTX 5080 and an outside tester's RTX 4090, self-reported; the memory layer and ray tracing are claims about a private test build",
-      "changed_at": "2026-11-26T20:42:00Z",
+      "status": "Its README (25 Nov) says the prologue runs at about 10 fps in typical views and 7 to 8 in the heaviest scenes, on one RTX 5080 at 3840 by 2160, with menus, character control, HUD and pause verified in play. It also reports an outside tester's monitored session on an RTX 4090 at 2560 by 1440: 36 min 46 s without a crash, mean 10 fps, median 11, range 1 to 20, and 9 to 12 after the first 10 minutes. That session covered the prologue and the first mission and is one session only. The README says about 7% of draws are still dropped, mostly because ray-tracing structures are not built, and that the thread preparing GPU work limits heavy frames. Its badge calls the project playable; this page's bar is 20 fps, which is not met. The README does not describe the picture, so that lane is empty. Its README (27 Nov) says a new memory layer and native ray tracing work in a build under test that is not public. It reports 22 ms of graphics-card work per open-world frame with the game's data in video memory, and loading screens and the intro at a locked 30 fps on the new layer. It gives no open-world frame rate for that build, and a commit of 27 Nov corrected earlier 35 ms open-world figures, which were loading screens, so the lanes still use the public build. The repository now lives under a studio's organisation.",
+      "source": "project README (27 Nov) and its latest commits; developer's RTX 5080 and an outside tester's RTX 4090, self-reported; the memory layer and ray tracing are claims about a private test build",
+      "changed_at": "2026-11-27T13:20:00Z",
       "tested_on": "Windows · NVIDIA RTX 5080; RTX 4090 (outside tester)",
       "lanes": {
         "picture": null,
@@ -203,9 +254,9 @@
       "furthest": "A city street at about 19 fps on the Series X profile with two renderer patches, in a README written for an RX 7900 XTX",
       "stage": 6,
       "state": "active",
-      "status": "Its README (status dated 26 Nov) is titled for an RX 7900 XTX and gives one scene, a city street, on an i9-12900K with ray tracing off: about 45 ms a frame (about 22 fps) on the Series S profile with five optional patches, about 53 ms (about 19 fps) on the Series X profile with two, and 57 to 75 ms (13 to 17 fps) without the patches. It is the older text of VIctory-7900XTX, so the figures may come from that machine, not from this repository's maintainer. The 41-minute session and the street-chase figures are no longer in the README, so the stability lane is empty. Newer commits port an FSR 4.1.2 upscale to 4K from DexNom's fork (cd8dfc0) and upload title textures earlier in each submission to fix frame order and flicker (5d6bd84). The README states that rooms with little light are not yet right. This page takes 19 fps.",
-      "source": "project README (status dated 26 Nov) and commits to cd8dfc0; the README describes an RX 7900 XTX, not the RX 9070 XT named in the commit titles, so provenance is unclear",
-      "changed_at": "2026-11-26T20:42:00Z",
+      "status": "Its README (status dated 26 Nov) is titled for an RX 7900 XTX and gives one scene, a city street, on an i9-12900K with ray tracing off: about 45 ms a frame (about 22 fps) on the Series S profile with five optional patches, about 53 ms (about 19 fps) on the Series X profile with two, and 57 to 75 ms (13 to 17 fps) without the patches. It is the older text of VIctory-7900XTX, so the figures may come from that machine, not from this repository's maintainer. The 41-minute session and the street-chase figures are no longer in the README, so the stability lane is empty. Newer commits port an FSR 4.1.2 upscale to 4K from DexNom's fork (cd8dfc0) and upload title textures earlier in each submission to fix frame order and flicker (5d6bd84). The README states that rooms with little light are not yet right. A table of reports from other cards, which the README attributes to contributors and links to issues, lists an RX 9060 XT averaging 19.8 fps in a Series X interior at 1080p with ray tracing off (with local changes), an RTX 3090 at 530 to 545 ms a frame, and an Intel Arc B580 that slowed to about 0.7 fps before device removal. This page does not use those for the lanes and takes 19 fps.",
+      "source": "project README (status dated 26 Nov, re-read 27 Nov) and commits to 4eb6cfd; the README describes an RX 7900 XTX, not the RX 9070 XT named in the commit titles, so provenance is unclear; the other-card table is second-hand",
+      "changed_at": "2026-11-27T13:20:00Z",
       "tested_on": "Windows 11 · AMD RX 7900 XTX (README, provenance unclear)",
       "lanes": {
         "picture": {
@@ -227,9 +278,9 @@
       "furthest": "A city street at about 16 to 20 fps on the Series X profile with ray tracing off, 9 to 10 with it on",
       "stage": 6,
       "state": "active",
-      "status": "Its README (status dated 26 Nov) was rewritten again and now gives 270-second runs in one city street on one machine, with five optional renderer patches on. On the Series X profile at 1440p drawn to 4K with ray tracing off it gives 49 ms a frame standing (20 fps) and about 62 ms walking (16 fps); with ray tracing on, the stated goal, 99 ms standing (10 fps) and about 110 ms walking (9 fps). The Series S profile gives 23 fps standing and 16 walking. It uses about 37 to 45 GB of memory and recommends 64 GB of RAM. It says trees and lighting were fixed on 26 Nov, but models and textures stay at low detail for a long time while streaming and some ray-traced structures of moving objects are corrupt. It states no session length, so the stability lane is empty. This page takes the Series X figures with ray tracing off, 18 fps as the midpoint.",
-      "source": "project README (status dated 26 Nov, rewritten again since the last check) and commits to the renderer-port-7 commit; one i9-12900K and RX 7900 XTX, self-reported; frame times converted to fps by this page",
-      "changed_at": "2026-11-26T20:42:00Z",
+      "status": "Its README (status dated 26 Nov) was rewritten again and now gives 270-second runs in one city street on one machine, with five optional renderer patches on. On the Series X profile at 1440p drawn to 4K with ray tracing off it gives 49 ms a frame standing (20 fps) and about 62 ms walking (16 fps); with ray tracing on, the stated goal, 99 ms standing (10 fps) and about 110 ms walking (9 fps). The Series S profile gives 23 fps standing and 16 walking, and a row at 1080p output on Series X with ray tracing off gives 25 standing and 23 walking. It uses about 37 to 45 GB of memory and recommends 64 GB of RAM. It says trees and lighting were fixed on 26 Nov, but models and textures stay at low detail for a long time while streaming and some ray-traced structures of moving objects are corrupt. It states no session length, so the stability lane is empty. This page takes the Series X figures with ray tracing off, 18 fps as the midpoint.",
+      "source": "project README (status dated 26 Nov, re-read 27 Nov) and its latest commits; one i9-12900K and RX 7900 XTX, self-reported; frame times converted to fps by this page",
+      "changed_at": "2026-11-27T13:20:00Z",
       "tested_on": "Windows 11 · AMD RX 7900 XTX",
       "lanes": {
         "picture": {
@@ -239,6 +290,30 @@
         "speed": {
           "fps": 18,
           "note": "Series X, ray tracing off: 20 standing, 16 walking; one street scene"
+        },
+        "stability": null
+      }
+    },
+    {
+      "id": "flamingo",
+      "name": "Flamingo",
+      "repo": "realblastex/flamingo",
+      "tagline": "NVIDIA-tuned fork of victory-fork with a stats overlay and speed work; created 25 Nov",
+      "furthest": "The first mission's boat cutscene at about 10 fps, after the first gameplay scene",
+      "stage": 6,
+      "state": "active",
+      "status": "Its README (status dated 26 Nov, edited 27 Nov) says menus run at 30 fps and cutscenes play through, and puts the first mission's boat cutscene at about 10 fps (run 222, median 10.4, 96 ms a frame) on one RTX 4070 with the Series S profile. Ray-traced light does not run, so a constant floor of light stands in; distant trees and buildings are left out, water shows dark blocks and a few meshes come out wrong, such as a missing body in the boat cutscene. It says runs end without a device loss but gives no session length.",
+      "source": "project README (status dated 26 Nov, read 27 Nov) and FLAMINGO.md; one RTX 4070, self-reported",
+      "changed_at": "2026-11-27T13:20:00Z",
+      "tested_on": "Windows 11 · NVIDIA RTX 4070",
+      "lanes": {
+        "picture": {
+          "step": 2,
+          "note": "a constant floor of light stands in; far scenery left out, water blocks dark, a few meshes wrong"
+        },
+        "speed": {
+          "fps": 10.4,
+          "note": "median 10.4 in the boat cutscene"
         },
         "stability": null
       }
@@ -268,25 +343,25 @@
       }
     },
     {
-      "id": "flamingo",
-      "name": "Flamingo",
-      "repo": "realblastex/flamingo",
-      "tagline": "NVIDIA-tuned fork of victory-fork with a stats overlay and speed work; created 25 Nov",
-      "furthest": "The first mission's boat cutscene at about 9 to 10 fps, after the first gameplay scene",
+      "id": "scarlettport",
+      "name": "ScarlettPort",
+      "repo": "ZigZagBoi1/ScarlettPort",
+      "tagline": "Packages VIctory and XCL with its own fixes and launcher; started 24 Nov",
+      "furthest": "Control in the opening area with a fuller lit picture, at about 7 to 8 fps",
       "stage": 6,
       "state": "active",
-      "status": "Its README (status dated 26 Nov) says menus run at 30 fps and cutscenes play through, and puts the first mission's boat cutscene at about 9 to 10 fps (run 193, median 9.8) on one RTX 4070 with the Series S profile. A newer commit reports 11.1 fps with one setting. Ray-traced light does not run, so a constant floor of light stands in; distant trees and buildings are left out, water shows dark blocks and one character's body is missing in some shots. It says runs end without a device loss but gives no session length. The 14 fps figure for the first gameplay scene is no longer in the README, so this page drops it.",
-      "source": "project README (status dated 26 Nov), FLAMINGO.md and commits to the 11 fps card-buffers commit; one RTX 4070, self-reported",
-      "changed_at": "2026-11-26T13:17:00Z",
-      "tested_on": "Windows 11 · NVIDIA RTX 4070",
+      "status": "Its README (27 Nov, versions to 0.5.3, progress 90%) says the game reaches player control in the opening area with a full lit picture without ray tracing, with haze indoors as a known issue. It now puts the world at about 7 to 8 fps on an RTX 3060 12 GB and Ryzen 5 5600X with a warm cache (v0.5.2, Series S profile), up from 3.4 in v0.5.0, with the world reached in 178 s. It says no long run has been recorded, so stability is unmeasured, and that NVIDIA cards are still slow at 3 to 6 fps. Its community list, which the README says is not its own measurements, includes 22.0 fps median on an RX 9060 XT (0.5.2) and an RTX 3070 session of 1 h 20 min without a crash at 8.5 fps. This page treats those as second-hand and does not use them for the lanes.",
+      "source": "project README (27 Nov) and merged pull requests to #141; one RTX 3060 for its own figure; community figures are quoted by the README, second-hand; this page has not checked its prebuilt launcher",
+      "changed_at": "2026-11-27T13:20:00Z",
+      "tested_on": "Windows 10 · NVIDIA RTX 3060",
       "lanes": {
         "picture": {
-          "step": 2,
-          "note": "a constant floor of light stands in; far scenery left out, water blocks dark"
+          "step": 3,
+          "note": "lit rooms and sky light without ray tracing; haze indoors"
         },
         "speed": {
-          "fps": 9.5,
-          "note": "about 9 to 10 fps in the boat cutscene"
+          "fps": 7.5,
+          "note": "7 to 8 fps in the world on an RTX 3060 (v0.5.2); community reports of 9 to 22 fps are second-hand"
         },
         "stability": null
       }
@@ -353,30 +428,6 @@
         "speed": {
           "fps": 4.75,
           "note": "3.5 to 6 fps"
-        },
-        "stability": null
-      }
-    },
-    {
-      "id": "scarlettport",
-      "name": "ScarlettPort",
-      "repo": "ZigZagBoi1/ScarlettPort",
-      "tagline": "Packages VIctory and XCL with its own fixes and launcher; started 24 Nov",
-      "furthest": "Control in the opening area with a fuller lit picture, at about 3 fps",
-      "stage": 6,
-      "state": "active",
-      "status": "Its README (27 Nov, versions 0.5.0 to 0.5.2, progress 90%) says the game reaches player control in the opening area with a full lit picture without ray tracing. Its own measurement is 3.4 fps in the world on an RTX 3060 with the Series S profile (v0.5.0), up from 1.6, and the world loads in 178 s. It says no long run has been recorded, so stability is unmeasured, and that NVIDIA cards are still slow at 3 to 6 fps. Its list of community reports, which the README says are not its own measurements, includes 22.0 fps median on an RX 9060 XT with version 0.5.2 and 13.4 fps average on an RTX 4070 Ti with 0.5.1. This page treats those as second-hand and does not use them for the lanes.",
-      "source": "project README (27 Nov) and merged pull requests to #104; one RTX 3060 for its own figure; community figures are quoted by the README, second-hand; this page has not checked its prebuilt launcher",
-      "changed_at": "2026-11-27T06:54:00Z",
-      "tested_on": "Windows 10 · NVIDIA RTX 3060",
-      "lanes": {
-        "picture": {
-          "step": 3,
-          "note": "lit rooms and sky light without ray tracing; the README does not list remaining faults"
-        },
-        "speed": {
-          "fps": 3.4,
-          "note": "3.4 fps in the world on an RTX 3060 (v0.5.0); community reports of 13 to 22 fps are second-hand"
         },
         "stability": null
       }
@@ -744,24 +795,24 @@
       "The executable surfaced on 23 November. Three days later a dozen or more public projects report the game world running, KLBF Lab reports finishing the first mission and reaching free roam, and Vice-Tay reports a boat mission section played by hand. Two private builds, CGBJ and one shown on a Rumble stream, are said to be in the world too, but both rest on reports this page has not confirmed.",
       "Other games show the pace. XCL's repository opened on the evening of 20 November, and by the evening of 22 November it listed two smaller retail games, Minecraft Preview and Unicorn Overlord, as fully playable. No project has done this with a game the size of GTA VI.",
       "The picture is arriving. KLBF Lab (a fix for dark faces in shade in its newest test build) and ScarlettPort (lit rooms without ray tracing since engine 0.4.6) light shaded places with stand-ins or fixes of their own; others still show anything out of the sun as black, because no build runs the game's ray-traced lighting properly yet.",
-      "Speed is the long pole. VIctory took 0.5 to 1.8 seconds per world frame on 23 November. On 25 November AnyXboxX's maintainer measured a median of 13.8 fps in the open world after moving to a new code base (about 12.5 earlier that day, about 5 before it), in 13-minute runs; that is one machine and self-reported. On 26 November KLBF Lab reported an average of 14.0 fps (median 14.5) over a session still running at 37 minutes, Kelvaroq reports about 10 fps over a 36-minute outside session, victory-fork 8 to 14 with sessions of up to 49 minutes that ended in a device loss, and Flamingo 9 to 10 at the first boat mission. VIctory-7900XTX reports 16 to 20 fps with ray tracing off in one street scene, with no session length. Vice-Tay's README reports a median of 21.1 fps over 30 minutes played by hand on an RTX 4090 with the Series S profile, the first report here that reaches 20 fps and 30 minutes together. This page treats it with caution: it is one self-reported session, the README does not say how it ended and the picture has listed faults. On 27 November AnyXboxX, which now builds on Vice-Tay's code, reported a median of about 24 fps at 1080p over a 14-minute session on an RTX 4070 SUPER, so two separate machines now report 20 fps or more, though only Vice-Tay's session reaches 30 minutes. A private build on a stream is said to show 12 to 15, unconfirmed. Playable needs 20 for 30 minutes without a crash.",
+      "Speed is the long pole. VIctory took 0.5 to 1.8 seconds per world frame on 23 November. On 25 November AnyXboxX's maintainer measured a median of 13.8 fps in the open world after moving to a new code base (about 12.5 earlier that day, about 5 before it), in 13-minute runs; that is one machine and self-reported. On 26 November KLBF Lab reported an average of 14.0 fps (median 14.5) over a session still running at 37 minutes, Kelvaroq reports about 10 fps over a 36-minute outside session, victory-fork 8 to 14 with sessions of up to 49 minutes that ended in a device loss, and Flamingo 9 to 10 at the first boat mission. VIctory-7900XTX reports 16 to 20 fps with ray tracing off in one street scene, with no session length. Vice-Tay's README reports a median of 21.1 fps over 30 minutes played by hand on an RTX 4090 with the Series S profile, the first report here that reaches 20 fps and 30 minutes together. This page treats it with caution: it is one self-reported session, the README does not say how it ended and the picture has listed faults. On 27 November AnyXboxX, which now builds on Vice-Tay's code, reported a median of about 24 fps at 1080p over a 14-minute session on an RTX 4070 SUPER, so two separate machines now report 20 fps or more, though only Vice-Tay's session reaches 30 minutes. On 27 November KLBF Lab reported 60-minute scripted runs without a crash at 16.9 fps on its released AMD build and 21.8 fps on an unreleased one, and playablegames-peppa reported 23.5 fps over 12 minutes standing in a house plus a separate 55-minute session without a crash, all self-reported, with the speed and the long session in different runs. A private build on a stream is said to show 12 to 15, unconfirmed. Playable needs 20 for 30 minutes without a crash.",
       "Where the time goes is now measured, and it is not mostly the graphics card. rorodev6's build spends 22 to 40 ms of a 113 to 141 ms frame on GPU work and the rest copying the game's memory to and from the card, on one thread. victory-fork finds its submit thread and the card both close to full, and cutting one alone moved the frame by 0 to 7%. Getting to 20 fps means removing most of that copying, which is deeper work than the gains of the first two days.",
-      "The playable bar does not require correct lighting, only 20 frames a second for 30 minutes. A build could skip the ray-traced passes to get there. Stability has moved: KLBF Lab reports a 77-minute session on a test build that the testers ended themselves, Kelvaroq an outside tester's 36 minutes at about 10 fps, and Vice-Tay a 30-minute session at 21.1 fps. If a second run or an outside tester confirms Vice-Tay, or says it ended without a crash, the page would call it playable.",
+      "The playable bar does not require correct lighting, only 20 frames a second for 30 minutes. A build could skip the ray-traced passes to get there. Stability has moved: KLBF Lab reports a 77-minute session on a test build that the testers ended themselves, Kelvaroq an outside tester's 36 minutes at about 10 fps, and Vice-Tay a 30-minute session at 21.1 fps. Three projects now report numbers on or near both parts of the bar, though none in one hand-played session confirmed by an outside tester. If a second run or an outside tester confirms Vice-Tay or playablegames-peppa, or says it ended without a crash, the page would call it playable.",
       "Work is shared across projects. victory-fork, AnyXboxX, Kelvaroq and ScarlettPort build on VIctory, and fixes move between XCL and the VIctory family within days. AnyXboxX's jump came from taking in a bundle of those fixes at once, which is the kind of gain that can repeat.",
-      "Takedowns are now on the record. On 24 November GitHub published a Take-Two notice against Leonida and applied it to its whole network of 3,007 repositories. The notice argues that requiring the game files, given when the project appeared and what it targets, points to the leaked copy. That argument would fit most projects listed here, though none has been named so far. A notice cannot stop private builds, but it could break up the open work the public projects depend on. On 25 November two more ranked repositories, ztrx and victory-perf, disappeared; no source says why."
+      "Takedowns are now on the record. On 24 November GitHub published a Take-Two notice against Leonida and applied it to its whole network of 3,007 repositories. The notice argues that requiring the game files, given when the project appeared and what it targets, points to the leaked copy. That argument would fit most projects listed here, though none has been named so far. A notice cannot stop private builds, but it could break up the open work the public projects depend on. On 25 November two more ranked repositories, ztrx and victory-perf, disappeared; no source says why, and victory-perf has since returned."
     ],
     "chances": [
       {
         "label": "By Sun 29 Nov",
-        "value": "4 in 10"
+        "value": "5 in 10"
       },
       {
         "label": "By Tue 1 Dec",
-        "value": "6 in 10"
+        "value": "7 in 10"
       },
       {
         "label": "By Fri 4 Dec",
-        "value": "7 in 10"
+        "value": "8 in 10"
       },
       {
         "label": "By 31 Dec",
@@ -795,17 +846,27 @@
       },
       {
         "label": "20 fps over a 30-minute session",
-        "value": "reported Thu 26 Nov by Vice-Tay (median 21.1 fps, one session, self-reported, ending not stated); AnyXboxX reported about 24 fps over 14 minutes on Fri 27 Nov"
+        "value": "reported Thu 26 Nov by Vice-Tay (median 21.1 fps, one session, self-reported, ending not stated); AnyXboxX reported about 24 fps over 14 minutes and playablegames-peppa 23.5 fps over 12 minutes plus a separate 55-minute session on Fri 27 Nov"
       },
       {
         "label": "Playable",
         "value": "around Mon 30 Nov"
       }
     ],
-    "revised_at": "2026-11-25T21:35:00Z",
-    "revision_note": "Moved forward from Tue 1 Dec to Mon 30 Nov. This check adds evidence on speed, the gap the earlier move rested on: AnyXboxX's maintainer measured a median of about 12.5 fps in the open world after switching code base, up from about 5 earlier the same day, and Kelvaroq reports about 10 fps over a 36-minute outside session. Both are self-reported on one machine each, and no project shows 20 fps and 30 minutes together, so the move is one day, not more. A private build said to run 12 to 15 fps on a stream is unconfirmed and was not used. Takedown risk is unchanged. The chance by Sun 29 Nov rises from 3 in 10 to 4 in 10."
+    "revised_at": "2026-11-27T13:20:00Z",
+    "revision_note": "Odds for 29 Nov to 4 Dec raised by one in ten; the target stays at Mon 30 Nov. On 27 Nov a second and a third project reported the bar's numbers in separate runs (playablegames-peppa: 23.5 fps and a 55-minute session; KLBF Lab: 60-minute runs at 16.9 to 21.8 fps), so what remains is one hand-played session that holds both. All of it is self-reported, with scripted or standing-still speed runs, so the date does not move. Earlier note: Moved forward from Tue 1 Dec to Mon 30 Nov. This check adds evidence on speed, the gap the earlier move rested on: AnyXboxX's maintainer measured a median of about 12.5 fps in the open world after switching code base, up from about 5 earlier the same day, and Kelvaroq reports about 10 fps over a 36-minute outside session. Both are self-reported on one machine each, and no project shows 20 fps and 30 minutes together, so the move is one day, not more. A private build said to run 12 to 15 fps on a stream is unconfirmed and was not used. Takedown risk is unchanged. The chance by Sun 29 Nov rises from 3 in 10 to 4 in 10."
   },
   "updates": [
+    {
+      "at": "2026-11-27T13:20:00Z",
+      "title": "Two projects report the bar's numbers in separate runs",
+      "points": [
+        "playablegames-peppa is new on this page: its README reports 23.5 fps over 12 minutes in a house interior and a separate 55-minute session without a crash on an RTX 5080, and it sits at the top of stage 6 on its lanes.",
+        "KLBF Lab's README now reports 60-minute scripted runs without a crash at 16.9 fps on its released AMD build and 21.8 fps on an unreleased one; this page keeps its lanes on the released build.",
+        "VI-BR-PORT is new: it reports 26 to 29 fps on an RTX 4060 Ti in runs of up to 3 minutes through the prison and the first boat mission.",
+        "ScarlettPort now reports 7 to 8 fps on an RTX 3060 and Flamingo 10.4 fps in the boat cutscene; VIctory-Belobug-AMD added a table of other cards' reports. The forecast odds for 29 Nov to 4 Dec rose by one in ten, and the target date holds."
+      ]
+    },
     {
       "at": "2026-11-27T06:54:00Z",
       "title": "AnyXboxX reports 24 fps in Full HD and moves to second; Native VIctory for macOS reaches the world",
