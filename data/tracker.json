@@ -6,7 +6,7 @@
     "repo": "audixdev/americas-pc-tracker",
     "description": "Live standings of the unofficial projects trying to run the Xbox build of GTA VI on a PC: how far each has got, what changed, and a best guess at when it becomes playable."
   },
-  "checked_at": "2026-11-27T13:20:00Z",
+  "checked_at": "2026-11-27T20:12:00Z",
   "headline_note": "No project is confirmed playable yet. Vice-Tay's README reports a median of 21.1 frames a second over a 30-minute session by hand on an RTX 4090, but one session, self-reported, and it does not say how the session ended. playablegames-peppa reports 23.5 over 12 minutes standing in a house and, separately, a 55-minute session without a crash on an RTX 5080. AnyXboxX reports a median of about 24 over a 14-minute session on an RTX 4070 SUPER. KLBF Lab reports 60-minute scripted runs without a crash at 16.9 fps on its released build and 21.8 on an unreleased one. Playable needs 20 for 30 minutes without a crash.",
   "stages": [
     {
@@ -128,9 +128,9 @@
       "furthest": "Free roam after the first mission; 60-minute scripted runs without a crash at 16.9 fps on the released AMD build, 21.8 fps on an unreleased one (self-reported)",
       "stage": 6,
       "state": "active",
-      "status": "Its README (27 Nov) now leads with an AMD line on one RX 9070 XT, Ryzen 7 9800X3D and 32 GB. The released beta v12 (branch beta-amd, also the stable branch) is certified on its own bench: 16.4 fps average over 5 minutes on Series X, 18.5 with Series S and FSR 4, and 16.9 fps average over a 60-minute scripted run without a crash. An in-development, unreleased build is reported at 21.8 and 21.1 fps average over two 60-minute scripted runs with no crash, both ended by the testers. All of these used scripted input, not play by hand, and picture fixes for the unreleased build are still in progress, so this page does not count them as a player-controlled session and keeps stage 6. Known faults: some vehicles partly green, see-through trees, flashing tree shadows and dark patches on far ground. The earlier hand-played results stay in the README: Lab 61 at 14.0 fps average over a session shown at 37 minutes so far, and 77 minutes without a crash on Lab 39, ended by the testers.",
+      "status": "Its README (27 Nov) now leads with an AMD line on one RX 9070 XT, Ryzen 7 9800X3D and 32 GB. The released beta v12 (branch beta-amd, also the stable branch) is certified on its own bench: 16.4 fps average over 5 minutes on Series X, 18.5 with Series S and FSR 4, and 16.9 fps average over a 60-minute scripted run without a crash. An in-development, unreleased build is reported at 21.8 and 21.1 fps average over two 60-minute scripted runs with no crash, both ended by the testers. All of these used scripted input, not play by hand, and picture fixes for the unreleased build are still in progress, so this page does not count them as a player-controlled session and keeps stage 6. Known faults: some vehicles partly green, see-through trees, flashing tree shadows and dark patches on far ground. A 5-minute test of the unreleased build with 2x frame generation shows 30.2 fps presented, but its rendered frames run at about 16 fps, so this page does not count it as speed. The earlier hand-played results stay in the README: Lab 61 at 14.0 fps average over a session shown at 37 minutes so far, and 77 minutes without a crash on Lab 39, ended by the testers.",
       "source": "project README (27 Nov: stable v12 and in-development tables, Lab 61 and Lab 39 sections) and its latest commits; one RX 9070 XT, self-reported; the 21.8 fps build is unreleased and the 60-minute runs used scripted input",
-      "changed_at": "2026-11-27T13:20:00Z",
+      "changed_at": "2026-11-27T20:12:00Z",
       "tested_on": "Windows 11 · AMD RX 9070 XT",
       "lanes": {
         "picture": {
@@ -242,54 +242,6 @@
         "speed": {
           "fps": 13.5,
           "note": "12 to 15 fps, swinging 5 to 24 (reported)"
-        },
-        "stability": null
-      }
-    },
-    {
-      "id": "victory-belobug-amd",
-      "name": "VIctory-Belobug-AMD",
-      "repo": "Belobug/VIctory-Belobug-AMD",
-      "tagline": "AMD Radeon fork of VIctory, created 25 Nov",
-      "furthest": "A city street at about 19 fps on the Series X profile with two renderer patches, in a README written for an RX 7900 XTX",
-      "stage": 6,
-      "state": "active",
-      "status": "Its README (status dated 26 Nov) is titled for an RX 7900 XTX and gives one scene, a city street, on an i9-12900K with ray tracing off: about 45 ms a frame (about 22 fps) on the Series S profile with five optional patches, about 53 ms (about 19 fps) on the Series X profile with two, and 57 to 75 ms (13 to 17 fps) without the patches. It is the older text of VIctory-7900XTX, so the figures may come from that machine, not from this repository's maintainer. The 41-minute session and the street-chase figures are no longer in the README, so the stability lane is empty. Newer commits port an FSR 4.1.2 upscale to 4K from DexNom's fork (cd8dfc0) and upload title textures earlier in each submission to fix frame order and flicker (5d6bd84). The README states that rooms with little light are not yet right. A table of reports from other cards, which the README attributes to contributors and links to issues, lists an RX 9060 XT averaging 19.8 fps in a Series X interior at 1080p with ray tracing off (with local changes), an RTX 3090 at 530 to 545 ms a frame, and an Intel Arc B580 that slowed to about 0.7 fps before device removal. This page does not use those for the lanes and takes 19 fps.",
-      "source": "project README (status dated 26 Nov, re-read 27 Nov) and commits to 4eb6cfd; the README describes an RX 7900 XTX, not the RX 9070 XT named in the commit titles, so provenance is unclear; the other-card table is second-hand",
-      "changed_at": "2026-11-27T13:20:00Z",
-      "tested_on": "Windows 11 · AMD RX 7900 XTX (README, provenance unclear)",
-      "lanes": {
-        "picture": {
-          "step": 2,
-          "note": "lighting indoors listed as too bright or too dark"
-        },
-        "speed": {
-          "fps": 19,
-          "note": "about 19 fps on the Series X profile with two patches; one street scene"
-        },
-        "stability": null
-      }
-    },
-    {
-      "id": "victory-7900xtx",
-      "name": "VIctory-7900XTX",
-      "repo": "avatarmanz/VIctory-7900XTX",
-      "tagline": "VIctory and victory-fork build tuned for speed on an AMD RX 7900 XTX; created 25 Nov",
-      "furthest": "A city street at about 16 to 20 fps on the Series X profile with ray tracing off, 9 to 10 with it on",
-      "stage": 6,
-      "state": "active",
-      "status": "Its README (status dated 26 Nov) was rewritten again and now gives 270-second runs in one city street on one machine, with five optional renderer patches on. On the Series X profile at 1440p drawn to 4K with ray tracing off it gives 49 ms a frame standing (20 fps) and about 62 ms walking (16 fps); with ray tracing on, the stated goal, 99 ms standing (10 fps) and about 110 ms walking (9 fps). The Series S profile gives 23 fps standing and 16 walking, and a row at 1080p output on Series X with ray tracing off gives 25 standing and 23 walking. It uses about 37 to 45 GB of memory and recommends 64 GB of RAM. It says trees and lighting were fixed on 26 Nov, but models and textures stay at low detail for a long time while streaming and some ray-traced structures of moving objects are corrupt. It states no session length, so the stability lane is empty. This page takes the Series X figures with ray tracing off, 18 fps as the midpoint.",
-      "source": "project README (status dated 26 Nov, re-read 27 Nov) and its latest commits; one i9-12900K and RX 7900 XTX, self-reported; frame times converted to fps by this page",
-      "changed_at": "2026-11-27T13:20:00Z",
-      "tested_on": "Windows 11 · AMD RX 7900 XTX",
-      "lanes": {
-        "picture": {
-          "step": 2,
-          "note": "lit; models and textures stay low-detail while streaming, moving objects' ray-traced structures partly corrupt"
-        },
-        "speed": {
-          "fps": 18,
-          "note": "Series X, ray tracing off: 20 standing, 16 walking; one street scene"
         },
         "stability": null
       }
@@ -612,6 +564,42 @@
       "tied_with_previous": true
     },
     {
+      "id": "victory-belobug-amd",
+      "name": "VIctory-Belobug-AMD",
+      "repo": "Belobug/VIctory-Belobug-AMD",
+      "tagline": "AMD Radeon fork of VIctory, created 25 Nov",
+      "furthest": "A city street at about 19 fps in a README written for an RX 7900 XTX (last recorded 26 Nov)",
+      "stage": 6,
+      "state": "gone",
+      "status": "The repository and the Belobug account both return 404 from GitHub's API (checked 27 Nov). A report passed to this page, citing PortWatch, says GitHub removed both on 27 Nov for a Terms of Service violation. This page has seen no GitHub notice, so the reason is second-hand and unconfirmed. The README as last read here (status dated 26 Nov) was written for an RX 7900 XTX and gave about 19 fps in one city street on the Series X profile; its provenance was unclear. That cannot be re-checked, so its lanes are left empty.",
+      "source": "repository and account return 404 on 27 Nov (checked by this page); the reason is from a report citing PortWatch, not confirmed; last README read 27 Nov before the removal",
+      "changed_at": "2026-11-27T20:12:00Z",
+      "lanes": {
+        "picture": null,
+        "speed": null,
+        "stability": null
+      },
+      "tied_with_previous": true
+    },
+    {
+      "id": "victory-7900xtx",
+      "name": "VIctory-7900XTX",
+      "repo": "avatarmanz/VIctory-7900XTX",
+      "tagline": "VIctory and victory-fork build tuned for speed on an AMD RX 7900 XTX; created 25 Nov",
+      "furthest": "A city street at about 16 to 20 fps on the Series X profile with ray tracing off (last recorded 26 Nov)",
+      "stage": 6,
+      "state": "gone",
+      "status": "The repository and the avatarmanz account both return 404 from GitHub's API (checked 27 Nov), and no source this page has read says why. Its README as last read here (status dated 26 Nov) gave 270-second runs in one city street: 16 to 20 fps on the Series X profile with ray tracing off and 9 to 10 with it on, with no session length. That cannot be re-checked, so its lanes are left empty.",
+      "source": "repository and account return 404 on 27 Nov (checked by this page); last README read 27 Nov before the removal",
+      "changed_at": "2026-11-27T20:12:00Z",
+      "lanes": {
+        "picture": null,
+        "speed": null,
+        "stability": null
+      },
+      "tied_with_previous": true
+    },
+    {
       "id": "leonida",
       "name": "Leonida",
       "repo": "ubiquitarianism/leonida",
@@ -765,6 +753,11 @@
       "note": "Static recompiler. The loader and boot milestones are in progress, and a first frame is not started."
     },
     {
+      "name": "mandy (ProjectLeonida)",
+      "repo": "ProjectLeonida/mandy",
+      "note": "Another home of Leonida Continued. Its README (27 Nov) carries the same status as ubiquitarianism/leonida: boots to the landing prompt and the story load, no world frame verified, nothing playable. It is not ranked separately."
+    },
+    {
       "name": "cool_fox (DoubleGhosty)",
       "repo": "DoubleGhosty/cool_fox",
       "note": "Created 26 Nov and described as a continuation of the cool_fox runtime. Its README lists merged fixes from VIctory-7900XTX, DexNom, Belobug and others and gives no measurement of its own, so it is not ranked."
@@ -799,7 +792,7 @@
       "Where the time goes is now measured, and it is not mostly the graphics card. rorodev6's build spends 22 to 40 ms of a 113 to 141 ms frame on GPU work and the rest copying the game's memory to and from the card, on one thread. victory-fork finds its submit thread and the card both close to full, and cutting one alone moved the frame by 0 to 7%. Getting to 20 fps means removing most of that copying, which is deeper work than the gains of the first two days.",
       "The playable bar does not require correct lighting, only 20 frames a second for 30 minutes. A build could skip the ray-traced passes to get there. Stability has moved: KLBF Lab reports a 77-minute session on a test build that the testers ended themselves, Kelvaroq an outside tester's 36 minutes at about 10 fps, and Vice-Tay a 30-minute session at 21.1 fps. Three projects now report numbers on or near both parts of the bar, though none in one hand-played session confirmed by an outside tester. If a second run or an outside tester confirms Vice-Tay or playablegames-peppa, or says it ended without a crash, the page would call it playable.",
       "Work is shared across projects. victory-fork, AnyXboxX, Kelvaroq and ScarlettPort build on VIctory, and fixes move between XCL and the VIctory family within days. AnyXboxX's jump came from taking in a bundle of those fixes at once, which is the kind of gain that can repeat.",
-      "Takedowns are now on the record. On 24 November GitHub published a Take-Two notice against Leonida and applied it to its whole network of 3,007 repositories. The notice argues that requiring the game files, given when the project appeared and what it targets, points to the leaked copy. That argument would fit most projects listed here, though none has been named so far. A notice cannot stop private builds, but it could break up the open work the public projects depend on. On 25 November two more ranked repositories, ztrx and victory-perf, disappeared; no source says why, and victory-perf has since returned."
+      "Takedowns are now on the record. On 24 November GitHub published a Take-Two notice against Leonida and applied it to its whole network of 3,007 repositories. The notice argues that requiring the game files, given when the project appeared and what it targets, points to the leaked copy. That argument would fit most projects listed here, though none has been named so far. A notice cannot stop private builds, but it could break up the open work the public projects depend on. On 25 November two more ranked repositories, ztrx and victory-perf, disappeared; no source says why, and victory-perf has since returned. On 27 November the repositories of VIctory-Belobug-AMD and VIctory-7900XTX, and the accounts behind them, also began returning 404; one report says GitHub removed Belobug's for a Terms of Service violation, which this page has not confirmed. Both were single-scene AMD builds at 18 to 19 fps without a session length, none of the leaders was affected, and no frame-rate gain was lost, so the date does not move."
     ],
     "chances": [
       {
@@ -857,6 +850,16 @@
     "revision_note": "Odds for 29 Nov to 4 Dec raised by one in ten; the target stays at Mon 30 Nov. On 27 Nov a second and a third project reported the bar's numbers in separate runs (playablegames-peppa: 23.5 fps and a 55-minute session; KLBF Lab: 60-minute runs at 16.9 to 21.8 fps), so what remains is one hand-played session that holds both. All of it is self-reported, with scripted or standing-still speed runs, so the date does not move. Earlier note: Moved forward from Tue 1 Dec to Mon 30 Nov. This check adds evidence on speed, the gap the earlier move rested on: AnyXboxX's maintainer measured a median of about 12.5 fps in the open world after switching code base, up from about 5 earlier the same day, and Kelvaroq reports about 10 fps over a 36-minute outside session. Both are self-reported on one machine each, and no project shows 20 fps and 30 minutes together, so the move is one day, not more. A private build said to run 12 to 15 fps on a stream is unconfirmed and was not used. Takedown risk is unchanged. The chance by Sun 29 Nov rises from 3 in 10 to 4 in 10."
   },
   "updates": [
+    {
+      "at": "2026-11-27T20:12:00Z",
+      "title": "VIctory-Belobug-AMD and VIctory-7900XTX are removed from GitHub",
+      "points": [
+        "VIctory-Belobug-AMD's repository and the Belobug account return 404; a report citing PortWatch says GitHub removed both for a Terms of Service violation, which this page has not confirmed.",
+        "VIctory-7900XTX's repository and the avatarmanz account also return 404, with no stated reason. Both entries move to the end of stage 6 as gone, with empty lanes.",
+        "KLBF Lab's README adds a 5-minute test at 30.2 fps with 2x frame generation, from about 16 fps rendered; its lanes are unchanged. Leonida Continued's second home, ProjectLeonida/mandy, joins the watch list.",
+        "The forecast holds at Mon 30 Nov: neither removed build led on speed or session length."
+      ]
+    },
     {
       "at": "2026-11-27T13:20:00Z",
       "title": "Two projects report the bar's numbers in separate runs",
